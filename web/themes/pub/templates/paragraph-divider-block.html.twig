@@ -1,0 +1,27 @@
+{# @var v \Drupal\app\Views\ParagraphDividerBlockView #}
+<div class="divider-block content-block"
+     data-padding-standard="horizontal"
+>
+  <div data-content-width="{{ v.blockWidth }}">
+    <div class="divider-padding"
+         data-divider-padding-top="{{ v.paddingTop }}"
+         data-divider-padding-bottom="{{ v.paddingBottom }}"
+         {% if v.paddingTop == "pixels" or v.paddingBottom == "pixels" %}
+         style="
+           {% if v.paddingTop == "pixels" %}padding-top: {{ v.paddingTopPixels }}px;{% endif %}
+           {% if v.paddingBottom == "pixels" %}padding-bottom: {{ v.paddingBottomPixels }}px;{% endif %}
+         "
+         {% endif %}
+    >
+      <div class="divider"
+           data-divider="{{ v.divider }}"
+           data-divider-thickness-minimal="{{ v.dividerThicknessMinimal }}"
+           data-divider-thickness-vibrant="{{ v.dividerThicknessVibrant }}"
+           {% if (v.divider == "minimal" and v.dividerThicknessMinimal == "pixels") or (v.divider == "vibrant" and v.dividerThicknessVibrant == "pixels") %}
+            style="height: {{ v.dividerThicknessPixels }}px;"
+           {% endif %}
+      >
+      </div>
+    </div>
+  </div>
+</div>

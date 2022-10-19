@@ -1,0 +1,10 @@
+{# @var v \Drupal\app\Views\NewsTeaserView #}
+<div class="news-teaser-more">
+  <a href="{{ v.url }}">
+    <div class="news-teaser-more-image" style="background-image: url({{ v.teaserImage }})"></div>
+    <div class="news-teaser-more-heading">
+      <div class="news-teaser-more-date">{{ v.date }}</div>
+      <div class="news-teaser-more-title">{{ v.title }}</div>
+    </div>
+  </a>
+</div>

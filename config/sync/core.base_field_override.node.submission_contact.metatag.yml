@@ -1,0 +1,18 @@
+uuid: b7eaff56-83c9-4b4d-ae32-62fb109edc25
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+id: node.submission_contact.metatag
+field_name: metatag
+entity_type: node
+bundle: submission_contact
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

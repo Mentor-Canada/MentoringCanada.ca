@@ -1,0 +1,20 @@
+uuid: b9cfdfa8-2924-4c7c-8fd7-8cecdad4aadd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_smt_tw_en
+field_name: field_smt_tw_en
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

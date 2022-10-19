@@ -1,0 +1,28 @@
+uuid: 4611123f-8084-4c76-95da-2301c9665310
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news
+    - node.type.news
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_news
+field_name: field_news
+entity_type: paragraph
+bundle: reference_section
+label: News
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news: news
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

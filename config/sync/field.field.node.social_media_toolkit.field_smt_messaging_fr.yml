@@ -1,0 +1,21 @@
+uuid: 13d673dd-ce27-4d1f-9a6c-84aa637e8ce6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smt_messaging_fr
+    - node.type.social_media_toolkit
+  module:
+    - text
+id: node.social_media_toolkit.field_smt_messaging_fr
+field_name: field_smt_messaging_fr
+entity_type: node
+bundle: social_media_toolkit
+label: 'Suggested Messaging (French)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

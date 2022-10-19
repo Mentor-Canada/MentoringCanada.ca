@@ -1,0 +1,106 @@
+{# @var v \Drupal\app\Views\EventView #}
+{% if v.banner.hasImage %}
+{{ v.banner|raw }}
+{% endif %}
+
+<div id="content">
+  <article>
+
+    {{ v.header|raw }}
+
+    {% if messages %}
+      <div class="messages" data-content-width="standard">
+        {{ messages|raw }}
+      </div>
+    {% endif %}
+
+    <section class="event-when-where-section {% if (not v.hasEventOptions) %}no-event-options{% endif %}"
+             data-section-zebra="odd"
+    >
+      <div data-padding-standard="horizontal">
+        <div data-content-width="{{ v.eventWhereWhenWidth }}">
+          <div class="event-when-where-label">
+            {{ "When"|t }}
+          </div>
+          <div class="event-when-where-detail">
+            <div class="date-time-range">{{ v.pageSectionDate.dateTimeRange }}</div>
+            <div class="date-time-range-timezone">{{ v.pageSectionDate.timezone }}</div>
+          </div>
+          <div class="event-when-where-label">
+            {{ "Details"|t }}
+          </div>
+          <div class="event-when-where-detail">
+            {{ v.pageSectionDetails }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% if not v.postEventContent %}
+      {% for section in v.sections %}
+        {{ section|raw }}
+      {% endfor %}
+    {% else %}
+
+    <section class="event-form-expired-section"
+             data-section-zebra="odd"
+    >
+      <div data-padding-standard="horizontal">
+        <div data-content-width="standard">
+          <div class="typography">
+            {{ v.postEventContent|raw }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endif %}
+
+
+    {% if v.activeEvent %}
+    {% if v.form is not null %}
+
+      <section class="form-section"
+               data-section-zebra="{{ v.formZebra }}"
+      >
+        <div data-padding-standard="horizontal">
+          <div data-content-width="standard">
+            <div class="typography form-section-heading">
+              <h2 class="visually-h5 form-section-heading-eyebrow">{{ "Event Registration"|t }}</h2>
+              <h3 class="visually-h3 form-section-heading-title">{{ node.label }}</h3>
+            </div>
+            {{ v.form|raw }}
+          </div>
+        </div>
+      </section>
+
+    {% endif %}
+    {% endif %}
+
+    {% if v.moreItems|length %}
+    <section class="more-items-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="standard">
+          <div class="more-heading">
+            <div class="typography">
+              <h2>{{ "More events"|t }}</h2>
+            </div>
+          </div>
+          <div class="items-wrapper">
+            {% for item in v.moreItems %}
+              {{ item|raw }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "event";
+</script>
+

@@ -1,0 +1,156 @@
+uuid: 014a1f27-c673-4e8b-aa81-fcdd59627f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image_block.field_hdpi_images
+    - field.field.paragraph.text_image_block.field_horizontal_alignment
+    - field.field.paragraph.text_image_block.field_horizontal_alignment_alt
+    - field.field.paragraph.text_image_block.field_image
+    - field.field.paragraph.text_image_block.field_image_2
+    - field.field.paragraph.text_image_block.field_image_position
+    - field.field.paragraph.text_image_block.field_image_width
+    - field.field.paragraph.text_image_block.field_number_of_images
+    - field.field.paragraph.text_image_block.field_reduced_typography
+    - field.field.paragraph.text_image_block.field_responsive_image_to_top
+    - field.field.paragraph.text_image_block.field_text_alignment_alt
+    - field.field.paragraph.text_image_block.field_text_image_group_2_tip
+    - field.field.paragraph.text_image_block.field_vertical_alignment
+    - field.field.paragraph.text_image_block.field_width_options_wide
+    - field.field.paragraph.text_image_block.field_wysiwyg
+    - field.field.paragraph.text_image_block.field_wysiwyg_2
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - description_field
+    - options
+    - text
+id: paragraph.text_image_block.default
+targetEntityType: paragraph
+bundle: text_image_block
+mode: default
+content:
+  field_hdpi_images:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_horizontal_alignment:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_horizontal_alignment_alt:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image_2:
+    type: entity_reference_entity_view
+    weight: 9
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_image_position:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image_width:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_number_of_images:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_reduced_typography:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_responsive_image_to_top:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_text_alignment_alt:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_text_image_group_2_tip:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: description_field_default
+    region: content
+  field_vertical_alignment:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_width_options_wide:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_wysiwyg:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_wysiwyg_2:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

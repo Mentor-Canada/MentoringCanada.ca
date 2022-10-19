@@ -1,0 +1,103 @@
+{# @var v \Drupal\app\Views\UI_EventOptionsView #}
+
+<div class="ui-event-options-field ui-field">
+  {% for pos, option in v.options %}
+
+    {% if pos % 2 == 0 %}
+      <div class="ui-form-row {% if v.options|length > 1 %}col-2{% endif %}">
+    {% endif %}
+
+    <div class="ui-event-option-wrapper">
+
+      <div class="ui-event-option"
+           {% if option.isPast %}data-past="true"{% endif %}
+        {% if option.occupancy and option.isFull %}data-full="true"{% endif %}
+      >
+        <input type="radio"
+               id="ui-event-option-{{ option.id }}"
+               name="{{ v.name }}"
+               value="{{ option.id }}"
+               required="required"
+          {% if v.options|length == 1 and option.isPast == false and option.isFull == false %}
+            checked="checked"
+          {% endif %}
+        />
+
+        <div class="ui-event-option-button">
+          <label for="ui-event-option-{{ option.id }}">
+            {% if option.isPast %}
+              <span class="event-date-state event-date-state-is-past">{{ "Event-Option-Past"|t }}</span>
+            {% elseif option.occupancy %}
+              {% if option.isFull %}
+                <span class="event-occupancy event-occupancy-full">{{ "Event-Option-Full"|t }}</span>
+              {% else %}
+                <span class="event-occupancy event-occupancy-free">{{ option.available }} {% if option.available == 1 %}{{ "Event-Option-Left-Singular"|t }}{% else %}{{ "Event-Option-Left-Plural"|t }}{% endif %}</span>
+              {% endif %}
+            {% else %}
+              <span class="event-date-state event-date-state-is-free">{{ "Event-Option-Open"|t }}</span>
+            {% endif %}
+            <span class="event-date">{{ option.dateTimeRange }}</span>
+            <span class="event-timezone">{{ option.timezoneString }}</span>
+            <span class="event-name">{{ option.name }}</span>
+          </label>
+        </div>
+        <div class="ui-event-option-button-indicator"></div>
+      </div>
+
+    </div>
+
+    {% if pos % 2 == 1 or pos == v.options|length - 1 %}
+      </div>
+    {% endif %}
+
+  {% endfor %}
+
+  <div class="ui-form-row">
+    <div class="event-option-calendar-links">
+      {% for option in v.options %}
+        <div id="ui-event-option-{{ option.id }}-calendar-link" class="event-option-calendar-link">
+          <fieldset {% if option.hideCalendarLinks %}class="hide-calendar-links"{% endif %}>
+            <legend>{{ "Add this event to your calendar"|t }}</legend>
+            <a href="{{ option.calendarLinks.ics }}">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              <span>ICS (Apple, Outlook)</span>
+            </a>
+            <a href="{{ option.calendarLinks.google }}">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              <span>Google</span>
+            </a>
+          </fieldset>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    (function() {
+
+      let parentElement = document.currentScript.parentElement;
+      let inputs = parentElement.querySelectorAll("input[type='radio']");
+      let linkElements = parentElement.querySelectorAll(".event-option-calendar-link")
+
+      let refresh = () => {
+        linkElements.forEach((linkElement) => {
+          linkElement.classList.remove("active");
+        });
+        inputs.forEach((input) => {
+          if(input.checked) {
+            let activeLink = document.querySelector(`#${input.id}-calendar-link`);
+            activeLink.classList.add("active");
+          }
+        });
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener("change", refresh)
+      });
+
+      refresh();
+
+    })()
+  </script>
+
+</div>

@@ -1,0 +1,22 @@
+uuid: 6a03e4d0-2009-4df8-905e-3d287f9360ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+id: node.submission_spo.promote
+field_name: promote
+entity_type: node
+bundle: submission_spo
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

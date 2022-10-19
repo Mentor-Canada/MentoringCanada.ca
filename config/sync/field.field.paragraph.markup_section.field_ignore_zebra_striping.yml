@@ -1,0 +1,23 @@
+uuid: 38ca1f83-c2e4-40fe-ad5c-f453f757daca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ignore_zebra_striping
+    - paragraphs.paragraphs_type.markup_section
+id: paragraph.markup_section.field_ignore_zebra_striping
+field_name: field_ignore_zebra_striping
+entity_type: paragraph
+bundle: markup_section
+label: 'Ignore Default Zebra Striping'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

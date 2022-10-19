@@ -1,0 +1,414 @@
+$body-font: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+$headline-font: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+
+$typography-break-1: 500px;
+$typography-break-2: 800px;
+
+.typography {
+  font-family: $body-font;
+  font-weight: 400;
+  color: $typography-color;
+
+  > * {
+    margin-top: 1em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $headline-font;
+    font-weight: 500;
+    color: $heading-color;
+  }
+  h1,
+  .visually-h1 {
+    line-height: 1;
+    @include font-tracking(72);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(60);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(48);
+    }
+    &.large {
+      @include font-tracking(72 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(60 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(48 * 1.25);
+      }
+    }
+  }
+  h2,
+  .visually-h2 {
+    line-height: 1;
+    @include font-tracking(48);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(40);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(32);
+    }
+    &.large {
+      @include font-tracking(48 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(40 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(32 * 1.25);
+      }
+    }
+  }
+  h3,
+  .visually-h3 {
+    line-height: 1.1;
+    @include font-tracking(32);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(27);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(22);
+    }
+    &.large {
+      @include font-tracking(32 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(27 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(22 * 1.25);
+      }
+    }
+  }
+  h4,
+  .visually-h4 {
+    line-height: 1.2;
+    @include font-tracking(22);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(21);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(20);
+    }
+    &.large {
+      @include font-tracking(22 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(21 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(20 * 1.25);
+      }
+    }
+  }
+  h5,
+  .visually-h5 {
+    line-height: 1.2;
+    @include font-tracking(21);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(20);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(19);
+    }
+    &.large {
+      @include font-tracking(21 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(20 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(19 * 1.25);
+      }
+    }
+  }
+  h6,
+  .visually-h6 {
+    line-height: 1.2;
+    @include font-tracking(20);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(19);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(18);
+    }
+    &.large {
+      @include font-tracking(20 * 1.25);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(19 * 1.25);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(18 * 1.25);
+      }
+    }
+  }
+  p {
+    line-height: 1.4;
+    @include font-tracking(20);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(19);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(18);
+    }
+    &.large {
+      @include font-tracking(24);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(22);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(20);
+      }
+    }
+    &.eyebrow-tip {
+      display: inline-block;
+      padding: 6px 16px;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      line-height: normal;
+      text-transform: uppercase;
+      border-radius: 50px;
+      &.eyebrow-tip-blue {
+        color: #fff;
+        background: $ui-primary;
+      }
+      &.eyebrow-tip-orange {
+        color: #000;
+        background: linear-gradient(#ffcf33, $mentor-yellow);
+      }
+      & + h1,
+      & + h2,
+      & + h3,
+      & + h4,
+      & + h5,
+      & + h6 {
+        margin-top: 0.25em;
+      }
+    }
+  }
+  p img {
+    margin: 0.5em 1em 0.5em 0;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+  }
+  blockquote {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding-left: 2em;
+    border-left: 4px solid $mentor-yellow;
+    p {
+      margin-top: 1em;
+      line-height: 1.4;
+      @include font-tracking(22);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(20);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(19);
+      }
+    }
+    cite {
+      display: block;
+      margin-top: 1em;
+      font-style: italic;
+      line-height: 1.2;
+      @include font-tracking(16);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(15);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(14);
+      }
+    }
+  }
+  ul {
+    list-style: disc;
+  }
+  ol {
+    list-style: decimal;
+  }
+  ol,
+  ul {
+    padding-left: 1em;
+    font-weight: 400;
+    line-height: 1.4;
+    @include font-tracking(19);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(18);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(17);
+    }
+    li {
+      margin-bottom: 0.5em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  strong {
+    font-weight: 500;
+  }
+  em {
+    font-style: italic;
+  }
+  a {
+    color: $ui-primary;
+    transition: color 200ms, background-color 200ms;
+    &:hover {
+      color: scale-color($ui-primary, $lightness: -10%);
+    }
+    &.button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: normal;
+      padding: 15px 20px;
+      min-height: 50px;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      background: $ui-primary;
+      font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 500;
+      @include font-tracking(14);
+      line-height: normal;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      &:hover {
+        background: scale-color($ui-primary, $lightness: -10%);
+      }
+    }
+  }
+  hr {
+    margin: 2em 0;
+    border: none;
+    height: 1px;
+    background: #e5e5e5;
+  }
+}
+.typography-reversed {
+  color: #fff;
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+  }
+}
+.typography-reduced {
+  $typography-reduced-factor: 0.8;
+
+  h1,
+  .visually-h1 {
+    @include font-tracking(72 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(60 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(48 * $typography-reduced-factor);
+    }
+  }
+  h2,
+  .visually-h2 {
+    @include font-tracking(48 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(40 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(32 * $typography-reduced-factor);
+    }
+  }
+  h3,
+  .visually-h3 {
+    @include font-tracking(32 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(27 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(22 * $typography-reduced-factor);
+    }
+  }
+  h4,
+  .visually-h4 {
+    @include font-tracking(22 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(21 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(20 * $typography-reduced-factor);
+    }
+  }
+  h5,
+  .visually-h5 {
+    @include font-tracking(21 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(20 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(19 * $typography-reduced-factor);
+    }
+  }
+  h6,
+  .visually-h6 {
+    @include font-tracking(20 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(19 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(18 * $typography-reduced-factor);
+    }
+  }
+  p {
+    line-height: 1.3;
+    @include font-tracking(20 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(19 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(18 * $typography-reduced-factor);
+    }
+    &.large {
+      @include font-tracking(24 * $typography-reduced-factor);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(22 * $typography-reduced-factor);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(20 * $typography-reduced-factor);
+      }
+    }
+  }
+  blockquote {
+    p {
+      line-height: 1.3;
+      @include font-tracking(22 * $typography-reduced-factor);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(20 * $typography-reduced-factor);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(19 * $typography-reduced-factor);
+      }
+    }
+    cite {
+      line-height: 1.1;
+      @include font-tracking(16 * $typography-reduced-factor);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(15 * $typography-reduced-factor);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(14 * $typography-reduced-factor);
+      }
+    }
+  }
+  ol,
+  ul {
+    line-height: 1.3;
+    @include font-tracking(19 * $typography-reduced-factor);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(18 * $typography-reduced-factor);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(17 * $typography-reduced-factor);
+    }
+  }
+}

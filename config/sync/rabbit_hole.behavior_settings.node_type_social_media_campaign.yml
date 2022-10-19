@@ -1,0 +1,11 @@
+uuid: 0c9325b6-4971-49dd-9c91-a276e92157c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_media_campaign
+id: node_type_social_media_campaign
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

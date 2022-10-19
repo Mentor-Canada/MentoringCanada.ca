@@ -1,0 +1,23 @@
+uuid: d2943ff5-8e10-408b-9f12-fb9e0d446672
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_calendar_links
+    - node.type.event_option
+id: node.event_option.field_hide_calendar_links
+field_name: field_hide_calendar_links
+entity_type: node
+bundle: event_option
+label: 'Hide Calendar Links'
+description: 'Hide the generated calendar links for this event option. This can be useful for open-ended or multi-day events where adding the event to a calendar would not make sense.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

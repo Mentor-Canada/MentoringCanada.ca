@@ -1,0 +1,37 @@
+{# @var v \Drupal\app\Views\UI_SelectFieldView #}
+{% if v.show %}
+  {% set optionals = v.show|split(',') %}
+{% endif %}
+<div class="ui-select-field ui-field ui-outline-field">
+  <div class="ui-outline-field-wrapper">
+    <select id="{{ v.name }}" name="{{ v.name }}" {{ v.required }}>
+      {% if v.blankString %}
+      <option disabled selected value>{{ v.blankString|t }}</option>
+      {% endif %}
+      {% for key, value in v.options %}
+      <option value="{{ key }}"
+        {% if v.show %}data-show="{% for pos, optional in optionals %}{{ optional }}-{{ key }}{% if pos != optionals|length - 1 %},{% endif %}{% endfor %}{% endif %}"
+      >
+        {{ value }}
+      </option>
+      {% endfor %}
+    </select>
+
+    <div class="ui-outline">
+      <div class="ui-outline-left"></div>
+      <div class="ui-outline-middle">
+        <label for="{{ v.name }}">
+          {{ v.label }}
+          {% if v.required %}
+            <span class="ui-field-required-marker">*</span>
+          {% endif %}
+        </label>
+      </div>
+      <div class="ui-outline-right"></div>
+    </div>
+
+    <div class="ui-select-field-caret-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M0 3h10L5 8" fill-rule="nonzero"></path></svg>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+uuid: 02328e38-0c41-480e-ad14-620a94e1104e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_in_menus
+    - paragraphs.paragraphs_type.content_section
+id: paragraph.content_section.field_display_in_menus
+field_name: field_display_in_menus
+entity_type: paragraph
+bundle: content_section
+label: 'Display in Menus'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

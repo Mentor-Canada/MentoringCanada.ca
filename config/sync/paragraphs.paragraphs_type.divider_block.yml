@@ -1,0 +1,10 @@
+uuid: ca0ff906-667b-4a7b-ac4b-0bdda4ddcb3d
+langcode: en
+status: true
+dependencies: {  }
+id: divider_block
+label: 'Divider Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

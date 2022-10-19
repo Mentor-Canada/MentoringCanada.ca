@@ -1,0 +1,20 @@
+uuid: 613d5cba-3fb9-432b-ae13-ef4252cba8b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_notify_event_users
+field_name: field_notify_event_users
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

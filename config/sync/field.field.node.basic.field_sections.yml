@@ -1,0 +1,73 @@
+uuid: f80fc021-8ada-453d-bebd-a4c25a4480bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.basic
+    - paragraphs.paragraphs_type.content_section
+    - paragraphs.paragraphs_type.markup_section
+    - paragraphs.paragraphs_type.parallax_section
+    - paragraphs.paragraphs_type.reference_section
+  module:
+    - entity_reference_revisions
+id: node.basic.field_sections
+field_name: field_sections
+entity_type: node
+bundle: basic
+label: 'Page Sections'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content_section: content_section
+      parallax_section: parallax_section
+      reference_section: reference_section
+      markup_section: markup_section
+    target_bundles_drag_drop:
+      content_section:
+        enabled: true
+        weight: -27
+      divider_block:
+        weight: -21
+        enabled: false
+      image_caption_field:
+        weight: -19
+        enabled: false
+      images_block:
+        weight: -20
+        enabled: false
+      markup_block:
+        weight: -17
+        enabled: false
+      markup_section:
+        enabled: true
+        weight: -24
+      parallax_section:
+        enabled: true
+        weight: -26
+      reference_block:
+        weight: -18
+        enabled: false
+      reference_section:
+        enabled: true
+        weight: -25
+      social_block:
+        weight: -15
+        enabled: false
+      text_image_block:
+        weight: -16
+        enabled: false
+      wysiwyg_block:
+        weight: -23
+        enabled: false
+      youtube_block:
+        weight: -22
+        enabled: false
+field_type: entity_reference_revisions

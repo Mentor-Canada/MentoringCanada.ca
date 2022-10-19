@@ -1,0 +1,92 @@
+uuid: ae7355ba-5f3f-4e72-8c68-d9ab93eb0f4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.divider_block.field_divider
+    - field.field.paragraph.divider_block.field_divider_thickness_minimal
+    - field.field.paragraph.divider_block.field_divider_thickness_pixels
+    - field.field.paragraph.divider_block.field_divider_thickness_vibrant
+    - field.field.paragraph.divider_block.field_padding_bottom
+    - field.field.paragraph.divider_block.field_padding_bottom_pixels
+    - field.field.paragraph.divider_block.field_padding_top
+    - field.field.paragraph.divider_block.field_padding_top_pixels
+    - field.field.paragraph.divider_block.field_width_options_full
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.default
+targetEntityType: paragraph
+bundle: divider_block
+mode: default
+content:
+  field_divider:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_divider_thickness_minimal:
+    weight: 12
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_divider_thickness_pixels:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_divider_thickness_vibrant:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_padding_bottom:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_padding_bottom_pixels:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_padding_top:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_padding_top_pixels:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_width_options_full:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

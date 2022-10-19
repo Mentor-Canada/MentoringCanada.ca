@@ -1,0 +1,19 @@
+uuid: b4ed8052-386f-4c0b-a83e-a971d66c6c44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_name
+    - node.type.social_media_campaign
+id: node.social_media_campaign.field_contact_name
+field_name: field_contact_name
+entity_type: node
+bundle: social_media_campaign
+label: 'Contact Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

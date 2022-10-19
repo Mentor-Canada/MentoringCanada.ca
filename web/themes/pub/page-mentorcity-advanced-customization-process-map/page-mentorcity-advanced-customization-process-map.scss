@@ -1,0 +1,283 @@
+body.page-mentorcity-advanced-customization-process-map {
+
+  #page-banner {
+    svg#knowledge-hub-icon {
+      display: block;
+      margin: 0 auto;
+      overflow: visible;
+      #knowledge-hub-icon-g1,
+      #knowledge-hub-icon-g2 {
+        opacity: 0;
+        transform: scale(0.4);
+        transform-origin: 50% 50%;
+        transition: opacity 200ms, transform 600ms cubic-bezier(0.445, 1.65, 0.27, 1);
+        html.loaded & {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      #knowledge-hub-icon-g1 {
+        transition-delay: 500ms;
+      }
+      #knowledge-hub-icon-g2 {
+        transition-delay: 575ms;
+      }
+    }
+    .page-banner-content {
+      text-align: center;
+      max-width: 700px;
+      html[lang="fr-CA"] & {
+        max-width: 800px;
+      }
+      padding-top: 2.5vh;
+      &:after {
+        display: none;
+      }
+    }
+    .typography {
+      opacity: 0;
+      transition: opacity 1000ms 700ms;
+      html.loaded & {
+        opacity: 1;
+      }
+    }
+  }
+
+  section.content-section {
+    padding-bottom: calc(10vh - 75px);
+  }
+
+  .steps-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .step {
+    position: relative;
+    width: 30%;
+    margin-bottom: 100px;
+    @media (max-width: 1250px) {
+      width: 46%;
+      margin-bottom: 75px;
+    }
+    @media (max-width: 750px) {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .step-number {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: calc(100% - 70px);
+      color: rgba($ui-primary, 0.125);
+      font-weight: 700;
+      @include font-tracking(80);
+    }
+    .step-content {
+      position: relative;
+      margin: 30px 0 0 60px;
+      z-index: 1;
+    }
+    .step-label {
+      font-weight: 500;
+      line-height: 1.2;
+      @include font-tracking(18);
+      color: $mentor-soft-blue-shade;
+    }
+    .step-info {
+      margin-top: 40px;
+    }
+  }
+
+  @include transitionDelay(".step", 850, 100, 30);
+  .step {
+    opacity: 0;
+    transition: opacity 500ms, transform 1000ms;
+    transform: translateY(50px);
+    html.loaded & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .step {
+    $step-typography-reduction: 0.666;
+    .typography {
+      h1,
+      .visually-h1 {
+        @include font-tracking(72 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(60 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(48 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(72 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(60 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(48 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      h2,
+      .visually-h2 {
+        @include font-tracking(48 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(40 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(32 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(48 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(40 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(32 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      h3,
+      .visually-h3 {
+        @include font-tracking(32 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(27 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(22 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(32 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(27 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(22 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      h4,
+      .visually-h4 {
+        @include font-tracking(22 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(21 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(20 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(22 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(21 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(20 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      h5,
+      .visually-h5 {
+        @include font-tracking(21 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(20 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(19 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(21 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(20 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(19 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      h6,
+      .visually-h6 {
+        @include font-tracking(20 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(19 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(18 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(20 * 1.25 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(19 * 1.25 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(18 * 1.25 * $step-typography-reduction);
+          }
+        }
+      }
+      p {
+        @include font-tracking(20 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(19 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(18 * $step-typography-reduction);
+        }
+        &.large {
+          @include font-tracking(24 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(22 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(20 * $step-typography-reduction);
+          }
+        }
+      }
+      blockquote {
+        p {
+          @include font-tracking(22 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(20 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(19 * $step-typography-reduction);
+          }
+        }
+        cite {
+          @include font-tracking(16 * $step-typography-reduction);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(15 * $step-typography-reduction);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(14 * $step-typography-reduction);
+          }
+        }
+      }
+      ol,
+      ul {
+        @include font-tracking(19 * $step-typography-reduction);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(18 * $step-typography-reduction);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(17 * $step-typography-reduction);
+        }
+      }
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+
+  #cta-mentorcity-advanced-customization-process-map {
+    padding: 15vh 5vw;
+    background: $mentor-off-white;
+    .typography {
+      text-align: center;
+    }
+  }
+
+}

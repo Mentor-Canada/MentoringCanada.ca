@@ -1,0 +1,220 @@
+uuid: fab0d81c-b0f3-4f15-9958-099e28de684f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_section.field_darken_image
+    - field.field.paragraph.parallax_section.field_display_dynamic_content
+    - field.field.paragraph.parallax_section.field_events
+    - field.field.paragraph.parallax_section.field_image
+    - field.field.paragraph.parallax_section.field_news
+    - field.field.paragraph.parallax_section.field_ref_events
+    - field.field.paragraph.parallax_section.field_ref_news
+    - field.field.paragraph.parallax_section.field_refd_events
+    - field.field.paragraph.parallax_section.field_refd_news
+    - field.field.paragraph.parallax_section.field_refl_events
+    - field.field.paragraph.parallax_section.field_refl_news
+    - field.field.paragraph.parallax_section.field_refp_events
+    - field.field.paragraph.parallax_section.field_refp_news
+    - field.field.paragraph.parallax_section.field_reft_events
+    - field.field.paragraph.parallax_section.field_section_eyebrow
+    - field.field.paragraph.parallax_section.field_section_height_units
+    - field.field.paragraph.parallax_section.field_section_height_value
+    - field.field.paragraph.parallax_section.field_section_title
+    - field.field.paragraph.parallax_section.field_width_options_wide
+    - field.field.paragraph.parallax_section.field_wysiwyg
+    - field.field.paragraph.parallax_section.field_wysiwyg_2
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - options
+    - text
+id: paragraph.parallax_section.default
+targetEntityType: paragraph
+bundle: parallax_section
+mode: default
+content:
+  field_darken_image:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_dynamic_content:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_events:
+    weight: 16
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_news:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ref_events:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ref_news:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refd_events:
+    weight: 14
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refd_news:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refl_events:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refl_news:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refp_events:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refp_news:
+    weight: 10
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_reft_events:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_section_eyebrow:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_height_units:
+    weight: 22
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_section_height_value:
+    weight: 21
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_section_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_width_options_wide:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_wysiwyg:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_wysiwyg_2:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

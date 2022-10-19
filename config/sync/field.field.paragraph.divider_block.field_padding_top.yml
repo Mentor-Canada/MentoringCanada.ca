@@ -1,0 +1,23 @@
+uuid: 6046c276-25b8-4000-a532-2313d9bc604c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_top
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_padding_top
+field_name: field_padding_top
+entity_type: paragraph
+bundle: divider_block
+label: 'Padding Top'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1x
+default_value_callback: ''
+settings: {  }
+field_type: list_string

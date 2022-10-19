@@ -1,0 +1,8 @@
+app.payment.promo:
+  path: '/a/payment/promo'
+  defaults:
+    _controller: '\Drupal\app_payment\PromoController::validate'
+  methods:
+    - POST
+  requirements:
+    _access: 'TRUE'

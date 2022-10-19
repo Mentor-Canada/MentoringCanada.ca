@@ -1,0 +1,18 @@
+uuid: 24099e2a-477a-4f1f-9cab-2675efd6f050
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+id: node.submission_spo.created
+field_name: created
+entity_type: node
+bundle: submission_spo
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

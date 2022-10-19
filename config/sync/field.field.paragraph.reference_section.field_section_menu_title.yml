@@ -1,0 +1,19 @@
+uuid: 6927b19b-8965-4e88-9275-0282b91c2cbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_menu_title
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_section_menu_title
+field_name: field_section_menu_title
+entity_type: paragraph
+bundle: reference_section
+label: 'Section Menu Title'
+description: "<strong>The menu title for this section.</strong><br>\r\nWhen <em>Display in Menus</em> is checked, this title will be used to reference this section within inline menus on the page. If blank, the menu item will not render even if <em>Display in Menus</em> is checked."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

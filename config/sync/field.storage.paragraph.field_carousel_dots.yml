@@ -1,0 +1,18 @@
+uuid: fbedcbca-79e2-45b0-bdd9-20eae65f2926
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_carousel_dots
+field_name: field_carousel_dots
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+{# @var v \Drupal\app\Views\UI_EventOptionsSelectView #}
+
+{% if v.optionsMonths|length > 1 %}
+<div class="ui-form-row">
+  {{ ui_select("event-options-month-select", v.optionsMonths, "Please select the month"|t, true, "Please select the month", "event-options-month") }}
+</div>
+
+{% for key, month in v.months %}
+  <div class="optional-event-options-month-{{ key }}"></div>
+  <template data-template-name="event-options-month-{{ key }}" data-target="optional-event-options-month-{{ key }}">
+    <div class="optional" data-template="event-options-month-{{ key }}">
+      <div class="ui-form-row">
+        {{ ui_event_options(v.name, month.options) }}
+      </div>
+    </div>
+  </template>
+{% endfor %}
+{% else %}
+  {{ ui_event_options(v.name, v.months.0.options) }}
+{% endif %}

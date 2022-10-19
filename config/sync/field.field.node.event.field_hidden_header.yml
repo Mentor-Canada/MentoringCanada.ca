@@ -1,0 +1,23 @@
+uuid: 234482b4-d367-4597-8f05-f0310dfcb326
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hidden_header
+    - node.type.event
+id: node.event.field_hidden_header
+field_name: field_hidden_header
+entity_type: node
+bundle: event
+label: 'Hidden Header'
+description: 'Hide the site header on this page, including the logo and menu.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

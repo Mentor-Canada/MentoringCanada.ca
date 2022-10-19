@@ -1,0 +1,16 @@
+{# @var v \Drupal\app\Views\ParagraphWysiwygBlockView #}
+<div class="wysiwyg-block content-block"
+     data-padding-standard="horizontal"
+>
+  <div data-column-count="{{ v.columnCount }}"
+       data-column-split="{{ v.columnSplit }}"
+       data-block-constrained="{{ v.blockConstrained }}"
+       data-block-alignment="{{ v.blockAlignment }}"
+       data-content-width="{{ v.blockWidth }}"
+  >
+    <div class="typography column-1">{{ v.column1|raw }}</div>
+    {% if v.columnCount == "2" %}
+    <div class="typography column-2">{{ v.column2|raw }}</div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,19 @@
+uuid: b7e003b3-0f6c-4fc2-83ee-6fcdeccda813
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_email_address
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_email_address
+field_name: field_submission_email_address
+entity_type: node
+bundle: submission_spo
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

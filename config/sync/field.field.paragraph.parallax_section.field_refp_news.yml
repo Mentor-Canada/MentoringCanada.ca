@@ -1,0 +1,23 @@
+uuid: f29c40eb-abfe-4e8c-9072-dd7c9f65d883
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refp_news
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_refp_news
+field_name: field_refp_news
+entity_type: paragraph
+bundle: parallax_section
+label: 'Promoted News Only'
+description: 'Display only those news items that have been marked as <em>Promoted</em>. Note that this option is language dependant.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

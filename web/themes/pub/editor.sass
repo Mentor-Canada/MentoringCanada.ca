@@ -1,0 +1,138 @@
+$mentor-red: #d91c1c
+$mentor-red-shade: #a31c1c
+$mentor-yellow: #ffad29
+$mentor-yellow-shade: #e5992b
+$mentor-green: #33c2b2
+$mentor-green-shade: #30ab9c
+$mentor-soft-blue: #0d5e99
+$mentor-soft-blue-shade: #125480
+$mentor-blue: #122e45
+$mentor-blue-shade: #0d2133
+$mentor-white-blue: #d9ebf0
+$mentor-white-blue-shade: #9eb8bf
+$mentor-night-blue: #001217
+
+// custom colours
+$mentor-yellow-light: #ffc91a
+$mentor-off-white: #f6f9fc
+
+$ui-primary: #0095ff
+$ui-neutral: rgba(#000, 0.38)
+$ui-neutral-dark: rgba(#000, 0.57)
+$ui-hover: rgba(#000, 0.76)
+$ui-focus: $ui-primary
+$ui-input-color: rgba(#000, 0.87)
+$ui-border-radius: 4px
+
+$ui-alert-success: #47c965
+$ui-alert-error: #ad1457
+
+body > *
+  margin-top: 1em
+  margin-bottom: 0
+  &:first-child
+    margin-top: 0
+h2
+  font-size: 32px
+  &.large
+    font-size: (32px * 1.25)
+h3
+  font-size: 22px
+  &.large
+    font-size: (22px * 1.25)
+h4
+  font-size: 20px
+  &.large
+    font-size: (20px * 1.25)
+h5
+  font-size: 19px
+  &.large
+    font-size: (19px * 1.25)
+h6
+  font-size: 18px
+  &.large
+    font-size: (18px * 1.25)
+p
+  font-size: 16px
+  &.large
+    font-size: 21px
+  &.eyebrow-tip
+    display: inline-block
+    padding: 8px 16px
+    font-weight: 700
+    font-size: 11px
+    letter-spacing: 0.1em
+    line-height: normal
+    text-transform: uppercase
+    border-radius: 50px
+    &.eyebrow-tip-blue
+      color: #fff
+      background: $ui-primary
+    &.eyebrow-tip-orange
+      color: #000
+      background: $mentor-yellow-light
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6
+      margin-top: 0.25em
+
+p img
+  margin: 0.5em 1em 0.5em 0
+  vertical-align: middle
+  max-width: 100%
+  height: auto
+
+blockquote
+  margin-top: 3em
+  margin-bottom: 3em
+  margin-left: 0
+  margin-right: 0
+  padding-left: 2em
+  border-left: 4px solid $mentor-yellow-light
+  p
+    margin-top: 1em
+    font-size: 19px
+  cite
+    display: block
+    margin-top: 1em
+    font-style: italic
+    font-size: 14px
+    color: #444
+ul
+  list-style: disc
+ol
+  list-style: decimal
+ol, ul
+  padding-left: 1em
+  font-size: 15px
+  li
+    margin-bottom: 0.5em
+    &:last-child
+      margin-bottom: 0
+a
+  color: $ui-primary
+a.button
+  position: relative
+  display: inline-block
+  padding: 15px 20px
+  color: #000
+  border: none
+  border-radius: 4px
+  background: linear-gradient($mentor-yellow-light, #f5b049)
+  font-weight: 700
+  font-size: 16px
+  letter-spacing: normal
+  line-height: normal
+  text-align: center
+  cursor: pointer
+  outline: none
+  appearance: none
+  text-decoration: none
+hr
+  margin: 2em 0
+  border: none
+  height: 1px
+  background: #e5e5e5

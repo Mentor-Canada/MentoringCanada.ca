@@ -1,0 +1,106 @@
+uuid: 67231fab-9c5d-4fe6-ac46-10eaf4cd8c09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_block.field_display_fb
+    - field.field.paragraph.social_block.field_display_ig
+    - field.field.paragraph.social_block.field_display_li
+    - field.field.paragraph.social_block.field_display_minimal
+    - field.field.paragraph.social_block.field_display_newsletter
+    - field.field.paragraph.social_block.field_display_tw
+    - field.field.paragraph.social_block.field_display_yt
+    - paragraphs.paragraphs_type.social_block
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_settings:
+      children:
+        - field_display_fb
+        - field_display_tw
+        - field_display_li
+        - field_display_ig
+        - field_display_yt
+        - field_display_newsletter
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Settings
+id: paragraph.social_block.default
+targetEntityType: paragraph
+bundle: social_block
+mode: default
+content:
+  field_display_fb:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_ig:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_li:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_minimal:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_newsletter:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_tw:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_yt:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

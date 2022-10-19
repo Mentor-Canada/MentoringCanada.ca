@@ -1,0 +1,19 @@
+uuid: 25ff1cae-8647-433f-a4c1-02be057ab59b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_aware_srdc_cmp
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_aware_srdc_cmp
+field_name: field_submission_aware_srdc_cmp
+entity_type: node
+bundle: submission_spo
+label: 'Are you familiar with these organizations?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

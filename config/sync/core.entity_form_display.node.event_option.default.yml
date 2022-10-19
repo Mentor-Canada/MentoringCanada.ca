@@ -1,0 +1,118 @@
+uuid: 597e4870-6320-4d5d-8087-3fb4126694b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_option.field_event_date_time_range
+    - field.field.node.event_option.field_event_link
+    - field.field.node.event_option.field_event_name
+    - field.field.node.event_option.field_event_occupancy
+    - field.field.node.event_option.field_event_option_closed
+    - field.field.node.event_option.field_event_timezone
+    - field.field.node.event_option.field_hide_calendar_links
+    - field.field.node.event_option.field_keep_open_after_start
+    - field.field.node.event_option.field_one_on_one_training
+    - node.type.event_option
+  module:
+    - datetime_range
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_event_details:
+      children:
+        - field_event_name
+        - field_event_occupancy
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Event Details'
+id: node.event_option.default
+targetEntityType: node
+bundle: event_option
+mode: default
+content:
+  field_event_date_time_range:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_event_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_event_occupancy:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_event_option_closed:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_event_timezone:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hide_calendar_links:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_keep_open_after_start:
+    weight: 26
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_one_on_one_training:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  title: true
+  uid: true

@@ -1,0 +1,23 @@
+uuid: 03db2ec8-2596-407c-b077-09cf0c4fe21c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_form_role
+    - node.type.event
+id: node.event.field_has_form_role
+field_name: field_has_form_role
+entity_type: node
+bundle: event
+label: Role
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

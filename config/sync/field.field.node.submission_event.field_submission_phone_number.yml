@@ -1,0 +1,19 @@
+uuid: 44f26772-7061-4394-8873-d7e37d41d281
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_phone_number
+    - node.type.submission_event
+id: node.submission_event.field_submission_phone_number
+field_name: field_submission_phone_number
+entity_type: node
+bundle: submission_event
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

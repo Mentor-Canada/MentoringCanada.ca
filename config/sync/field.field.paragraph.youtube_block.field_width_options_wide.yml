@@ -1,0 +1,23 @@
+uuid: c7e06458-cc98-46ed-aeea-4981a742dd4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_wide
+    - paragraphs.paragraphs_type.youtube_block
+  module:
+    - options
+id: paragraph.youtube_block.field_width_options_wide
+field_name: field_width_options_wide
+entity_type: paragraph
+bundle: youtube_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

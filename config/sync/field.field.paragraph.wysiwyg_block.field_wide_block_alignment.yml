@@ -1,0 +1,23 @@
+uuid: 9566da73-7179-4eae-8080-ebbd4e8d98b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wide_block_alignment
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - options
+id: paragraph.wysiwyg_block.field_wide_block_alignment
+field_name: field_wide_block_alignment
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Wide Block Alignment'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

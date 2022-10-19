@@ -1,0 +1,76 @@
+{# @var v \Drupal\app\Views\BannerView #}
+{% if v.hasImage %}
+<section id="page-banner" class="page-banner-with-image">
+
+  <div class="page-banners-image-wrapper {% if v.hideScrim %}hide-scrim{% endif %}">
+    <div class="page-banners-image-scroll-effects-container">
+      <div class="page-banner-image-element">
+        <div class="page-banner-image" style="background-image: url('{{ v.image }}')"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-banners-content-wrapper {% if v.hideContent %}hide-content{% endif %}">
+    <div class="page-banners-content-scroll-effects-container">
+      <div class="page-banner-content-element">
+        <div class="page-banner-content typography typography-reversed">
+
+        {% if not v.eyebrow and not v.heading %}
+          <h1 class="banner-heading {% if v.title|length > 60 %}heading-long{% endif %}">{{ v.title }}</h1>
+        {% elseif v.eyebrow and not v.heading %}
+          <h2 class="banner-eyebrow visually-h3">{{ v.eyebrow }}</h2>
+          <h1 class="banner-heading {% if v.title|length > 60 %}heading-long{% endif %}">{{ v.title }}</h1>
+        {% elseif not v.eyebrow and v.heading %}
+          <h2 class="banner-eyebrow visually-h3">{{ v.title }}</h2>
+          <h1 class="banner-heading {% if v.heading|length > 60 %}heading-long{% endif %}">{{ v.heading }}</h1>
+        {% else %}
+          <h2 class="banner-eyebrow visually-h3">{{ v.eyebrow }}</h2>
+          <h1 class="banner-heading {% if v.heading|length > 60 %}heading-long{% endif %}">{{ v.heading }}</h1>
+        {% endif %}
+
+        {% if v.subheading %}
+          <h3 class="banner-subheading visually-h2 {% if v.subheading|length > 60 %}subheading-long{% endif %} {% if v.subheading|length > 120 %}subheading-x-long{% endif %}">{{ v.subheading }}</h3>
+        {% endif %}
+
+        {% if v.hasLink %}
+          <div class="banner-link">
+            <a href="{{ v.linkUrl }}"><button>{{ v.linkTitle }}</button></a>
+          </div>
+        {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% else %}
+<section id="page-banner" class="page-banner-no-image">
+  <div class="page-banner-content typography" data-banner-width="{{ v.width }}">
+
+  {% if not v.eyebrow and not v.heading %}
+    <h1 class="banner-heading {% if v.title|length > 60 %}heading-long{% endif %}">{{ v.title }}</h1>
+  {% elseif v.eyebrow and not v.heading %}
+    <h2 class="banner-eyebrow visually-h3">{{ v.eyebrow }}</h2>
+    <h1 class="banner-heading {% if v.title|length > 60 %}heading-long{% endif %}">{{ v.title }}</h1>
+  {% elseif not v.eyebrow and v.heading %}
+    <h2 class="banner-eyebrow visually-h3">{{ v.title }}</h2>
+    <h1 class="banner-heading {% if v.heading|length > 60 %}heading-long{% endif %}">{{ v.heading }}</h1>
+  {% else %}
+    <h2 class="banner-eyebrow visually-h3">{{ v.eyebrow }}</h2>
+    <h1 class="banner-heading {% if v.heading|length > 60 %}heading-long{% endif %}">{{ v.heading }}</h1>
+  {% endif %}
+
+  {% if v.subheading %}
+    <h3 class="banner-subheading visually-h2 {% if v.subheading|length > 60 %}subheading-long{% endif %} {% if v.subheading|length > 120 %}subheading-x-long{% endif %}">{{ v.subheading }}</h3>
+  {% endif %}
+
+  {% if v.hasLink %}
+    <div class="banner-link">
+      <a href="{{ v.linkUrl }}"><button>{{ v.linkTitle }}</button></a>
+    </div>
+  {% endif %}
+
+  </div>
+</section>
+{% endif %}

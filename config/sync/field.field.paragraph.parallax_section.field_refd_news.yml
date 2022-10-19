@@ -1,0 +1,23 @@
+uuid: fc3de3bb-1922-4731-a800-2ed419c46cc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refd_news
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_refd_news
+field_name: field_refd_news
+entity_type: paragraph
+bundle: parallax_section
+label: 'Dynamic News'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

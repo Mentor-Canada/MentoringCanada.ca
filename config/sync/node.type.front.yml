@@ -1,0 +1,17 @@
+uuid: c9a8379e-eb35-4675-8266-4af745977403
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Front
+type: front
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

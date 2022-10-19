@@ -1,0 +1,23 @@
+uuid: 0d3c285f-f4c3-40d8-a9ec-247f5354df33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_event_form
+    - node.type.event
+id: node.event.field_has_event_form
+field_name: field_has_event_form
+entity_type: node
+bundle: event
+label: 'Event Form'
+description: "<big><strong>Enables a form for this event.</strong></big><br>\r\nBy default, the form includes the following fields: <em>First Name</em>, <em>Last Name</em>, <em>Email</em>, <em>Organization</em>, <em>Province or Territory</em> (when <em>\"Are you in Canada?\"</em> is selected as <em>\"Yes\"</em>)."
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

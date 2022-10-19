@@ -1,0 +1,27 @@
+uuid: fb18b556-9240-4f89-8318-fc02ae6ad1dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_images_display_mode
+field_name: field_images_display_mode
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: carousel
+      label: Carousel
+    -
+      value: grid
+      label: Grid
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

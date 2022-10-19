@@ -1,0 +1,18 @@
+uuid: b26dbb80-78bc-440f-94f1-8a39d55c972b
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_refp_news
+field_name: field_refp_news
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

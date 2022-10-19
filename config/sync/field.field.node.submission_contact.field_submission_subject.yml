@@ -1,0 +1,19 @@
+uuid: 8e5640bf-3745-436b-90ad-fc2a07d72a5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_subject
+    - node.type.submission_contact
+id: node.submission_contact.field_submission_subject
+field_name: field_submission_subject
+entity_type: node
+bundle: submission_contact
+label: Subject
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

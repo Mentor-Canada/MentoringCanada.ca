@@ -1,0 +1,328 @@
+uuid: 19e50eb4-9b12-4f47-a429-d6a345ae7fef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.images_block.field_carousel_arrows
+    - field.field.paragraph.images_block.field_carousel_arrows_persistent
+    - field.field.paragraph.images_block.field_carousel_arrows_placement
+    - field.field.paragraph.images_block.field_carousel_autoplay
+    - field.field.paragraph.images_block.field_carousel_autoplay_speed
+    - field.field.paragraph.images_block.field_carousel_dots
+    - field.field.paragraph.images_block.field_carousel_infinite
+    - field.field.paragraph.images_block.field_carousel_transition
+    - field.field.paragraph.images_block.field_grid_flexible_rows
+    - field.field.paragraph.images_block.field_grid_layout
+    - field.field.paragraph.images_block.field_grid_number_per_row
+    - field.field.paragraph.images_block.field_grid_reflow_width_percent
+    - field.field.paragraph.images_block.field_hdpi_images
+    - field.field.paragraph.images_block.field_horizontal_alignment
+    - field.field.paragraph.images_block.field_images
+    - field.field.paragraph.images_block.field_images_display_mode
+    - field.field.paragraph.images_block.field_vertical_alignment
+    - field.field.paragraph.images_block.field_width_options_full
+    - field.field.paragraph.images_block.field_width_options_wide
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - field_group
+    - paragraphs
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - field_images
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_settings:
+      children:
+        - field_images_display_mode
+        - group_carousel_settings_layout_a
+        - field_carousel_arrows
+        - group_carousel_arrows_options
+        - field_carousel_dots
+        - field_carousel_infinite
+        - field_carousel_autoplay
+        - group_carousel_autoplay_options
+        - group_grid_settings_layout_a
+        - field_grid_layout
+        - group_grid_number_options
+        - field_hdpi_images
+      parent_name: group_tabs
+      weight: 5
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+    group_carousel_settings_layout_a:
+      children:
+        - field_width_options_wide
+        - field_carousel_transition
+      parent_name: group_settings
+      weight: 6
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Settings Layout A'
+    group_carousel_autoplay_options:
+      children:
+        - field_carousel_autoplay_speed
+      parent_name: group_settings
+      weight: 12
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-carousel-autoplay-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Autoplay Options'
+    group_carousel_arrows_options:
+      children:
+        - field_carousel_arrows_placement
+        - field_carousel_arrows_persistent
+      parent_name: group_settings
+      weight: 8
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-carousel-arrows-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Carousel Arrows Options'
+    group_grid_number_options:
+      children:
+        - field_grid_number_per_row
+        - field_grid_flexible_rows
+        - field_grid_reflow_width_percent
+      parent_name: group_settings
+      weight: 16
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-grid-number-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Grid Number Options'
+    group_grid_settings_layout_a:
+      children:
+        - field_width_options_full
+        - field_horizontal_alignment
+        - field_vertical_alignment
+      parent_name: group_settings
+      weight: 14
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Grid Settings Layout A'
+id: paragraph.images_block.default
+targetEntityType: paragraph
+bundle: images_block
+mode: default
+content:
+  field_carousel_arrows:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_carousel_arrows_persistent:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_carousel_arrows_placement:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_carousel_autoplay:
+    weight: 11
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_carousel_autoplay_speed:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_carousel_dots:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_carousel_infinite:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_carousel_transition:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_grid_flexible_rows:
+    weight: 21
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_grid_layout:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_grid_number_per_row:
+    weight: 20
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_grid_reflow_width_percent:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_hdpi_images:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_horizontal_alignment:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_images:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Image
+      title_plural: Images
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: image_caption_field
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_images_display_mode:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_vertical_alignment:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_width_options_full:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_width_options_wide:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

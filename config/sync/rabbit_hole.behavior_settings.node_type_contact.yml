@@ -1,0 +1,11 @@
+uuid: 884de43c-7051-4644-bb89-ae142163a5d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.contact
+id: node_type_contact
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

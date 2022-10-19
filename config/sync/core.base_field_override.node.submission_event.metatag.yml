@@ -1,0 +1,18 @@
+uuid: 2aa15d1b-f310-44c6-863f-94f3d42a51de
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node.submission_event.metatag
+field_name: metatag
+entity_type: node
+bundle: submission_event
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

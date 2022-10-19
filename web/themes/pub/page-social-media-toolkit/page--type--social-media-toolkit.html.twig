@@ -1,0 +1,114 @@
+{# @var v \Drupal\app\Views\SocialMediaToolkitView #}
+<section id="page-banner" class="page-banner-no-image">
+  <div class="page-banner-content typography" data-banner-width="wide">
+    <h1 class="banner-eyebrow visually-h4">{{ "Social Media Toolkit"|t }}</h1>
+    <h2 class="banner-heading">{{ v.title }}</h2>
+    <h3 class="banner-subheading visually-h4">{{ v.campaign.title }} &mdash; {{ v.date }}</h3>
+  </div>
+</section>
+
+
+<div id="content">
+  <article>
+
+    <section class="content-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="wide">
+
+          <h4 class="toolkit-heading">{{ "Graphic Resources"|t }}</h4>
+          <div class="toolkit-flex-block toolkit-graphic-resources">
+
+            {% for lang in v.langOrder %}
+              <div class='toolkit-logo {{ "toolkit-logo-#{lang}" }}'>
+                <img src="{{ v.campaign.logoLocalized[lang].url }}" alt="{{ v.campaign.logoLocalized[lang].alt }}">
+
+                <div class="toolkit-image-info">
+                  <a href="{{ v.campaign.logoLocalized[lang].url }}" download>
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    {{ "Download"|t }} {{ "Logo"|t }} ({{ "toolkit-lang-#{lang}"|t }})
+                  </a>
+                </div>
+
+              </div>
+            {% endfor %}
+
+            {% for channel in ["tw", "fb", "ig"] %}
+              {% for lang in v.langOrder %}
+                <div class='toolkit-image {{ "toolkit-#{channel}" }} {{ "toolkit-#{channel}-#{lang}" }}'>
+                  <img src="{{ v.channelImages[channel][lang].url }}" alt="{{ v.channelImages[channel][lang].alt }}" style="max-width: {{ v.channelImages[channel][lang].relativeWidth }}%">
+                  <div class="toolkit-image-info">
+                    <div class="toolkit-image-channel">{{ v.channelImages[channel][lang].channelName }} ({{ "toolkit-lang-#{lang}"|t }})</div>
+                    <div class="toolkit-image-dimensions">{{ v.channelImages[channel][lang].width }}&times;{{ v.channelImages[channel][lang].height }}</div>
+                    <a href="{{ v.channelImages[channel][lang].url }}" download>
+                      <i class="far fa-arrow-alt-circle-down"></i>
+                      {{ "Download"|t }}
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endfor %}
+
+          </div>
+
+
+          <h4 class="toolkit-heading">{{ "Suggested Messaging"|t }}</h4>
+          <div class="toolkit-flex-block toolkit-suggested-messaging">
+            {% for lang in v.langOrder %}
+              <div>
+                <h5 class="toolkit-subheading">{{ "toolkit-lang-#{lang}"|t }}</h5>
+                <div class='toolkit-message {{ "toolkit-message-#{lang}" }}'>
+                  <div class="typography">
+                    {{ v.messageLocalized[lang]|raw }}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="post-content-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="wide">
+
+
+          <div class="toolkit-flex-block toolkit-suggested-messaging">
+            <div>
+              <h4 class="toolkit-heading">{{ "Contact Us"|t }}</h4>
+              <div class='toolkit-contact-us'>
+                <div class="typography">
+                  {{ v.campaign.contactCopy|raw }}
+                  <p>
+                    <strong>{{ v.campaign.contactName }}</strong><br>
+                    {{ v.campaign.contactPosition }}<br>
+                    <a href="{{ v.campaign.contactEmail }}">{{ v.campaign.contactEmail }}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="toolkit-heading">{{ "About Mentor Canada"|t }}</h4>
+              <div class='toolkit-about-us'>
+                <div class="typography">
+                  {{ v.aboutUs|raw }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>
+

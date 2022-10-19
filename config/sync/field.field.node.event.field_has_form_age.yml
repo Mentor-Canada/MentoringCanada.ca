@@ -1,0 +1,23 @@
+uuid: eb77b275-db35-4a8a-a128-0a4955a5c51e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_form_age
+    - node.type.event
+id: node.event.field_has_form_age
+field_name: field_has_form_age
+entity_type: node
+bundle: event
+label: Age
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

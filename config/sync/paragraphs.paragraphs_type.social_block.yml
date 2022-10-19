@@ -1,0 +1,10 @@
+uuid: 312ed913-1dea-44bf-877f-f52821956747
+langcode: en
+status: true
+dependencies: {  }
+id: social_block
+label: 'Social Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

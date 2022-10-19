@@ -1,0 +1,6 @@
+status: 1
+pattern: 'Event Option [node:nid] [current-date:html_date] [current-date:html_time]'
+escape: false
+dependencies:
+  config:
+    - node.type.event_option

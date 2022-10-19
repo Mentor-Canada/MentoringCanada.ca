@@ -1,0 +1,23 @@
+uuid: 7fcdcc55-2981-48e6-bd9e-dd548434f4eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_full
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_width_options_full
+field_name: field_width_options_full
+entity_type: paragraph
+bundle: divider_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

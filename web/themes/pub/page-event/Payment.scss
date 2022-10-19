@@ -1,0 +1,53 @@
+.page-type-event {
+  #event-form.show-payment {
+    .form-step {
+      display: none;
+    }
+  }
+
+  #event-form:not(.show-payment) {
+    .payment-step {
+      display: none;
+    }
+  }
+
+  #event-form.pay-by-cheque {
+    .paypal-buttons {
+      display: none;
+    }
+  }
+
+  #event-form.pay-by-paypal {
+    .cheque-choice {
+      display: none;
+    }
+  }
+
+  #event-form:not(.pay-by-cheque) {
+    .pay-by-cheque-actions {
+      display: none;
+    }
+  }
+
+  fieldset.payment {
+    margin-bottom: 2em;
+    .promo-code {
+      .promo-code-input-row {
+        display: flex;
+        > div:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+      .error-description {
+        color: #ff0000;
+        margin-top: 10px;
+      }
+      margin-bottom: 2em;
+    }
+    .promo-code:not(.invalid) {
+      .error-description {
+        display: none;
+      }
+    }
+  }
+}

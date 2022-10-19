@@ -1,0 +1,63 @@
+{# @var v \Drupal\app\Views\ParagraphSocialBlockView #}
+<div class="social-block content-block"
+     data-padding-standard="horizontal"
+     {% if v.displayMinimal %}
+       data-display-minimal="true"
+     {% endif %}
+>
+  <div data-content-width="{{ v.blockWidth }}">
+
+    <div class="actions">
+      {% if v.fb %}
+      <a href="{{ v.fb }}" target="_blank">
+        <button class="icon-button follow-fb" aria-label="{{ 'Follow us on'|t }} Facebook">
+          <i class="fab fa-facebook-f"></i>
+          <span>{{ "Follow us on"|t }} Facebook</span>
+        </button>
+      </a>
+      {% endif %}
+      {% if v.tw %}
+      <a href="{{ v.tw }}" target="_blank">
+        <button class="icon-button follow-tw" aria-label="{{ 'Follow us on'|t }} Twitter">
+          <i class="fab fa-twitter"></i>
+          <span>{{ "Follow us on"|t }} Twitter</span>
+        </button>
+      </a>
+      {% endif %}
+      {% if v.li %}
+      <a href="{{ v.li }}" target="_blank">
+        <button class="icon-button follow-li" aria-label="{{ 'Follow us on'|t }} LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+          <span>{{ "Follow us on"|t }} LinkedIn</span>
+        </button>
+      </a>
+      {% endif %}
+      {% if v.ig %}
+      <a href="{{ v.ig }}" target="_blank">
+        <button class="icon-button follow-ig" aria-label="{{ 'Follow us on'|t }} Instagram">
+          <i class="fab fa-instagram"></i>
+          <span>{{ "Follow us on"|t }} Instagram</span>
+        </button>
+      </a>
+      {% endif %}
+      {% if v.yt %}
+      <a href="{{ v.yt }}" target="_blank">
+        <button class="icon-button follow-yt" aria-label="{{ 'Follow us on'|t }} YouTube">
+          <i class="fab fa-youtube"></i>
+          <span>{{ "Follow us on"|t }} YouTube</span>
+        </button>
+      </a>
+      {% endif %}
+      {% if v.newsletter %}
+        <a href="{{ path('entity.node.canonical', {'node': 823}) }}">
+          <button class="icon-button follow-newsletter" aria-label="{{ 'Sign up for the newsletter'|t }}">
+            <i class="far fa-envelope-open"></i>
+            <span>{{ "Sign up for the newsletter"|t }}</span>
+          </button>
+        </a>
+      {% endif %}
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+uuid: e20ca33b-2b81-4a56-9ada-e0cab11fa8bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_email
+    - node.type.social_media_campaign
+id: node.social_media_campaign.field_contact_email
+field_name: field_contact_email
+entity_type: node
+bundle: social_media_campaign
+label: 'Contact Email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

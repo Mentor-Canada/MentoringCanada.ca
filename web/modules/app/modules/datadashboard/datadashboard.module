@@ -1,0 +1,14 @@
+<?php
+
+function datadashboard_pagecontrollers_alter(&$pageControllers) {
+  $pageControllers[] = "\Drupal\datadashboard\DataDashboardController";
+}
+
+/**
+ * Implements hook_theme().
+ */
+function datadashboard_theme($existing, $type, $theme, $path) {
+  return [
+    'datadashboard_chart_ui' => ['variables' => ['v' => '']]
+  ];
+}

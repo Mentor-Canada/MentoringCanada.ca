@@ -1,0 +1,25 @@
+uuid: baf4ed08-da04-4ad3-8d7b-8fd33d4d6522
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grid_number_per_row
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_grid_number_per_row
+field_name: field_grid_number_per_row
+entity_type: paragraph
+bundle: images_block
+label: 'Grid Number Per Row'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: 10
+  prefix: ''
+  suffix: 'per row'
+field_type: integer

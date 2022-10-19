@@ -1,0 +1,23 @@
+uuid: d414981f-fa96-4815-8543-26520c99f367
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ref_team_members
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_ref_team_members
+field_name: field_ref_team_members
+entity_type: paragraph
+bundle: reference_section
+label: 'Team Members'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

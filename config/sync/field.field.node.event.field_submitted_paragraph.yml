@@ -1,0 +1,21 @@
+uuid: e1a08d32-0177-4dc7-aa58-c348f50cca8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submitted_paragraph
+    - node.type.event
+  module:
+    - text
+id: node.event.field_submitted_paragraph
+field_name: field_submitted_paragraph
+entity_type: node
+bundle: event
+label: 'Submitted Paragraph'
+description: "<big><strong>The paragraph on the page following form submission.</strong></big><br>\r\nFor example: \"In the next week, you will receive an email confirmation with additional information about the event.\""
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

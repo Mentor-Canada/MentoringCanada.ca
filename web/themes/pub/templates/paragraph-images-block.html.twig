@@ -1,0 +1,54 @@
+{# @var v \Drupal\app\Views\ParagraphImagesBlockView #}
+{% if v.displayMode == "carousel" %}
+<div class="images-block images-carousel-block content-block"
+     data-display-mode="{{ v.displayMode }}"
+     data-carousel-width="{{ v.blockWidth }}"
+     data-carousel-disabled="{% if v.imageCaptionItems|length > 1 %}false{% else %}true{% endif %}"
+>
+
+  <div class="carousel"
+       data-carousel-transition="{{ v.carouselTransition }}"
+       data-carousel-arrows="{{ v.carouselArrows }}"
+       data-carousel-arrows-placement="{{ v.carouselArrowsPlacement }}"
+       data-carousel-arrows-persistent="{{ v.carouselArrowsPersistent }}"
+       data-carousel-dots="{{ v.carouselDots }}"
+       data-carousel-infinite="{{ v.carouselInfinite }}"
+       data-carousel-autoplay="{{ v.carouselAutoplay }}"
+       data-carousel-autoplay-speed="{{ v.carouselAutoplaySpeed }}"
+  >
+    <div class="carousel-track">
+      {% for imageCaptionItem in v.imageCaptionItems %}
+      <div class="carousel-item" data-padding-standard="horizontal">
+        {{ imageCaptionItem|raw }}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="carousel-nav-button prev"><span aria-label="{{ "Previous"|t }}">{{ "Previous"|t }}</span></div>
+    <div class="carousel-nav-button next"><span aria-label="{{ "Next"|t }}">{{ "Next"|t }}</span></div>
+  </div>
+
+</div>
+{% else %}
+<div class="images-block images-grid-block content-block"
+     data-display-mode="{{ v.displayMode }}"
+     data-grid-width="{{ v.blockWidth }}"
+     data-grid-layout="{{ v.gridLayout }}"
+     data-grid-number-per-row="{{ v.gridNumberPerRow  }}"
+     data-grid-flexible="{{ v.gridFlexible }}"
+     data-grid-horizontal-alignment="{{ v.gridHorizontalAlignment }}"
+     data-grid-vertical-alignment="{{ v.gridVerticalAlignment }}"
+     data-padding-standard="horizontal"
+>
+  <div data-content-width="{{ v.blockWidth }}">
+    <div class="grid-wrapper">
+    {% for imageCaptionItem in v.imageCaptionItems %}
+      <div class="grid-item" {% if v.gridLayout == "number" %}style="flex-basis: {{ 100 / v.gridNumberPerRow }}%;"{% endif %}>
+        <div class="grid-item-flex-min-width" {% if v.gridFlexible == "true" %}style="min-width: {{ imageCaptionItem.image.flexMinWidth }}px;"{% endif %}>
+        {{ imageCaptionItem|raw }}
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

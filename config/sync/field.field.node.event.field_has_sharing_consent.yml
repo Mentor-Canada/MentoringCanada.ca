@@ -1,0 +1,23 @@
+uuid: 1700cb4d-253c-47d1-9dc7-2f41320d8765
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_sharing_consent
+    - node.type.event
+id: node.event.field_has_sharing_consent
+field_name: field_has_sharing_consent
+entity_type: node
+bundle: event
+label: 'Sharing Consent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

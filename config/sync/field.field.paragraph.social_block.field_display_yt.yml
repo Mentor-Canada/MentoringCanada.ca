@@ -1,0 +1,23 @@
+uuid: 70302799-14f8-4dea-a355-67163322e418
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_yt
+    - paragraphs.paragraphs_type.social_block
+id: paragraph.social_block.field_display_yt
+field_name: field_display_yt
+entity_type: paragraph
+bundle: social_block
+label: 'Display YouTube'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

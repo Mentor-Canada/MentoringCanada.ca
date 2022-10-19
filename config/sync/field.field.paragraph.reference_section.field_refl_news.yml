@@ -1,0 +1,23 @@
+uuid: fda7210a-4c85-415c-8747-1db1e9a74b14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refl_news
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_refl_news
+field_name: field_refl_news
+entity_type: paragraph
+bundle: reference_section
+label: 'Label News'
+description: 'Display a <em>News</em> label on the displayed news teasers. This can be useful when displaying multiple content types together.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,24 @@
+uuid: cbec6027-45fb-41c9-8c53-1898ab890d07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_column_2_tip
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - description_field
+id: paragraph.wysiwyg_block.field_text_column_2_tip
+field_name: field_text_column_2_tip
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Text Column 2 Tip'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  long_description:
+    value: "<h6>Add a second text column</h6>\r\n\r\n<p>To add a second text column, please select \"<em>2 columns</em>\" from the \"<em>Number of Columns</em>\" option under the Settings tab above.</p>\r\n"
+    format: html
+field_type: description_field

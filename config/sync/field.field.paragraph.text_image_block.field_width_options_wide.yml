@@ -1,0 +1,23 @@
+uuid: bae4379f-a837-41fc-9f5c-26f994261167
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_wide
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - options
+id: paragraph.text_image_block.field_width_options_wide
+field_name: field_width_options_wide
+entity_type: paragraph
+bundle: text_image_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

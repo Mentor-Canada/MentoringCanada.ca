@@ -1,0 +1,10 @@
+uuid: f2b422a4-507f-42af-ba86-3ecd14bafe8b
+langcode: en
+status: true
+dependencies: {  }
+id: markup_section
+label: 'Markup Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

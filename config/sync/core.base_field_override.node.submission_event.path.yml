@@ -1,0 +1,20 @@
+uuid: ba9aec30-9dbf-4d6c-8ade-c030ee6e4d08
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+  module:
+    - path
+id: node.submission_event.path
+field_name: path
+entity_type: node
+bundle: submission_event
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,25 @@
+uuid: ab967dbe-5ce2-4053-9672-8386e5ea4f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_top_pixels
+    - paragraphs.paragraphs_type.divider_block
+id: paragraph.divider_block.field_padding_top_pixels
+field_name: field_padding_top_pixels
+entity_type: paragraph
+bundle: divider_block
+label: 'Padding Top Pixels'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 20
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: px
+field_type: integer

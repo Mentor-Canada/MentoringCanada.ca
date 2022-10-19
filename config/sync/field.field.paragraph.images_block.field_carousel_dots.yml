@@ -1,0 +1,23 @@
+uuid: c42ab164-1eb2-4803-a529-1a738b54b8ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_dots
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_carousel_dots
+field_name: field_carousel_dots
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Dots'
+description: 'Displays navigation dots below the carousel, which indicate the current slide being viewed, and allow for users to jump to other slides.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

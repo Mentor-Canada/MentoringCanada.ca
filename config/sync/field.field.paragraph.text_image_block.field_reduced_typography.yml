@@ -1,0 +1,23 @@
+uuid: 13d9003f-7565-4862-81d5-8d8b3bdb53f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reduced_typography
+    - paragraphs.paragraphs_type.text_image_block
+id: paragraph.text_image_block.field_reduced_typography
+field_name: field_reduced_typography
+entity_type: paragraph
+bundle: text_image_block
+label: 'Reduced Typography'
+description: 'Reduce the font size of accompanying text. This can be useful when displaying images to the left or right of text, particularly with wider image sizes.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

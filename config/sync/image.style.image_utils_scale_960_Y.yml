@@ -1,0 +1,15 @@
+uuid: dddd4726-0253-4e68-a6c2-e62e20304d29
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_960_Y
+label: 'Image Utils (Scale width 960)'
+effects:
+  cd50441d-ba1e-4e9e-9e54-ff0dd1becfa2:
+    uuid: cd50441d-ba1e-4e9e-9e54-ff0dd1becfa2
+    id: image_scale
+    weight: 0
+    data:
+      width: 960
+      height: null
+      upscale: false

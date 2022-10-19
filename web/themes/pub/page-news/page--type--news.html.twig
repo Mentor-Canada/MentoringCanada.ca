@@ -1,0 +1,39 @@
+{# @var v \Drupal\app\Views\NewsView #}
+{% if v.banner.hasImage %}
+{{ v.banner|raw }}
+{% endif %}
+
+<div id="content">
+  <article>
+
+    {{ v.header|raw }}
+
+    {% for section in v.sections %}
+      {{ section|raw }}
+    {% endfor %}
+
+    <section class="more-items-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="standard">
+          <div class="more-heading">
+            <div class="typography">
+              <h2>{{ "More news"|t }}</h2>
+            </div>
+          </div>
+          <div class="items-wrapper">
+            {% for item in v.moreItems %}
+              {{ item|raw }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "news";
+</script>
+

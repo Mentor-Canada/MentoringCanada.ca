@@ -1,0 +1,18 @@
+uuid: 54b35fba-fdf1-49de-94fa-30af426b7612
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.youtube_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.youtube_block
+target_entity_type_id: paragraph
+target_bundle: youtube_block
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,15 @@
+uuid: 8542a8af-563f-4201-90b3-35e1d7815f0f
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_3000_Y
+label: 'Image Utils (Scale width 3000)'
+effects:
+  f258b433-d32c-479f-8288-42f6cb18c136:
+    uuid: f258b433-d32c-479f-8288-42f6cb18c136
+    id: image_scale
+    weight: 0
+    data:
+      width: 3000
+      height: null
+      upscale: false

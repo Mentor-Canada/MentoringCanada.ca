@@ -1,0 +1,23 @@
+uuid: 5067042e-ab74-4424-8589-a8623337a655
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_alignment_alt
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - options
+id: paragraph.text_image_block.field_text_alignment_alt
+field_name: field_text_alignment_alt
+entity_type: paragraph
+bundle: text_image_block
+label: 'Text Alignment (Narrow Layout)'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: as-is
+default_value_callback: ''
+settings: {  }
+field_type: list_string

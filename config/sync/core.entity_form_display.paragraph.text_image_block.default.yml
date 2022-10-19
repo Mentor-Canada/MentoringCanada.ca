@@ -1,0 +1,299 @@
+uuid: a193d06a-2394-46ac-9582-032a6328fe50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image_block.field_hdpi_images
+    - field.field.paragraph.text_image_block.field_horizontal_alignment
+    - field.field.paragraph.text_image_block.field_horizontal_alignment_alt
+    - field.field.paragraph.text_image_block.field_image
+    - field.field.paragraph.text_image_block.field_image_2
+    - field.field.paragraph.text_image_block.field_image_position
+    - field.field.paragraph.text_image_block.field_image_width
+    - field.field.paragraph.text_image_block.field_number_of_images
+    - field.field.paragraph.text_image_block.field_reduced_typography
+    - field.field.paragraph.text_image_block.field_responsive_image_to_top
+    - field.field.paragraph.text_image_block.field_text_alignment_alt
+    - field.field.paragraph.text_image_block.field_text_image_group_2_tip
+    - field.field.paragraph.text_image_block.field_vertical_alignment
+    - field.field.paragraph.text_image_block.field_width_options_wide
+    - field.field.paragraph.text_image_block.field_wysiwyg
+    - field.field.paragraph.text_image_block.field_wysiwyg_2
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - description_field
+    - field_group
+    - media_library
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - group_groups
+      parent_name: group_tabs
+      weight: 3
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_settings:
+      children:
+        - group_ti_settings_layout_a
+        - group_ti_settings_layout_b
+        - group_ti_settings_layout_c
+        - field_responsive_image_to_top
+        - field_hdpi_images
+        - field_reduced_typography
+        - field_width_options_wide
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+    group_group_1:
+      children:
+        - field_wysiwyg
+        - field_image
+      parent_name: group_groups
+      weight: 11
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Group 1'
+    group_group_2:
+      children:
+        - field_wysiwyg_2
+        - field_image_2
+        - field_text_image_group_2_tip
+      parent_name: group_groups
+      weight: 12
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Group 2'
+    group_groups:
+      children:
+        - group_group_1
+        - group_group_2
+      parent_name: group_content
+      weight: 2
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Groups
+    group_ti_settings_layout_a:
+      children:
+        - field_number_of_images
+        - field_image_position
+      parent_name: group_settings
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'TI Settings Layout A'
+    group_ti_settings_layout_b:
+      children:
+        - field_vertical_alignment
+        - field_horizontal_alignment
+        - field_image_width
+      parent_name: group_settings
+      weight: 2
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'TI Settings Layout B'
+    group_ti_settings_layout_c:
+      children:
+        - field_horizontal_alignment_alt
+        - field_text_alignment_alt
+      parent_name: group_settings
+      weight: 3
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'TI Settings Layout C'
+id: paragraph.text_image_block.default
+targetEntityType: paragraph
+bundle: text_image_block
+mode: default
+content:
+  field_hdpi_images:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_horizontal_alignment:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_horizontal_alignment_alt:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 8
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_image_2:
+    type: media_library_widget
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_image_position:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image_width:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_number_of_images:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_reduced_typography:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_responsive_image_to_top:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_text_alignment_alt:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_text_image_group_2_tip:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: description_field_standard
+    region: content
+  field_vertical_alignment:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_width_options_wide:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_wysiwyg:
+    weight: 7
+    settings:
+      rows: 3
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_wysiwyg_2:
+    weight: 8
+    settings:
+      rows: 3
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  web:
+    build: ./docker
+    volumes:
+      - .:/var/www/html
+    command: ./docker/init
+    working_dir: /var/www/html
+    restart: unless-stopped
+  db:
+    image: mysql:5.7
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    restart: unless-stopped
+
+volumes:
+  data:

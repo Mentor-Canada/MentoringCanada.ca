@@ -1,0 +1,404 @@
+{# @var v \Drupal\app\Views\ServiceProviderOutreachView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    <div data-padding-standard="horizontal-vertical">
+      <div data-content-width="standard">
+
+        <form id="spo-form" method="post" class="spo-form standard-form-style" onsubmit="document.querySelector('body').classList.add('standard-form-submitted');">
+
+          <fieldset>
+            <legend>{{ "Section 1"|t }}</legend>
+            <div class="ui-form-row">
+              <div class="description description-script">
+                {{ "Hello, my name is _____.  I am ... (insert your title and name of your organization)"|t }}
+              </div>
+            </div>
+            <div class="ui-form-row">
+              <div class="description description-script">
+                {{ "May I please speak to the Executive Director?"|t }}
+              </div>
+            </div>
+            <div class="ui-form-row">
+              <div class="description description-script description-script-instruction">
+                {{ "If Executive Director not available, ask to speak to person in charge of mentoring programs."|t }}
+              </div>
+            </div>
+            <div class="ui-form-row col-2">
+              {{ ui_input(v.FIRST_NAME, "First Name"|t, "required", "First Name", "off") }}
+              {{ ui_input(v.LAST_NAME, "Last Name"|t, "required", "Last Name", "off") }}
+            </div>
+            <div class="ui-form-row">
+              {{ ui_input(v.ORGANIZATION, "Organization"|t, "required", "Organization", "") }}
+            </div>
+            <div class="ui-form-row">
+              <div class="description description-script">
+                {{ "I am calling on behalf of Social Research and Demonstration Corporation, a nonprofit research firm, and the Canadian Mentoring Partnership to update you on our newest initiative and ask for your support."|t }}
+              </div>
+            </div>
+            <div class="ui-form-row">
+              <fieldset>
+                <legend>{{ "Are you familiar with these organizations?"|t }}</legend>
+                {{ ui_radio("#{v.AWARE_SRDC_CMP}_yes", v.AWARE_SRDC_CMP, "Yes"|t, "Yes", "", true, "services-offered") }}
+                {{ ui_radio("#{v.AWARE_SRDC_CMP}_no", v.AWARE_SRDC_CMP, "No"|t, "No", "", true, "aware-no,services-offered") }}
+              </fieldset>
+            </div>
+
+            <div class="optional-aware-no"></div>
+
+            <div class="optional-services-offered"></div>
+
+            <div class="optional-survey-received"></div>
+
+            <div class="optional-survey-received-yes"></div>
+
+            <div class="optional-survey-complete-yes"></div>
+
+            <div class="optional-survey-complete-no"></div>
+
+            <div class="optional-survey-started-yes"></div>
+
+            <div class="optional-survey-started-no"></div>
+
+            <div class="optional-survey-started-no-why-not"></div>
+
+            <div class="optional-survey-received-no"></div>
+
+            <div class="optional-survey-ask-1-yes"></div>
+
+            <div class="optional-survey-ask-1-no"></div>
+
+            <div class="optional-survey-ask-2-yes"></div>
+
+            <div class="optional-survey-ask-2-no"></div>
+
+
+          </fieldset>
+
+          <div class="optional-section-2"></div>
+
+          <div class="optional-submit"></div>
+
+
+
+
+
+
+
+          <template data-template-name="aware-no" data-target="optional-aware-no">
+            <div class="optional" data-template="aware-no">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "The Social Research and Demonstration Corporation -- or SRDC -- is a nonprofit, national research firm. Its research helps evaluate policies and programs that improve the well-being of all Canadians."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "The Canadian Mentoring Partnership is a coalition of organizations that provide youth mentoring. CMP plays a coordinating role in linking researchers, service providers, service recipients, funders and volunteers to build sector capacity and expand access to mentoring across Canada."|t }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="services-offered" data-target="optional-services-offered">
+            <div class="optional" data-template="services-offered">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Does your organization offer mentoring programs or services for children and youth between the ages of 6 and 29?"|t }}</legend>
+                  {{ ui_radio("#{v.HAS_SERVICES}_yes", v.HAS_SERVICES, "Yes"|t, "Yes", "", true, "survey-received") }}
+                  {{ ui_radio("#{v.HAS_SERVICES}_no", v.HAS_SERVICES, "No"|t, "No", "", true, "submit") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-received" data-target="optional-survey-received">
+            <div class="optional" data-template="survey-received">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "SRDC is conducting a survey on behalf of the Canadian Mentoring Partnership to understand the prevalence, practices and scope of youth mentoring programs in Canada. The survey is funded by the Government of Canada and the BMO Financial Group."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "I want to emphasize that this survey is completely confidential."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "All of the information provided by the organizations that respond will be kept confidential  by SRDC. The survey results will be anonymized to ensure identifying information about your organization is not shared."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Have you received an email with a link to the survey from us?"|t }}</legend>
+                  {{ ui_radio("#{v.RECEIVED_SURVEY}_yes", v.RECEIVED_SURVEY, "Yes"|t, "Yes", "", true, "survey-received-yes") }}
+                  {{ ui_radio("#{v.RECEIVED_SURVEY}_no", v.RECEIVED_SURVEY, "No"|t, "No", "", true, "survey-received-no") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-received-yes" data-target="optional-survey-received-yes">
+            <div class="optional" data-template="survey-received-yes">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "May I ask if your organization was able to complete it?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_COMPLETE}_yes", v.SURVEY_COMPLETE, "Yes"|t, "Yes", "", true, "survey-complete-yes,section-2") }}
+                  {{ ui_radio("#{v.SURVEY_COMPLETE}_no", v.SURVEY_COMPLETE, "No"|t, "No", "", true, "survey-complete-no") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-complete-yes" data-target="optional-survey-complete-yes">
+            <div class="optional" data-template="survey-complete-yes">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "Thank you. We really appreciate your support in completing the survey."|t }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-complete-no" data-target="optional-survey-complete-no">
+            <div class="optional" data-template="survey-complete-no">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Did you start to complete the survey and stop?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_STARTED}_yes", v.SURVEY_STARTED, "Yes"|t, "Yes", "", true, "survey-started-yes") }}
+                  {{ ui_radio("#{v.SURVEY_STARTED}_no", v.SURVEY_STARTED, "No"|t, "No", "", true, "survey-started-no") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-started-yes" data-target="optional-survey-started-yes">
+            <div class="optional" data-template="survey-started-yes">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Would you be willing to complete it?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_WILLING}_yes", v.SURVEY_WILLING, "Yes"|t, "Yes", "", true, "section-2") }}
+                  {{ ui_radio("#{v.SURVEY_WILLING}_no", v.SURVEY_WILLING, "No"|t, "No", "", true, "survey-started-no") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-started-no" data-target="optional-survey-started-no">
+            <div class="optional" data-template="survey-started-no">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Would you be willing to share why not?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_WHY_NOT}_yes", v.SURVEY_WHY_NOT, "Yes"|t, "Yes", "", true, "survey-started-no-why-not,section-2") }}
+                  {{ ui_radio("#{v.SURVEY_WHY_NOT}_no", v.SURVEY_WHY_NOT, "No"|t, "No", "", true, "section-2") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-started-no-why-not" data-target="optional-survey-started-no-why-not">
+            <div class="optional" data-template="survey-started-no-why-not">
+              <div class="ui-form-row">
+                <div class="description description-script description-script-instruction">
+                  {{ "Probe for concerns (time, confidentiality, etc) and try to address the concerns."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="ui-form-row">
+                  {{ ui_textarea(v.SURVEY_CONCERNS, "Concerns"|t, true) }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-received-no" data-target="optional-survey-received-no">
+            <div class="optional" data-template="survey-received-no">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "If I were to send you a link would you or someone in your organization be willing to complete it?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_ASK_1}_yes", v.SURVEY_ASK_1, "Yes"|t, "Yes", "", true, "survey-ask-1-yes,section-2,email") }}
+                  {{ ui_radio("#{v.SURVEY_ASK_1}_no", v.SURVEY_ASK_1, "No"|t, "No", "", true, "survey-ask-1-no") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-ask-1-yes" data-target="optional-survey-ask-1-yes">
+            <div class="optional" data-template="survey-ask-1-yes">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "Thank you. I will send you a follow-up email when we finish our call."|t }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-ask-1-no" data-target="optional-survey-ask-1-no">
+            <div class="optional" data-template="survey-ask-1-no">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "I understand that COVID-19 has put an enormous amount of stress on our sector and people like us. But I think you’ll agree that mentoring programs are going to be even more important than ever. The goal is to use the survey results to:"|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "•	Identify gaps and challenges in programs and services;"|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "•	Develop new resources, training, and tools to support organizations like yours;"|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "•	Advocate for more government and private sector investment in youth mentoring."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "We need more responses from (insert province or region name) to have a full picture of mentoring in Canada so we can make that case for investment. And we would really appreciate it if you could make the time to complete the survey."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "We appreciate that the survey asks a lot of detailed questions. So we are offering incentives to thank you."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "•	By completing the survey, you will be entered into a contest to win one of five $1000 cash prizes for your organization or program.  "|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "•	Survey participants will be among the first organizations to receive the full survey report with national-level findings in the fall of 2020."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Would you like to receive more information and a link to the survey?"|t }}</legend>
+                  {{ ui_radio("#{v.SURVEY_ASK_2}_yes", v.SURVEY_ASK_2, "Yes"|t, "Yes", "", true, "survey-ask-2-yes,section-2,email") }}
+                  {{ ui_radio("#{v.SURVEY_ASK_2}_no", v.SURVEY_ASK_2, "No"|t, "No", "", true, "survey-ask-2-no,section-2") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-ask-2-yes" data-target="optional-survey-ask-2-yes">
+            <div class="optional" data-template="survey-ask-2-yes">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "Thank you. I will send you a follow-up email when we finish our call."|t }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="survey-ask-2-no" data-target="optional-survey-ask-2-no">
+            <div class="optional" data-template="survey-ask-2-no">
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "I understand."|t }}
+                </div>
+              </div>
+            </div>
+          </template>
+
+
+          <template data-template-name="section-2" data-target="optional-section-2">
+            <div class="optional" data-template="section-2">
+
+
+              <fieldset>
+                <legend>{{ "Section 2"|t }}</legend>
+                <div class="ui-form-row">
+                  <div class="description description-script">
+                    {{ "As I mentioned at the start of the call, I really appreciate your time today. The Canadian Mentoring Partnership will be launching the Canadian Mentor Portal this summer. It is a national gateway for mentors, mentees and the organizations that support them. The portal will offer technology and resources developed in consultation with Canadian mentoring service providers. The first initiative to rollout is the Mentor Connector: an online platform that matches volunteer mentors and mentees with the right mentoring program."|t }}
+                  </div>
+                </div>
+                <div class="ui-form-row">
+                  <fieldset>
+                    <legend>{{ "Would you be interested in receiving more information about how to pre-register for the Mentor Connector?"|t }}</legend>
+                    {{ ui_radio("#{v.CONNECTOR_LIST}_yes", v.CONNECTOR_LIST, "Yes"|t, "Yes", "", true, "newsletter,email") }}
+                    {{ ui_radio("#{v.CONNECTOR_LIST}_no", v.CONNECTOR_LIST, "No"|t, "No", "", true, "newsletter") }}
+                  </fieldset>
+                </div>
+
+                <div class="optional-newsletter"></div>
+
+              </fieldset>
+
+
+            </div>
+          </template>
+
+          <template data-template-name="newsletter" data-target="optional-newsletter">
+            <div class="optional" data-template="newsletter">
+              <div class="ui-form-row">
+                <fieldset>
+                  <legend>{{ "Would you be interested in joining our mailing list?"|t }}</legend>
+                  {{ ui_radio("#{v.NEWSLETTER_LIST}_yes", v.NEWSLETTER_LIST, "Yes"|t, "Yes", "", true, "submit,email") }}
+                  {{ ui_radio("#{v.NEWSLETTER_LIST}_no", v.NEWSLETTER_LIST, "No"|t, "No", "", true, "submit") }}
+                </fieldset>
+              </div>
+            </div>
+          </template>
+
+
+
+          <template data-template-name="email" data-target="optional-email">
+            <div class="optional" data-template="email">
+              <fieldset>
+                <div class="ui-form-row">
+                  <div class="description description-script">
+                    {{ "May I have a contact email where I can send you the information you agreed to receive following our call?"|t }}
+                  </div>
+                </div>
+                <div class="ui-form-row">
+                  {{ ui_input(v.EMAIL, "Email Address"|t, "required", "email", "off") }}
+                </div>
+              </fieldset>
+            </div>
+          </template>
+
+          <template data-template-name="submit" data-target="optional-submit">
+            <div class="optional" data-template="submit">
+              <div class="optional-email"></div>
+              <div class="ui-form-row">
+                <div class="description description-script">
+                  {{ "Thank you for your time today."|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script description-script-instruction">
+                  {{ "If people have concerns or wish to speak with the CMP lead, please direct them to contact Veronique Church-Duplessis at veronique.church-duplessis@mentoringcanada.ca or 1-800-263-9133 ext.62"|t }}
+                </div>
+              </div>
+              <div class="ui-form-row">
+                <div class="description description-script description-script-instruction">
+                  {{ "Or at SRDC, you can contact Christina Hackett at chackett@srdc.org or 604-601-4075"|t }}
+                </div>
+              </div>
+              <div class="actions">
+                <button>{{ "Submit"|t }}</button>
+              </div>
+            </div>
+          </template>
+
+
+        </form>
+
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>

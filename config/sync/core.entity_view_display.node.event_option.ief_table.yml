@@ -1,0 +1,72 @@
+uuid: ced60323-0f09-489f-925b-09084992dd25
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.ief_table
+    - field.field.node.event_option.field_event_date_time_range
+    - field.field.node.event_option.field_event_link
+    - field.field.node.event_option.field_event_name
+    - field.field.node.event_option.field_event_occupancy
+    - field.field.node.event_option.field_event_option_closed
+    - field.field.node.event_option.field_event_timezone
+    - field.field.node.event_option.field_hide_calendar_links
+    - field.field.node.event_option.field_keep_open_after_start
+    - field.field.node.event_option.field_one_on_one_training
+    - node.type.event_option
+  module:
+    - datetime_range
+    - user
+id: node.event_option.ief_table
+targetEntityType: node
+bundle: event_option
+mode: ief_table
+content:
+  field_event_date_time_range:
+    type: daterange_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: event_option
+      separator: '-'
+    third_party_settings: {  }
+  field_event_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_option_closed:
+    type: boolean
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: Closed
+      format_custom_false: Open
+    third_party_settings: {  }
+  field_one_on_one_training:
+    type: boolean
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: '1:1'
+      format_custom_false: ''
+    third_party_settings: {  }
+hidden:
+  field_event_link: true
+  field_event_occupancy: true
+  field_event_timezone: true
+  field_hide_calendar_links: true
+  field_keep_open_after_start: true
+  label: true
+  langcode: true
+  links: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: dcef5f0d-3ecf-4e51-8a22-f222d07d2101
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Main Menu'
+description: 'Site header links'
+locked: true

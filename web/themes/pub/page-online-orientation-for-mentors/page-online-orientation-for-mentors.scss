@@ -1,0 +1,72 @@
+body.page-online-orientation-for-mentors {
+  .oofm-bottom-block {
+    margin-top: -5vh;
+    padding-bottom: 10vh;
+  }
+  .actions {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .button-style-select-wrapper {
+    position: relative;
+    select {
+      position: relative;
+      padding: 15px 20px;
+      min-height: 50px;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      background: $ui-primary;
+      font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+      font-weight: 500;
+      @include font-tracking(14);
+      letter-spacing: normal;
+      line-height: normal;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      padding-right: 34px;
+      &:hover {
+        background: scale-color($ui-primary, $lightness: -10%);
+      }
+    }
+    .ui-select-field-caret-icon {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      pointer-events: none;
+      svg {
+        display: block;
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+        transition: fill 150ms;
+      }
+    }
+  }
+  button.submit {
+    margin-top: 1em;
+  }
+  .developed-by-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    img {
+      display: block;
+      margin: 0 20px 20px 0;
+    }
+    .mc-logo {
+      width: 193px;
+    }
+    .amp-logo {
+      width: 167px;
+    }
+  }
+}

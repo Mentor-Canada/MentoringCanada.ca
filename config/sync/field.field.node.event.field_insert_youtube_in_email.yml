@@ -1,0 +1,23 @@
+uuid: ea531583-e563-4dd0-af3e-7f90daef4919
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_insert_youtube_in_email
+    - node.type.event
+id: node.event.field_insert_youtube_in_email
+field_name: field_insert_youtube_in_email
+entity_type: node
+bundle: event
+label: 'Insert YouTube in email'
+description: 'Will include a link to the above YouTube video in the email sent following form submission.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

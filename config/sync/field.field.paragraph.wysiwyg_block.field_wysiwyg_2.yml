@@ -1,0 +1,23 @@
+uuid: 15d36fd8-94aa-4bb3-9f9a-1ad479055927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wysiwyg_2
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - text
+id: paragraph.wysiwyg_block.field_wysiwyg_2
+field_name: field_wysiwyg_2
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Column 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

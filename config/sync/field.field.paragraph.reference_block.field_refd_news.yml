@@ -1,0 +1,23 @@
+uuid: 780d75d0-f8a0-4da6-bd99-4bbb1fb407a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refd_news
+    - paragraphs.paragraphs_type.reference_block
+id: paragraph.reference_block.field_refd_news
+field_name: field_refd_news
+entity_type: paragraph
+bundle: reference_block
+label: 'Dynamic News'
+description: 'Display <em>News</em> dynamically, updated as new ones are created. Disable this option to display specific news.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

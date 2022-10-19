@@ -1,0 +1,19 @@
+uuid: fdc45543-de11-4450-9671-f4a51bca6612
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_eyebrow
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_section_eyebrow
+field_name: field_section_eyebrow
+entity_type: paragraph
+bundle: reference_section
+label: 'Section Eyebrow'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

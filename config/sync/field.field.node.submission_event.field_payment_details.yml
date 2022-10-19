@@ -1,0 +1,21 @@
+uuid: 6ef07c13-4419-4c69-ba21-9203d894ba6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment_details
+    - node.type.submission_event
+  module:
+    - app_payment
+id: node.submission_event.field_payment_details
+field_name: field_payment_details
+entity_type: node
+bundle: submission_event
+label: 'Payment Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: payment_details_item

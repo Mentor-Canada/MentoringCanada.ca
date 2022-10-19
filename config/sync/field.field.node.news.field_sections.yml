@@ -1,0 +1,76 @@
+uuid: bad163f5-980e-4692-a0c8-c1eaef26d244
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sections
+    - node.type.news
+    - paragraphs.paragraphs_type.content_section
+    - paragraphs.paragraphs_type.markup_section
+    - paragraphs.paragraphs_type.parallax_section
+    - paragraphs.paragraphs_type.reference_section
+  module:
+    - entity_reference_revisions
+id: node.news.field_sections
+field_name: field_sections
+entity_type: node
+bundle: news
+label: 'Page Sections'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      content_section: content_section
+      parallax_section: parallax_section
+      reference_section: reference_section
+      markup_section: markup_section
+    target_bundles_drag_drop:
+      content_section:
+        enabled: true
+        weight: -29
+      divider_block:
+        weight: -25
+        enabled: false
+      image_caption_field:
+        weight: -23
+        enabled: false
+      images_block:
+        weight: -24
+        enabled: false
+      markup_block:
+        weight: -18
+        enabled: false
+      markup_section:
+        enabled: true
+        weight: -26
+      mentor_connector_block:
+        weight: -17
+        enabled: false
+      parallax_section:
+        enabled: true
+        weight: -28
+      reference_block:
+        weight: -22
+        enabled: false
+      reference_section:
+        enabled: true
+        weight: -27
+      social_block:
+        weight: -16
+        enabled: false
+      text_image_block:
+        weight: -21
+        enabled: false
+      wysiwyg_block:
+        weight: -20
+        enabled: false
+      youtube_block:
+        weight: -19
+        enabled: false
+field_type: entity_reference_revisions

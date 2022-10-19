@@ -1,0 +1,33 @@
+uuid: 08a9fc7f-5721-4977-9c58-7fc5de682db4
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: social_media_campaigns_english_
+label: 'Social Media Campaigns (English)'
+type: 'canonical_entities:node'
+pattern: 'social-media-campaigns/[node:title]'
+selection_criteria:
+  e89bcc8b-e4ae-4306-a281-47f8e586579b:
+    id: node_type
+    bundles:
+      social_media_campaign: social_media_campaign
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e89bcc8b-e4ae-4306-a281-47f8e586579b
+  f26cd19e-147b-4f6e-b063-20374d5b93df:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: f26cd19e-147b-4f6e-b063-20374d5b93df
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

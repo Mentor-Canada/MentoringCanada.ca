@@ -1,0 +1,33 @@
+uuid: 2a174cda-108c-4205-832e-6c4314224659
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: social_media_toolkits_french_
+label: 'Social Media Toolkits (French)'
+type: 'canonical_entities:node'
+pattern: 'campagnes-medias-sociaux/[node:field_smt_campaign:entity:title]/[node:title]'
+selection_criteria:
+  5dc8a8f8-03e9-405e-b229-96377456cd05:
+    id: node_type
+    bundles:
+      social_media_toolkit: social_media_toolkit
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 5dc8a8f8-03e9-405e-b229-96377456cd05
+  c33055cd-0161-4bfe-a45c-163165c708f5:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: c33055cd-0161-4bfe-a45c-163165c708f5
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

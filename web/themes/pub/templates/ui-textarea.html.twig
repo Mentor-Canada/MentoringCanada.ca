@@ -1,0 +1,19 @@
+{# @var v \Drupal\app\Views\UI_TextareaFieldView #}
+<div class="ui-textarea-field ui-field ui-outline-field">
+  <div class="ui-outline-field-wrapper">
+    <textarea id="{{ v.name }}" name="{{ v.name }}" {{ v.required }} autocomplete="{{ v.autocomplete }}" rows="{{ v.rows }}"></textarea>
+
+    <div class="ui-outline">
+      <div class="ui-outline-left"></div>
+      <div class="ui-outline-middle">
+        <label for="{{ v.name }}">
+          {{ v.label }}
+          {% if v.required %}
+            <span class="ui-field-required-marker">*</span>
+          {% endif %}
+        </label>
+      </div>
+      <div class="ui-outline-right"></div>
+    </div>
+  </div>
+</div>

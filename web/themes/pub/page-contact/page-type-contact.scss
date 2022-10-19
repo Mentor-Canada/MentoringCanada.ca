@@ -1,0 +1,51 @@
+body.page-type-contact {
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    @media (max-width: 750px) {
+      flex-wrap: wrap;
+    }
+    .contact-info-block {
+      margin-top: 5vh;
+      width: 45%;
+      @media (max-width: 750px) {
+        width: 100%;
+      }
+    }
+    a,
+    span {
+      display: block;
+      margin-top: 3px;
+    }
+    a {
+      color: $ui-primary;
+      text-decoration: none;
+      @include font-tracking(18);
+      &:last-child {
+        margin-top: 12px;
+      }
+    }
+    .address-name {
+      font-weight: 500;
+    }
+  }
+  .contact-info-heading {
+    line-height: 1.2;
+    font-weight: 500;
+    @include font-tracking(22);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(21);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(20);
+    }
+    color: #000;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ccc;
+  }
+  form.contact-form {
+    margin-top: 5vh;
+  }
+}

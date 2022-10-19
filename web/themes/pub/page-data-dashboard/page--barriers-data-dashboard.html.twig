@@ -1,0 +1,64 @@
+{# @var v \Drupal\barriers\BarriersPageViewModel #}
+{# @var group \Drupal\app\Views\Chart\ChartGroupView #}
+{# @var item \Drupal\app\Views\Chart\ChartItemView #}
+{{ v.banner|raw }}
+
+<div id="content">
+
+  <section id="intro">
+    {{ v.sections.0|raw }}
+  </section>
+
+  <section>
+    {{ v.sections.1|raw }}
+  </section>
+
+  <section id="chart-wrapper" class="overview-chart">
+    <div class="chart">
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="chart-ui">
+        {{ v.overviewChart.interface }}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    {{ v.sections.2|raw }}
+  </section>
+
+  <section>
+    {{ v.sections.3|raw }}
+  </section>
+
+  <section id="chart-wrapper" class="breakdown-chart">
+    <div class="chart">
+      <div class="chart-container">
+        <canvas id="breakdown-chart"></canvas>
+      </div>
+      <div class="chart-ui">
+        {{ v.breakdownChart.interface }}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    {{ v.sections.4|raw }}
+  </section>
+
+  <section>
+    {{ v.sections.5|raw }}
+  </section>
+
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "barriers"
+  window.pageData.overviewJson = {{ v.overviewChart.data.elements|json_encode()|raw }}
+  window.pageData.overviewKPILabels = {{ v.overviewChart.KPILabels|json_encode|raw }}
+  window.pageData.breakdownJson = {{ v.breakdownChart.data.elements|json_encode()|raw }}
+  window.pageData.breakdownKPILabels = {{ v.breakdownChart.KPILabels|json_encode|raw }}
+  window.pageData.language = "{{ language.getId() }}"
+</script>

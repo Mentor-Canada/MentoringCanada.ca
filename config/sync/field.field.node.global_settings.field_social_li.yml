@@ -1,0 +1,23 @@
+uuid: 973e6c4a-5fc2-4e35-941c-29755fdb6b10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_li
+    - node.type.global_settings
+  module:
+    - link
+id: node.global_settings.field_social_li
+field_name: field_social_li
+entity_type: node
+bundle: global_settings
+label: LinkedIn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

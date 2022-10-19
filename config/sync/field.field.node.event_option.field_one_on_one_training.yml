@@ -1,0 +1,23 @@
+uuid: b8ab9295-bcdb-40f2-a2e8-393b6ba762e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_one_on_one_training
+    - node.type.event_option
+id: node.event_option.field_one_on_one_training
+field_name: field_one_on_one_training
+entity_type: node
+bundle: event_option
+label: '1:1 Training'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

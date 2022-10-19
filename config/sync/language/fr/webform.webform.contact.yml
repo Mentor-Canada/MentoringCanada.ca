@@ -1,0 +1,7 @@
+title: test
+elements: "name:\n  '#type': textfield\n  '#title': 'Full name'\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#type': email\n  '#title': Email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Submit"
+settings:
+  confirmation_message: 'Votre message a été envoyé.'
+handlers:
+  email_notification:
+    label: 'Notification par courriel'

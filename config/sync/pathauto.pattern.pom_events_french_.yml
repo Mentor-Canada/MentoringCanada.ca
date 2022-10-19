@@ -1,0 +1,33 @@
+uuid: 84176ea3-84ef-428b-9411-82406c201919
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: pom_events_french_
+label: 'POM Events (French)'
+type: 'canonical_entities:node'
+pattern: 'pouvoir-du-mentorat/[node:title]'
+selection_criteria:
+  06597640-8d2c-4b00-8672-6d76cb8fdccf:
+    id: node_type
+    bundles:
+      event_pom: event_pom
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 06597640-8d2c-4b00-8672-6d76cb8fdccf
+  6cb0a394-1158-4845-b3ef-385cc98355ba:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 6cb0a394-1158-4845-b3ef-385cc98355ba
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

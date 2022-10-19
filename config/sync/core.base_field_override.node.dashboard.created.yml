@@ -1,0 +1,18 @@
+uuid: 84c5af52-609f-4814-ac01-7cd936c6bb0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dashboard
+id: node.dashboard.created
+field_name: created
+entity_type: node
+bundle: dashboard
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

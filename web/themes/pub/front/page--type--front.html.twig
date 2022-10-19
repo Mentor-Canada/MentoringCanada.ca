@@ -1,0 +1,25 @@
+{#<div class="curve-test">#}
+{#  <div class="container">#}
+{#    <div class="curve-box"></div>#}
+{#    <div class="border-box"></div>#}
+{#  </div>#}
+{#</div>#}
+
+
+{# @var v \Drupal\app\Views\FrontView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    {% for section in v.sections %}
+      {{ section|raw }}
+    {% endfor %}
+
+  </article>
+</div>
+
+<script>
+    if(!window.pageData) window.pageData = {};
+    window.pageData.type = "front";
+</script>

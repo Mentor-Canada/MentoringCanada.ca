@@ -1,0 +1,21 @@
+uuid: 3bbeaa28-4e39-4cba-8ad4-a3df21e44730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smt_messaging_en
+    - node.type.social_media_toolkit
+  module:
+    - text
+id: node.social_media_toolkit.field_smt_messaging_en
+field_name: field_smt_messaging_en
+entity_type: node
+bundle: social_media_toolkit
+label: 'Suggested Messaging (English)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

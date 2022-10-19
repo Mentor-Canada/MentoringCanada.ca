@@ -1,0 +1,55 @@
+{# @var v \Drupal\app\Views\SubmittedView #}
+
+<div id="content">
+  <article>
+
+    <div data-padding-standard="horizontal-vertical">
+      <div data-content-width="standard">
+        <div class="typography">
+          {% if v.renderBodyMessage %}
+            {{ v.body|raw }}
+          {% else %}
+            <h2>{{ v.heading }}</h2>
+            <h3>{{ v.subheading }}</h3>
+            {{ v.paragraph|raw }}
+          {% endif %}
+
+          {% if v.ytLinkUrl %}
+            <hr>
+            <div class="video-wrapper">
+              <iframe width="560" height="315" src="{{ v.ytLinkUrl }}?modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <hr>
+          {% else %}
+            <div id="countdown">
+              <div class="countdown-timer">
+                <span>{{ "You will be redirected in"|t }}</span>
+                <span class="no-break">
+              <span id="countdown-timer-seconds"></span>
+              <span class="second-string">{{ "second"|t }}</span>
+              <span class="seconds-string">{{ "seconds"|t }}</span>
+            </span>
+              </div>
+              <div class="countdown-progress">
+                <div id="countdown-progress-bar"></div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="actions">
+            <div class="typography">
+              <a href="{{ url('<front>') }}" class="button">{{ 'Return to the home page'|t }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "submitted";
+  window.pageData.redirect = "{{ url('<front>') }}"
+</script>

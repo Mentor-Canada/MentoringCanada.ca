@@ -1,0 +1,23 @@
+uuid: 44cfd166-53a4-40f2-a198-b3417077ba30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_form_phone_number
+    - node.type.event
+id: node.event.field_has_form_phone_number
+field_name: field_has_form_phone_number
+entity_type: node
+bundle: event
+label: 'Phone Number'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

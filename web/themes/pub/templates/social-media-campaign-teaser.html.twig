@@ -1,0 +1,10 @@
+{# @var v \Drupal\app\Views\SocialMediaCampaignTeaserView #}
+<a class="social-media-campaign-teaser card-teaser" href="{{ v.url }}">
+  <div class="card-teaser-image">
+    <div class="card-teaser-image-background" style="background-image: url('{{ v.image }}')"></div>
+  </div>
+  <div class="card-teaser-meta">
+    <div class="card-title">{{ v.title }}</div>
+    <div class="card-chin">{{ v.count }}</div>
+  </div>
+</a>

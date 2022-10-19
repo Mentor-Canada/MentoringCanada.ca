@@ -1,0 +1,23 @@
+uuid: 9318ac4f-e646-4421-817f-ac5db919a671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ref_news
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_ref_news
+field_name: field_ref_news
+entity_type: paragraph
+bundle: reference_section
+label: News
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

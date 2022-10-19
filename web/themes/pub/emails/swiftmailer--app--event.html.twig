@@ -1,0 +1,163 @@
+{# @var payment \Drupal\app\Models\PaymentDetails #}
+{% set v = message.params.v %}
+{% set langcode = message.lang %}
+{% set payment = message.params.payment %}
+<html>
+<body>
+
+<table class="email" style="margin: 0 auto;padding: 0;width: 100%;max-width: 600px;height: 100%;border: 1px solid #0d2133;border-spacing: 0;background: #0d2133;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+
+  <tr class="header">
+    <td style="padding: 35px 20px;">
+      <img class="logo" width="193" height="44" alt="{{ message.logoAlt }}" src="{{ message.logo }}" style="display: block;width: 193px;height: 44px;">
+    </td>
+  </tr>
+
+  <tr class="body">
+    <td style="padding: 0 6px 20px 6px;">
+      <table class="body-table" style="margin: 0;padding: 0;width: 100%;height: 100%;background: #fff;">
+        <tr class="body-body">
+          <td style="padding: 40px 14px;">
+            <div class="wysiwyg" style="font-size: 16px;font-weight: normal;color: #464748;">
+
+              <h1 style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-weight: 700;line-height: 1.1;color: #000;margin-top: 0;margin-bottom: 0;font-size: 2em;letter-spacing: -0.015em;">{{ message.params.eventTitle }}</h1>
+
+              <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                <strong class="small note" style="font-weight: 700;font-size: 0.8125em;color: #7c7e80;">{{ "Date & Time"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong style="font-weight: 700;">{{ message.params.eventOption.dateTimeRange }}</strong><br>
+                <strong class="small" style="font-weight: 700;font-size: 0.8125em;">{{ message.params.eventOption.timezoneString }}</strong>
+              </p>
+
+              {% if not message.params.eventOption.hideCalendarLinks %}
+              <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                <strong class="small note" style="font-weight: 700;font-size: 0.8125em;color: #7c7e80;">{{ "Add this event to your calendar"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong class="small" style="font-weight: 700;font-size: 0.8125em;"><a href="{{ message.params.eventOption.calendarLinks.ics }}" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">ICS (Apple, Outlook)</a></strong><br>
+                <strong class="small" style="font-weight: 700;font-size: 0.8125em;"><a href="{{ message.params.eventOption.calendarLinks.google }}" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">Google</a></strong><br>
+              </p>
+              {% endif %}
+
+              <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                <strong class="small note" style="font-weight: 700;font-size: 0.8125em;color: #7c7e80;">{{ "Details"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong style="font-weight: 700;">{{ message.params.eventOption.name }}</strong>
+              </p>
+
+              {% if message.params.eventOption.link %}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  <strong class="small note" style="font-weight: 700;font-size: 0.8125em;color: #7c7e80;">{{ "Event Link"|t([],{'langcode': langcode}) }}</strong><br>
+                  <strong style="font-weight: 700;"><a href="{{ message.params.eventOption.link }}" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">{{ "Click to join the event"|t([],{'langcode': langcode}) }}</a></strong>
+                </p>
+              {% endif %}
+
+              <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                <strong class="small note" style="font-weight: 700;font-size: 0.8125em;color: #7c7e80;">{{ "View Event"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong style="font-weight: 700;"><a href="{{ message.params.eventUrl }}" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">{{ "Click to view the event online"|t([],{'langcode': langcode}) }}</a></strong>
+              </p>
+
+              <hr style="margin: 2em 0;border: none;height: 1px;background: #e5e5e5;">
+
+              {% if langcode == "fr" %}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">Cher / Chère {{ message.name }},</p>
+                {{ message.params.body|raw }}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Sincèrement,<br>
+                  Votre équipe MENTOR Canada
+                </p>
+              {% else %}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">Dear {{ message.name }},</p>
+                {{ message.params.body|raw }}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Sincerely,<br>
+                  Your MENTOR Canada Team
+                </p>
+              {% endif %}
+              {% if payment %}
+                <table style="width: 100%">
+                  <tr>
+                    <td><b>{{ "Total"|t }}</b></td><td style="text-align: right">${{ payment.totalAmount|number_format(2, ".") }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>{{ "Amount Paid"|t }}</b></td><td style="text-align: right">${{ payment.paidAmount|number_format(2, ".") }}</td>
+                  </tr>
+                  <tr>
+                    <td><b>{{ "Amount Owed"|t }}</b></td><td style="text-align: right">${{ (payment.totalAmount - payment.paidAmount)|number_format(2, ".") }}</td>
+                  </tr>
+                </table>
+              {% endif %}
+              {% if message.params.ytLinkUrl %}
+                <hr style="margin: 2em 0;border: none;height: 1px;background: #e5e5e5;">
+                <a class="yt-video" href="{{ message.params.ytLinkUrl }}" style="display: block;text-decoration: none;outline: none;color: #0084ff;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+                  <img src="{{ message.params.ytPosterUrl }}" width="640" style="max-width: 100%;border: 0;line-height: 100%;outline: none;text-decoration: none;vertical-align: bottom;height: auto !important;">
+                </a>
+                <p class="yt-video-label" style="margin-top: 1em;font-size: 0.875em;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;">
+                  <em style="font-style: italic;"><strong style="font-weight: 700;">{{ "Click above to watch the video."|t([],{'langcode': langcode}) }}</strong></em>
+                </p>
+              {% endif %}
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr class="footer">
+    <td style="padding: 0 14px 20px 14px;">
+      <div class="footer-summary" style="font-size: 12px;color: #6b8399;">
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Follow us"|t([],{'langcode': langcode}) }}</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mentoringcanada/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.fb }}" alt="Facebook" style="width: 30px;height: 29.5px;">
+            </a>
+            <a href="https://twitter.com/MentoringCanada" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.tw }}" alt="Twitter" style="width: 30px;height: 30px;">
+            </a>
+            <a href="https://www.linkedin.com/company/canadian-mentoring-partnership-partenariat-canadien-de-mentorat/?viewAsMember=true" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.li }}" alt="LinkedIn" style="width: 28.5px;height: 28px;">
+            </a>
+            <a href="https://www.instagram.com/mentorcanada/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.ig }}" alt="Instagram" style="width: 29px;height: 29px;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCYExa1ehADYg-kzG7lSmPoQ/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.yt }}" alt="YouTube" style="width: 35px;height: 25px;">
+            </a>
+          </div>
+          <p style="margin: 0;line-height: 1.3;">#MentoringCanada</p>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Contact us"|t([],{'langcode': langcode}) }}</div>
+          <a href="{{ message.globalSettings.phoneLink }}" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ message.globalSettings.phoneDisplayWithExtension }}</a>
+          <br>
+          <a href="{{ message.globalSettings.emailLink }}" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ message.globalSettings.emailDisplay }}</a>
+          <br>
+          <a href="mentoringcanada.ca/{{ langcode }}" target="_blank" style="color: #a4daff;margin: 0;line-height: 1.3;">mentoringcanada.ca</a>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Mailing address"|t([],{'langcode': langcode}) }}</div>
+          <p style="margin: 0;line-height: 1.3;">
+            {{ message.globalSettings .addressName }}
+            <br>
+            {{ message.globalSettings .addressLine1 }}
+            <br>
+            {{ message.globalSettings .addressLine2 }}
+            <br>
+            {{ message.globalSettings .addressLine3 }}
+          </p>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 0;">
+          <p style="margin: 0;line-height: 1.3;">{{ "Join our"|t([],{'langcode': langcode}) }} <a href="https://mentoringcanada.us4.list-manage.com/subscribe?u=a67929939be415eba75c93a0b&id=7d099210dd" target="_blank" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ "mailing list"|t([],{'langcode': langcode}) }}</a></p>
+          <p style="margin: 0;line-height: 1.3;">&copy;{{ 'now'|date('Y') }} {{ message.globalSettings.addressName }}</p>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

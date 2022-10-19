@@ -1,0 +1,4 @@
+payment:
+  css:
+    theme:
+      payment.css: {}

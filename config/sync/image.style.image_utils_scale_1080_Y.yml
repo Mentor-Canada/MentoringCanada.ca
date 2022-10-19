@@ -1,0 +1,15 @@
+uuid: 58e2da9c-43d4-4013-97c5-e58578662336
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_1080_Y
+label: 'Image Utils (Scale width 1080)'
+effects:
+  e2a8ac76-8d55-4ea0-b01b-6e916d1bbefe:
+    uuid: e2a8ac76-8d55-4ea0-b01b-6e916d1bbefe
+    id: image_scale
+    weight: 0
+    data:
+      width: 1080
+      height: null
+      upscale: false

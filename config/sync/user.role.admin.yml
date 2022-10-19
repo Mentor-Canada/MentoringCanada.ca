@@ -1,0 +1,14 @@
+uuid: ab6b944f-ba18-4f3f-9383-60945cfdda1a
+langcode: en
+status: true
+dependencies: {  }
+id: admin
+label: Admin
+weight: 2
+is_admin: null
+permissions:
+  - 'create field_template'
+  - 'edit field_template'
+  - 'edit own field_template'
+  - 'view field_template'
+  - 'view own field_template'

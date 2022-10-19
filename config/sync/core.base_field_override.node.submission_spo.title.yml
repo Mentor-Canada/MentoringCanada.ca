@@ -1,0 +1,18 @@
+uuid: cb79f101-6d02-4d89-8968-8f10281bc70a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+id: node.submission_spo.title
+field_name: title
+entity_type: node
+bundle: submission_spo
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,126 @@
+uuid: e99d778a-ef60-4f98-96ee-7d964e5a7baa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.social_media_toolkit.field_smt_campaign
+    - field.field.node.social_media_toolkit.field_smt_date
+    - field.field.node.social_media_toolkit.field_smt_fb_en
+    - field.field.node.social_media_toolkit.field_smt_fb_fr
+    - field.field.node.social_media_toolkit.field_smt_ig_en
+    - field.field.node.social_media_toolkit.field_smt_ig_fr
+    - field.field.node.social_media_toolkit.field_smt_messaging_en
+    - field.field.node.social_media_toolkit.field_smt_messaging_fr
+    - field.field.node.social_media_toolkit.field_smt_tw_en
+    - field.field.node.social_media_toolkit.field_smt_tw_fr
+    - field.field.node.social_media_toolkit.field_teaser_image
+    - node.type.social_media_toolkit
+  module:
+    - datetime
+    - text
+    - user
+id: node.social_media_toolkit.default
+targetEntityType: node
+bundle: social_media_toolkit
+mode: default
+content:
+  field_smt_campaign:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_smt_date:
+    weight: 109
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_smt_fb_en:
+    type: entity_reference_entity_view
+    weight: 103
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_smt_fb_fr:
+    type: entity_reference_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_smt_ig_en:
+    type: entity_reference_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_smt_ig_fr:
+    type: entity_reference_entity_view
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_smt_messaging_en:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_smt_messaging_fr:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_smt_tw_en:
+    type: entity_reference_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_smt_tw_fr:
+    type: entity_reference_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_teaser_image:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

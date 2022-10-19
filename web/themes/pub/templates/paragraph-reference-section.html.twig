@@ -1,0 +1,31 @@
+{# @var v \Drupal\app\Views\ParagraphReferenceSectionView #}
+<section class="reference-section"
+         data-section-id="{{ v.id }}"
+         data-section-zebra="{{ v.zebra }}"
+>
+  <div data-padding-standard="horizontal">
+    <div data-content-width="{{ v.sectionWidth }}">
+      {% if v.eyebrow or v.title %}
+        <div class="typography reference-section-heading">
+          {% if v.eyebrow %}
+            <h2 class="visually-h3 reference-section-heading-eyebrow">{{ v.eyebrow }}</h2>
+          {% endif %}
+          {% if v.title %}
+            <h3 class="visually-h1 reference-section-heading-title">{{ v.title }}</h3>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if v.references|length %}
+        <div class="items-wrapper">
+          {% for referenceGroup in v.references %}
+            {% for item in referenceGroup %}
+              {{ item|raw }}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="typography reference-section-no-results">{{ v.noResults|raw }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>

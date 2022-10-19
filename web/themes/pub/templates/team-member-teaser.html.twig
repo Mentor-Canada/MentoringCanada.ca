@@ -1,0 +1,15 @@
+{# @var v \Drupal\app\Views\TeamMemberTeaserView #}
+<div class="team-member-teaser reference-item">
+  <div class="reference-item-padding">
+    <div class="team-member-teaser-image" style="background-image: url({{ v.image }})"></div>
+    <div class="team-member-teaser-name">{{ v.name }}</div>
+    <div class="team-member-teaser-title">{{ v.title }}</div>
+    <div class="team-member-teaser-phone">{{ v.phone }}</div>
+    <div class="team-member-teaser-email">
+      <a href="mailto:{{ v.email }}">{{ v.email }}</a>
+    </div>
+    <div class="team-member-teaser-bio">
+      <div class="typography">{{ v.bio|raw }}</div>
+    </div>
+  </div>
+</div>

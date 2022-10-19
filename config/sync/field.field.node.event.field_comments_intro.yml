@@ -1,0 +1,19 @@
+uuid: 899cdb94-782b-4d3f-b738-bb3a379ff545
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments_intro
+    - node.type.event
+id: node.event.field_comments_intro
+field_name: field_comments_intro
+entity_type: node
+bundle: event
+label: 'Comments Intro'
+description: 'An optional introductory text for the ''Comment'' text area. This can be used to guide the user to provide specific information or customize the comments for this event.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

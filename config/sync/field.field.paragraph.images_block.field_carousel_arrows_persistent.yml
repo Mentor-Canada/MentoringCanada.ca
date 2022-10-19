@@ -1,0 +1,23 @@
+uuid: 90ef15cc-1692-4159-854a-48eae354e8ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_arrows_persistent
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_carousel_arrows_persistent
+field_name: field_carousel_arrows_persistent
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Arrows Persistent'
+description: 'Persistently displays the carousel navigation arrows. When this is disabled, the arrows become visible when the user hovers over the carousel.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

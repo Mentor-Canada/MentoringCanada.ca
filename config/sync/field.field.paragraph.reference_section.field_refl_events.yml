@@ -1,0 +1,23 @@
+uuid: f7c678c2-bfcb-49ae-a7a6-e0269b0e4de4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refl_events
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_refl_events
+field_name: field_refl_events
+entity_type: paragraph
+bundle: reference_section
+label: 'Label Events'
+description: 'Display an <em>Event</em> label on the displayed event teasers. This can be useful when displaying multiple content types together.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: 209113db-2d5b-4375-b8d8-fabeb823fac7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refp_events
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_refp_events
+field_name: field_refp_events
+entity_type: paragraph
+bundle: reference_section
+label: 'Promoted Events Only'
+description: 'Display only those events that have been marked as <em>Promoted</em>. Note that this option is language dependant.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

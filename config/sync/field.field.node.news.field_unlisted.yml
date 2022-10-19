@@ -1,0 +1,23 @@
+uuid: 0b8a66f6-ffbd-4cab-bf61-37adfc83af63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unlisted
+    - node.type.news
+id: node.news.field_unlisted
+field_name: field_unlisted
+entity_type: node
+bundle: news
+label: Unlisted
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

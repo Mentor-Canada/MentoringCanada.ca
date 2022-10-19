@@ -1,0 +1,15 @@
+uuid: 5ee17113-5137-4629-9df4-3919335b627d
+name: 'Mentor Canada'
+mail: communications@mentoringcanada.ca
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/339
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: ''

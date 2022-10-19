@@ -1,0 +1,15 @@
+uuid: 3e5f5e79-433a-4848-b722-b83485bd7f2e
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_600_Y
+label: 'Image Utils (Scale width 600)'
+effects:
+  86e0f667-9610-4ede-8c9e-7e53be75ea22:
+    uuid: 86e0f667-9610-4ede-8c9e-7e53be75ea22
+    id: image_scale
+    weight: 0
+    data:
+      width: 600
+      height: null
+      upscale: false

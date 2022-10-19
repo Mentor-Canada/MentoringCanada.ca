@@ -1,0 +1,11 @@
+uuid: 6f84ddb4-9fa4-4275-b1bd-8e4060252c25
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.front
+id: node_type_front
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

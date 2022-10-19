@@ -1,0 +1,23 @@
+uuid: abbedd5a-2fdf-4ee4-8de5-0aa10092fc14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_horizontal_alignment_alt
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - options
+id: paragraph.text_image_block.field_horizontal_alignment_alt
+field_name: field_horizontal_alignment_alt
+entity_type: paragraph
+bundle: text_image_block
+label: 'Horizontal Alignment (Narrow Layout)'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

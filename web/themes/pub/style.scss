@@ -1,0 +1,263 @@
+@mixin transitionDelay($selector, $delay: 100, $offset: 0, $range: 10, $post-selector: "") {
+  $delay: $delay * 1ms;
+  $offset: $offset * 1ms;
+  @for $i from 1 to $range {
+    #{$selector}:nth-child(#{$i}) #{$post-selector} {
+      transition-delay: (($i - 1) * $offset) + $delay;
+    }
+  }
+}
+@function colorAtOpacity($desired_colour, $desired_alpha, $background_colour: white) {
+  $r3: red($desired_colour);
+  $g3: green($desired_colour);
+  $b3: blue($desired_colour);
+
+  $r2: red($background_colour);
+  $g2: green($background_colour);
+  $b2: blue($background_colour);
+
+  $r1: ( $r3 - $r2 + ($r2 * $desired_alpha) ) / $desired_alpha;
+  $g1: ( $g3 - $g2 + ($g2 * $desired_alpha) ) / $desired_alpha;
+  $b1: ( $b3 - $b2 + ($b2 * $desired_alpha) ) / $desired_alpha;
+
+  @return rgba($r1, $g1, $b1, $desired_alpha);
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  resize: vertical;
+}
+* {
+  box-sizing: border-box;
+}
+
+@import "../../../node_modules/spin.js/spin.css";
+@import "../../../node_modules/slick-carousel/slick/slick.css";
+
+@import "./common/vars.scss";
+@import "./common/fonts.scss";
+@import "./common/typography.scss";
+@import "./common/header.scss";
+@import "./common/footer.scss";
+@import "./common/banner.scss";
+@import "./common/page-header.scss";
+
+@import "./common/team-member-teaser.scss";
+@import "./common/news-teaser.scss";
+@import "./common/event-teaser.scss";
+@import "./common/news-teaser-more.scss";
+@import "./common/event-teaser-more.scss";
+@import "./common/page-teaser-more.scss";
+
+@import "./common/compact-menu.scss";
+@import "./common/form.scss";
+@import "./common/page.scss";
+@import "./common/processing.scss";
+
+@import "./page-404/page-404.scss";
+@import "./page-contact/page-type-contact.scss";
+@import "./page-newsletter/page-newsletter.scss";
+@import "./submitted/submitted.scss";
+
+@import "./page-service-provider-outreach/page-service-provider-outreach.scss";
+@import "./page-online-orientation-for-mentors/page-online-orientation-for-mentors.scss";
+@import "./page-data-dashboard/data-dashboard.scss";
+@import "./page-data-dashboard/state-of-mentoring-research-initiative-dashboard-mentors.scss";
+
+@import "./page-year-end-2021/page--year-end-2021.scss";
+@import "./page-strat-plan-2022-2024/page--strat-plan-2022-2024.scss";
+@import "./page-mentorcity-advanced-customization-process-map/page-mentorcity-advanced-customization-process-map.scss";
+
+@import "./page-social-media-toolkit/page-type-social-media-toolkit.scss";
+@import "./page-social-media-campaign/page-type-social-media-campaign.scss";
+@import "./page-social-media-campaigns/page-social-media-campaigns.scss";
+@import "./page-event/Payment.scss";
+
+@import "./page-templates/event-mentorcity-live-training-sector-onboarding/page--template--event-mentorcity-live-training-sector-onboarding.scss";
+@import "./page-templates/employment-opportunities/page--template--employment-opportunities.scss";
+
+@mixin bezierBorderRadius($size, $curvature: 0.3) {
+  $s: strip-unit($size);
+  $sPx: $s * 1px;
+  $c: $s * $curvature;
+  $sMinusC: $s - $c;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: destination-out, destination-out, destination-out, destination-out;
+  @supports (-webkit-mask-composite: exclude) {
+    -webkit-mask-composite: exclude, exclude, exclude, exclude;
+  }
+  -webkit-mask-size: $sPx $sPx, $sPx $sPx, $sPx $sPx, $sPx $sPx, 100% 100%;
+  -webkit-mask-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  -webkit-mask-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' width='#{$s}' height='#{$s}'><path d='M#{$s},0C#{$c},0,0,#{$c},0,#{$s}V0H#{$s}z'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' width='#{$s}' height='#{$s}'><path d='M#{$s},#{$s}C#{$s},#{$c},#{$sMinusC},0,0,0h#{$s}V#{$s}z'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' width='#{$s}' height='#{$s}'><path d='M0,#{$s}c#{$sMinusC},0,#{$s}-#{$c},#{$s}-#{$s}v#{$s}H0z'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' width='#{$s}' height='#{$s}'><path d='M0,0c0,#{$sMinusC},#{$c},#{$s},#{$s},#{$s}H0V0z'/></svg>"),
+    linear-gradient(#fff,#fff);
+}
+
+.curve-test {
+  padding: 20vh 5vw;
+  .container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+}
+.curve-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: blue;
+  @include bezierBorderRadius(31);
+}
+.border-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(red, 0.75);
+  border-radius: 99px;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-kerning: normal;
+  font-synthesis: none;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 0;
+  transition: opacity 500ms;
+  html.loaded & {
+    opacity: 1;
+  }
+  html[lang="en-CA"] & {
+    quotes: "“" "”";
+  }
+  html[lang="fr-CA"] & {
+    quotes: "«" "»";
+  }
+}
+main {
+  flex: 1 1 auto;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+button,
+input[type='submit'] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: normal;
+  padding: 15px 20px;
+  min-height: 50px;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  background: $ui-primary;
+  font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: 500;
+  @include font-tracking(14);
+  line-height: normal;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  transition: color 200ms, background-color 200ms;
+  &:hover {
+    background: scale-color($ui-primary, $lightness: -10%);
+  }
+  &.compact {
+    padding: 10px 20px;
+    min-height: 36px;
+    border-radius: 50px;
+    @include font-tracking(12);
+  }
+  &.input-height {
+    min-height: $ui-input-height;
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &.unset {
+    all: unset;
+  }
+}
+.messages {
+  margin-bottom: 2.5vh;
+  text-align: left;
+  font-weight: 500;
+  @include font-tracking(24);
+  color: $ui-alert-success;
+  [role="alert"] {
+    color: $ui-alert-error;
+    &:before {
+      content: "\f071";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      margin-right: 0.2em;
+    }
+  }
+}
+

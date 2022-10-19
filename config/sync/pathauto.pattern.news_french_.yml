@@ -1,0 +1,33 @@
+uuid: e7bb4ca4-8fe9-4814-90fb-69ab4fa91f69
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: news_french_
+label: 'News (French)'
+type: 'canonical_entities:node'
+pattern: 'nouvelles/[node:title]'
+selection_criteria:
+  b4fda9ad-090c-4cc6-b52a-84cdc85ec679:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b4fda9ad-090c-4cc6-b52a-84cdc85ec679
+  188a8304-405b-4aac-be5a-4b6fa50907ea:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 188a8304-405b-4aac-be5a-4b6fa50907ea
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

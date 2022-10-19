@@ -1,0 +1,19 @@
+body.path-service-provider-outreach {
+  [data-padding-standard="horizontal-vertical"] {
+    padding-top: 5vh;
+  }
+  .description-script {
+    position: relative;
+    @include font-tracking(18);
+    font-style: italic;
+    line-height: 1.35;
+    color: darken($ui-primary, 20%);
+    padding-left: 1em;
+    border-left: 2px solid rgba($ui-primary, 0.375);
+  }
+  .description-script-instruction {
+    font-weight: 500;
+    @include font-tracking(14);
+    border-style: dotted;
+  }
+}

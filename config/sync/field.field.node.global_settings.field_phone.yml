@@ -1,0 +1,21 @@
+uuid: fd9e7844-55c3-4c50-98a7-16cd5ae32ca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone
+    - node.type.global_settings
+  module:
+    - telephone
+id: node.global_settings.field_phone
+field_name: field_phone
+entity_type: node
+bundle: global_settings
+label: Phone
+description: 'Enter a 10-digit phone number without spaces or other characters.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

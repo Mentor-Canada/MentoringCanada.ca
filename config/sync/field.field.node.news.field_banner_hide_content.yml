@@ -1,0 +1,23 @@
+uuid: dbe6af90-668b-40ac-94b4-3e1493262caa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_hide_content
+    - node.type.news
+id: node.news.field_banner_hide_content
+field_name: field_banner_hide_content
+entity_type: node
+bundle: news
+label: 'Hide Banner Content'
+description: 'Hide all banner content, including headlines and links, when a banner image is present.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

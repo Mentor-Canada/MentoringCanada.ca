@@ -1,0 +1,23 @@
+uuid: 371975f8-eb35-4aa1-8a02-19926d61ab99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hidden_header_logo
+    - node.type.news
+id: node.news.field_hidden_header_logo
+field_name: field_hidden_header_logo
+entity_type: node
+bundle: news
+label: 'Hidden Header Logo'
+description: 'Hide the site header logo on this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,20 @@
+{# @var v \Drupal\app\Views\NewsTeaserView #}
+<div class="news-teaser reference-item">
+  <div class="reference-item-padding">
+    <a href="{{ v.url }}">
+      <div class="news-teaser-image-wrapper">
+        <div class="news-teaser-image" style="background-image: url({{ v.teaserImage }})"></div>
+      </div>
+      <div class="news-teaser-heading">
+        {% if v.showTypeTip %}
+          <div class="news-teaser-type-tip">{{ v.typeTip }}</div>
+        {% endif %}
+        <div class="news-teaser-title">{{ v.title }}</div>
+        <div class="news-teaser-date">{{ v.date }}</div>
+      </div>
+      <div class="news-teaser-teaser">
+        <div class="typography"><p>{{ v.teaserSummary }}</p></div>
+      </div>
+    </a>
+  </div>
+</div>

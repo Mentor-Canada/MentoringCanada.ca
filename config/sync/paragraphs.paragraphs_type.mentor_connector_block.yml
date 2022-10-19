@@ -1,0 +1,10 @@
+uuid: d5aede90-80b3-4e89-9837-5ab60155f2e9
+langcode: en
+status: true
+dependencies: {  }
+id: mentor_connector_block
+label: 'Mentor Connector Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

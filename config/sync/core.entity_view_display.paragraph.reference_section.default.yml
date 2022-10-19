@@ -1,0 +1,215 @@
+uuid: d28f166d-b226-4d9c-b0d7-929f790d2046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reference_section.field_display_in_menus
+    - field.field.paragraph.reference_section.field_events
+    - field.field.paragraph.reference_section.field_news
+    - field.field.paragraph.reference_section.field_ref_events
+    - field.field.paragraph.reference_section.field_ref_news
+    - field.field.paragraph.reference_section.field_ref_team_members
+    - field.field.paragraph.reference_section.field_refd_events
+    - field.field.paragraph.reference_section.field_refd_news
+    - field.field.paragraph.reference_section.field_refd_team_members
+    - field.field.paragraph.reference_section.field_refl_events
+    - field.field.paragraph.reference_section.field_refl_news
+    - field.field.paragraph.reference_section.field_refp_events
+    - field.field.paragraph.reference_section.field_refp_news
+    - field.field.paragraph.reference_section.field_reft_events
+    - field.field.paragraph.reference_section.field_section_eyebrow
+    - field.field.paragraph.reference_section.field_section_menu_title
+    - field.field.paragraph.reference_section.field_section_title
+    - field.field.paragraph.reference_section.field_team_members
+    - field.field.paragraph.reference_section.field_width_options_full
+    - field.field.paragraph.reference_section.field_wysiwyg
+    - paragraphs.paragraphs_type.reference_section
+  module:
+    - options
+    - text
+id: paragraph.reference_section.default
+targetEntityType: paragraph
+bundle: reference_section
+mode: default
+content:
+  field_display_in_menus:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_events:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_news:
+    weight: 19
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ref_events:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ref_news:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ref_team_members:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refd_events:
+    weight: 15
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refd_news:
+    weight: 16
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refd_team_members:
+    weight: 17
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refl_events:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refl_news:
+    weight: 13
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refp_events:
+    weight: 10
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_refp_news:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_reft_events:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_section_eyebrow:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_menu_title:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_team_members:
+    weight: 20
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_width_options_full:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_wysiwyg:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

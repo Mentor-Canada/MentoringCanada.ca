@@ -1,0 +1,23 @@
+uuid: 2d03339d-0e37-4d24-9702-fa09814e7e03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extension
+    - node.type.global_settings
+id: node.global_settings.field_extension
+field_name: field_extension
+entity_type: node
+bundle: global_settings
+label: Extension
+description: 'Enter an optional extension number.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 9999
+  prefix: ''
+  suffix: ''
+field_type: integer

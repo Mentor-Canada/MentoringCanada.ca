@@ -1,0 +1,81 @@
+uuid: ff60c5c9-db13-4da2-9d11-48b09ae52a11
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.submission_contact.field_submission_email_address
+    - field.field.node.submission_contact.field_submission_first_name
+    - field.field.node.submission_contact.field_submission_language
+    - field.field.node.submission_contact.field_submission_last_name
+    - field.field.node.submission_contact.field_submission_message
+    - field.field.node.submission_contact.field_submission_subject
+    - node.type.submission_contact
+id: node.submission_contact.default
+targetEntityType: node
+bundle: submission_contact
+mode: default
+content:
+  field_submission_email_address:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_first_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_language:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_last_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_message:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_submission_subject:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

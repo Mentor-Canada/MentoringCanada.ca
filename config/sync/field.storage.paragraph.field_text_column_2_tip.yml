@@ -1,0 +1,19 @@
+uuid: 84053d24-5a30-40f8-8a6a-e128c16adcd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - description_field
+    - paragraphs
+id: paragraph.field_text_column_2_tip
+field_name: field_text_column_2_tip
+entity_type: paragraph
+type: description_field
+settings: {  }
+module: description_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

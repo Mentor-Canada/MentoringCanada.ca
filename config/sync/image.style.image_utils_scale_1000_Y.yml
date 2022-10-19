@@ -1,0 +1,15 @@
+uuid: d7468ca8-55ea-4e30-8f28-68b1c7549a05
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_1000_Y
+label: 'Image Utils (Scale width 1000)'
+effects:
+  f76c65f9-6492-4a5f-ac60-627a17ab5806:
+    uuid: f76c65f9-6492-4a5f-ac60-627a17ab5806
+    id: image_scale
+    weight: 0
+    data:
+      width: 1000
+      height: null
+      upscale: false

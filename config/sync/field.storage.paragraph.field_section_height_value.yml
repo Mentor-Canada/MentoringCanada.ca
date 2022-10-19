@@ -1,0 +1,18 @@
+uuid: c5c456cd-78a5-47a5-84ea-dbc918fe92bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_section_height_value
+field_name: field_section_height_value
+entity_type: paragraph
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

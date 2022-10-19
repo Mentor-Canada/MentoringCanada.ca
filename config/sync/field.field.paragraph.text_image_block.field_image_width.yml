@@ -1,0 +1,23 @@
+uuid: b3f8a0f7-a7e6-45fe-8113-acc523719ced
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_width
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - options
+id: paragraph.text_image_block.field_image_width
+field_name: field_image_width
+entity_type: paragraph
+bundle: text_image_block
+label: 'Image Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1/2
+default_value_callback: ''
+settings: {  }
+field_type: list_string

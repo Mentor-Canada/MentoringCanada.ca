@@ -1,0 +1,14 @@
+uuid: dc1f4e59-b082-4962-91f3-59f3dab70d4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.caller
+  module:
+    - user
+id: user_remove_role_action.caller
+label: 'Remove the Caller role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: caller

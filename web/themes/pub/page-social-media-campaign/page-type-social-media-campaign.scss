@@ -1,0 +1,122 @@
+body.page-type-social-media-campaign {
+
+  background: $mentor-off-white;
+  #content {
+    background: transparent;
+  }
+
+  .toolkit-flex-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid $divider-minimal;
+    margin-bottom: 50px;
+    > * {
+      width: calc(50% - 20px);
+      margin-bottom: 50px;
+    }
+    @media (max-width: 750px) {
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  .toolkit-logo {
+    img {
+      max-width: 300px;
+      max-height: 100px;
+    }
+  }
+
+  .toolkit-image-info {
+    margin-top: 20px;
+    font-weight: 500;
+    a {
+      display: inline-flex;
+      align-items: center;
+      @include font-tracking(14);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(13);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(12);
+      }
+      i {
+        font-weight: normal;
+        font-size: 24px;
+        margin-right: 5px;
+      }
+      color: $ui-primary;
+      transition: color 200ms, background-color 200ms;
+      &:hover {
+        color: scale-color($ui-primary, $lightness: -10%);
+      }
+    }
+  }
+
+  .teasers-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card-teaser {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(#000, 0.05), 0 10px 20px rgba(#000, 0.05);
+    transition: box-shadow 300ms;
+    margin-bottom: 50px;
+    width: 32%;
+    @media (max-width: 1000px) {
+      width: 48%;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    &:hover {
+      box-shadow: 0 2px 4px rgba(#000, 0.05), 0 10px 20px rgba(#000, 0.1);
+    }
+    .card-teaser-image {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 52.333%;
+      overflow: hidden;
+      .card-teaser-image-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+    }
+    .card-teaser-meta {
+      position: relative;
+      flex: 1 0 auto;
+      background: #fff;
+      padding: 25px 20px 50px 20px;
+      font-weight: 500;
+      .card-title {
+        color: $heading-color;
+        @include font-tracking(16);
+        line-height: 1.2;
+      }
+      .card-chin {
+        position: absolute;
+        bottom: 25px;
+        left: 20px;
+        width: calc(100% - 40px);
+        @include font-tracking(13);
+        color: $eyebrow-color;
+      }
+    }
+  }
+
+}

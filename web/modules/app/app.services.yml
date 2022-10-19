@@ -1,0 +1,9 @@
+services:
+  app.twigextensions:
+    class: Drupal\app\TwigExtensions
+    tags:
+      - { name: twig.extension }
+  app.route_subscriber:
+    class: Drupal\app\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

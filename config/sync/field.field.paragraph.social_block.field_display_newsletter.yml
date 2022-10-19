@@ -1,0 +1,23 @@
+uuid: b3a6ddd5-2be5-4a4a-926f-2b2e6a6a5859
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_newsletter
+    - paragraphs.paragraphs_type.social_block
+id: paragraph.social_block.field_display_newsletter
+field_name: field_display_newsletter
+entity_type: paragraph
+bundle: social_block
+label: 'Display Newsletter'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,14 @@
+uuid: ff99c18e-bc30-4920-8bf5-6f4e78ab1072
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.caller
+  module:
+    - user
+id: user_add_role_action.caller
+label: 'Add the Caller role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: caller

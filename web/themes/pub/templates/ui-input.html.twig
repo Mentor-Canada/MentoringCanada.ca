@@ -1,0 +1,19 @@
+{# @var v \Drupal\app\Views\UI_InputFieldView #}
+<div class="ui-input-field ui-field ui-outline-field">
+  <div class="ui-outline-field-wrapper">
+    <input id="{{ v.name }}" name="{{ v.name }}" type="{{ v.type }}" {{ v.required }} autocomplete="{{ v.autocomplete }}" {% if v.pattern %}pattern="{{ v.pattern }}"{% endif %}>
+
+    <div class="ui-outline">
+      <div class="ui-outline-left"></div>
+      <div class="ui-outline-middle">
+        <label for="{{ v.name }}">
+          {{ v.label }}
+          {% if v.required %}
+          <span class="ui-field-required-marker">*</span>
+          {% endif %}
+        </label>
+      </div>
+      <div class="ui-outline-right"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+uuid: 0b2026d2-ada2-4b9b-9c78-d2098aa68799
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_youtube_id
+    - node.type.event
+id: node.event.field_email_youtube_id
+field_name: field_email_youtube_id
+entity_type: node
+bundle: event
+label: 'Post-Submission YouTube Video'
+description: 'Optionally enter a YouTube video ID, which will add a clickable video preview image link to the end of post-submission emails.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

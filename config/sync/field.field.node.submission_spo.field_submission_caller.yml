@@ -1,0 +1,19 @@
+uuid: 67ae2265-e1e6-4b3d-9b65-a4cada176254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_caller
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_caller
+field_name: field_submission_caller
+entity_type: node
+bundle: submission_spo
+label: Caller
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

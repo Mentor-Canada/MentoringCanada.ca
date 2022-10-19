@@ -1,0 +1,11 @@
+uuid: 3bb5df7d-9dfa-43d0-9179-267c3047c941
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node_type_submission_event
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

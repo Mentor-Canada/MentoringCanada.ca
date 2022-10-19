@@ -1,0 +1,33 @@
+uuid: 992e3e14-cea5-4298-98fe-b2615d847f89
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_alignment_alt
+field_name: field_text_alignment_alt
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: as-is
+      label: As-Is
+    -
+      value: left
+      label: Left
+    -
+      value: center
+      label: Center
+    -
+      value: right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

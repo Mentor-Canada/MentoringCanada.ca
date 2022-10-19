@@ -1,0 +1,19 @@
+uuid: 073ba225-1ef0-4e8d-b727-889350be46b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submitted_heading
+    - node.type.event
+id: node.event.field_submitted_heading
+field_name: field_submitted_heading
+entity_type: node
+bundle: event
+label: 'Submitted Heading'
+description: "<big><strong>The heading on the page following form submission.</strong></big><br>\r\nFor example: \"Thank you.\""
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

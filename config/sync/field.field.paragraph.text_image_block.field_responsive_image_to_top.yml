@@ -1,0 +1,23 @@
+uuid: 404a9138-62d9-4782-8442-a780b5158974
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responsive_image_to_top
+    - paragraphs.paragraphs_type.text_image_block
+id: paragraph.text_image_block.field_responsive_image_to_top
+field_name: field_responsive_image_to_top
+entity_type: paragraph
+bundle: text_image_block
+label: 'Display Image on Top'
+description: 'Displays the image on top of the text when space does not permit them to be displayed side by side.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

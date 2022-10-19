@@ -1,0 +1,23 @@
+uuid: 9c2e9df4-bdda-454c-9b8e-4d2cce4b254d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_divider_thickness_vibrant
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_divider_thickness_vibrant
+field_name: field_divider_thickness_vibrant
+entity_type: paragraph
+bundle: divider_block
+label: 'Divider Thickness Vibrant'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: thick
+default_value_callback: ''
+settings: {  }
+field_type: list_string

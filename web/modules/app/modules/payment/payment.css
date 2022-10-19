@@ -1,0 +1,17 @@
+.field--widget-payment-widget table {
+  margin-top: 0;
+  table-layout: fixed;
+}
+
+.field--widget-payment-widget tr {
+  border-bottom: none
+}
+
+.field--widget-payment-widget td {
+  vertical-align: top;
+}
+
+.field--widget-payment-widget .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}

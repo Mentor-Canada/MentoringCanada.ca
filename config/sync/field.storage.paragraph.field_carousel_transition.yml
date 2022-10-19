@@ -1,0 +1,27 @@
+uuid: edb37c20-c96b-4a69-997f-e64f880ad011
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_carousel_transition
+field_name: field_carousel_transition
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: slide
+      label: Slide
+    -
+      value: fade
+      label: Fade
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

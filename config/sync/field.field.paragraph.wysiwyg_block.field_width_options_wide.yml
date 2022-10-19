@@ -1,0 +1,23 @@
+uuid: 069567af-0338-43fe-8150-957884e84827
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_wide
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - options
+id: paragraph.wysiwyg_block.field_width_options_wide
+field_name: field_width_options_wide
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

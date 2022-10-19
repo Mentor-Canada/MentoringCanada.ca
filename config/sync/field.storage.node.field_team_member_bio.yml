@@ -1,0 +1,19 @@
+uuid: 39135ce8-1d2f-46d0-b7de-e8ac9711d42f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_team_member_bio
+field_name: field_team_member_bio
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

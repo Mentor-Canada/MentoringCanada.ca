@@ -1,0 +1,19 @@
+uuid: 1f0ccf03-7eaf-4574-9f58-64cfdc3b3380
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_menu_title
+    - paragraphs.paragraphs_type.markup_section
+id: paragraph.markup_section.field_section_menu_title
+field_name: field_section_menu_title
+entity_type: paragraph
+bundle: markup_section
+label: 'Section Menu Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

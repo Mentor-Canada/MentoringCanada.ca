@@ -1,0 +1,23 @@
+uuid: 7649d57f-9f99-4468-af60-b6a476a5fb37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_infinite
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_carousel_infinite
+field_name: field_carousel_infinite
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Infinite'
+description: 'Permits the carousel to loop infinitely.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

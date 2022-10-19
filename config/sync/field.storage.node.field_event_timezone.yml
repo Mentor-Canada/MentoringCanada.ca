@@ -1,0 +1,39 @@
+uuid: 1c9c8bb1-e3e7-4f17-93a2-40b0753b3373
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_timezone
+field_name: field_event_timezone
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: NST
+      label: 'Newfoundland Standard Time (NST)'
+    -
+      value: AST
+      label: 'Atlantic Standard Time (AST)'
+    -
+      value: EST
+      label: 'Eastern Standard Time (EST)'
+    -
+      value: CST
+      label: 'Central Standard Time (CST)'
+    -
+      value: MST
+      label: 'Mountain Standard Time (MST)'
+    -
+      value: PST
+      label: 'Pacific Standard Time (PST)'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

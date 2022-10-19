@@ -1,0 +1,192 @@
+uuid: 64bc78ee-8b2c-48ee-a6a2-7ccc8265bcc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg_block.field_column_split
+    - field.field.paragraph.wysiwyg_block.field_constrain_block_width
+    - field.field.paragraph.wysiwyg_block.field_number_of_columns
+    - field.field.paragraph.wysiwyg_block.field_text_column_2_tip
+    - field.field.paragraph.wysiwyg_block.field_wide_block_alignment
+    - field.field.paragraph.wysiwyg_block.field_width_options_wide
+    - field.field.paragraph.wysiwyg_block.field_wysiwyg
+    - field.field.paragraph.wysiwyg_block.field_wysiwyg_2
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - description_field
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_settings:
+      children:
+        - group_wys_settings_layout_a
+        - field_constrain_block_width
+        - field_wide_block_alignment
+      parent_name: group_tabs
+      weight: 22
+      format_type: details
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Settings
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - group_columns
+      parent_name: group_tabs
+      weight: 20
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_columns:
+      children:
+        - group_column_1
+        - group_column_2
+      parent_name: group_content
+      weight: 21
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Columns
+    group_column_1:
+      children:
+        - field_wysiwyg
+      parent_name: group_columns
+      weight: 5
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: 'Column 1'
+    group_column_2:
+      children:
+        - field_wysiwyg_2
+        - field_text_column_2_tip
+      parent_name: group_columns
+      weight: 6
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'Column 2'
+    group_wys_settings_layout_a:
+      children:
+        - field_number_of_columns
+        - field_column_split
+        - field_width_options_wide
+      parent_name: group_settings
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: false
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'WYS Settings Layout A'
+id: paragraph.wysiwyg_block.default
+targetEntityType: paragraph
+bundle: wysiwyg_block
+mode: default
+content:
+  field_column_split:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_constrain_block_width:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_number_of_columns:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_text_column_2_tip:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: description_field_standard
+    region: content
+  field_wide_block_alignment:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_width_options_wide:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_wysiwyg:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_wysiwyg_2:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

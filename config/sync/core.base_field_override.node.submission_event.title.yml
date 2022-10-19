@@ -1,0 +1,18 @@
+uuid: 3174e22a-99a4-466e-ab85-e69b5a4d9b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node.submission_event.title
+field_name: title
+entity_type: node
+bundle: submission_event
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

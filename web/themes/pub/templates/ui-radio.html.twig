@@ -1,0 +1,24 @@
+{# @var v \Drupal\app\Views\UI_RadioFieldView #}
+<div class="ui-radio-field ui-field ui-option-field">
+
+  <div class="ui-option-field-wrapper">
+
+    <input type="radio"
+           id="{{ v.id }}"
+           name="{{ v.name }}"
+           value="{{ v.value }}"
+           {{ v.checked }}
+           {{ v.required }}
+           {{ v.show }}
+    />
+
+    <div class="ui-radio-state-indicator ui-option-state-indicator"></div>
+    <div class="ui-radio-secondary-indicator ui-option-secondary-indicator"></div>
+
+  </div>
+
+  <div class="ui-option-label">
+    <label for="{{ v.id }}">{{ v.label }}</label>
+  </div>
+
+</div>

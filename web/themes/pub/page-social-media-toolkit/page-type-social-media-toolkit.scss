@@ -1,0 +1,137 @@
+body.page-type-social-media-toolkit {
+
+  .toolkit-heading {
+    font-weight: 500;
+    color: $heading-color;
+    line-height: 1.2;
+    margin-top: 5vh;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid $divider-minimal;
+    @include font-tracking(20);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(19);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(18);
+    }
+  }
+
+  .toolkit-subheading {
+    font-weight: 500;
+    color: $heading-color;
+    line-height: 1.2;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $divider-minimal;
+    @include font-tracking(16);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(15);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(14);
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .toolkit-flex-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > * {
+      width: calc(50% - 20px);
+      margin-bottom: 50px;
+    }
+    @media (max-width: 750px) {
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  .toolkit-logo {
+    img {
+      max-width: 300px;
+      max-height: 100px;
+    }
+  }
+
+  .toolkit-image {
+    img {
+      box-shadow: 0 5px 10px rgba(#000, 0.15);
+    }
+  }
+
+  .toolkit-image-info {
+    margin-top: 20px;
+    font-weight: 500;
+    .toolkit-image-channel {
+      color: $heading-color;
+      @include font-tracking(16);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(15);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(14);
+      }
+    }
+    .toolkit-image-dimensions {
+      margin-top: 0.5em;
+      color: $typography-color;
+      @include font-tracking(14);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(13);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(12);
+      }
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.75em;
+      @include font-tracking(14);
+      @media (max-width: $typography-break-2) {
+        @include font-tracking(13);
+      }
+      @media (max-width: $typography-break-1) {
+        @include font-tracking(12);
+      }
+      i {
+        font-weight: normal;
+        font-size: 24px;
+        margin-right: 5px;
+      }
+      color: $ui-primary;
+      transition: color 200ms, background-color 200ms;
+      &:hover {
+        color: scale-color($ui-primary, $lightness: -10%);
+      }
+    }
+  }
+
+  .post-content-section {
+    background: $mentor-off-white;
+    padding: 10vh 0 calc(10vh - 50px) 0;
+    .toolkit-heading {
+      margin-top: 0;
+    }
+    .typography {
+      p {
+        @include font-tracking(16);
+        @media (max-width: $typography-break-2) {
+          @include font-tracking(15);
+        }
+        @media (max-width: $typography-break-1) {
+          @include font-tracking(14);
+        }
+      }
+    }
+  }
+
+}

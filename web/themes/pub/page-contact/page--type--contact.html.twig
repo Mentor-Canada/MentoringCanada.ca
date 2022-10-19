@@ -1,0 +1,78 @@
+{# @var v \Drupal\app\Views\PageContactView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    <div data-padding-standard="horizontal-vertical">
+      <div data-content-width="standard">
+
+        {% if v.messages %}
+          <div class="messages">
+            {{ v.messages|raw }}
+          </div>
+        {% endif %}
+
+        <div class="typography">
+          {{ node.field_page_content.0.value|raw }}
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-info-block contact-direct">
+            <h4 class="contact-info-heading">{{ "Contact us directly"|t }}</h4>
+            <a href="{{ v.globalSettings.phoneLink }}">{{ v.globalSettings.phoneDisplayWithExtension }}</a>
+            <a href="{{ v.globalSettings.emailLink }}">{{ v.globalSettings.emailDisplay }}</a>
+          </div>
+          <div class="contact-info-block contact-postal">
+            <h4 class="contact-info-heading">{{ "Contact us by mail"|t }}</h4>
+            <address>
+              <span class="address-name">{{ v.globalSettings.addressName }}</span>
+              <span>{{ v.globalSettings.addressLine1 }}</span>
+              <span>{{ v.globalSettings.addressLine2 }}</span>
+              <span>{{ v.globalSettings.addressLine3 }}</span>
+            </address>
+          </div>
+        </div>
+
+        <form id="contact-form" method="post" class="contact-form standard-form-style" onsubmit="document.querySelector('body').classList.add('standard-form-submitted');">
+
+          <fieldset>
+            <legend>{{ "Send us a message"|t }}</legend>
+            <div class="ui-form-row col-2">
+              {{ ui_input(v.entity.FIRST_NAME, "First Name"|t, "required", "First Name", "off") }}
+              {{ ui_input(v.entity.LAST_NAME, "Last Name"|t, "required", "Last Name", "off") }}
+            </div>
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.EMAIL, "Email Address"|t, "required", "email", "off") }}
+            </div>
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.SUBJECT, "Subject"|t, "", "Subject", "off") }}
+            </div>
+            <div class="ui-form-row">
+              {{ ui_textarea(v.entity.MESSAGE, "Message"|t) }}
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <div class="ui-form-row">
+              <div id="google-recaptcha"></div>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button id="sign-up-button" class="disabled">{{ "Submit"|t }}</button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "contact";
+</script>
+

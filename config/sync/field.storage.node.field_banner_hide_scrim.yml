@@ -1,0 +1,18 @@
+uuid: ad1a2c84-bfcd-4441-b3c1-8ba0a2eca47d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_banner_hide_scrim
+field_name: field_banner_hide_scrim
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

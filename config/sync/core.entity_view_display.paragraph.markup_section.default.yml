@@ -1,0 +1,83 @@
+uuid: b5614c59-bc34-4010-ae9c-01561a4b5882
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.markup_section.field_display_in_menus
+    - field.field.paragraph.markup_section.field_ignore_padding_bottom
+    - field.field.paragraph.markup_section.field_ignore_padding_top
+    - field.field.paragraph.markup_section.field_ignore_zebra_striping
+    - field.field.paragraph.markup_section.field_markup
+    - field.field.paragraph.markup_section.field_section_menu_title
+    - field.field.paragraph.markup_section.field_width_options_full_bleed
+    - paragraphs.paragraphs_type.markup_section
+  module:
+    - options
+id: paragraph.markup_section.default
+targetEntityType: paragraph
+bundle: markup_section
+mode: default
+content:
+  field_display_in_menus:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ignore_padding_bottom:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ignore_padding_top:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ignore_zebra_striping:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_markup:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_section_menu_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_width_options_full_bleed:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }

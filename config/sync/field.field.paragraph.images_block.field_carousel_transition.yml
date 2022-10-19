@@ -1,0 +1,23 @@
+uuid: 82ee0f9b-e183-41bd-8c61-f96080b9fcad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_transition
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_carousel_transition
+field_name: field_carousel_transition
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Transition'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: slide
+default_value_callback: ''
+settings: {  }
+field_type: list_string

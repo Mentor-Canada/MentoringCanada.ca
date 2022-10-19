@@ -1,0 +1,23 @@
+uuid: 8505da69-c2d1-40d6-9dfe-7278ecf3af7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_link
+    - node.type.front
+  module:
+    - link
+id: node.front.field_banner_link
+field_name: field_banner_link
+entity_type: node
+bundle: front
+label: 'Banner Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

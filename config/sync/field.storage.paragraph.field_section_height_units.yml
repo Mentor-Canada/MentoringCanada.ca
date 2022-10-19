@@ -1,0 +1,27 @@
+uuid: 84105f93-48cc-471c-baa0-a634d6c72cf3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_section_height_units
+field_name: field_section_height_units
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: px
+      label: Pixels
+    -
+      value: vh
+      label: 'Viewport Percent'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

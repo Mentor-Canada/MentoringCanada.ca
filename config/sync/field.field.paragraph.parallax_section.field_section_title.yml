@@ -1,0 +1,19 @@
+uuid: 4122500b-c49f-482a-ae8a-3977637f16f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_section_title
+field_name: field_section_title
+entity_type: paragraph
+bundle: parallax_section
+label: 'Section Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

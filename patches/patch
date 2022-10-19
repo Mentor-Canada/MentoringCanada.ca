@@ -1,0 +1,4 @@
+#!/bin/bash
+set -ex
+cd ./web && patch -p1 < ../patches/claro-nested_paragraphs_multiple_drag_handles-3092181-75-8.8.x-backport.patch && cd ../
+cd ./web/modules/contrib/paragraphs && patch -p1 < ../../../../patches/paragraphs-field-group-fix.patch && cd ../../../../

@@ -1,0 +1,249 @@
+definitions:
+  system__admin_content:
+    weight: -83
+    menu_name: admin
+    parent: system.admin
+    enabled: true
+    expanded: false
+  system__admin_structure:
+    weight: -73
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  system__themes_page:
+    weight: -72
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  system__modules_list:
+    weight: -71
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  system__admin_config:
+    weight: -70
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  entity__user__collection:
+    weight: -69
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  system__admin_reports:
+    weight: -68
+    menu_name: admin
+    parent: system.admin
+    expanded: false
+    enabled: true
+  block__admin_display:
+    weight: -76
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  entity__node_type__collection:
+    weight: -75
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  field_ui__display_mode:
+    weight: -73
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  entity__media_type__collection:
+    weight: -72
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  entity__menu__collection:
+    weight: -71
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  entity__view__collection:
+    weight: -70
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  entity__webform__collection:
+    weight: -69
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  config__conditional_field:
+    weight: -68
+    menu_name: admin
+    parent: system.admin_structure
+    expanded: false
+    enabled: true
+  user__admin_index:
+    weight: -76
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  entity__user__admin_form:
+    weight: -75
+    menu_name: admin
+    parent: user.admin_index
+    expanded: false
+    enabled: true
+  system__admin_config_system:
+    weight: -75
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  swiftmailer__message_settings:
+    weight: -76
+    menu_name: admin
+    parent: swiftmailer.config
+    expanded: false
+    enabled: true
+  swiftmailer__test:
+    weight: -75
+    menu_name: admin
+    parent: swiftmailer.config
+    expanded: false
+    enabled: true
+  swiftmailer__transport_settings:
+    weight: -73
+    menu_name: admin
+    parent: swiftmailer.config
+    expanded: false
+    enabled: true
+  system__admin_config_content:
+    weight: -74
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__admin_config_ui:
+    weight: -73
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__admin_config_development:
+    weight: -72
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__admin_config_media:
+    weight: -71
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__file_system_settings:
+    weight: -76
+    menu_name: admin
+    parent: system.admin_config_media
+    expanded: false
+    enabled: true
+  entity__image_style__collection:
+    weight: -75
+    menu_name: admin
+    parent: system.admin_config_media
+    expanded: false
+    enabled: true
+  media_library__settings:
+    weight: -73
+    menu_name: admin
+    parent: system.admin_config_media
+    expanded: false
+    enabled: true
+  media__settings:
+    weight: -72
+    menu_name: admin
+    parent: system.admin_config_media
+    expanded: false
+    enabled: true
+  system__image_toolkit_settings:
+    weight: -71
+    menu_name: admin
+    parent: system.admin_config_media
+    expanded: false
+    enabled: true
+  system__admin_config_search:
+    weight: -70
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__admin_config_regional:
+    weight: -69
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__regional_settings:
+    weight: -76
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  entity__date_format__collection:
+    weight: -74
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  entity__configurable_language__collection:
+    weight: -73
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  stringoverrides__translations_form:
+    weight: -72
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  language__content_settings_page:
+    weight: -71
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  locale__translate_page:
+    weight: -70
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  config_translation__mapper_list:
+    weight: -69
+    menu_name: admin
+    parent: system.admin_config_regional
+    expanded: false
+    enabled: true
+  system__admin_config_services:
+    weight: -68
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+  system__admin_config_workflow:
+    weight: -66
+    menu_name: admin
+    parent: system.admin_config
+    expanded: false
+    enabled: true
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

@@ -1,0 +1,10 @@
+uuid: db06b13b-8b9d-4e2a-81c9-2729f94d490e
+langcode: en
+status: true
+dependencies: {  }
+id: image_caption_field
+label: 'Image + Caption Field'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

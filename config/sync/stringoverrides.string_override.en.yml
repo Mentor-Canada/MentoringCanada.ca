@@ -1,0 +1,55 @@
+contexts:
+  -
+    context: ''
+    translations:
+      -
+        source: AST-Timezone
+        translation: 'Atlantic Time'
+      -
+        source: CST-Timezone
+        translation: 'Central Time'
+      -
+        source: EST-Timezone
+        translation: 'Eastern Time'
+      -
+        source: Mentor/Mentee
+        translation: 'Mentor / Mentee'
+      -
+        source: MST-Timezone
+        translation: 'Mountain Time'
+      -
+        source: NST-Timezone
+        translation: 'Newfoundland Time'
+      -
+        source: 'Opt in for photo/video at events'
+        translation: 'Opt in for photo / video at events'
+      -
+        source: 'Photo/video consent'
+        translation: 'Photo / video consent'
+      -
+        source: PST-Timezone
+        translation: 'Pacific Time'
+      -
+        source: Service-Provider-Large-Plural
+        translation: 'Large service providers'
+      -
+        source: Service-Provider-Large-Singular
+        translation: 'Large service provider'
+      -
+        source: Service-Provider-Medium-Plural
+        translation: 'Medium service providers'
+      -
+        source: Service-Provider-Medium-Singular
+        translation: 'Medium service provider'
+      -
+        source: Service-Provider-Small-Plural
+        translation: 'Small service providers'
+      -
+        source: Service-Provider-Small-Singular
+        translation: 'Small service provider'
+      -
+        source: Support-And-Training-CTA
+        translation: 'Have you checked out our <a href="https://support.mentoringcanada.ca/">Support & Training Centre</a>? Answers to your questions may be available there! We would invite you to visit the page before booking a 1:1 meeting. Thank you!'
+      -
+        source: MentorCity-Connector-Instruction
+        translation: 'Please note: before booking your Essentials to Onboarding session, please ensure your organization & program(s) are listed in the Mentor Connector. Not yet listed? <a href="https://mentoringcanada.ca/en/mentor-connector/list-your-organization-programs-mentor-connector">Get started here</a>.'

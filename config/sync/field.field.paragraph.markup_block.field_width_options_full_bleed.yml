@@ -1,0 +1,23 @@
+uuid: 54b10038-9e91-4948-a957-359a9542b1b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_full_bleed
+    - paragraphs.paragraphs_type.markup_block
+  module:
+    - options
+id: paragraph.markup_block.field_width_options_full_bleed
+field_name: field_width_options_full_bleed
+entity_type: paragraph
+bundle: markup_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

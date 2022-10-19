@@ -1,0 +1,28 @@
+uuid: 6e541d5a-deb5-49b2-9991-2a0e942dd08f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_form_recipients
+    - node.type.global_settings
+id: node.global_settings.field_contact_form_recipients
+field_name: field_contact_form_recipients
+entity_type: node
+bundle: global_settings
+label: 'Contact Form Recipients'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

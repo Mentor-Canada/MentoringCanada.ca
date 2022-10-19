@@ -1,0 +1,64 @@
+{# @var v \Drupal\app\Views\ParagraphParallaxSectionView #}
+<section class="interstitial-section"
+         data-section-id="{{ v.id }}"
+>
+  <div class="interstitial-wrapper" {% if v.darkenImage %}data-darken-image="true"{% endif %}>
+    <div class="interstitial-image parallax-element" style="background-image: url({{ v.image }})"></div>
+    <div class="interstitial-content" style="min-height: {{ v.sectionHeightValue }}{{ v.sectionHeightUnits }}">
+
+      <div class="interstitial-section-ui anim-view"
+           data-content-width="{{ v.sectionWidth }}"
+      >
+        {% if v.eyebrow or v.title %}
+        <div class="interstitial-section-ui-header typography typography-reversed">
+          {% if v.eyebrow %}
+            <h2 class="visually-h3 interstitial-section-tip">{{ v.eyebrow }}</h2>
+          {% endif %}
+          {% if v.title %}
+            <h3 class="visually-h1 interstitial-section-title">{{ v.title }}</h3>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if v.content %}
+        <div class="interstitial-section-content typography typography-reversed">
+          {{ v.content|raw }}
+        </div>
+        {% endif %}
+
+        {% if v.dynamicContentType != "none" %}
+
+          {% if v.dynamicContentType == "menu" %}
+            <ul data-dynamic-content-type="{{ v.dynamicContentType }}">
+              {% for item in v.menu %}
+                <li><a data-section-id="{{ item.id }}" class="section-link">{{ item.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if v.dynamicContentType == "references" %}
+            {% if v.references|length %}
+              <ul data-dynamic-content-type="{{ v.dynamicContentType }}">
+                {% for referenceGroup in v.references %}
+                  {% for item in referenceGroup %}
+                    <li>
+                      <a href="{{ item.url }}">
+                        <div class="ref-item-label-date-location">{% if item.showTypeTip %}{{ item.typeTip }}&nbsp;<span>/</span> {% endif %}{{ item.date }}{% if item.location %}&nbsp;<span>/</span> {{ item.location }}{% endif %}</div>
+                        <div class="ref-item-title">{{ item.title }}</div>
+                      </a>
+                    </li>
+                  {% endfor %}
+                {% endfor %}
+              </ul>
+            {% else %}
+              <div class="typography typography-reversed no-results">{{ v.noResults|raw }}</div>
+            {% endif %}
+          {% endif %}
+
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+</section>

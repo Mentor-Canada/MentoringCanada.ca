@@ -1,0 +1,15 @@
+uuid: b6c730bf-3f13-4db0-a13e-695eaf83bdaa
+langcode: en
+status: true
+dependencies: {  }
+name: banner_1920x1280
+label: 'Banner (1920x1280)'
+effects:
+  0aef4b25-adf0-4684-9449-7251aaf0a385:
+    uuid: 0aef4b25-adf0-4684-9449-7251aaf0a385
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: 1280
+      upscale: false

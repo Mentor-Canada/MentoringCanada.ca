@@ -1,0 +1,12 @@
+{# @var v \Drupal\app\Views\PageTeaserView #}
+<div class="page-teaser-more">
+  <a href="{{ v.url }}">
+    <div class="page-teaser-more-image" style="background-image: url({{ v.teaserImage }})"></div>
+    <div class="page-teaser-more-heading">
+      <div class="page-teaser-more-title">{{ v.title }}</div>
+      {% if v.teaserSummary %}
+      <div class="page-teaser-more-summary">{{ v.teaserSummary }}</div>
+      {% endif %}
+    </div>
+  </a>
+</div>

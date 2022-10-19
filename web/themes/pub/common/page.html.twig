@@ -1,0 +1,17 @@
+{{ v.banner }}
+
+<div id="content">
+  <article>
+
+    <div class="padding-wrapper">
+      <div class="typography">
+        {{ node.body.0.value|raw }}
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+</script>

@@ -1,0 +1,22 @@
+uuid: 397ee154-525a-44d8-8e7f-728eeb09e7d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+id: node.submission_spo.sticky
+field_name: sticky
+entity_type: node
+bundle: submission_spo
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,39 @@
+uuid: 71a693e9-ed62-43a2-8e08-c6fb8e210269
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reft_events
+    - paragraphs.paragraphs_type.parallax_section
+    - taxonomy.vocabulary.event_types
+  content:
+    - 'taxonomy_term:event_types:58d4d3c4-6c6b-4ae4-8e02-4eaeb4d51c97'
+    - 'taxonomy_term:event_types:b1f58961-c0d6-483a-b733-8dedfc7d4738'
+    - 'taxonomy_term:event_types:b7c7495a-ebaf-42a8-818f-f772a1f18827'
+id: paragraph.parallax_section.field_reft_events
+field_name: field_reft_events
+entity_type: paragraph
+bundle: parallax_section
+label: 'Event Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: b1f58961-c0d6-483a-b733-8dedfc7d4738
+  -
+    target_uuid: b7c7495a-ebaf-42a8-818f-f772a1f18827
+  -
+    target_uuid: 58d4d3c4-6c6b-4ae4-8e02-4eaeb4d51c97
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_types: event_types
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

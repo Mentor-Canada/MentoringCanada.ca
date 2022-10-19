@@ -1,0 +1,411 @@
+<?php
+
+error_reporting(0);
+
+use Drupal\app\App;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+function app_preprocess_html(&$vars) {
+  $func = str_replace('app_', '', __FUNCTION__);
+  App::Instance()->invoke($func, function($controller) use($func, &$vars) {
+    $controller->$func($vars);
+  });
+}
+
+function app_preprocess_page(&$vars) {
+  $func = str_replace('app_', '', __FUNCTION__);
+  App::Instance()->invoke($func, function($controller) use($func, &$vars) {
+    $controller->$func($vars);
+  });
+}
+
+function app_theme_suggestions_page_alter(&$suggestions, $vars) {
+  $route = Drupal::request()->attributes->get('_route');
+  if($route == "system.404") {
+    return;
+  }
+
+  $func = str_replace('app_', '', __FUNCTION__);
+  App::Instance()->invoke($func, function($controller) use($func, &$suggestions, $vars) {
+    $controller->$func($suggestions, $vars);
+  });
+}
+
+function app_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if(preg_match("/^node_.*_form$/", $form_id)) {
+    $form['actions']['submit']['#submit'][] = "appContentSubmit";
+  }
+
+//  \Drupal\app\App::Instance()->commonController->form_alter($form, $form_state, $form_id);
+  $func = str_replace('app_', '', __FUNCTION__);
+  \Drupal\app\App::Instance()->invoke($func, function($controller) use(&$form, $form_state, $form_id) {
+    /* @var $controller Drupal\app\Controllers\BaseInterface */
+    $controller->form_alter($form, $form_state, $form_id);
+  });
+
+}
+
+function app_metatags_alter(&$vars) {
+  $func = str_replace('app_', '', __FUNCTION__);
+  App::Instance()->invoke($func, function($controller) use($func, &$vars) {
+    $controller->$func($vars);
+  });
+}
+
+function appContentSubmit($form, Drupal\Core\Form\FormState $form_state) {
+  $formId = $form["#form_id"];
+  $matches = [];
+  preg_match("/^node_(.*)_form$/", $formId, $matches);
+  $form_state->setRedirect("system.admin_content");
+}
+
+function app_node_update(Drupal\Core\Entity\EntityInterface $entity) {
+  if($entity->getType() == "event") {
+    $lang = $entity->language()->getId();
+    $translationLang = $lang == "fr" ? "en" : "fr";
+    $id = $entity->id();
+    $node = Node::load($id);
+    if($node->hasTranslation($translationLang)) {
+      $node = $node->getTranslation($translationLang);
+      pathauto_entity_update($node);
+    }
+  }
+}
+
+function pub_theme($existing, $type, $theme, $path) {
+  return [
+    'logo' => ['variables' => ['v' => '']],
+    'header' => ['variables' => ['v' => '']],
+    'footer' => ['variables' => ['v' => '']],
+    'compact_menu' => ['variables' => ['v' => '']],
+    'banner' => ['variables' => ['v' => '']],
+    'page_header' => ['variables' => ['v' => '']],
+
+    'ui_input' => ['variables' => ['v' => '']],
+    'ui_textarea' => ['variables' => ['v' => '']],
+    'ui_select' => ['variables' => ['v' => '']],
+    'ui_datepicker' => ['variables' => ['v' => '']],
+    'ui_radio' => ['variables' => ['v' => '']],
+    'ui_checkbox' => ['variables' => ['v' => '']],
+    'ui_checkboxes' => ['variables' => ['v' => '']],
+    'ui_event_options' => ['variables' => ['v' => '']],
+    'ui_event_options_select' => ['variables' => ['v' => '']],
+
+    'icon_hamburger' => ['variables' => ['v' => '']],
+    'icon_close' => ['variables' => ['v' => '']],
+    'team_member_teaser' => ['variables' => ['v' => '']],
+    'news_teaser' => ['variables' => ['v' => '']],
+    'event_teaser' => ['variables' => ['v' => '']],
+    'news_teaser_more' => ['variables' => ['v' => '']],
+    'event_teaser_more' => ['variables' => ['v' => '']],
+    'page_teaser_more' => ['variables' => ['v' => '']],
+    'event_form' => ['variables' => ['v' => '']],
+    'social_media_toolkit_teaser' => ['variables' => ['v' => '']],
+    'social_media_campaign_teaser' => ['variables' => ['v' => '']],
+
+    'paragraph_content_section' => ['variables' => ['v' => '']],
+    'paragraph_parallax_section' => ['variables' => ['v' => '']],
+    'paragraph_reference_section' => ['variables' => ['v' => '']],
+    'paragraph_markup_section' => ['variables' => ['v' => '']],
+
+    'paragraph_wysiwyg_block' => ['variables' => ['v' => '']],
+    'paragraph_text_image_block' => ['variables' => ['v' => '']],
+    'paragraph_images_block' => ['variables' => ['v' => '']],
+    'paragraph_youtube_block' => ['variables' => ['v' => '']],
+    'paragraph_reference_block' => ['variables' => ['v' => '']],
+    'paragraph_social_block' => ['variables' => ['v' => '']],
+    'paragraph_divider_block' => ['variables' => ['v' => '']],
+    'paragraph_mentor_connector_block' => ['variables' => ['v' => '']],
+    'paragraph_markup_block' => ['variables' => ['v' => '']],
+
+    'paragraph_image_caption_field' => ['variables' => ['v' => '']],
+    'paragraph_image_caption_carousel_field' => ['variables' => ['v' => '']],
+    'paragraph_image_caption_grid_field' => ['variables' => ['v' => '']],
+
+  ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function app_mail($key, &$message, $params) {
+
+  global $base_url;
+
+  $message['headers']['Content-Type'] = SWIFTMAILER_FORMAT_HTML;
+
+//  $assetsBaseUrl = $base_url;
+  $assetsBaseUrl = "https://mentoringcanada.ca";
+
+  if(isset($params['lang'])) {
+    $language = $params['lang'];
+  } else {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  }
+
+  if($language != "fr") {
+    $logo = "$assetsBaseUrl/assets/MENTOR-Canada-Logo-EN.png";
+    $logoAlt = "MENTOR Canada";
+  } else {
+    $logo = "$assetsBaseUrl/assets/MENTOR-Canada-Logo-EN.png";
+    $logoAlt = "MENTOR Canada";
+  }
+
+  $fb = "$assetsBaseUrl/assets/email-social-icons/email-fb-icon.png";
+  $tw = "$assetsBaseUrl/assets/email-social-icons/email-tw-icon.png";
+  $li = "$assetsBaseUrl/assets/email-social-icons/email-li-icon.png";
+  $ig = "$assetsBaseUrl/assets/email-social-icons/email-ig-icon.png";
+  $yt = "$assetsBaseUrl/assets/email-social-icons/email-yt-icon.png";
+
+  $globalSettings = \Drupal\app\Utils\Utils::globalSettings($language);
+
+  $message['lang'] = $language;
+  $message['subject'] = $params['subject'];
+  $message['body'] = $params['body'];
+  $message['name'] = $params['name'];
+  $message['logo'] = $logo;
+  $message['logoAlt'] = $logoAlt;
+  $message['fb'] = $fb;
+  $message['tw'] = $tw;
+  $message['li'] = $li;
+  $message['ig'] = $ig;
+  $message['yt'] = $yt;
+  $message['globalSettings'] = $globalSettings;
+  $message['v'] = $params['v'];
+  $message['from'] = $language == "fr" ? "Communications MENTOR Canada <{$message['from']}>" : "MENTOR Canada Communications <{$message['from']}>";
+
+  if(isset($params['reply-to'])) {
+    $message['reply-to'] = $params['reply-to'];
+  }
+
+}
+
+function app_page_attachments_alter(array &$attachments) {
+
+  /** @var $theme \Drupal\Core\Theme\ActiveTheme */
+  $theme = \Drupal::service('theme.manager')->getActiveTheme();
+  $themeName = $theme->getName();
+  if($themeName == 'claro') {
+    $attachments['#attached']['library'][] = 'app/global-styling';
+  }
+
+  foreach ($attachments['#attached']['html_head'] as $key => $head) {
+    if ((isset($head[1]) ? $head[1] : FALSE) == 'canonical_url') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+
+  /* @var $node \Drupal\node\Entity\Node */
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node) {
+    if($node->getType() == 'front') {
+      foreach($attachments['#attached']['html_head_link'] as $key => $head) {
+        if($head[0]['rel'] == 'alternate') {
+          $href = $attachments['#attached']['html_head_link'][$key][0]['href'];
+          $href = str_replace('/front', '', $href);
+          $attachments['#attached']['html_head_link'][$key][0]['href'] = $href;
+        }
+      }
+    }
+  }
+}
+
+function drupal_goto($url) {
+  $language =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $response = new RedirectResponse("{$GLOBALS['base_url']}/$language/$url");
+  $request = Drupal::request();
+  // Save the session so things like messages get saved.
+  $request->getSession()->save();
+  $response->prepare($request);
+  // Make sure to trigger kernel events.
+  Drupal::service('kernel')->terminate($request, $response);
+  $response->send();
+}
+
+// Classic paragraphs widget hook
+function app_field_widget_entity_reference_paragraphs_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  \Drupal\app\Utils\ParagraphUtils::setParagraphFormStates($element, $form_state, $context);
+}
+// Experimental paragraphs widget hook
+function app_field_widget_paragraphs_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  \Drupal\app\Utils\ParagraphUtils::setParagraphFormStates($element, $form_state, $context);
+}
+
+function app_update_8101() {
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', 'event');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+    if(!count($node->get("field_event_options")->getValue())) {
+
+      // Get event data in the old format
+      $date = $node->get("field_event_date_time")->getValue()[0]['value'];
+      $timezone = $node->get("field_event_timezone")->getValue()[0]['value'];
+      $name = $node->get("field_event_location")->getValue()[0]['value'];
+
+      // Create a new event option node with the old format data
+      $fields = [
+        'type' => 'event_option',
+        'field_event_date_time' => ['value' => $date],
+        'field_event_timezone'  => ['value' => $timezone],
+        'field_event_name'      => ['value' => $name]
+      ];
+      $optionNode = Node::create($fields);
+      $optionNode->save();
+      $optionId = $optionNode->id();
+
+      // Update the event's option field with the newly created option's tid
+      $node->field_event_options[] = ['target_id' => $optionId];
+      $node->save();
+    }
+  }
+
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', 'submission_event');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  foreach($nodes as $node) {
+    $eventNid = $node->get('field_submission_event_id')->getValue()[0]['target_id'];
+    $eventNode = Node::load($eventNid);
+    if($eventNode) {
+      $eventOptionId = $eventNode->get('field_event_options')->getValue()[0]['target_id'];
+      $node->set('field_submission_event_option', $eventOptionId);
+      $node->save();
+    }
+  }
+}
+
+function app_update_8102() {
+  // Update events with new date range
+  // Will take existing date and use as start date in range
+  // Will add one hour to this start date and use as end date in range
+
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', 'event_option');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+
+    $date = $node->get("field_event_date_time")->getValue()[0]['value'];
+
+    $d = new \DateTime($date);
+    $d->add(new DateInterval('PT1H'));
+    $endDate = $d->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT);
+
+    $dateRange = [
+      'value'=> $date,
+      'end_value' => $endDate
+    ];
+    $node->set('field_event_date_time_range', $dateRange);
+
+    $node->save();
+  }
+}
+
+function app_update_8103() {
+  // Set a value for field_unlisted on events, news, and pages.
+  // This is a fix for query->condition on that field when it is new.
+
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', ['event', 'news', 'basic'], 'IN');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+
+    $value = $node->get("field_unlisted")->getValue()[0]['value'];
+    $setValue = $value ? "1" : "0";
+
+    $node->set('field_unlisted', $setValue);
+    $node->save();
+  }
+}
+
+function app_update_8104() {
+  // Set a value for field_event_option_closed on event_option.
+  // This is a fix for query->condition on that field when it is new.
+
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', 'event_option');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+
+    $value = $node->get("field_event_option_closed")->getValue()[0]['value'];
+    $setValue = $value ? "1" : "0";
+
+    $node->set('field_event_option_closed', $setValue);
+    $node->save();
+  }
+}
+
+function app_update_8105() {
+  // Set a value for field_event_options_cutoff on event.
+  // This is a fix for query->condition on that field when it is new.
+
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', 'event');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+    $node->set('field_event_options_cutoff', '48.00');
+    $node->save();
+  }
+}
+
+function app_update_8106() {
+  // Set section height value and units for new fields
+  // on Parallax Sections
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('paragraph');
+  $query->condition('type', 'parallax_section');
+  $pids = $query->execute();
+  $paragraphs = \Drupal\paragraphs\Entity\Paragraph::loadMultiple($pids);
+
+  foreach($paragraphs as $paragraph) {
+    $paragraph->set('field_section_height_value', '80');
+    $paragraph->set('field_section_height_units', 'vh');
+    $paragraph->save();
+  }
+}
+
+function app_update_8107() {
+  // Update URLs with new patterns for
+  // social media campaigns and toolkits
+
+  /* @var $query \Drupal\Core\Entity\Query\Sql\Query */
+  $query = \Drupal::entityQuery('node');
+  $query->condition('type', ['social_media_toolkit', 'social_media_campaign'], 'IN');
+  $nids = $query->execute();
+  $nodes = Node::loadMultiple($nids);
+
+  /** @var $node \Drupal\node\Entity\Node */
+  foreach($nodes as $node) {
+    $thisLang = $node->language()->getId();
+    $otherLang = $thisLang == "en" ? "fr" : "en";
+    if($node->hasTranslation($otherLang)) {
+      $nodeOtherLang = $node->getTranslation($otherLang);
+    }
+    $node->save();
+    $nodeOtherLang->save();
+  }
+}

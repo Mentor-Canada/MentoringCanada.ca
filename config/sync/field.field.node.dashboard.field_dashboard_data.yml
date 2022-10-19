@@ -1,0 +1,21 @@
+uuid: abda2e6f-6055-4d17-8dc2-f3d20b15ea6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dashboard_data
+    - node.type.dashboard
+  module:
+    - app
+id: node.dashboard.field_dashboard_data
+field_name: field_dashboard_data
+entity_type: node
+bundle: dashboard
+label: 'Dashboard Data'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: dashboard_data_item

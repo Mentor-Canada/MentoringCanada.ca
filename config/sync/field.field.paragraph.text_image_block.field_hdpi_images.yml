@@ -1,0 +1,23 @@
+uuid: 683009e6-8872-4fa6-a74a-14e40f4ac052
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hdpi_images
+    - paragraphs.paragraphs_type.text_image_block
+id: paragraph.text_image_block.field_hdpi_images
+field_name: field_hdpi_images
+entity_type: paragraph
+bundle: text_image_block
+label: 'HDPI Images'
+description: 'Constrain image dimensions by 50% for high-resolution displays.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

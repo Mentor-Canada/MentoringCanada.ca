@@ -1,0 +1,15 @@
+uuid: 789dacf6-5163-4709-8211-ef3d8cc0f61b
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_330x220
+label: 'Teaser (330x220)'
+effects:
+  15d5f2eb-50cb-4119-9976-fb05e2c511e0:
+    uuid: 15d5f2eb-50cb-4119-9976-fb05e2c511e0
+    id: image_scale
+    weight: 1
+    data:
+      width: 330
+      height: 220
+      upscale: false

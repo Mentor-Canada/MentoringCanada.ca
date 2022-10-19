@@ -1,0 +1,16 @@
+uuid: c9d6121d-480b-4012-a248-0acca273c05d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_media_campaign
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.social_media_campaign
+target_entity_type_id: node
+target_bundle: social_media_campaign
+default_langcode: site_default
+language_alterable: false

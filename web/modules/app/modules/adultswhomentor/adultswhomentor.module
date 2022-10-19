@@ -1,0 +1,14 @@
+<?php
+
+function adultswhomentor_pagecontrollers_alter(&$pageControllers) {
+  $pageControllers[] = "\Drupal\adultswhomentor\AdultsWhoMentorController";
+}
+
+///**
+// * Implements hook_theme().
+// */
+//function datadashboard_theme($existing, $type, $theme, $path) {
+//  return [
+//    'datadashboard_chart_ui' => ['variables' => ['v' => '']]
+//  ];
+//}

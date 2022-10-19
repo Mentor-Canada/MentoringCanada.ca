@@ -1,0 +1,10 @@
+{# @var v \Drupal\app\Views\ParagraphMarkupBlockView #}
+<div class="markup-block content-block"
+     {% if v.blockWidth != "bleed" %}
+     data-padding-standard="horizontal"
+     {% endif %}
+>
+  <div data-content-width="{{ v.blockWidth }}">
+    {{ v.markup|raw }}
+  </div>
+</div>

@@ -1,0 +1,340 @@
+{# @var v \Drupal\app\Views\EventFormView #}
+{% if v.eventOptionsAvailable|length %}
+<form id="event-form" method="post" class="event-form standard-form-style" onsubmit="document.querySelector('body').classList.add('standard-form-submitted');">
+
+  <input type="hidden" name="{{ v.entity.EVENT_ID }}" value="{{ v.eventId }}">
+  <input type="hidden" id="hasPayment" value="{{ v.hasPayment }}" />
+
+  <div class="form-step">
+    <fieldset>
+      <legend>{{ "Date & Time Selection"|t }}</legend>
+
+      {% if v.eventType == "event_training" %}
+
+        {% if v.eventOptionsGroupedByTraining["one-on-one"]|length == 0 %}
+          <div class="ui-form-row">
+            {{ ui_event_options_select(v.entity.EVENT_OPTION, v.eventOptionsGroupedByTraining["group"]) }}
+          </div>
+        {% elseif v.eventOptionsGroupedByTraining["group"]|length == 0 %}
+          <div class="ui-form-row">
+            {{ ui_event_options_select(v.entity.EVENT_OPTION, v.eventOptionsGroupedByTraining["one-on-one"]) }}
+          </div>
+        {% else %}
+          <div class="ui-form-row">
+            <fieldset>
+              <legend>{{ "What kind of training are you looking for?"|t }}</legend>
+              {{ ui_radio("#{v.entity.TRAINING_TYPE}_group", v.entity.TRAINING_TYPE, v.groupLabel, "Group Training", "", true, "training-group") }}
+              {{ ui_radio("#{v.entity.TRAINING_TYPE}_one_on_one", v.entity.TRAINING_TYPE, v.oneOnOneLabel, "1:1 Training & Support", "", true, "training-one-on-one,training-one-on-one-questions") }}
+            </fieldset>
+          </div>
+
+          <div class="optional-training-group"></div>
+          <div class="optional-training-one-on-one"></div>
+
+          <template data-template-name="training-group" data-target="optional-training-group">
+            <div class="optional" data-template="training-group">
+              <div class="ui-form-row">
+                <div class="instruction">{{ "MentorCity-Connector-Instruction"|t }}</div>
+              </div>
+              <div class="ui-form-row">
+                {{ ui_select("extras[Program Name]", v.mentorConnectorPrograms, "Program Name"|t, true, v.mentorConnectorDropdownLabel) }}
+              </div>
+              <div class="ui-form-row">
+                {{ ui_event_options_select(v.entity.EVENT_OPTION, v.eventOptionsGroupedByTraining["group"]) }}
+              </div>
+            </div>
+          </template>
+
+          <template data-template-name="training-one-on-one" data-target="optional-training-one-on-one">
+            <div class="optional" data-template="training-one-on-one">
+              <div class="ui-form-row">
+                <div class="instruction">{{ "Support-And-Training-CTA"|t }}</div>
+              </div>
+              <div class="ui-form-row">
+                {{ ui_event_options_select(v.entity.EVENT_OPTION, v.eventOptionsGroupedByTraining["one-on-one"]) }}
+              </div>
+            </div>
+          </template>
+        {% endif %}
+
+      {% else %}
+        <div class="ui-form-row">
+          {{ ui_event_options_select(v.entity.EVENT_OPTION, v.eventOptionsGroupedMonthly) }}
+        </div>
+      {% endif %}
+    </fieldset>
+
+    <fieldset>
+      <legend>{{ "Personal Information"|t }}</legend>
+      <div class="ui-form-row col-2">
+        {{ ui_input(v.entity.FIRST_NAME, "First Name"|t, "required", "First Name", "off") }}
+        {{ ui_input(v.entity.LAST_NAME, "Last Name"|t, "required", "Last Name", "off") }}
+      </div>
+      <div class="ui-form-row">
+        {{ ui_input(v.entity.EMAIL, "Email Address"|t, "required", "email", "off") }}
+      </div>
+    </fieldset>
+
+
+    <div class="optional-training-one-on-one-questions"></div>
+
+    <template data-template-name="training-one-on-one-questions" data-target="optional-training-one-on-one-questions">
+      <div class="optional" data-template="training-one-on-one-questions">
+        <fieldset>
+          <legend>{{ v.oneOnOneLabel }}</legend>
+          <div class="ui-form-row">
+            <fieldset>
+              <legend>{{ "Please indicate which of the following topic areas you are seeking further training and / or assistance"|t }}</legend>
+              <div class="ui-form-row description">{{ "One-on-one: Select all that apply"|t }}</div>
+              <div class="ui-option-fields-wrapper col-2">
+                {{ ui_checkboxes(v.entity.ONE_ON_ONE_TOPICS, v.oneOnOneOptions, "required") }}
+              </div>
+            </fieldset>
+          </div>
+          <div class="ui-form-row">
+            {{ ui_textarea(v.entity.ONE_ON_ONE_COMMENTS, "Please describe what you like to resolve or learn during this 1:1 training session"|t, "required") }}
+          </div>
+        </fieldset>
+      </div>
+    </template>
+
+
+    <fieldset>
+      <legend>{{ "Participant Information"|t }}</legend>
+
+      {% if v.hasRole %}
+        <div class="ui-form-row">
+          <fieldset>
+            <legend>{{ "In what capacity are you participating in this event?"|t }}</legend>
+            {{ ui_radio("#{v.entity.ROLE}_mentor", v.entity.ROLE, "Mentor"|t, "Mentor", "", true, "role-mentor") }}
+            {{ ui_radio("#{v.entity.ROLE}_mentee", v.entity.ROLE, "Youth / Young Leader"|t, "Mentee", "", true, "role-mentee,age-mentee") }}
+          </fieldset>
+        </div>
+
+        <div class="optional-role-mentor"></div>
+        <div class="optional-role-mentee"></div>
+
+        <template data-template-name="role-mentor" data-target="optional-role-mentor">
+          <div class="optional" data-template="role-mentor">
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.MENTOR_TITLE, "Position / Title"|t, "required", "Title", "Title") }}
+            </div>
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.ORGANIZATION, "Company / Organization"|t, "required", "Organization", "") }}
+            </div>
+          </div>
+        </template>
+
+        <template data-template-name="role-mentee" data-target="optional-role-mentee">
+          <div class="optional" data-template="role-mentee">
+            {% if v.hasTitle %}
+              <div class="ui-form-row">
+                {{ ui_input(v.entity.MENTOR_TITLE, "Position / Title"|t, "required", "Title", "Title") }}
+              </div>
+            {% endif %}
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.ORGANIZATION, "Program / School / Organization "|t, "required", "Organization", "") }}
+            </div>
+          </div>
+        </template>
+      {% else %}
+        {% if v.hasTitle %}
+          <div class="ui-form-row">
+            {{ ui_input(v.entity.MENTOR_TITLE, "Position / Title"|t, "required", "Title", "Title") }}
+          </div>
+        {% endif %}
+        <div class="ui-form-row">
+          {{ ui_input(v.entity.ORGANIZATION, "Organization"|t, "required", "Organization", "") }}
+        </div>
+      {% endif %}
+
+    </fieldset>
+
+    <fieldset>
+      <legend>{{ "Additional Information"|t }}</legend>
+      {% if v.hasBirthdate %}
+        <div class="ui-form-row">
+          {{ ui_datepicker(v.entity.BIRTHDATE, "Birthday"|t, "required", "changeMonth: true, minDate: -100y, maxDate: -10y") }}
+        </div>
+      {% endif %}
+      {% if v.hasAge %}
+        <div class="ui-form-row">
+          {{ ui_input(v.entity.AGE, "Your Age"|t, "required", "text", "off", "[0-9]+") }}
+        </div>
+      {% elseif v.hasRole %}
+
+        <div class="optional-age-mentee"></div>
+
+        <template data-template-name="age-mentee" data-target="optional-age-mentee">
+          <div class="optional" data-template="age-mentee">
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.AGE, "Your Age"|t, "required", "text", "off", "[0-9]+") }}
+            </div>
+          </div>
+        </template>
+
+      {% endif %}
+
+      {% if v.hasIndigenous %}
+        <div class="ui-form-row">
+          <fieldset>
+            <legend>{{ "Are you an Indigenous person?"|t }}</legend>
+            {{ ui_radio("#{v.entity.IS_INDIGENOUS}_yes", v.entity.IS_INDIGENOUS, "Yes, I am an Indigenous person"|t, "Yes", "", true, "indigenous-yes") }}
+            {{ ui_radio("#{v.entity.IS_INDIGENOUS}_no", v.entity.IS_INDIGENOUS, "No, I am not an Indigenous person"|t, "No", "", true) }}
+          </fieldset>
+        </div>
+
+        <div class="optional-indigenous-yes"></div>
+
+        <template data-template-name="indigenous-yes" data-target="optional-indigenous-yes">
+          <div class="optional" data-template="indigenous-yes">
+            <div class="ui-form-row">
+              {{ ui_select(v.entity.INDIGENOUS, v.indigenousSelectOptions, "Please select which applies to you"|t, true, "Please select which applies to you") }}
+            </div>
+          </div>
+        </template>
+      {% endif %}
+
+      {% if v.hasPhoneNumber %}
+        <div class="ui-form-row">
+          {{ ui_input(v.entity.PHONE_NUMBER, "Phone Number"|t, "required", "text", "off") }}
+        </div>
+      {% endif %}
+      {% if v.hasLinkedinProfile %}
+        <div class="ui-form-row">
+          {{ ui_input(v.entity.LINKEDIN, "LinkedIn Profile"|t, "", "text", "off") }}
+        </div>
+      {% endif %}
+
+      <div class="ui-form-row">
+        <fieldset>
+          <legend>{{ "Are you in Canada?"|t }}</legend>
+          {{ ui_radio("#{v.entity.IN_CANADA}_yes", v.entity.IN_CANADA, "Yes"|t, "Yes", "", true, "canada-yes") }}
+          {{ ui_radio("#{v.entity.IN_CANADA}_no", v.entity.IN_CANADA, "No"|t, "No", "", true, "canada-no") }}
+        </fieldset>
+      </div>
+
+      <div class="optional-canada-yes"></div>
+
+      <div class="optional-canada-no"></div>
+
+      <template data-template-name="canada-yes" data-target="optional-canada-yes">
+        <div class="optional" data-template="canada-yes">
+          <div class="ui-form-row">
+            {{ ui_select(v.entity.PROVINCE, v.provinceSelectOptions, "Province or Territory"|t, true, "Please select a province or territory") }}
+          </div>
+          {% if v.hasPostalCode %}
+            <div class="ui-form-row">
+              {{ ui_input(v.entity.POSTAL_CODE, "Postal Code"|t, "required", "text", "off", "[A-Za-z][0-9][A-Za-z][-| ]?[0-9][A-Za-z][0-9]") }}
+            </div>
+          {% endif %}
+        </div>
+      </template>
+
+      <template data-template-name="canada-no" data-target="optional-canada-no">
+        <div class="optional" data-template="canada-no">
+          {% if v.hasCountry %}
+            <div class="ui-form-row">
+              {{ ui_select(v.entity.COUNTRY, v.countrySelectOptions, "Country"|t, true, "Please select your country") }}
+            </div>
+          {% endif %}
+        </div>
+      </template>
+
+      {% if v.hasSharingConsent %}
+      <div class="ui-form-row">
+        <fieldset>
+          <legend>{{ "Do you consent to sharing your name, organization, and email with the other event attendees?"|t }}</legend>
+          {{ ui_radio("#{v.entity.SHARING_CONSENT}_yes", v.entity.SHARING_CONSENT, "Yes"|t, 1, "", true) }}
+          {{ ui_radio("#{v.entity.SHARING_CONSENT}_no", v.entity.SHARING_CONSENT, "No"|t, 0, "", true) }}
+        </fieldset>
+      </div>
+      {% endif %}
+
+      {% if v.hasComments %}
+        {% if v.commentsIntro %}
+          <div class="ui-form-row">
+            <div class="description">{{ v.commentsIntro }}</div>
+          </div>
+        {% endif %}
+        <div class="ui-form-row">
+          {{ ui_textarea(v.entity.COMMENTS, v.commentsLabel) }}
+        </div>
+      {% endif %}
+      {% if v.hasPhotoVideoConsent %}
+        <div class="ui-form-row">
+          <fieldset>
+            <legend>{{ "Photo/video consent"|t }}</legend>
+            {{ ui_checkbox(v.entity.PHOTO_VIDEO_CONSENT, v.entity.PHOTO_VIDEO_CONSENT, "Consent for photo/video at events"|t, "Yes", "", "required") }}
+            <div class="description">{{ "I hereby consent to MENTOR Canada and its founding partners (Big Brothers Big Sisters of Canada, The Alberta Mentoring Partnership and The Ontario Mentoring Coalition) the use of any photographs, audio and/or video recordings of myself as taken or produced by media personnel and/or MENTOR Canada or Local Partner staff at events or otherwise authorized by MENTOR Canada and that this media may be used by MENTOR Canada and its founding partners for purposes of promotional material including brochures, posters, newsletters, media information, advertisements, audio-visual productions and digital media(such as websites and social media).  Photographs or video productions may also be shared with partners for promotion. I further waive any claim which I may have against MENTOR Canada, its founding partners and its fiscal agent Big Brothers Big Sisters of Canada, arising from the use of such photographs, audio and/or video recordings of myself, as aforesaid. This consent and waiver shall remain in effect unless otherwise revoked."|t }}</div>
+          </fieldset>
+        </div>
+      {% endif %}
+      <div class="ui-form-row">
+        <fieldset>
+          <legend>{{ "Would you like to receive the MENTOR Canada Newsletter?"|t }}</legend>
+          {{ ui_checkbox("newsletter", "newsletter", "Yes, subscribe me to the MENTOR Canada Newsletter"|t, "Yes") }}
+          <div class="description">{{ "casl_description_text"|t }} <a href="{{ path('entity.node.canonical', {'node': 381}) }}">{{ "casl_contact_link"|t }}</a>.</div>
+        </fieldset>
+      </div>
+    </fieldset>
+
+    {% if v.hasPayment == false %}
+    <fieldset>
+      <div class="ui-form-row">
+        <div id="google-recaptcha"></div>
+      </div>
+    </fieldset>
+    {% endif %}
+
+    <div class="actions">
+      {% if v.hasPayment == false %}
+        <button id="sign-up-button" class="disabled">{{ "Sign up"|t }}</button>
+      {% else %}
+        <button id="sign-up-button">{{ "Sign up"|t }}</button>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if v.hasPayment %}
+  <div class="payment-step">
+    <fieldset class="payment">
+      <script src="https://www.paypal.com/sdk/js?client-id={{ v.paypalClientId }}&currency=CAD"></script>
+      <input type="hidden" name="order_id" />
+      <legend>{{ "Payment"|t }} $<span class="payment-total">{{ v.paymentAmount }}</span></legend>
+      <input type="hidden" id="totalWithoutPromo" value="{{ v.paymentAmount }}" />
+
+      <div class="promo-code">
+        <div class="promo-code-input-row">
+          {{ ui_input("promo_code", "Discount Code"|t) }}
+          <input type="hidden" name="active-promo-code" />
+          <button type="button" id="promo-code-button">{{ "Apply"|t }}</button>
+        </div>
+        <div class="error-description">{{ "Please enter a valid discount code" }}</div>
+      </div>
+
+      <div class="paypal-buttons">
+        <legend>{{ "Please select your method of payment: "|t }}</legend>
+        <div id="paypal-button"></div>
+      </div>
+
+      <div class="cheque-choice">
+        {{ ui_checkbox("cheque", "cheque", "Cheque"|t, "cheque") }}
+        <div class="description">
+          {{ "We will email you a separate invoice and payment instructions"|t }}
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="actions pay-by-cheque-actions">
+      <button id="sign-up-button">{{ "Sign up"|t }}</button>
+    </div>
+  </div>
+  {% endif %}
+
+</form>
+{% else %}
+  <div class="no-options-available">
+    {{ "Unfortunately there are no open slots left for this event."|t }}
+  </div>
+{% endif %}

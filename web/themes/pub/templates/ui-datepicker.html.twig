@@ -1,0 +1,20 @@
+{# @var v \Drupal\app\Views\UI_DatepickerFieldView #}
+<div class="ui-datepicker-field ui-field ui-outline-field">
+  <div class="ui-outline-field-wrapper">
+    <input id="{{ v.name }}" name="{{ v.name }}" type="hidden">
+    <input type="datepicker" data-options="{{ v.options }}" {{ v.required }}>
+
+    <div class="ui-outline">
+      <div class="ui-outline-left"></div>
+      <div class="ui-outline-middle">
+        <label for="{{ v.name }}">
+          {{ v.label }}
+          {% if v.required %}
+          <span class="ui-field-required-marker">*</span>
+          {% endif %}
+        </label>
+      </div>
+      <div class="ui-outline-right"></div>
+    </div>
+  </div>
+</div>

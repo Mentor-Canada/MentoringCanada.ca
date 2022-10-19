@@ -1,0 +1,166 @@
+uuid: 969cd914-008e-4599-8772-c9630c617cd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.global_settings.field_about_us
+    - field.field.node.global_settings.field_address_line_1
+    - field.field.node.global_settings.field_address_line_2
+    - field.field.node.global_settings.field_address_line_3
+    - field.field.node.global_settings.field_address_name
+    - field.field.node.global_settings.field_contact_form_recipients
+    - field.field.node.global_settings.field_email
+    - field.field.node.global_settings.field_extension
+    - field.field.node.global_settings.field_phone
+    - field.field.node.global_settings.field_social_fb
+    - field.field.node.global_settings.field_social_ig
+    - field.field.node.global_settings.field_social_li
+    - field.field.node.global_settings.field_social_tw
+    - field.field.node.global_settings.field_social_yt
+    - node.type.global_settings
+  module:
+    - link
+    - text
+    - user
+id: node.global_settings.default
+targetEntityType: node
+bundle: global_settings
+mode: default
+content:
+  field_about_us:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_address_line_1:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_address_line_2:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_address_line_3:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_address_name:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_contact_form_recipients:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_email:
+    weight: 109
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_extension:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_phone:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_social_fb:
+    weight: 111
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_social_ig:
+    weight: 114
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_social_li:
+    weight: 113
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_social_tw:
+    weight: 112
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_social_yt:
+    weight: 115
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,570 @@
+{# @var v \Drupal\app\Views\CustomView #}
+{# @var extendedView \Drupal\app\Views\EmploymentOpportunitiesView #}
+{% set extendedView = v.extendedView %}
+<div id="content">
+  <article>
+
+    {# HERO #}
+    <section id="hero">
+      <div class="hero-background">
+        <div class="hero-background-subject hero-background-subject-bg"></div>
+        <div class="hero-background-subject hero-background-subject-fg"></div>
+        <div class="hero-content" data-focus-start="t-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+          <h1 class="hero-title">
+            <span class="title-wrapper">
+              {% if extendedView.lang == "fr" %}
+                <span class="title-line">Mentorat</span>
+                <span class="title-line">et emploi</span>
+              {% else %}
+                <span class="title-line">Mentoring &</span>
+                <span class="title-line">Employment</span>
+              {% endif %}
+            </span>
+          </h1>
+        </div>
+        <style>
+          .hero-background-subject {
+            background-image: url("{{ image(v.images.0.uri, null, 2000) }}");
+          }
+          /*@media  (max-width: 1500px) and (-webkit-min-device-pixel-ratio: 1.5),*/
+          /*        (max-width: 1500px) and (min-resolution: 1.5dppx),*/
+          /*        (max-width: 1500px) and (min-resolution: 144dpi) {*/
+          /*  .hero-background-subject {*/
+          /*    opacity: 0.5;*/
+          /*  }*/
+          /*}*/
+          .hero-background-subject-bg {
+            -webkit-mask-image: url("{{ image(v.images.1.uri, null, 2000) }}");
+            mask-image: url("{{ image(v.images.1.uri, null, 2000) }}");
+          }
+          .hero-background-subject-fg {
+            -webkit-mask-image: url("{{ image(v.images.2.uri, null, 2000) }}");
+            mask-image: url("{{ image(v.images.2.uri, null, 2000) }}");
+          }
+        </style>
+      </div>
+    </section>
+
+    {# INTRO #}
+    <section id="intro">
+      <div class="intro" data-focus-start="b-0vh" data-focus-end="b-35vh" data-focus-vars="true">
+        <div class="typography">{{ v.bodies.0|raw }}</div>
+      </div>
+      <div class="decline-heading" data-focus-start="b-0vh" data-focus-end="b-25vh" data-focus-vars="true">
+        <div class="typography">{{ v.bodies.1|raw }}</div>
+      </div>
+      <div class="stats-wrapper">
+        <div class="stat-block typography" data-focus-start="b-20vh">{{ v.bodies.2|raw }}</div>
+        <div class="stat-block typography" data-focus-start="b-20vh">{{ v.bodies.3|raw }}</div>
+        <div class="fineprint">{{ v.bodies.4|raw }}</div>
+      </div>
+      <div class="section-scroller" data-focus-start="b-0vh" data-focus-end="b-62.5vh" data-focus-vars="true">
+        <div class="section-scroller-track">
+          <div class="section-scroller-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    {# MENTOR KEY TO OPPORTUNITY #}
+    <section id="mentor-key-to-opportunity" data-focus-start="b-75vh" data-focus-end="b-100vh" data-focus-toggle="false" data-theme="dark" data-theme-transition-in="1000ms" data-theme-transition-out="0ms">
+      <div class="intro">
+        <div class="typography">{{ v.bodies.5|raw }}</div>
+        <div class="stat-block" data-focus-start="b-20vh">
+          <div class="typography">{{ v.bodies.6|raw }}</div>
+        </div>
+      </div>
+
+      <div id="mentor-key-to-opportunity-grid-layout-1">
+        <div class="images">
+          <div class="grid-image grid-image-1" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <div class="grid-image grid-image-2" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <style>
+            @media (max-width: 700px) {
+              #mentor-key-to-opportunity-grid-layout-1 .grid-image-1 {
+                background-image: url("{{ image(v.images.3.uri, 600) }}");
+              }
+              #mentor-key-to-opportunity-grid-layout-1 .grid-image-2 {
+                background-image: url("{{ image(v.images.4.uri, 600) }}");
+              }
+            }
+            @media (min-width: 701px) {
+              #mentor-key-to-opportunity-grid-layout-1 .grid-image-1 {
+                background-image: url("{{ image(v.images.3.uri, 1200) }}");
+              }
+              #mentor-key-to-opportunity-grid-layout-1 .grid-image-2 {
+                background-image: url("{{ image(v.images.4.uri, 1200) }}");
+              }
+            }
+          </style>
+        </div>
+
+        <div class="copy copy-1">
+          <div class="stat-group-standard">
+            <div class="stat-group-title" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">
+              <div class="typography">{{ v.bodies.7|raw }}</div>
+            </div>
+            <div class="stat-group-heading" data-focus-start="b-20vh">
+              <div class="typography">{{ v.bodies.8|raw }}</div>
+            </div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.9|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.10|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.11|raw }}</div>
+          </div>
+        </div>
+
+        <div class="copy copy-2">
+          <div class="stat-group-standard">
+            <div class="stat-group-heading" data-focus-start="b-20vh">
+              <div class="typography">{{ v.bodies.12|raw }}</div>
+            </div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.13|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.14|raw }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-layout">
+        <div class="typography stat-block" data-focus-start="b-20vh">{{ v.bodies.15|raw }}</div>
+        <div class="typography stat-block" data-focus-start="b-20vh">{{ v.bodies.16|raw }}</div>
+        <div class="typography stat-block" data-focus-start="b-20vh">{{ v.bodies.17|raw }}</div>
+      </div>
+
+      <div id="mentor-key-to-opportunity-grid-layout-2">
+        <div class="images">
+          <div class="grid-image grid-image-1" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <div class="grid-image grid-image-2" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <style>
+            @media (max-width: 700px) {
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-1 {
+                background-image: url("{{ image(v.images.5.uri, 600) }}");
+              }
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-2 {
+                background-image: url("{{ image(v.images.6.uri, 600) }}");
+              }
+            }
+            @media (min-width: 701px) {
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-1 {
+                background-image: url("{{ image(v.images.5.uri, 960) }}");
+              }
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-2 {
+                background-image: url("{{ image(v.images.6.uri, 960) }}");
+              }
+            }
+            @media (min-width: 1051px) {
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-1 {
+                background-image: url("{{ image(v.images.5.uri, 1080) }}");
+              }
+              #mentor-key-to-opportunity-grid-layout-2 .grid-image-2 {
+                background-image: url("{{ image(v.images.6.uri, 1080) }}");
+              }
+            }
+          </style>
+        </div>
+
+        <div class="copy copy-1">
+          <div class="stat-group-standard">
+            <div class="stat-group-title" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">
+              <div class="typography">{{ v.bodies.18|raw }}</div>
+            </div>
+            <div class="stat-group-heading" data-focus-start="b-20vh">
+              <div class="typography">{{ v.bodies.19|raw }}</div>
+            </div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.20|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.21|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.22|raw }}</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    {# STATE OF MENTORING #}
+    <section id="state-of-mentoring">
+      <div id="state-of-mentoring-section-bg" class="section-bg" data-focus-start="b-0vh" data-focus-end="t-0vh" data-focus-vars="true">
+        <div class="section-bg-image"></div>
+      </div>
+      <style>
+        #state-of-mentoring-section-bg .section-bg-image {
+          background-image: url("{{ image(v.images.7.uri, 600) }}");
+        }
+        @media (min-width: 500px) {
+          #state-of-mentoring-section-bg .section-bg-image {
+            background-image: url("{{ image(v.images.7.uri, 1000) }}");
+          }
+        }
+        @media (min-width: 1000px) {
+          #state-of-mentoring-section-bg .section-bg-image {
+            background-image: url("{{ image(v.images.7.uri, 2000) }}");
+          }
+        }
+        @media (min-width: 1500px) {
+          #state-of-mentoring-section-bg .section-bg-image {
+            background-image: url("{{ image(v.images.7.uri, 3000) }}");
+          }
+        }
+      </style>
+      <div class="typography typography-reversed ignore-theme">{{ v.bodies.23|raw }}</div>
+    </section>
+
+    {# STRUGGLE TO CONNECT #}
+    <section id="struggle-to-connect">
+
+      <div class="intro">
+        <div class="intro-heading" data-focus-start="b-0vh" data-focus-end="b-35vh" data-focus-vars="true">
+          <div class="typography">{{ v.bodies.24|raw }}</div>
+        </div>
+        <div class="stats-wrapper">
+          <div class="stat-block typography" data-focus-start="b-20vh">{{ v.bodies.25|raw }}</div>
+          <div class="stat-block typography" data-focus-start="b-20vh">{{ v.bodies.26|raw }}</div>
+        </div>
+      </div>
+
+      <div id="struggle-to-connect-grid-layout">
+        <div class="images">
+          <div class="grid-image grid-image-1" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <div class="grid-image grid-image-2" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <div class="grid-image grid-image-3" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <style>
+            #struggle-to-connect-grid-layout .grid-image-1 {
+              background-image: url("{{ image(v.images.8.uri, null, 1200) }}");
+            }
+            #struggle-to-connect-grid-layout .grid-image-2 {
+              background-image: url("{{ image(v.images.9.uri, null, 1200) }}");
+            }
+            #struggle-to-connect-grid-layout .grid-image-3 {
+              background-image: url("{{ image(v.images.10.uri, null, 1200) }}");
+            }
+          </style>
+        </div>
+
+        <div class="copy copy-1">
+          <div class="stat-group-standard">
+            <div class="stat-group-heading" data-focus-start="b-20vh">
+              <div class="typography">{{ v.bodies.27|raw }}</div>
+            </div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.28|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.29|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.30|raw }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-standard">
+        <blockquote>
+          <div class="typography">{{ v.bodies.31|raw }}</div>
+          <figcaption>
+            <div class="cite-name">{{ extendedView.quotes.0.name }}</div>
+            <div class="cite-title">{{ extendedView.quotes.0.title }}</div>
+          </figcaption>
+        </blockquote>
+      </div>
+
+      <div class="section-scroller" data-focus-start="b-0vh" data-focus-end="b-62.5vh" data-focus-vars="true">
+        <div class="section-scroller-track">
+          <div class="section-scroller-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    {# POWER OF MENTORING #}
+    <section id="power-of-mentoring" data-focus-start="b-75vh" data-focus-end="b-100vh" data-focus-toggle="false" data-theme="dark" data-theme-transition-in="1000ms" data-theme-transition-out="0ms">
+
+      <div class="intro">
+        <div class="intro-heading" data-focus-start="b-0vh" data-focus-end="b-35vh" data-focus-vars="true">
+          <div class="typography">{{ v.bodies.32|raw }}</div>
+        </div>
+        <div class="stats-wrapper">
+          <div class="stat-block typography" data-focus-start="b-20vh">{{ v.bodies.33|raw }}</div>
+        </div>
+      </div>
+
+      <div id="power-of-mentoring-grid-layout-1">
+        <div class="images">
+          <div class="grid-image grid-image-1" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true"></div>
+          <style>
+            #power-of-mentoring-grid-layout-1 .grid-image-1 {
+              background-image: url("{{ image(v.images.11.uri, null, 1200) }}");
+            }
+          </style>
+        </div>
+
+        <div class="copy copy-1" data-focus-start="b-0vh" data-focus-end="b-20vh" data-focus-vars="true">
+          <div class="stat-group-standard">
+            <div class="stat-group-heading" data-focus-start="b-20vh">
+              <div class="typography">{{ v.bodies.34|raw }}</div>
+            </div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.35|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.36|raw }}</div>
+            <div class="typography stat-item stat-block" data-focus-start="b-20vh">{{ v.bodies.37|raw }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="power-of-mentoring-grid-layout-2-heading">
+        <div class="typography">{{ v.bodies.38|raw }}</div>
+      </div>
+      <div id="power-of-mentoring-grid-layout-2-wrapper">
+        <div id="power-of-mentoring-grid-layout-2">
+          <div class="grid-item grid-item-1" data-focus-start="b-20vh">
+            <div class="icon">
+              <div class="icon-shape"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M35.86,35.19c1.53-0.36,3.15-0.55,4.83-0.55c2.24,0,4.37,0.34,6.32,0.95"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M60.33,44.67l2.03-1.35c0.66-0.44,1.55-0.13,1.8,0.62l0,0c0.28,0.85,1.36,1.1,1.99,0.47L67,43.56"/>
+                <circle fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="40.89" cy="18.56" r="6.11"/>
+                <line fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="25.89" y1="42.44" x2="28.11" y2="42.44"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M28.19,33.45c3.38-2.02,7.62-3.22,12.23-3.22c11,0,19.91,6.84,19.91,15.28c0,3.63-1.67,6.63-4.44,9.21l0,0l-1.13,8.84h-3.53l-2.49-4.6l0,0c-2.36,0.8-4.97,1.25-7.72,1.25c-2.43,0-4.75-0.35-6.89-0.99l0,0l-2.05,4.34h-3.98v-5.58c-3.91-1.61-5.62-4.06-9.44-6.62C17,50.24,17,47,17,43.91l2.78-1.55c0.75-2.08,1.79-3.84,3.33-5.02l-3.61-5.97c3.47-0.11,7.86,0.95,10.58,3.45"/>
+              </svg>
+            </div>
+            <div class="typography">{{ v.bodies.39|raw }}</div>
+          </div>
+          <div class="grid-item grid-item-2" data-focus-start="b-20vh">
+            <div class="icon">
+              <div class="icon-shape"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <path fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M47.68,35.05l-1.77-6.62c-0.22-0.81,0.45-1.57,1.28-1.47c0.48,0.06,0.97,0.07,1.36-0.04c1.57-0.42,2.5-2.03,2.08-3.6c-0.42-1.57-2.03-2.5-3.6-2.08c-0.38,0.1-0.81,0.36-1.21,0.65c-0.67,0.49-1.62,0.16-1.83-0.64l-1.48-5.53l0,0l17.05-4.57c1.26-0.34,2.55,0.41,2.88,1.66L67,29.87l0,0l0,0l-5.49,1.47c-0.8,0.22-1.13,1.17-0.64,1.84c0.28,0.38,0.53,0.81,0.64,1.21c0.42,1.57-0.51,3.18-2.08,3.6c-1.57,0.42-3.18-0.51-3.6-2.08c-0.11-0.39-0.1-0.89-0.04-1.37c0.1-0.83-0.67-1.49-1.47-1.27L47.68,35.05L47.68,35.05L47.68,35.05L47.68,35.05L47.68,35.05L47.68,35.05z"/>
+                <path fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M35,45l6.87,0c0.83,0,1.4,0.84,1.09,1.61c-0.18,0.45-0.31,0.93-0.31,1.33c0,1.62,1.32,2.94,2.94,2.94c1.62,0,2.94-1.32,2.94-2.94c0-0.42-0.13-0.89-0.3-1.33c-0.3-0.77,0.26-1.61,1.09-1.61L55,45h0v17.65c0,1.3-1.05,2.35-2.35,2.35H35"/>
+                <path fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M35,45L35,45L35,45l0-6.85c0-0.84,0.84-1.4,1.62-1.09c0.44,0.18,0.92,0.31,1.32,0.31c1.62,0,2.94-1.32,2.94-2.94c0-1.62-1.32-2.94-2.94-2.94c-0.4,0-0.88,0.14-1.34,0.32c-0.77,0.3-1.6-0.27-1.6-1.09L35,25h0H17.35c-1.3,0-2.35,1.05-2.35,2.35V45c0,0,5.69,0,5.69,0c0.83,0,1.4-0.84,1.09-1.61c-0.18-0.45-0.31-0.93-0.31-1.33c0-1.62,1.32-2.94,2.94-2.94c1.62,0,2.94,1.32,2.94,2.94c0,0.42-0.13,0.89-0.3,1.33c-0.3,0.77,0.26,1.61,1.09,1.61L35,45C35,45,35,45,35,45z"/>
+                <path fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M15,45v17.65c0,1.3,1.05,2.35,2.35,2.35L35,65l0-5.67c0-0.84-0.84-1.4-1.62-1.09c-0.44,0.18-0.92,0.31-1.32,0.31c-1.62,0-2.94-1.32-2.94-2.94c0-1.62,1.32-2.94,2.94-2.94c0.4,0,0.88,0.14,1.34,0.32c0.77,0.3,1.6-0.27,1.6-1.09l0-6.9"/>
+              </svg>
+            </div>
+            <div class="typography">{{ v.bodies.40|raw }}</div>
+          </div>
+          <div class="grid-item grid-item-3" data-focus-start="b-20vh">
+            <div class="icon">
+              <div class="icon-shape"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="40" y1="11.39" x2="40" y2="19.2"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="21.91" y1="19.29" x2="26.85" y2="24.24"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="14" y1="37.39" x2="21.82" y2="37.39"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="21.62" y1="55.77" x2="27.14" y2="50.24"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="58.38" y1="55.77" x2="52.86" y2="50.24"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="66" y1="37.39" x2="58.18" y2="37.39"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="58.38" y1="19" x2="52.86" y2="24.53"/>
+                <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="44.91,64.39 43.68,64.39 42.45,65.61 40,65.61 37.55,65.61 36.32,64.39 35.09,64.39 	"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="33.64" y1="57.02" x2="46.36" y2="57.02"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="34.86" y1="60.7" x2="45.14" y2="60.7"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M46.14,53.57l0-1.45c0-2.22,0.77-4.26,2.31-5.83c2.32-2.37,3.83-5.29,3.83-8.9c0-6.78-5.49-12.27-12.27-12.27s-12.27,5.49-12.27,12.27c0,3.61,1.51,6.53,3.83,8.9c1.54,1.57,2.31,3.61,2.31,5.83l0,1.45"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="40" y1="53.57" x2="40" y2="44.75"/>
+                <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="37.55,42.3 40,44.75 42.45,42.3 	"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="31.93" y1="17.9" x2="33.04" y2="20.59"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="20.51" y1="29.32" x2="23.2" y2="30.43"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="20.51" y1="45.46" x2="23.2" y2="44.34"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="59.49" y1="45.46" x2="56.8" y2="44.34"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="59.49" y1="29.32" x2="56.8" y2="30.43"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="48.07" y1="17.9" x2="46.96" y2="20.59"/>
+              </svg>
+            </div>
+            <div class="typography">{{ v.bodies.41|raw }}</div>
+          </div>
+          <div class="grid-item grid-item-4" data-focus-start="b-20vh">
+            <div class="icon">
+              <div class="icon-shape"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M50.43,32.36v-6.52c0-0.72,0.58-1.3,1.3-1.3h2.61c0.72,0,1.3,0.58,1.3,1.3v27.39c0,0.72-0.58,1.3-1.3,1.3h-2.61c-0.72,0-1.3-0.58-1.3-1.3V38.88"/>
+                <path fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M14.22,44.1H11c-0.55,0-1-0.45-1-1v-7.13c0-0.55,0.45-1,1-1h3.22c0.55,0,1,0.45,1,1v7.13C15.22,43.65,14.77,44.1,14.22,44.1z"/>
+                <line fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="15.22" y1="37.57" x2="50.43" y2="25.83"/>
+                <line fill="none" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" x1="15.22" y1="41.49" x2="50.43" y2="53.23"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="62.17" y1="38.88" x2="70" y2="38.88"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="62.17" y1="45.4" x2="68.7" y2="49.31"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="62.17" y1="32.36" x2="68.7" y2="28.44"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M36.86,48.7l-1.57,4.94c-0.43,1.37-1.9,2.14-3.27,1.7l-8.71-2.74c-1.37-0.43-2.14-1.9-1.7-3.27l1.53-4.85"/>
+              </svg>
+            </div>
+            <div class="typography">{{ v.bodies.42|raw }}</div>
+          </div>
+          <div class="grid-item grid-item-5" data-focus-start="b-20vh">
+            <div class="icon">
+              <div class="icon-shape"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M27.24,46.75C15.94,47.72,18.1,58.09,15,65.06c6.97-3.1,17.34-0.94,18.31-12.24"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M49.73,35.3c-1.41,1.41-3.68,1.41-5.09,0c-1.41-1.41-1.41-3.68,0-5.09c1.41-1.41,3.68-1.41,5.09,0C51.13,31.62,51.13,33.9,49.73,35.3z"/>
+                <path fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M36.15,48.88c5.13-1.38,13.5-6.71,19-12.21c9.8-9.8,9.85-21.73,9.85-21.73s-11.93,0.05-21.73,9.85c-5.5,5.5-10.83,13.86-12.21,19L36.15,48.88z"/>
+                <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="36.1,33.7 22.12,34.07 19.13,42.04 24.48,40.6 31.06,43.79 	"/>
+                <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="46.24,43.85 45.87,57.82 37.9,60.81 39.34,55.46 36.15,48.88 	"/>
+                <line fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="39.55" y1="40.39" x2="29.36" y2="50.58"/>
+              </svg>
+            </div>
+            <div class="typography">{{ v.bodies.43|raw }}</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    {# WHAT DOES MENTORING LOOK LIKE #}
+    <section id="what-does-mentoring-look-like">
+      <div id="what-does-mentoring-look-like-section-bg" class="section-bg" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+        <div class="section-bg-image"></div>
+      </div>
+      <style>
+        #what-does-mentoring-look-like-section-bg .section-bg-image {
+          background-image: url("{{ image(v.images.12.uri, 1550) }}");
+        }
+      </style>
+      <div class="content-wrapper">
+        <div class="typography-item-1 typography-item" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+          <div class="typography typography-reversed ignore-theme">{{ v.bodies.44|raw }}</div>
+        </div>
+        <div class="typography-item-2 typography-item" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+          <div class="item-content">
+            <div class="images images-odd">
+              <div class="image image-1"></div>
+              <div class="image image-2"></div>
+              <style>
+                #what-does-mentoring-look-like .typography-item-2 .image-1 {
+                  background-image: url("{{ image(v.images.13.uri, null, 300) }}");
+                }
+                #what-does-mentoring-look-like .typography-item-2 .image-2 {
+                  background-image: url("{{ image(v.images.14.uri, null, 300) }}");
+                }
+              </style>
+            </div>
+            <div class="typography typography-reversed ignore-theme" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">{{ v.bodies.45|raw }}</div>
+          </div>
+        </div>
+        <div class="typography-item-3 typography-item" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+          <div class="item-content">
+            <div class="images images-even">
+              <div class="image image-1"></div>
+              <div class="image image-2"></div>
+              <style>
+                #what-does-mentoring-look-like .typography-item-3 .image-1 {
+                  background-image: url("{{ image(v.images.15.uri, null, 300) }}");
+                }
+                #what-does-mentoring-look-like .typography-item-3 .image-2 {
+                  background-image: url("{{ image(v.images.16.uri, null, 300) }}");
+                }
+              </style>
+            </div>
+            <div class="typography typography-reversed ignore-theme" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">{{ v.bodies.46|raw }}</div>
+          </div>
+        </div>
+        <div class="typography-item-4 typography-item" data-focus-start="b-0vh" data-focus-end="b-100vh" data-focus-vars="true">
+          <div class="item-content">
+            <div class="images images-odd">
+              <div class="image image-1"></div>
+              <div class="image image-2"></div>
+              <style>
+                #what-does-mentoring-look-like .typography-item-4 .image-1 {
+                  background-image: url("{{ image(v.images.17.uri, null, 300) }}");
+                }
+                #what-does-mentoring-look-like .typography-item-4 .image-2 {
+                  background-image: url("{{ image(v.images.18.uri, null, 300) }}");
+                }
+              </style>
+            </div>
+            <div class="typography typography-reversed ignore-theme" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">{{ v.bodies.47|raw }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {# CLOSE MENTORING GAP #}
+    <section id="close-mentoring-gap">
+      <div class="typography heading" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">
+        <div class="hide-visually" aria-hidden="true">{{ v.bodies.48|raw }}</div>
+        <div class="heading-animate">{{ v.bodies.48|raw }}</div>
+      </div>
+
+      <div class="close-gap-grid" data-focus-start="b-0vh" data-focus-end="b-50vh" data-focus-vars="true">
+
+        <div class="close-gap-item-1 close-gap-item" data-focus-start="b-20vh">
+          <div class="icon">
+            <svg id="svg-close-gap-item-1" xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+              <radialGradient id="close-gap-item-1_gradient_1" cx="37.5" cy="37.5" r="37.5" gradientUnits="userSpaceOnUse">
+                <stop  offset="0" style="stop-color:#ff4040"/>
+                <stop  offset="1" style="stop-color:#A60000"/>
+              </radialGradient>
+              <path id="svg-close-gap-item-1-anim-1" fill="url(#close-gap-item-1_gradient_1)" d="M37.5,0C16.79,0,0,16.79,0,37.5C0,58.21,16.79,75,37.5,75S75,58.21,75,37.5C75,16.79,58.21,0,37.5,0zM37.5,67.5c-16.57,0-30-13.43-30-30c0-16.57,13.43-30,30-30s30,13.43,30,30C67.5,54.07,54.07,67.5,37.5,67.5z"/>
+              <path id="svg-close-gap-item-1-anim-2" fill="url(#close-gap-item-1_gradient_1)" d="M37.5,15C25.07,15,15,25.07,15,37.5S25.07,60,37.5,60S60,49.93,60,37.5S49.93,15,37.5,15z M37.5,52.5c-8.28,0-15-6.72-15-15c0-8.28,6.72-15,15-15s15,6.72,15,15C52.5,45.78,45.78,52.5,37.5,52.5z"/>
+              <circle id="svg-close-gap-item-1-anim-3" fill="url(#close-gap-item-1_gradient_1)" cx="37.5" cy="37.5" r="7.5"/>
+            </svg>
+          </div>
+          <div class="typography ignore-theme">{{ v.bodies.49|raw }}</div>
+        </div>
+
+        <div class="close-gap-item-2 close-gap-item" data-focus-start="b-20vh">
+          <div class="icon">
+            <svg id="svg-close-gap-item-2" xmlns="http://www.w3.org/2000/svg" width="50" height="75" viewBox="0 0 50 75">
+              <linearGradient id="close-gap-item-2_gradient_1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="75">
+                <stop  offset="0" style="stop-color:#ffd400"/>
+                <stop  offset="1" style="stop-color:#E85520"/>
+              </linearGradient>
+              <path id="svg-close-gap-item-2-anim-1" fill="url(#close-gap-item-2_gradient_1)" d="M48.75,37.5H27.3l7.63-35.93c0.27-1.27-1.25-2.11-2.12-1.17l-32.47,35c-0.74,0.8-0.18,2.1,0.92,2.1H22.7l-7.63,35.93c-0.27,1.27,1.25,2.11,2.12,1.17l32.47-35C50.41,38.8,49.84,37.5,48.75,37.5z"/>
+            </svg>
+          </div>
+          <div class="typography ignore-theme">{{ v.bodies.50|raw }}</div>
+        </div>
+
+        <div class="close-gap-item-3 close-gap-item" data-focus-start="b-20vh">
+          <div class="icon">
+            <svg id="svg-close-gap-item-3" xmlns="http://www.w3.org/2000/svg" width="80" height="60" viewBox="0 0 80 60">
+              <linearGradient id="close-gap-item-3_gradient_1" gradientUnits="userSpaceOnUse" x1="27.5346" y1="1.5304" x2="27.5346" y2="61.5304" gradientTransform="matrix(1 0 0 1 -1.5304 -1.5304)">
+                <stop  offset="0" style="stop-color:#0061A6"/>
+                <stop  offset="1" style="stop-color:#003459"/>
+              </linearGradient>
+              <path id="svg-close-gap-item-3-anim-1" fill="url(#close-gap-item-3_gradient_1)" d="M30.02,11.8C14.62,2.67,3.91-1.6,1.21,0.55C-2.15,2.77,2.5,11.42,3,30C2.5,48.58-2.15,57.23,1.21,59.45c2.71,2.15,13.42-2.12,28.81-11.25C59.34,29.91,59.34,30.09,30.02,11.8z"/>
+              <linearGradient id="close-gap-item-3_gradient_2" gradientUnits="userSpaceOnUse" x1="53.9958" y1="-9.094947e-13" x2="53.9958" y2="60">
+                <stop  offset="0" style="stop-color:#33CEBF"/>
+                <stop  offset="1" style="stop-color:#009AA6"/>
+              </linearGradient>
+              <path id="svg-close-gap-item-3-anim-2" fill="url(#close-gap-item-3_gradient_2)" d="M58.01,11.8C42.62,2.67,31.91-1.6,29.2,0.55C25.85,2.77,30.5,11.42,30.99,30c-0.5,18.58-5.15,27.23-1.79,29.45c2.71,2.15,13.42-2.12,28.81-11.25C87.33,29.91,87.33,30.09,58.01,11.8z"/>
+            </svg>
+          </div>
+          <div class="typography ignore-theme">{{ v.bodies.51|raw }}</div>
+        </div>
+
+      </div>
+
+      <div class="quote-standard">
+        <blockquote>
+          <div class="typography">{{ v.bodies.52|raw }}</div>
+          <figcaption>
+            <div class="cite-name">{{ extendedView.quotes.1.name }}</div>
+            <div class="cite-title">{{ extendedView.quotes.1.title }}</div>
+          </figcaption>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="cta">
+      <div class="typography">{{ v.bodies.53|raw }}</div>
+
+      <div class="share-content">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ extendedView.url }}">
+          <span class="visually-hidden">{{ "Share on Facebook"|t }}</span>
+          <div class="share-button-shape share-fb"></div>
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a target="_blank" href="https://twitter.com/intent/tweet?text={{ extendedView.url }}">
+          <span class="visually-hidden">{{ "Share on Twitter"|t }}</span>
+          <div class="share-button-shape share-tw"></div>
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ extendedView.url|url_encode }}&title={{ extendedView.title|url_encode }}&source={{ "MENTOR Canada"|t|url_encode }}">
+          <span class="visually-hidden">{{ "Share on LinkedIn"|t }}</span>
+          <div class="share-button-shape share-li"></div>
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a target="_blank" href="mailto:?subject={{ extendedView.title|url_encode }}">
+          <span class="visually-hidden">{{ "Share by Email"|t }}</span>
+          <div class="share-button-shape share-em"></div>
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+    </section>
+
+
+    <section id="theme-background"></section>
+
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "employment-opportunities";
+</script>
+

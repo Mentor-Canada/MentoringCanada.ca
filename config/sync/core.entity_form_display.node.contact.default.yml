@@ -1,0 +1,119 @@
+uuid: ce312541-2363-4101-9db8-143088527c73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_banner_eyebrow
+    - field.field.node.contact.field_banner_heading
+    - field.field.node.contact.field_banner_image
+    - field.field.node.contact.field_banner_link
+    - field.field.node.contact.field_banner_subheading
+    - field.field.node.contact.field_page_content
+    - node.type.contact
+  module:
+    - field_group
+    - link
+    - media_library
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_banner:
+      children:
+        - field_banner_eyebrow
+        - field_banner_heading
+        - field_banner_subheading
+        - field_banner_link
+        - field_banner_image
+      parent_name: ''
+      weight: 4
+      format_type: details_sidebar
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: true
+        weight: -1000
+      label: Banner
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_banner_eyebrow:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_banner_heading:
+    weight: 129
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_banner_image:
+    type: media_library_widget
+    weight: 132
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_banner_link:
+    weight: 131
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_banner_subheading:
+    weight: 130
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_page_content:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  promote: true
+  sticky: true
+  translation: true
+  uid: true

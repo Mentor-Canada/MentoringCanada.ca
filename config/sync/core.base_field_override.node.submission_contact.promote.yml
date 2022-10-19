@@ -1,0 +1,22 @@
+uuid: 5123edb0-9928-428a-a53f-4a442d7a9322
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+id: node.submission_contact.promote
+field_name: promote
+entity_type: node
+bundle: submission_contact
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,117 @@
+uuid: 6ca55cd0-22b4-43bc-a1a2-6424b6b865b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_banner_heading
+    - field.field.node.event.field_banner_hide_content
+    - field.field.node.event.field_banner_hide_scrim
+    - field.field.node.event.field_banner_image
+    - field.field.node.event.field_banner_link
+    - field.field.node.event.field_banner_subheading
+    - field.field.node.event.field_coming_soon_label
+    - field.field.node.event.field_comments_intro
+    - field.field.node.event.field_comments_label
+    - field.field.node.event.field_email_body
+    - field.field.node.event.field_email_subject
+    - field.field.node.event.field_email_youtube_id
+    - field.field.node.event.field_event_options
+    - field.field.node.event.field_event_options_cutoff
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_group_training_label
+    - field.field.node.event.field_has_event_form
+    - field.field.node.event.field_has_form_age
+    - field.field.node.event.field_has_form_birthdate
+    - field.field.node.event.field_has_form_comments
+    - field.field.node.event.field_has_form_country
+    - field.field.node.event.field_has_form_indigenous
+    - field.field.node.event.field_has_form_linkedin_profile
+    - field.field.node.event.field_has_form_pho_vid_consent
+    - field.field.node.event.field_has_form_phone_number
+    - field.field.node.event.field_has_form_postal_code
+    - field.field.node.event.field_has_form_role
+    - field.field.node.event.field_has_form_title
+    - field.field.node.event.field_has_sharing_consent
+    - field.field.node.event.field_hidden_footer
+    - field.field.node.event.field_hidden_header
+    - field.field.node.event.field_hidden_header_logo
+    - field.field.node.event.field_hidden_header_menu
+    - field.field.node.event.field_insert_youtube_in_email
+    - field.field.node.event.field_insert_youtube_on_page
+    - field.field.node.event.field_notify_event_users
+    - field.field.node.event.field_notify_unregistered_events
+    - field.field.node.event.field_one_on_one_training_label
+    - field.field.node.event.field_payment
+    - field.field.node.event.field_post_event_page_content
+    - field.field.node.event.field_sections
+    - field.field.node.event.field_submitted_heading
+    - field.field.node.event.field_submitted_paragraph
+    - field.field.node.event.field_submitted_subheading
+    - field.field.node.event.field_teaser_image
+    - field.field.node.event.field_teaser_summary
+    - field.field.node.event.field_template
+    - field.field.node.event.field_unlisted
+    - node.type.event
+  module:
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner_heading: true
+  field_banner_hide_content: true
+  field_banner_hide_scrim: true
+  field_banner_image: true
+  field_banner_link: true
+  field_banner_subheading: true
+  field_coming_soon_label: true
+  field_comments_intro: true
+  field_comments_label: true
+  field_email_body: true
+  field_email_subject: true
+  field_email_youtube_id: true
+  field_event_options: true
+  field_event_options_cutoff: true
+  field_event_type: true
+  field_group_training_label: true
+  field_has_event_form: true
+  field_has_form_age: true
+  field_has_form_birthdate: true
+  field_has_form_comments: true
+  field_has_form_country: true
+  field_has_form_indigenous: true
+  field_has_form_linkedin_profile: true
+  field_has_form_pho_vid_consent: true
+  field_has_form_phone_number: true
+  field_has_form_postal_code: true
+  field_has_form_role: true
+  field_has_form_title: true
+  field_has_sharing_consent: true
+  field_hidden_footer: true
+  field_hidden_header: true
+  field_hidden_header_logo: true
+  field_hidden_header_menu: true
+  field_insert_youtube_in_email: true
+  field_insert_youtube_on_page: true
+  field_notify_event_users: true
+  field_notify_unregistered_events: true
+  field_one_on_one_training_label: true
+  field_payment: true
+  field_post_event_page_content: true
+  field_sections: true
+  field_submitted_heading: true
+  field_submitted_paragraph: true
+  field_submitted_subheading: true
+  field_teaser_image: true
+  field_teaser_summary: true
+  field_template: true
+  field_unlisted: true
+  langcode: true

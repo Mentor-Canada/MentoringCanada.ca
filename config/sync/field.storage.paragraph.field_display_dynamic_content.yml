@@ -1,0 +1,30 @@
+uuid: 5e03cbbe-52e8-48ab-9e59-0fff289ce2c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_display_dynamic_content
+field_name: field_display_dynamic_content
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: menu
+      label: 'Page Sections'
+    -
+      value: references
+      label: References
+    -
+      value: none
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: c4dfc827-edc7-4a8a-8f28-242fe8c70546
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.social_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.social_block
+target_entity_type_id: paragraph
+target_bundle: social_block
+default_langcode: site_default
+language_alterable: true

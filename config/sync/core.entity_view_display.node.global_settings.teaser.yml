@@ -1,0 +1,49 @@
+uuid: 45ce92d4-18a0-4f66-b422-de9cb0f467c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.global_settings.field_about_us
+    - field.field.node.global_settings.field_address_line_1
+    - field.field.node.global_settings.field_address_line_2
+    - field.field.node.global_settings.field_address_line_3
+    - field.field.node.global_settings.field_address_name
+    - field.field.node.global_settings.field_contact_form_recipients
+    - field.field.node.global_settings.field_email
+    - field.field.node.global_settings.field_extension
+    - field.field.node.global_settings.field_phone
+    - field.field.node.global_settings.field_social_fb
+    - field.field.node.global_settings.field_social_ig
+    - field.field.node.global_settings.field_social_li
+    - field.field.node.global_settings.field_social_tw
+    - field.field.node.global_settings.field_social_yt
+    - node.type.global_settings
+  module:
+    - user
+id: node.global_settings.teaser
+targetEntityType: node
+bundle: global_settings
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_about_us: true
+  field_address_line_1: true
+  field_address_line_2: true
+  field_address_line_3: true
+  field_address_name: true
+  field_contact_form_recipients: true
+  field_email: true
+  field_extension: true
+  field_phone: true
+  field_social_fb: true
+  field_social_ig: true
+  field_social_li: true
+  field_social_tw: true
+  field_social_yt: true
+  langcode: true

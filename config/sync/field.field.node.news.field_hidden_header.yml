@@ -1,0 +1,23 @@
+uuid: f7f809c1-4383-4c97-a522-955271dc4f6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hidden_header
+    - node.type.news
+id: node.news.field_hidden_header
+field_name: field_hidden_header
+entity_type: node
+bundle: news
+label: 'Hidden Header'
+description: 'Hide the site header on this page, including the logo and menu.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

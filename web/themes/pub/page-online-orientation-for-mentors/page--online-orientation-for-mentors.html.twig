@@ -1,0 +1,58 @@
+{# @var v \Drupal\app\Views\OnlineOrientationForMentorsView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    {% for section in v.sections %}
+      {{ section|raw }}
+    {% endfor %}
+
+    <div class="oofm-bottom-block">
+      <div class="wysiwyg-block content-block"
+           data-padding-standard="horizontal"
+      >
+        <div data-column-count="2"
+             data-column-split="1-to-1"
+             data-content-width="wide"
+        >
+          <div class="typography column-1">
+            <h3>{{ "Let's get started!"|t }}</h3>
+
+            <form id="oofm" class="actions">
+              <div class="button-style-select-wrapper">
+                <select autocomplete="off" required="required">
+                  <option disabled selected value>{{ "Please Select Your Province or Territory"|t }}</option>
+                  {% for key, value in v.provinceSelectOptions %}
+                    <option value="{{ key }}">{{ value }}</option>
+                  {% endfor %}
+                </select>
+                <div class="ui-select-field-caret-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M0 3h10L5 8" fill-rule="nonzero"></path></svg>
+                </div>
+              </div>
+              <button class="submit">{{ "Access Online Orientation"|t }}</button>
+            </form>
+
+
+
+          </div>
+          <div class="typography column-2">
+            <h3>{{ "Developed By"|t }}</h3>
+            <div class="developed-by-logos">
+              <img src="https://www.mentoringcanada.ca/sites/default/files/2020-08/Mentor_Canada_Logo_Colour.jpg" alt="MENTOR Canada" class="mc-logo">
+              <img src="https://www.mentoringcanada.ca/sites/default/files/2020-03/AMP-Logo.png" alt="Alberta Mentoring Partnership" class="amp-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "onlineOrientationForMentors";
+</script>

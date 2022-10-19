@@ -1,0 +1,271 @@
+uuid: 2da6d396-5cc5-477c-aef9-e9bc22cf7a2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reference_block.field_events
+    - field.field.paragraph.reference_block.field_news
+    - field.field.paragraph.reference_block.field_ref_events
+    - field.field.paragraph.reference_block.field_ref_news
+    - field.field.paragraph.reference_block.field_ref_team_members
+    - field.field.paragraph.reference_block.field_refd_events
+    - field.field.paragraph.reference_block.field_refd_news
+    - field.field.paragraph.reference_block.field_refd_team_members
+    - field.field.paragraph.reference_block.field_refl_events
+    - field.field.paragraph.reference_block.field_refl_news
+    - field.field.paragraph.reference_block.field_refp_events
+    - field.field.paragraph.reference_block.field_refp_news
+    - field.field.paragraph.reference_block.field_reft_events
+    - field.field.paragraph.reference_block.field_team_members
+    - field.field.paragraph.reference_block.field_width_options_full
+    - field.field.paragraph.reference_block.field_wysiwyg
+    - paragraphs.paragraphs_type.reference_block
+  module:
+    - field_group
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - field_wysiwyg
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_settings:
+      children:
+        - field_width_options_full
+        - field_section_width
+        - field_ref_events
+        - group_ev
+        - field_ref_news
+        - group_news_options
+        - field_ref_team_members
+        - group_team_member_options
+      parent_name: group_tabs
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+    group_ev:
+      children:
+        - field_refd_events
+        - field_refp_events
+        - field_refl_events
+        - field_reft_events
+        - field_events
+      parent_name: group_settings
+      weight: 13
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-event-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Event Options'
+    group_news_options:
+      children:
+        - field_refd_news
+        - field_refp_news
+        - field_refl_news
+        - field_news
+      parent_name: group_settings
+      weight: 15
+      format_type: html_element
+      region: content
+      format_settings:
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'nested-options nested-news-options'
+      label: 'News Options'
+    group_team_member_options:
+      children:
+        - field_refd_team_members
+        - field_team_members
+      parent_name: group_settings
+      weight: 17
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-team-member-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Team Member Options'
+id: paragraph.reference_block.default
+targetEntityType: paragraph
+bundle: reference_block
+mode: default
+content:
+  field_events:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_news:
+    weight: 8
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ref_events:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ref_news:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ref_team_members:
+    weight: 16
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refd_events:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refd_news:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refd_team_members:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refl_events:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refl_news:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refp_events:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refp_news:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_reft_events:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_team_members:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_width_options_full:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_wysiwyg:
+    weight: 2
+    settings:
+      rows: 2
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

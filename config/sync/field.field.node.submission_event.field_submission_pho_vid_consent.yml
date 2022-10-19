@@ -1,0 +1,19 @@
+uuid: ce2a9eee-d80a-4aec-833b-91fcb160a5bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_pho_vid_consent
+    - node.type.submission_event
+id: node.submission_event.field_submission_pho_vid_consent
+field_name: field_submission_pho_vid_consent
+entity_type: node
+bundle: submission_event
+label: 'Photo / Video Consent'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

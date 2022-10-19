@@ -1,0 +1,5 @@
+<?php
+
+function barriers_pagecontrollers_alter(&$pageControllers) {
+  $pageControllers[] = "\Drupal\barriers\BarriersDashboardController";
+}

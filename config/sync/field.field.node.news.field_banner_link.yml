@@ -1,0 +1,23 @@
+uuid: 16674227-2587-422b-9776-59a39d42d21e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_link
+    - node.type.news
+  module:
+    - link
+id: node.news.field_banner_link
+field_name: field_banner_link
+entity_type: node
+bundle: news
+label: 'Banner Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

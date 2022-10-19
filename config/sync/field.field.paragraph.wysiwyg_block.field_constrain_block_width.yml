@@ -1,0 +1,23 @@
+uuid: b915330b-7b62-4868-8570-8eacaa142b82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_constrain_block_width
+    - paragraphs.paragraphs_type.wysiwyg_block
+id: paragraph.wysiwyg_block.field_constrain_block_width
+field_name: field_constrain_block_width
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Constrain Block Width'
+description: 'Constrain the block to standard width to improve readability. This option can be turned off when the text block contains headlines that would remain readable in a wide layout.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

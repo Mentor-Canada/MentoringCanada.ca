@@ -1,0 +1,40 @@
+{# @var v \Drupal\app\Views\ParagraphTextImageBlockView #}
+<div class="text-image-block content-block"
+     data-padding-standard="horizontal"
+>
+  <div data-image-count="{{ v.imageCount }}"
+       data-image-width="{{ v.imageWidth }}"
+       data-image-position="{{ v.imagePosition }}"
+       data-horizontal-alignment="{{ v.horizontalAlignment }}"
+       data-vertical-alignment="{{ v.verticalAlignment }}"
+       data-horizontal-alignment-alt="{{ v.horizontalAlignmentAlt }}"
+       data-text-alignment-alt="{{ v.textAlignmentAlt }}"
+       data-responsive-image-to-top="{{ v.responsiveImageToTop }}"
+       data-content-width="{{ v.blockWidth }}"
+  >
+    <div class="text-image-group text-image-group-1">
+      <div class="text-image-image">
+        <img src="{{ v.image1.url }}"
+             width="{% if v.hdpiImages %}{{ v.image1.width/2 }}{% else %}{{ v.image1.width }}{% endif %}"
+             height="{% if v.hdpiImages %}{{ v.image1.height/2 }}{% else %}{{ v.image1.height }}{% endif %}"
+        >
+      </div>
+      <div class="text-image-text">
+        <div class="typography {% if v.reducedTypography %}typography-reduced{% endif %}">{{ v.text1|raw }}</div>
+      </div>
+    </div>
+    {% if v.imageCount == "2" %}
+    <div class="text-image-group text-image-group-2">
+      <div class="text-image-image">
+        <img src="{{ v.image2.url }}"
+             width="{% if v.hdpiImages %}{{ v.image2.width/2 }}{% else %}{{ v.image2.width }}{% endif %}"
+             height="{% if v.hdpiImages %}{{ v.image2.height/2 }}{% else %}{{ v.image2.height }}{% endif %}"
+        >
+      </div>
+      <div class="text-image-text">
+        <div class="typography {% if v.reducedTypography %}typography-reduced{% endif %}">{{ v.text2|raw }}</div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

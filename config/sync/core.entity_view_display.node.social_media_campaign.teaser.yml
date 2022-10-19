@@ -1,0 +1,35 @@
+uuid: b964aea1-528a-49f6-877e-0d4f8dec7644
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.social_media_campaign.field_contact_copy
+    - field.field.node.social_media_campaign.field_contact_email
+    - field.field.node.social_media_campaign.field_contact_name
+    - field.field.node.social_media_campaign.field_contact_position
+    - field.field.node.social_media_campaign.field_smc_logo_en
+    - field.field.node.social_media_campaign.field_smc_logo_fr
+    - field.field.node.social_media_campaign.field_teaser_image
+    - node.type.social_media_campaign
+  module:
+    - user
+id: node.social_media_campaign.teaser
+targetEntityType: node
+bundle: social_media_campaign
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_contact_copy: true
+  field_contact_email: true
+  field_contact_name: true
+  field_contact_position: true
+  field_smc_logo_en: true
+  field_smc_logo_fr: true
+  field_teaser_image: true
+  langcode: true

@@ -1,0 +1,19 @@
+uuid: 37a65b0b-b00e-4f88-94ed-e6bae4a95b54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_survey_ask_1
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_survey_ask_1
+field_name: field_submission_survey_ask_1
+entity_type: node
+bundle: submission_spo
+label: 'If I were to send you a link would you or someone in your organization be willing to complete it?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

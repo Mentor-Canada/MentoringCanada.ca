@@ -1,0 +1,23 @@
+uuid: 3f9207b7-a738-4091-96a4-86957a277ac9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_divider_thickness_minimal
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_divider_thickness_minimal
+field_name: field_divider_thickness_minimal
+entity_type: paragraph
+bundle: divider_block
+label: 'Divider Thickness Minimal'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: hairline
+default_value_callback: ''
+settings: {  }
+field_type: list_string

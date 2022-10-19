@@ -1,0 +1,17 @@
+body.page-alias--enquete-sur-letat-du-mentorat-tableau-de-bord-barriers,
+body.page-alias--state-of-mentoring-research-initiative-dashboard-barriers {
+
+  #chart-wrapper {
+    background: $zebra-even;
+    .chart-groups {
+      display: none;
+    }
+    .toggle-details-wrapper {
+      display: none;
+    }
+    .chart-factor.open {
+      margin-bottom: 5px
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+uuid: b19d7f16-1660-4d3f-a027-551dbfb8d175
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smc_logo_fr
+    - media.type.image
+    - node.type.social_media_campaign
+id: node.social_media_campaign.field_smc_logo_fr
+field_name: field_smc_logo_fr
+entity_type: node
+bundle: social_media_campaign
+label: 'Logo (French)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

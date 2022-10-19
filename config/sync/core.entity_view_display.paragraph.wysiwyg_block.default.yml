@@ -1,0 +1,83 @@
+uuid: a56c6bb2-22ee-457f-baaa-0a63710791b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg_block.field_column_split
+    - field.field.paragraph.wysiwyg_block.field_constrain_block_width
+    - field.field.paragraph.wysiwyg_block.field_number_of_columns
+    - field.field.paragraph.wysiwyg_block.field_text_column_2_tip
+    - field.field.paragraph.wysiwyg_block.field_wide_block_alignment
+    - field.field.paragraph.wysiwyg_block.field_width_options_wide
+    - field.field.paragraph.wysiwyg_block.field_wysiwyg
+    - field.field.paragraph.wysiwyg_block.field_wysiwyg_2
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - description_field
+    - options
+    - text
+id: paragraph.wysiwyg_block.default
+targetEntityType: paragraph
+bundle: wysiwyg_block
+mode: default
+content:
+  field_column_split:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_constrain_block_width:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_number_of_columns:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_text_column_2_tip:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: description_field_default
+    region: content
+  field_wide_block_alignment:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_width_options_wide:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_wysiwyg:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_wysiwyg_2:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

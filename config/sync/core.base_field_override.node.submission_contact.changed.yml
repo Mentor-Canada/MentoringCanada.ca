@@ -1,0 +1,18 @@
+uuid: f9e6e2dd-748d-4162-ad31-b54f8c407d78
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+id: node.submission_contact.changed
+field_name: changed
+entity_type: node
+bundle: submission_contact
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

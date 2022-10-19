@@ -1,0 +1,23 @@
+uuid: d87a98da-a55b-4eab-90c3-b0e64df8cd88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_height_units
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - options
+id: paragraph.parallax_section.field_section_height_units
+field_name: field_section_height_units
+entity_type: paragraph
+bundle: parallax_section
+label: 'Section Height Units'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: vh
+default_value_callback: ''
+settings: {  }
+field_type: list_string

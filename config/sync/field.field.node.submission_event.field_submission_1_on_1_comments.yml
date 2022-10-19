@@ -1,0 +1,19 @@
+uuid: 77c4e9b8-0571-4127-b8b9-4ab3ea3e2774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_1_on_1_comments
+    - node.type.submission_event
+id: node.submission_event.field_submission_1_on_1_comments
+field_name: field_submission_1_on_1_comments
+entity_type: node
+bundle: submission_event
+label: 'One On One Comments'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

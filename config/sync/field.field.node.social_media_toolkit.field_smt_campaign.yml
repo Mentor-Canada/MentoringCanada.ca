@@ -1,0 +1,28 @@
+uuid: b7875a9a-439b-4c6b-8ef7-1b31a7035baa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smt_campaign
+    - node.type.social_media_campaign
+    - node.type.social_media_toolkit
+id: node.social_media_toolkit.field_smt_campaign
+field_name: field_smt_campaign
+entity_type: node
+bundle: social_media_toolkit
+label: Campaign
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      social_media_campaign: social_media_campaign
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

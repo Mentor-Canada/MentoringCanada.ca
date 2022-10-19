@@ -1,0 +1,46 @@
+contexts:
+  -
+    context: ''
+    translations:
+      -
+        source: AST-Timezone
+        translation: 'Heure de l''Atlantique'
+      -
+        source: CST-Timezone
+        translation: 'Heure du Centre'
+      -
+        source: EST-Timezone
+        translation: 'Heure de l''Est'
+      -
+        source: MST-Timezone
+        translation: 'Heure des Rocheuses'
+      -
+        source: NST-Timezone
+        translation: 'Heure de Terre-Neuve'
+      -
+        source: PST-Timezone
+        translation: 'Heure du Pacifique'
+      -
+        source: Service-Provider-Large-Plural
+        translation: 'Prestataires de services de grande taille'
+      -
+        source: Service-Provider-Large-Singular
+        translation: 'Prestataire de services de grande taille'
+      -
+        source: Service-Provider-Medium-Plural
+        translation: 'Prestataires de services de taille moyenne'
+      -
+        source: Service-Provider-Medium-Singular
+        translation: 'Prestataire de services de taille moyenne'
+      -
+        source: Service-Provider-Small-Plural
+        translation: 'Prestataires de services de petite taille'
+      -
+        source: Service-Provider-Small-Singular
+        translation: 'Prestataire de services de petite taille'
+      -
+        source: Support-And-Training-CTA
+        translation: 'Avez-vous visité notre <a href="https://support.mentoringcanada.ca/">Centre de support et de formation</a> ? Les réponses à vos questions peuvent être disponibles sur cette page ! Nous vous invitons à visiter celle-ci avant de réserver une session 1 :1.'
+      -
+        source: MentorCity-Connector-Instruction
+        translation: 'Veuillez noter : avant de réserver votre session sur les éléments essentiels à l’intégration, veuillez-vous assurer que votre organisation et vos programmes sont répertoriés dans le Connecteur Mentor. Votre organisation n''est pas encore listée ? <a href="https://mentoringcanada.ca/fr/le-connecteur-mentor/repertoriez-votre-organisation-et-vos-programmes-de-mentorat-dans-le-connecteur-mentor">Commencez ici</a>.'

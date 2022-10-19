@@ -1,0 +1,334 @@
+{# @var v \Drupal\app\Views\StratPlan2022_2024View #}
+<section id="page-banner" class="page-banner-with-image">
+  <div class="page-banners-image-wrapper">
+
+    {% for i in 0..4 %}
+      <div class="page-banners-image-scroll-effects-container container-{{ i }}">
+        <div class="page-banner-image-element">
+          <div class="page-banner-image" style="background-image: url('{{ v.images[i].url }}')"></div>
+        </div>
+      </div>
+    {% endfor %}
+
+
+  </div>
+
+  <div class="page-banners-content-wrapper">
+    <div class="page-banners-content-scroll-effects-container">
+      <div class="page-banner-content-element">
+        <div class="page-banner-content typography typography-reversed">
+          <h2 class="banner-eyebrow visually-h4">{{ v.banner.eyebrow }}</h2>
+          <h1 class="banner-heading heading-long">{{ v.banner.heading }}</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="content">
+  <article id="strat-plan-article">
+
+    <section id="why-mentoring-matters">
+
+      <div id="why-mentoring-matters-intro">
+        <div class="typography">{{ v.bodies.0|raw }}</div>
+      </div>
+
+      <div id="why-mentoring-matters-stats">
+        <div class="why-stats-1 why-stat" data-focus-start="b-30vh">
+          <div class="typography">{{ v.bodies.1|raw }}</div>
+        </div>
+        <div class="why-stats-2 why-stat" data-focus-start="b-30vh">
+          <div class="typography">{{ v.bodies.2|raw }}</div>
+        </div>
+        <div class="why-stats-3 why-stat" data-focus-start="b-30vh">
+          <div class="typography">{{ v.bodies.3|raw }}</div>
+        </div>
+      </div>
+
+      <div id="why-mentoring-matters-1">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.4|raw }}</div>
+      </div>
+
+      <div id="why-mentoring-matters-2">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.5|raw }}</div>
+      </div>
+
+      <div id="why-mentoring-matters-3">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.6|raw }}</div>
+      </div>
+
+      <div id="why-mentoring-matters-recap">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.7|raw }}</div>
+      </div>
+
+    </section>
+
+
+    <section id="barriers-to-mentoring">
+      <div class="sticky-content">
+
+        <section id="barriers-to-mentoring-intro" data-focus-start="t+49vh">
+          <div class="typography">{{ v.bodies.8|raw }}</div>
+        </section>
+
+        <section id="barriers-to-mentoring-stat" data-focus-start="b-30vh">
+          <div class="typography">{{ v.bodies.9|raw }}</div>
+        </section>
+
+        <section id="barriers-to-mentoring-covid-19" class="section-flex-content content-right">
+          <div class="image-aside">
+            <div data-parallax="-0.1" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.5.url }}')"></div>
+            </div>
+            <div data-parallax="-0.2" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.6.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.10|raw }}</div>
+          </div>
+        </section>
+
+        <section id="barriers-to-mentoring-marginalization" class="section-flex-content content-left">
+          <div class="image-aside">
+            <div data-parallax="-0.15" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.7.url }}')"></div>
+            </div>
+            <div data-parallax="-0.3" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.8.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.11|raw }}</div>
+          </div>
+        </section>
+
+        <section id="barriers-to-mentoring-access" class="section-flex-content content-right">
+          <div class="image-aside">
+            <div data-parallax="-0.1" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.9.url }}')"></div>
+            </div>
+            <div data-parallax="-0.2" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.10.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.12|raw }}</div>
+          </div>
+        </section>
+
+
+        <section id="barriers-to-mentoring-broken-down">
+          <div class="list">
+            <div class="typography list-heading" data-focus-start="b-30vh">{{ v.bodies.13|raw }}</div>
+            <div class="list-items">
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.14|raw }}</div>
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.15|raw }}</div>
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.16|raw }}</div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+      <div class="sticky-spacer"></div>
+    </section>
+
+
+
+    <section id="what-is-mentor-canada-doing">
+      <div class="sticky-content">
+
+        <section id="what-is-mentor-canada-doing-intro">
+          <div class="typography">{{ v.bodies.17|raw }}</div>
+        </section>
+
+        <section id="what-is-mentor-canada-doing-focus-areas">
+          <div class="list">
+            <div class="typography list-heading" data-focus-start="b-30vh">{{ v.bodies.18|raw }}</div>
+            <div class="list-items">
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.19|raw }}</div>
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.20|raw }}</div>
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.21|raw }}</div>
+              <div class="typography list-item" data-focus-start="b-30vh">{{ v.bodies.22|raw }}</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="what-is-mentor-canada-doing-seek-to-achieve" class="section-flex-content content-right">
+          <div class="image-aside">
+            <div data-parallax="-0.1" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.11.url }}')"></div>
+            </div>
+            <div data-parallax="-0.2" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.12.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.23|raw }}</div>
+          </div>
+        </section>
+
+        <section id="what-is-mentor-canada-doing-core-underpinnings" class="section-flex-content content-left">
+          <div class="image-aside">
+            <div data-parallax="-0.15" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.13.url }}')"></div>
+            </div>
+            <div data-parallax="-0.3" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.14.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.24|raw }}</div>
+          </div>
+        </section>
+
+        <section id="what-is-mentor-canada-doing-ultimate-goal" class="section-flex-content content-right">
+          <div class="image-aside">
+            <div data-parallax="-0.1" class="parallax-container parallax-1">
+              <div class="parallax-image" data-parallax="-0.05" style="background-image: url('{{ v.images.15.url }}')"></div>
+            </div>
+            <div data-parallax="-0.2" class="parallax-container parallax-2">
+              <div class="parallax-image" data-parallax="-0.03" style="background-image: url('{{ v.images.16.url }}')"></div>
+            </div>
+          </div>
+          <div class="content-aside">
+            <div class="typography" data-focus-start="b-30vh">{{ v.bodies.25|raw }}</div>
+          </div>
+        </section>
+
+      </div>
+      <div class="sticky-spacer"></div>
+    </section>
+
+    <section id="reconciliation">
+      <div class="sticky-trigger" data-focus-start="t-150vh" data-focus-toggle="true"></div>
+      <div class="sticky-content">
+        <div class="sticky-content-image" style="background-image: url('{{ v.images.17.url }}')"></div>
+        <div class="sticky-content-content">
+          <div class="typography" data-focus-start="b-30vh">{{ v.bodies.26|raw }}</div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="typography-wrapper">
+          <div class="typography" data-focus-start="b-30vh" data-focus-toggle="true">{{ v.bodies.27|raw }}</div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="what-will-mentor-canada-do">
+
+      <div class="scroll-effect-wrapper">
+        <div class="scroll-effect-wrapper-left">
+          <div data-parallax="-0.03">
+            <div>
+              <div style="background-image: url('{{ v.images.18.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.06">
+            <div>
+              <div style="background-image: url('{{ v.images.19.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.09">
+            <div>
+              <div style="background-image: url('{{ v.images.20.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.12">
+            <div>
+              <div style="background-image: url('{{ v.images.21.url }}')"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-effect-wrapper-right">
+          <div data-parallax="-0.03">
+            <div>
+              <div style="background-image: url('{{ v.images.22.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.06">
+            <div>
+              <div style="background-image: url('{{ v.images.23.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.09">
+            <div>
+              <div style="background-image: url('{{ v.images.24.url }}')"></div>
+            </div>
+          </div>
+          <div data-parallax="-0.12">
+            <div>
+              <div style="background-image: url('{{ v.images.25.url }}')"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sticky-content">
+
+        <section id="what-will-mentor-canada-do-intro">
+          <div class="typography">{{ v.bodies.28|raw }}</div>
+        </section>
+
+        <section id="what-will-mentor-canada-do-influence-inspire" class="pillar-section">
+          <div class="typography" data-focus-start="b-30vh">{{ v.bodies.29|raw }}</div>
+        </section>
+
+        <section id="what-will-mentor-canada-do-convene-connect" class="pillar-section">
+          <div class="typography" data-focus-start="b-30vh">{{ v.bodies.30|raw }}</div>
+        </section>
+
+        <section id="what-will-mentor-canada-do-uplift-support" class="pillar-section">
+          <div class="typography" data-focus-start="b-30vh">{{ v.bodies.31|raw }}</div>
+        </section>
+
+        <section id="what-will-mentor-canada-do-collaborate-lead" class="pillar-section">
+          <div class="typography" data-focus-start="b-30vh">{{ v.bodies.32|raw }}</div>
+        </section>
+
+      </div>
+      <div class="sticky-spacer"></div>
+    </section>
+
+    <section id="about-us">
+      <section id="about-us-intro">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.33|raw }}</div>
+      </section>
+      <section id="about-us-vision">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.34|raw }}</div>
+      </section>
+      <section id="about-us-mission">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.35|raw }}</div>
+      </section>
+      <section id="about-us-commitment">
+        <div class="typography" data-focus-start="b-30vh">{{ v.bodies.36|raw }}</div>
+      </section>
+      <section id="about-us-quote">
+        <div class="about-us-quote-wrapper" data-focus-start="b-30vh">
+          <div class="quote-body">
+            <div class="typography">{{ v.bodies.37|raw }}</div>
+          </div>
+          <div class="quote-attribution">
+            <div class="quote-avatar" style="background-image: url('{{ v.images.26.url }}')"></div>
+            <div class="typography">{{ v.bodies.38|raw }}</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "stratPlan2022_2024";
+</script>
+

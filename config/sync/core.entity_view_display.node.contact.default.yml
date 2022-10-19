@@ -1,0 +1,77 @@
+uuid: 21613fbe-b844-400d-9057-ba9c66cd6520
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.contact.field_banner_eyebrow
+    - field.field.node.contact.field_banner_heading
+    - field.field.node.contact.field_banner_image
+    - field.field.node.contact.field_banner_link
+    - field.field.node.contact.field_banner_subheading
+    - field.field.node.contact.field_page_content
+    - node.type.contact
+  module:
+    - link
+    - text
+    - user
+id: node.contact.default
+targetEntityType: node
+bundle: contact
+mode: default
+content:
+  field_banner_eyebrow:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_banner_heading:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_banner_image:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_banner_link:
+    weight: 107
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_banner_subheading:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_page_content:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

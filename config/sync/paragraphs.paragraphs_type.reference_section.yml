@@ -1,0 +1,10 @@
+uuid: c2c969f5-6160-49af-a3d8-877dc4abdec9
+langcode: en
+status: true
+dependencies: {  }
+id: reference_section
+label: 'Reference Section'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

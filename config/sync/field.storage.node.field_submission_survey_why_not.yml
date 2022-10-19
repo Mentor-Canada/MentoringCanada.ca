@@ -1,0 +1,21 @@
+uuid: 909f659e-8072-4271-acaf-802fc423c0a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_submission_survey_why_not
+field_name: field_submission_survey_why_not
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

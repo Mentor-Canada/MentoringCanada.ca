@@ -1,0 +1,19 @@
+uuid: 5770fba8-01ec-4329-b4a4-2ca8feadf69b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_received_survey
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_received_survey
+field_name: field_submission_received_survey
+entity_type: node
+bundle: submission_spo
+label: 'Have you received an email with a link to the survey from us?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

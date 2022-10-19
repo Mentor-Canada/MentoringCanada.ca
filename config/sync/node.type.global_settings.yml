@@ -1,0 +1,17 @@
+uuid: c61b53f2-1530-4cdb-8074-9a53cf8e121e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Global Settings'
+type: global_settings
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

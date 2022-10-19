@@ -1,0 +1,86 @@
+uuid: 5140a44a-95c8-42b9-86d4-25a1bd29efc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_blocks
+    - paragraphs.paragraphs_type.content_section
+    - paragraphs.paragraphs_type.divider_block
+    - paragraphs.paragraphs_type.images_block
+    - paragraphs.paragraphs_type.markup_block
+    - paragraphs.paragraphs_type.mentor_connector_block
+    - paragraphs.paragraphs_type.reference_block
+    - paragraphs.paragraphs_type.social_block
+    - paragraphs.paragraphs_type.text_image_block
+    - paragraphs.paragraphs_type.wysiwyg_block
+    - paragraphs.paragraphs_type.youtube_block
+  module:
+    - entity_reference_revisions
+id: paragraph.content_section.field_section_blocks
+field_name: field_section_blocks
+entity_type: paragraph
+bundle: content_section
+label: 'Section Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      wysiwyg_block: wysiwyg_block
+      text_image_block: text_image_block
+      images_block: images_block
+      youtube_block: youtube_block
+      reference_block: reference_block
+      social_block: social_block
+      divider_block: divider_block
+      mentor_connector_block: mentor_connector_block
+      markup_block: markup_block
+    target_bundles_drag_drop:
+      content_section:
+        weight: -20
+        enabled: false
+      divider_block:
+        enabled: true
+        weight: -23
+      image_caption_field:
+        weight: -17
+        enabled: false
+      images_block:
+        enabled: true
+        weight: -27
+      markup_block:
+        enabled: true
+        weight: -21
+      markup_section:
+        weight: -16
+        enabled: false
+      mentor_connector_block:
+        enabled: true
+        weight: -22
+      parallax_section:
+        weight: -19
+        enabled: false
+      reference_block:
+        enabled: true
+        weight: -25
+      reference_section:
+        weight: -18
+        enabled: false
+      social_block:
+        enabled: true
+        weight: -24
+      text_image_block:
+        enabled: true
+        weight: -28
+      wysiwyg_block:
+        enabled: true
+        weight: -29
+      youtube_block:
+        enabled: true
+        weight: -26
+field_type: entity_reference_revisions

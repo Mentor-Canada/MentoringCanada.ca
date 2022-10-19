@@ -1,0 +1,23 @@
+uuid: ea913f00-cb7b-4c6c-8285-356b1f3a48ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_column_split
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - options
+id: paragraph.wysiwyg_block.field_column_split
+field_name: field_column_split
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Column Split'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1-to-1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

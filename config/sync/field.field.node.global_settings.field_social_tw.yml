@@ -1,0 +1,23 @@
+uuid: 18bed5c6-01ce-4753-9181-0e275fa93a99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_tw
+    - node.type.global_settings
+  module:
+    - link
+id: node.global_settings.field_social_tw
+field_name: field_social_tw
+entity_type: node
+bundle: global_settings
+label: Twitter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,21 @@
+@import '../../../node_modules/sass-math-pow/sass/index.scss';
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+// Inter font dynamic metric calculation
+@mixin font-tracking($font-size) {
+  $z: strip-unit($font-size);
+  $a: -0.075;
+  $b: 0.1689;
+  $c: -0.0677;
+  $E: 2.71828;
+  $tracking: $a + ($b * poly-pow($E, ($c * $z)));
+
+  font-size: $z * 1px;
+  letter-spacing: $tracking * 1em;
+}

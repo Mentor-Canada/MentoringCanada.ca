@@ -1,0 +1,21 @@
+uuid: f4d57ab3-a774-43d9-9fce-b6490fdbbf26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_birthdate
+    - node.type.submission_event
+  module:
+    - datetime
+id: node.submission_event.field_submission_birthdate
+field_name: field_submission_birthdate
+entity_type: node
+bundle: submission_event
+label: Birthdate
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,118 @@
+uuid: 0c356339-2c9e-4cdb-8564-dbdf98e37b01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_option.field_event_date_time_range
+    - field.field.node.event_option.field_event_link
+    - field.field.node.event_option.field_event_name
+    - field.field.node.event_option.field_event_occupancy
+    - field.field.node.event_option.field_event_option_closed
+    - field.field.node.event_option.field_event_timezone
+    - field.field.node.event_option.field_hide_calendar_links
+    - field.field.node.event_option.field_keep_open_after_start
+    - field.field.node.event_option.field_one_on_one_training
+    - node.type.event_option
+  module:
+    - datetime_range
+    - link
+    - options
+    - user
+id: node.event_option.default
+targetEntityType: node
+bundle: event_option
+mode: default
+content:
+  field_event_date_time_range:
+    weight: 106
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_event_link:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_event_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_occupancy:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_event_option_closed:
+    weight: 107
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_event_timezone:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hide_calendar_links:
+    weight: 110
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_keep_open_after_start:
+    weight: 109
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_one_on_one_training:
+    weight: 108
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

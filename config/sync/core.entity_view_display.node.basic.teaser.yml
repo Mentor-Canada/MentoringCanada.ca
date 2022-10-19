@@ -1,0 +1,51 @@
+uuid: b7d400a9-1e73-4407-bb12-7e8107067c16
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basic.field_banner_eyebrow
+    - field.field.node.basic.field_banner_heading
+    - field.field.node.basic.field_banner_hide_content
+    - field.field.node.basic.field_banner_hide_scrim
+    - field.field.node.basic.field_banner_image
+    - field.field.node.basic.field_banner_link
+    - field.field.node.basic.field_banner_subheading
+    - field.field.node.basic.field_hidden_footer
+    - field.field.node.basic.field_hidden_header
+    - field.field.node.basic.field_hidden_header_logo
+    - field.field.node.basic.field_hidden_header_menu
+    - field.field.node.basic.field_sections
+    - field.field.node.basic.field_teaser_image
+    - field.field.node.basic.field_teaser_summary
+    - field.field.node.basic.field_template
+    - node.type.basic
+  module:
+    - user
+id: node.basic.teaser
+targetEntityType: node
+bundle: basic
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner_eyebrow: true
+  field_banner_heading: true
+  field_banner_hide_content: true
+  field_banner_hide_scrim: true
+  field_banner_image: true
+  field_banner_link: true
+  field_banner_subheading: true
+  field_hidden_footer: true
+  field_hidden_header: true
+  field_hidden_header_logo: true
+  field_hidden_header_menu: true
+  field_sections: true
+  field_teaser_image: true
+  field_teaser_summary: true
+  field_template: true
+  langcode: true

@@ -1,0 +1,176 @@
+uuid: bdd280cf-25b9-43ba-ae53-3b93382729a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.divider_block.field_divider
+    - field.field.paragraph.divider_block.field_divider_thickness_minimal
+    - field.field.paragraph.divider_block.field_divider_thickness_pixels
+    - field.field.paragraph.divider_block.field_divider_thickness_vibrant
+    - field.field.paragraph.divider_block.field_padding_bottom
+    - field.field.paragraph.divider_block.field_padding_bottom_pixels
+    - field.field.paragraph.divider_block.field_padding_top
+    - field.field.paragraph.divider_block.field_padding_top_pixels
+    - field.field.paragraph.divider_block.field_width_options_full
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_settings:
+      children:
+        - field_width_options_full
+        - group_padding_top_options
+        - group_padding_bottom_options
+        - group_divider_options
+      parent_name: group_tabs
+      weight: 9
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Settings
+    group_padding_top_options:
+      children:
+        - field_padding_top
+        - field_padding_top_pixels
+      parent_name: group_settings
+      weight: 11
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Padding Top Options'
+    group_padding_bottom_options:
+      children:
+        - field_padding_bottom
+        - field_padding_bottom_pixels
+      parent_name: group_settings
+      weight: 12
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Padding Bottom Options'
+    group_divider_options:
+      children:
+        - field_divider
+        - field_divider_thickness_minimal
+        - field_divider_thickness_vibrant
+        - field_divider_thickness_pixels
+      parent_name: group_settings
+      weight: 13
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Divider Options'
+id: paragraph.divider_block.default
+targetEntityType: paragraph
+bundle: divider_block
+mode: default
+content:
+  field_divider:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_divider_thickness_minimal:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_divider_thickness_pixels:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_divider_thickness_vibrant:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_padding_bottom:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_padding_bottom_pixels:
+    weight: 16
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_padding_top:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_padding_top_pixels:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_width_options_full:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

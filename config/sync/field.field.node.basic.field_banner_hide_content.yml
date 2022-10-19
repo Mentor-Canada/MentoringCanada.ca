@@ -1,0 +1,23 @@
+uuid: de7055fa-e7d5-4e32-9cfd-eb20c60c422c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_hide_content
+    - node.type.basic
+id: node.basic.field_banner_hide_content
+field_name: field_banner_hide_content
+entity_type: node
+bundle: basic
+label: 'Hide Banner Content'
+description: 'Hide all banner content, including headlines and links, when a banner image is present.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

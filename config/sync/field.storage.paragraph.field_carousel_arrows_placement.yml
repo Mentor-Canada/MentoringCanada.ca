@@ -1,0 +1,30 @@
+uuid: dfbbc948-652d-41f6-9ecf-e2dd06d9f6cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_carousel_arrows_placement
+field_name: field_carousel_arrows_placement
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: inside
+      label: Inside
+    -
+      value: outside
+      label: Outside
+    -
+      value: edge
+      label: Edge
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

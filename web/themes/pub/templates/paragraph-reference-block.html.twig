@@ -1,0 +1,18 @@
+{# @var v \Drupal\app\Views\ParagraphReferenceBlockView #}
+<div class="reference-block content-block"
+         data-padding-standard="horizontal"
+>
+    <div data-content-width="{{ v.blockWidth }}">
+      {% if v.references|length %}
+        <div class="items-wrapper">
+          {% for referenceGroup in v.references %}
+            {% for item in referenceGroup %}
+              {{ item|raw }}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="typography">{{ v.noResults|raw }}</div>
+      {% endif %}
+    </div>
+</div>

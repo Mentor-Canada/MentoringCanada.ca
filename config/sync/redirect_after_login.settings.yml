@@ -1,0 +1,5 @@
+login_redirection:
+  anonymous: null
+  authenticated: /admin/pages
+  admin: /admin/content
+exclude_urls: ''

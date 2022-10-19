@@ -1,0 +1,19 @@
+uuid: 4bdc555b-3eab-40fd-9742-84c50e7e52dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extras
+    - node.type.submission_event
+id: node.submission_event.field_extras
+field_name: field_extras
+entity_type: node
+bundle: submission_event
+label: Extras
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

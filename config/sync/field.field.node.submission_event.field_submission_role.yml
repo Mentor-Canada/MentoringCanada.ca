@@ -1,0 +1,19 @@
+uuid: 7ca7347a-29d5-46c3-8835-e276214bcaf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_role
+    - node.type.submission_event
+id: node.submission_event.field_submission_role
+field_name: field_submission_role
+entity_type: node
+bundle: submission_event
+label: Role
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 35e2176f-f0c2-4f5d-9d68-602dd2cefba6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hidden_header_menu
+    - node.type.basic
+id: node.basic.field_hidden_header_menu
+field_name: field_hidden_header_menu
+entity_type: node
+bundle: basic
+label: 'Hidden Header Menu'
+description: 'Hide the site header menu on this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

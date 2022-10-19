@@ -1,0 +1,39 @@
+uuid: a7771c3d-e338-44c3-82f4-e0e4f7fae0a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event_option.field_event_date_time_range
+    - field.field.node.event_option.field_event_link
+    - field.field.node.event_option.field_event_name
+    - field.field.node.event_option.field_event_occupancy
+    - field.field.node.event_option.field_event_option_closed
+    - field.field.node.event_option.field_event_timezone
+    - field.field.node.event_option.field_hide_calendar_links
+    - field.field.node.event_option.field_keep_open_after_start
+    - field.field.node.event_option.field_one_on_one_training
+    - node.type.event_option
+  module:
+    - user
+id: node.event_option.teaser
+targetEntityType: node
+bundle: event_option
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_event_date_time_range: true
+  field_event_link: true
+  field_event_name: true
+  field_event_occupancy: true
+  field_event_option_closed: true
+  field_event_timezone: true
+  field_hide_calendar_links: true
+  field_keep_open_after_start: true
+  field_one_on_one_training: true
+  langcode: true

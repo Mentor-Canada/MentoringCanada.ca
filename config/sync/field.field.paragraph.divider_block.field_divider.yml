@@ -1,0 +1,23 @@
+uuid: 146ba976-440c-42c3-ae1d-f3aa3bc2f9fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_divider
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_divider
+field_name: field_divider
+entity_type: paragraph
+bundle: divider_block
+label: Divider
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: minimal
+default_value_callback: ''
+settings: {  }
+field_type: list_string

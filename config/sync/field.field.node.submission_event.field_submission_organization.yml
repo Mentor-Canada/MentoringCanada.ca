@@ -1,0 +1,19 @@
+uuid: 2a126fd1-adb9-404a-9f66-77f0ec7cb7cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_organization
+    - node.type.submission_event
+id: node.submission_event.field_submission_organization
+field_name: field_submission_organization
+entity_type: node
+bundle: submission_event
+label: Organization
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

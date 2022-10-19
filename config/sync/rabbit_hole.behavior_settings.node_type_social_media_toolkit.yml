@@ -1,0 +1,11 @@
+uuid: ef4d7c81-fc41-43a8-b04f-a8de7aabe339
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_media_toolkit
+id: node_type_social_media_toolkit
+action: display_page
+allow_override: 0
+redirect: ''
+redirect_code: 301

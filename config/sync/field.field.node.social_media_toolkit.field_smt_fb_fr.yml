@@ -1,0 +1,28 @@
+uuid: 75f0d31d-c4d7-45af-9d6a-db7516e3f953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smt_fb_fr
+    - media.type.image
+    - node.type.social_media_toolkit
+id: node.social_media_toolkit.field_smt_fb_fr
+field_name: field_smt_fb_fr
+entity_type: node
+bundle: social_media_toolkit
+label: 'Facebook & LinkedIn (French)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

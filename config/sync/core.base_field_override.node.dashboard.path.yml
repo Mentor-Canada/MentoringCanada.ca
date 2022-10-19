@@ -1,0 +1,20 @@
+uuid: 61c9e1de-50b4-4c2f-8637-745a40b5bc5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dashboard
+  module:
+    - path
+id: node.dashboard.path
+field_name: path
+entity_type: node
+bundle: dashboard
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

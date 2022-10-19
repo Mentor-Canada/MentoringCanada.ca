@@ -1,0 +1,197 @@
+#toolbar-administration.toolbar nav.toolbar-lining .toolbar-icon {
+  padding: 1em 1.3333em;
+}
+#toolbar-administration.toolbar nav.toolbar-lining .toolbar-icon:before {
+  display: none;
+}
+#toolbar-administration.toolbar nav.toolbar-lining .toolbar-icon.toolbar-icon-toggle-vertical:before,
+#toolbar-administration.toolbar nav.toolbar-lining .toolbar-icon.toolbar-icon-toggle-horizontal:before {
+  display: block;
+}
+.filter-wrapper {
+  display: none;
+}
+
+
+[data-drupal-selector="edit-field-sections"] .tabledrag-toggle-weight-wrapper {
+  display: none
+}
+
+[data-drupal-selector="edit-field-sections"] th.field-label {
+  padding-left: 50px;
+  display: none;
+}
+
+
+
+/* Section rows */
+[data-drupal-selector="edit-field-sections"] > table > tbody > tr {
+  border-bottom: 1px solid #ccc;
+  border-left: 4px solid transparent;
+  background: rgba(0, 60, 197, 0);
+}
+[data-drupal-selector="edit-field-sections"] > table > tbody > tr:hover {
+  border-left-color: #003cc5;
+  background: rgba(0, 60, 197, 0.03);
+}
+[data-drupal-selector="edit-field-sections"] > table > tbody > tr.drag,
+[data-drupal-selector="edit-field-sections"] > table > tbody > tr.drag:focus {
+  background-color: #fe7;
+}
+[data-drupal-selector="edit-field-sections"] > table > tbody > tr.drag-previous {
+  background-color: #ffb;
+}
+
+
+/* Block rows */
+[data-drupal-selector="edit-field-sections"] table[id^="field-section-blocks-values"] > tbody > tr {
+  border-bottom: 1px dotted #ccc;
+  border-left: 4px solid transparent;
+  background: rgba(0, 60, 197, 0);
+}
+[data-drupal-selector="edit-field-sections"] table[id^="field-section-blocks-values"] > tbody > tr:hover {
+  border-left-color: #003cc5;
+  background: rgba(0, 60, 197, 0.03);
+}
+[data-drupal-selector="edit-field-sections"] table[id^="field-section-blocks-values"] > tbody > tr.drag,
+[data-drupal-selector="edit-field-sections"] table[id^="field-section-blocks-values"] > tbody > tr.drag:focus {
+  background-color: #fe7;
+}
+[data-drupal-selector="edit-field-sections"] table[id^="field-section-blocks-values"] > tbody > tr.drag-previous {
+  background-color: #ffb;
+}
+
+
+.paragraphs-subform {
+  padding-right: 10px;
+}
+
+.field--name-field-section-blocks {
+  margin-right: -10px;
+}
+
+
+
+
+[data-drupal-selector="edit-field-sections"] .paragraph-type-label {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+[data-drupal-selector="edit-field-sections"] [id^="field-section-blocks-values"] .paragraph-type-label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+[data-drupal-selector="edit-field-sections"] [id^="field-images-values"] .paragraph-type-label {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+
+
+
+[data-drupal-selector="edit-field-sections"] .form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+[data-drupal-selector="edit-field-sections"] [id^="edit-field-sections-add-more"].paragraphs-add-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+[data-drupal-selector="edit-field-sections"] .paragraphs-add-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.js .paragraph-top {
+  grid-template-columns: auto auto 1fr auto !important;
+}
+
+
+
+.horizontal-tabs {
+  background: white;
+}
+
+.paragraphs-badge {
+  opacity: 0;
+}
+.paragraph-summary {
+  opacity: 0;
+}
+
+.paragraphs-subform .claro-details {
+  box-shadow: none;
+}
+
+.paragraphs-subform .field-group-tabs-wrapper > .horizontal-tabs .horizontal-tabs-panes .horizontal-tabs-pane {
+  margin-bottom: 0;
+}
+
+.paragraphs-subform .field-group-tabs-wrapper > .horizontal-tabs .horizontal-tabs-panes .horizontal-tabs-pane .claro-details__wrapper {
+  margin: 0;
+}
+
+.paragraphs-subform .field-group-tabs-wrapper > .horizontal-tabs .horizontal-tabs-panes .horizontal-tabs-pane .claro-details__wrapper .horizontal-tabs {
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  margin-left: -1em;
+  margin-right: -1em;
+  margin-bottom: 0;
+}
+
+.paragraphs-subform .field-group-tabs-wrapper > .horizontal-tabs .horizontal-tabs-panes .horizontal-tabs-pane .claro-details__wrapper .horizontal-tabs .horizontal-tabs-pane {
+  padding: 0 1em;
+  margin-bottom: 0;
+}
+
+.paragraphs-add-dialog ul.paragraphs-add-dialog-list input.field-add-more-submit {
+  padding: calc(1rem - 1px) calc(1.5rem - 1px);
+  text-align: center;
+}
+
+.nested-options {
+  padding-left: 27px;
+}
+
+.ui-layout-row {
+  display: flex
+}
+.ui-layout-row > * {
+  padding-right: 20px
+}
+
+.field--name-field-event-date-time > fieldset.form-item {
+  margin-top: 0.5rem;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+.field--name-field-event-date-time .fieldset__wrapper {
+  margin: 0;
+}
+.field--name-field-event-date-time .fieldset__wrapper .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.field--name-field-event-date-time > fieldset.form-item .fieldset__label {
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+  display: table;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.889rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  color: #222330;
+}
+
+.field--name-field-event-date-time .form-items-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+}

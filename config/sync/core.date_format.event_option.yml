@@ -1,0 +1,8 @@
+uuid: 7d692ab4-3ffc-4d33-89d6-7d2968c55c75
+langcode: en
+status: true
+dependencies: {  }
+id: event_option
+label: 'Event Option'
+locked: false
+pattern: 'M j, Y @ g:ia'

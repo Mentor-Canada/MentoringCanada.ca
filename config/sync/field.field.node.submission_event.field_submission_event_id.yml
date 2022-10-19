@@ -1,0 +1,28 @@
+uuid: ae232a6b-9edd-4220-99be-9afacb10c4dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_event_id
+    - node.type.event
+    - node.type.submission_event
+id: node.submission_event.field_submission_event_id
+field_name: field_submission_event_id
+entity_type: node
+bundle: submission_event
+label: 'Event ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: b361d554-77e1-409f-b672-5be8c6b2c92c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_keep_open_after_start
+    - node.type.event_option
+id: node.event_option.field_keep_open_after_start
+field_name: field_keep_open_after_start
+entity_type: node
+bundle: event_option
+label: 'Keep Open After Start'
+description: 'Keep this event option open for registration even if it has already begun.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

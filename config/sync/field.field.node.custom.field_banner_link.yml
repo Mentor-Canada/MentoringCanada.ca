@@ -1,0 +1,23 @@
+uuid: f5dbf00d-cb1d-4c59-ad4c-83fa30b07164
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_link
+    - node.type.custom
+  module:
+    - link
+id: node.custom.field_banner_link
+field_name: field_banner_link
+entity_type: node
+bundle: custom
+label: 'Banner Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

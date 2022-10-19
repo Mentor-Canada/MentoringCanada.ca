@@ -1,0 +1,23 @@
+uuid: e6bcb493-b965-471f-ae81-0ca8cf1db768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ignore_padding_bottom
+    - paragraphs.paragraphs_type.markup_section
+id: paragraph.markup_section.field_ignore_padding_bottom
+field_name: field_ignore_padding_bottom
+entity_type: paragraph
+bundle: markup_section
+label: 'Ignore Default Padding Bottom'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

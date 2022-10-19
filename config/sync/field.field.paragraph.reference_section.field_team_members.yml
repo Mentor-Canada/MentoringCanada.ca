@@ -1,0 +1,28 @@
+uuid: 6c525af5-0d80-489a-88dc-334936093e5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_team_members
+    - node.type.team_member
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_team_members
+field_name: field_team_members
+entity_type: paragraph
+bundle: reference_section
+label: 'Team Members'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      team_member: team_member
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

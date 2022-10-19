@@ -1,0 +1,15 @@
+{# @var v \Drupal\app\Views\ParagraphYoutubeBlockView #}
+<div class="youtube-block content-block"
+     data-padding-standard="horizontal"
+>
+  <div data-content-width="{{ v.blockWidth }}">
+    <figure class="video-caption">
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="{{ v.ytUrl }}?modestbranding=1&hl={{ v.uiLang }}{% if v.ccPolicy %}&cc_load_policy=1&cc_lang_pref={{ v.ccLang }}{% endif %}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      {% if v.caption %}
+      <figcaption>{{ v.caption }}</figcaption>
+      {% endif %}
+    </figure>
+  </div>
+</div>

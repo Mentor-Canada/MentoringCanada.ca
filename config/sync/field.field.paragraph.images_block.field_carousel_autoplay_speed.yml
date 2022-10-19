@@ -1,0 +1,25 @@
+uuid: 2e9820d7-ee1b-4da1-949c-18acbe3e6da0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_autoplay_speed
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_carousel_autoplay_speed
+field_name: field_carousel_autoplay_speed
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Autoplay Speed'
+description: 'The delay in seconds between slides when autoplay is enabled. Decimal values are permitted.'
+required: true
+translatable: false
+default_value:
+  -
+    value: !!float 3
+default_value_callback: ''
+settings:
+  min: 0.7
+  max: !!float 30
+  prefix: ''
+  suffix: seconds
+field_type: decimal

@@ -1,0 +1,20 @@
+uuid: ed4e0c77-83bd-4fb9-ad31-882f2b1cbc22
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+  module:
+    - path
+id: node.submission_spo.path
+field_name: path
+entity_type: node
+bundle: submission_spo
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

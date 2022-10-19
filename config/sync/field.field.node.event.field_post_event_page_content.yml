@@ -1,0 +1,21 @@
+uuid: 49a94606-cee0-4ae8-a279-672f42355b8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_event_page_content
+    - node.type.event
+  module:
+    - text
+id: node.event.field_post_event_page_content
+field_name: field_post_event_page_content
+entity_type: node
+bundle: event
+label: 'Post-Event Page Content'
+description: "<big><strong>Page content after the event.</strong></big><br>\r\nThis will replace the page content, and form if present, after the date and time of the event has passed."
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

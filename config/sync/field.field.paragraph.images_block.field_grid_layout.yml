@@ -1,0 +1,23 @@
+uuid: e6600cb7-6ae5-45c7-9468-f928292453c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grid_layout
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_grid_layout
+field_name: field_grid_layout
+entity_type: paragraph
+bundle: images_block
+label: 'Grid Layout'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: best-fit
+default_value_callback: ''
+settings: {  }
+field_type: list_string

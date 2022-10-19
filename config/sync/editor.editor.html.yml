@@ -1,0 +1,60 @@
+uuid: 0e26bbde-60d9-42d7-ac7e-375545e41c0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.html
+  module:
+    - ckeditor
+format: html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Format
+            - Styles
+            - Bold
+            - Italic
+            - Superscript
+            - HorizontalRule
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    stylescombo:
+      styles: "p.large|Paragraph Large\r\nh2.large|Heading 2 Large\r\nh3.large|Heading 3 Large\r\nh4.large|Heading 4 Large\r\nh5.large|Heading 5 Large\r\nh6.large|Heading 6 Large\r\ncite|Cite\r\na.button|Button Link\r\np.eyebrow-tip.eyebrow-tip-blue|Eyebrow Tip Blue\r\np.eyebrow-tip.eyebrow-tip-orange|Eyebrow Tip Orange"
+    language:
+      language_list: un
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

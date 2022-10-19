@@ -1,0 +1,10 @@
+uuid: 66612ca0-56f7-44f4-8ebd-10a95cd37284
+langcode: en
+status: true
+dependencies: {  }
+id: youtube_block
+label: 'YouTube Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

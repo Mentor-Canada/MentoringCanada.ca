@@ -1,0 +1,11 @@
+uuid: 4183bcf6-a9bf-4839-93d8-5f54727f053e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+id: node_type_submission_contact
+action: page_not_found
+allow_override: 0
+redirect: ''
+redirect_code: 301

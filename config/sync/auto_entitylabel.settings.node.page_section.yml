@@ -1,0 +1,6 @@
+status: 1
+pattern: 'Page Section NID-[node:nid]-[node:langcode]'
+escape: false
+dependencies:
+  config:
+    - node.type.page_section

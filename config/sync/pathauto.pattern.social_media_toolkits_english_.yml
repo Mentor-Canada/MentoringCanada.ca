@@ -1,0 +1,33 @@
+uuid: d082ecab-1297-4e7c-87a4-56d35c60368e
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: social_media_toolkits_english_
+label: 'Social Media Toolkits (English)'
+type: 'canonical_entities:node'
+pattern: 'social-media-campaigns/[node:field_smt_campaign:entity:title]/[node:title]'
+selection_criteria:
+  2c75bcda-8591-4cc4-ad28-19a48aa418c4:
+    id: node_type
+    bundles:
+      social_media_toolkit: social_media_toolkit
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2c75bcda-8591-4cc4-ad28-19a48aa418c4
+  202686d0-4aed-4ef5-8aa9-c2fb9236aee6:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 202686d0-4aed-4ef5-8aa9-c2fb9236aee6
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

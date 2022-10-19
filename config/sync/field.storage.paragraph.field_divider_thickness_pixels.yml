@@ -1,0 +1,20 @@
+uuid: 3bf02e96-42fa-488a-84ba-c5af2bcf312a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_divider_thickness_pixels
+field_name: field_divider_thickness_pixels
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

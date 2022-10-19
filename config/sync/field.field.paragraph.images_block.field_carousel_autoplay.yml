@@ -1,0 +1,23 @@
+uuid: f0f02885-3dc5-44d7-8754-e59e2aadf3ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_autoplay
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_carousel_autoplay
+field_name: field_carousel_autoplay
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Autoplay'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,33 @@
+uuid: 1ee512e7-f04d-41a8-9009-29d3e01c97e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: social_media_campaigns_french_
+label: 'Social Media Campaigns (French)'
+type: 'canonical_entities:node'
+pattern: 'campagnes-medias-sociaux/[node:title]'
+selection_criteria:
+  560649ae-6d2a-440e-85de-a973d3425bd5:
+    id: node_type
+    bundles:
+      social_media_campaign: social_media_campaign
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 560649ae-6d2a-440e-85de-a973d3425bd5
+  724463de-2c7a-4c7c-9c14-bd08e503fad9:
+    id: language
+    langcodes:
+      fr: fr
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 724463de-2c7a-4c7c-9c14-bd08e503fad9
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

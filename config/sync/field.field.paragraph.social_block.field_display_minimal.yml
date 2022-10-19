@@ -1,0 +1,23 @@
+uuid: 01953c88-91f5-4514-86b4-ea00a39cd290
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_minimal
+    - paragraphs.paragraphs_type.social_block
+id: paragraph.social_block.field_display_minimal
+field_name: field_display_minimal
+entity_type: paragraph
+bundle: social_block
+label: 'Display Minimal'
+description: 'Will render a minimal social block, displaying logo-only buttons.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

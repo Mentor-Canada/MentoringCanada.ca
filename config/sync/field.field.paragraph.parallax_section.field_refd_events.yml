@@ -1,0 +1,23 @@
+uuid: 307d06f4-fcce-4f9d-a599-c7efc0ae2f62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refd_events
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_refd_events
+field_name: field_refd_events
+entity_type: paragraph
+bundle: parallax_section
+label: 'Dynamic Events'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

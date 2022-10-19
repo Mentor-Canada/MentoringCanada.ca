@@ -1,0 +1,23 @@
+uuid: 8c3db330-fa4b-46b0-98ad-4a5b0195a94e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_occupancy
+    - node.type.event_option
+id: node.event_option.field_event_occupancy
+field_name: field_event_occupancy
+entity_type: node
+bundle: event_option
+label: 'Registration Limit'
+description: 'Enter an optional number of maximum reservations for this event. Leave blank for no limit.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

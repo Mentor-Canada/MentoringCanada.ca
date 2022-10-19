@@ -1,0 +1,181 @@
+{#
+/**
+ * @file
+ * The default template file for e-mails.
+ *
+ * Available variables:
+ * - subject: The subject.
+ * - body: The message content.
+ * - message: The $message array created and used in the mail building
+ *   procedure. Its content varies between cases, but typically contains at
+ *   least the following elements:
+ *   - id: The message identifier.
+ *   - module: The module that handles the building of the message.
+ *   - key: The key of the message.
+ *   - to: The recipient email address.
+ *   - from: The email address of the sender.
+ *   - langcode: The langcode to use to compose the e-mail.
+ *   - params: The message parameters.
+ *
+ * This template may be overriden by module and/or mail key, using any of the
+ * following template names:
+ * - swiftmailer.html.twig: global, used by default.
+ * - swiftmailer--mymodule.html.twig: only emails sent by the module "mymodule".
+ * - swiftmailer--mymodule--test.html.twig: only emails by the module
+ *   "mymodule" with key "test".
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_swiftmailer()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set v = message.params.v %}
+{% set langcode = message.lang %}
+<html>
+<body>
+
+<table class="email">
+
+  <tr class="header">
+    <td>
+      <img class="logo" width="193" height="44" alt="{{ message.logoAlt }}" src="{{ message.logo }}">
+    </td>
+  </tr>
+
+  <tr class="body">
+    <td>
+      <table class="body-table">
+        <tr class="body-body">
+          <td>
+            <div class="wysiwyg">
+
+              <h1>{{ message.params.eventTitle }}</h1>
+
+              <p>
+                <strong class="small note">{{ "Date & Time"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong>{{ message.params.eventOption.dateTimeRange }}</strong><br>
+                <strong class="small">{{ message.params.eventOption.timezoneString }}</strong>
+              </p>
+
+              {% if not message.params.eventOption.hideCalendarLinks %}
+              <p>
+                <strong class="small note">{{ "Add this event to your calendar"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong class="small"><a href="{{ message.params.eventOption.calendarLinks.ics }}">ICS (Apple, Outlook)</a></strong><br>
+                <strong class="small"><a href="{{ message.params.eventOption.calendarLinks.google }}">Google</a></strong><br>
+              </p>
+              {% endif %}
+
+              <p>
+                <strong class="small note">{{ "Details"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong>{{ message.params.eventOption.name }}</strong>
+              </p>
+
+              {% if message.params.eventOption.link %}
+              <p>
+                <strong class="small note">{{ "Event Link"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong><a href="{{ message.params.eventOption.link }}">{{ "Click to join the event"|t([],{'langcode': langcode}) }}</a></strong>
+              </p>
+              {% endif %}
+
+              <p>
+                <strong class="small note">{{ "View Event"|t([],{'langcode': langcode}) }}</strong><br>
+                <strong><a href="{{ message.params.eventUrl }}">{{ "Click to view the event online"|t([],{'langcode': langcode}) }}</a></strong>
+              </p>
+
+              <hr>
+
+              {% if langcode == "fr" %}
+                <p>Cher / Chère {{ message.name }},</p>
+                {{ message.params.body|raw }}
+                <p>
+                  Sincèrement,<br>
+                  Votre équipe MENTOR Canada
+                </p>
+              {% else %}
+                <p>Dear {{ message.name }},</p>
+                {{ message.params.body|raw }}
+                <p>
+                  Sincerely,<br>
+                  Your MENTOR Canada Team
+                </p>
+              {% endif %}
+              {% if message.params.ytLinkUrl %}
+              <hr>
+              <a class="yt-video" href="{{ message.params.ytLinkUrl }}">
+                <img src="{{ message.params.ytPosterUrl }}" width="640"/>
+              </a>
+              <p class="yt-video-label">
+                <em><strong>{{ "Click above to watch the video."|t([],{'langcode': langcode}) }}</strong></em>
+              </p>
+              {% endif %}
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr class="footer">
+    <td>
+      <div class="footer-summary">
+
+        <div class="footer-contact-block">
+          <div class="footer-contact-title">{{ "Follow us"|t([],{'langcode': langcode}) }}</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mentoringcanada/">
+              <img src="{{ message.fb }}" alt="Facebook">
+            </a>
+            <a href="https://twitter.com/MentoringCanada">
+              <img src="{{ message.tw }}" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/company/canadian-mentoring-partnership-partenariat-canadien-de-mentorat/?viewAsMember=true">
+              <img src="{{ message.li }}" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/mentorcanada/">
+              <img src="{{ message.ig }}" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/channel/UCYExa1ehADYg-kzG7lSmPoQ/">
+              <img src="{{ message.yt }}" alt="YouTube">
+            </a>
+          </div>
+          <p>#MentoringCanada</p>
+        </div>
+
+        <div class="footer-contact-block">
+          <div class="footer-contact-title">{{ "Contact us"|t([],{'langcode': langcode}) }}</div>
+          <a href="{{ message.globalSettings.phoneLink }}">{{ message.globalSettings.phoneDisplayWithExtension }}</a>
+          <br>
+          <a href="{{ message.globalSettings.emailLink }}">{{ message.globalSettings.emailDisplay }}</a>
+          <br>
+          <a href="mentoringcanada.ca/{{ langcode }}" target="_blank">mentoringcanada.ca</a>
+        </div>
+
+        <div class="footer-contact-block">
+          <div class="footer-contact-title">{{ "Mailing address"|t([],{'langcode': langcode}) }}</div>
+          <p>
+            {{ message.globalSettings .addressName }}
+            <br>
+            {{ message.globalSettings .addressLine1 }}
+            <br>
+            {{ message.globalSettings .addressLine2 }}
+            <br>
+            {{ message.globalSettings .addressLine3 }}
+          </p>
+        </div>
+
+        <div class="footer-contact-block">
+          <p>{{ "Join our"|t([],{'langcode': langcode}) }} <a href="https://mentoringcanada.us4.list-manage.com/subscribe?u=a67929939be415eba75c93a0b&id=7d099210dd" target="_blank">{{ "mailing list"|t([],{'langcode': langcode}) }}</a></p>
+          <p>&copy;{{ 'now'|date('Y') }} {{ message.globalSettings.addressName }}</p>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
+

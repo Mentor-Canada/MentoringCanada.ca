@@ -1,0 +1,9 @@
+{# @var v \Drupal\app\Views\ParagraphContentSectionView #}
+<section class="content-section"
+         data-section-id="{{ v.id }}"
+         data-section-zebra="{{ v.zebra }}"
+>
+  {% for block in v.blocks %}
+    {{ block|raw }}
+  {% endfor %}
+</section>

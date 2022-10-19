@@ -1,0 +1,23 @@
+uuid: 51410fba-10f4-4a7e-a771-8e031b14c90c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ref_events
+    - paragraphs.paragraphs_type.reference_block
+id: paragraph.reference_block.field_ref_events
+field_name: field_ref_events
+entity_type: paragraph
+bundle: reference_block
+label: Events
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

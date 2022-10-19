@@ -1,0 +1,34 @@
+{# @var v \Drupal\app\Views\UI_CheckboxesFieldView #}
+
+{% for key, value in v.options %}
+  {{ ui_checkbox("#{v.name}-#{key}", v.name, value, value) }}
+{% endfor %}
+
+{% if v.required %}
+<script>
+
+  (function() {
+
+    let refresh = () => {
+      let checked = false;
+      inputs.forEach((input) => {
+        if(input.checked) checked = true;
+      });
+      if(checked) {
+        inputs[0].removeAttribute('required');
+      } else {
+        inputs[0].setAttribute('required', 'required');
+      }
+    }
+
+    let inputs = document.querySelectorAll('[id^="{{ v.name }}"]');
+    inputs.forEach((input) => {
+      input.addEventListener('change', refresh)
+    });
+
+    refresh();
+
+  })()
+
+</script>
+{% endif %}

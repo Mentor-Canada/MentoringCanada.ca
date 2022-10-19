@@ -1,0 +1,23 @@
+uuid: 04508223-4aa5-4476-8760-c8a2f423fdb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_bottom
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - options
+id: paragraph.divider_block.field_padding_bottom
+field_name: field_padding_bottom
+entity_type: paragraph
+bundle: divider_block
+label: 'Padding Bottom'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1x
+default_value_callback: ''
+settings: {  }
+field_type: list_string

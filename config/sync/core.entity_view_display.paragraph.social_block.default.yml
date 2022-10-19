@@ -1,0 +1,89 @@
+uuid: 43c53847-4d0f-440b-8e17-5a5e290cc864
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_block.field_display_fb
+    - field.field.paragraph.social_block.field_display_ig
+    - field.field.paragraph.social_block.field_display_li
+    - field.field.paragraph.social_block.field_display_minimal
+    - field.field.paragraph.social_block.field_display_newsletter
+    - field.field.paragraph.social_block.field_display_tw
+    - field.field.paragraph.social_block.field_display_yt
+    - paragraphs.paragraphs_type.social_block
+id: paragraph.social_block.default
+targetEntityType: paragraph
+bundle: social_block
+mode: default
+content:
+  field_display_fb:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_ig:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_li:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_minimal:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_newsletter:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_tw:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_display_yt:
+    weight: 4
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden: {  }

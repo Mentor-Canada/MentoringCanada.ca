@@ -1,0 +1,229 @@
+uuid: bb6372d1-a766-49c0-9efc-7fde4dea8c3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.global_settings.field_about_us
+    - field.field.node.global_settings.field_address_line_1
+    - field.field.node.global_settings.field_address_line_2
+    - field.field.node.global_settings.field_address_line_3
+    - field.field.node.global_settings.field_address_name
+    - field.field.node.global_settings.field_contact_form_recipients
+    - field.field.node.global_settings.field_email
+    - field.field.node.global_settings.field_extension
+    - field.field.node.global_settings.field_phone
+    - field.field.node.global_settings.field_social_fb
+    - field.field.node.global_settings.field_social_ig
+    - field.field.node.global_settings.field_social_li
+    - field.field.node.global_settings.field_social_tw
+    - field.field.node.global_settings.field_social_yt
+    - node.type.global_settings
+  module:
+    - field_group
+    - link
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_contact_info:
+      children:
+        - group_phone
+        - field_email
+        - field_address_name
+        - field_address_line_1
+        - field_address_line_2
+        - field_address_line_3
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact Info'
+    group_phone:
+      children:
+        - field_phone
+        - field_extension
+      parent_name: group_contact_info
+      weight: 1
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Phone
+    group_social:
+      children:
+        - field_social_fb
+        - field_social_tw
+        - field_social_li
+        - field_social_ig
+        - field_social_yt
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Social
+    group_contact_form_recipients:
+      children:
+        - field_contact_form_recipients
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Contact Form Recipients'
+id: node.global_settings.default
+targetEntityType: node
+bundle: global_settings
+mode: default
+content:
+  field_about_us:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_address_line_1:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_address_line_2:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_address_line_3:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_address_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_contact_form_recipients:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_extension:
+    weight: 22
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_phone:
+    weight: 21
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_social_fb:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_social_ig:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_social_li:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_social_tw:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_social_yt:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  translation: true
+  uid: true

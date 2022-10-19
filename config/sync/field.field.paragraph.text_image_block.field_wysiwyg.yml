@@ -1,0 +1,23 @@
+uuid: f7d51f80-83fa-4145-acf9-0fc885ed47cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wysiwyg
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - text
+id: paragraph.text_image_block.field_wysiwyg
+field_name: field_wysiwyg
+entity_type: paragraph
+bundle: text_image_block
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

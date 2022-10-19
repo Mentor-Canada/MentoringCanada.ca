@@ -1,0 +1,22 @@
+uuid: c99d760c-a78d-4c53-b30d-4b275d833312
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node.submission_event.status
+field_name: status
+entity_type: node
+bundle: submission_event
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

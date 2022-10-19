@@ -1,0 +1,316 @@
+uuid: 4c7fc42f-9f00-4300-a738-c670f8369e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_section.field_darken_image
+    - field.field.paragraph.parallax_section.field_display_dynamic_content
+    - field.field.paragraph.parallax_section.field_events
+    - field.field.paragraph.parallax_section.field_image
+    - field.field.paragraph.parallax_section.field_news
+    - field.field.paragraph.parallax_section.field_ref_events
+    - field.field.paragraph.parallax_section.field_ref_news
+    - field.field.paragraph.parallax_section.field_refd_events
+    - field.field.paragraph.parallax_section.field_refd_news
+    - field.field.paragraph.parallax_section.field_refl_events
+    - field.field.paragraph.parallax_section.field_refl_news
+    - field.field.paragraph.parallax_section.field_refp_events
+    - field.field.paragraph.parallax_section.field_refp_news
+    - field.field.paragraph.parallax_section.field_reft_events
+    - field.field.paragraph.parallax_section.field_section_eyebrow
+    - field.field.paragraph.parallax_section.field_section_height_units
+    - field.field.paragraph.parallax_section.field_section_height_value
+    - field.field.paragraph.parallax_section.field_section_title
+    - field.field.paragraph.parallax_section.field_width_options_wide
+    - field.field.paragraph.parallax_section.field_wysiwyg
+    - field.field.paragraph.parallax_section.field_wysiwyg_2
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - field_group
+    - media_library
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - field_section_eyebrow
+        - field_section_title
+        - field_wysiwyg_2
+        - field_wysiwyg
+        - field_image
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_settings:
+      children:
+        - field_display_dynamic_content
+        - field_width_options_wide
+        - field_ref_events
+        - group_event_options
+        - field_ref_news
+        - group_news_options
+        - field_darken_image
+        - group_section_height
+      parent_name: group_tabs
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+    group_event_options:
+      children:
+        - field_refd_events
+        - field_refp_events
+        - field_refl_events
+        - field_reft_events
+        - field_events
+      parent_name: group_settings
+      weight: 9
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-event-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Event Options'
+    group_news_options:
+      children:
+        - field_refd_news
+        - field_refp_news
+        - field_refl_news
+        - field_news
+      parent_name: group_settings
+      weight: 11
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: 'nested-options nested-news-options'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'News Options'
+    group_section_height:
+      children:
+        - field_section_height_value
+        - field_section_height_units
+      parent_name: group_settings
+      weight: 13
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: ui-layout-row
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        required_fields: true
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Section Height'
+id: paragraph.parallax_section.default
+targetEntityType: paragraph
+bundle: parallax_section
+mode: default
+content:
+  field_darken_image:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_display_dynamic_content:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_events:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    weight: 7
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_news:
+    weight: 17
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_ref_events:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_ref_news:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refd_events:
+    weight: 13
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refd_news:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refl_events:
+    weight: 15
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refl_news:
+    weight: 16
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refp_events:
+    weight: 14
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_refp_news:
+    weight: 15
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_reft_events:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_section_eyebrow:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_section_height_units:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_section_height_value:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_section_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_width_options_wide:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_wysiwyg:
+    weight: 6
+    settings:
+      rows: 2
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_wysiwyg_2:
+    weight: 5
+    settings:
+      rows: 4
+      placeholder: ''
+      summary_rows: 3
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

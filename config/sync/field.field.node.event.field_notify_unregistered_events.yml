@@ -1,0 +1,23 @@
+uuid: 954ccab4-ecf3-4a1e-8360-b7766a05b3c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notify_unregistered_events
+    - node.type.event
+id: node.event.field_notify_unregistered_events
+field_name: field_notify_unregistered_events
+entity_type: node
+bundle: event
+label: 'Send Notifications for Unregistered Event Options'
+description: 'Send notifications to selected administrative users when an event option has no registrations a certain number of hours before it is scheduled to begin. This will also mark the event option as closed and prevent any future registrations.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

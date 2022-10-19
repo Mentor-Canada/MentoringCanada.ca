@@ -1,0 +1,272 @@
+uuid: c8cdeb85-3217-41fb-8c60-78aac299af85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.submission_event.field_extras
+    - field.field.node.submission_event.field_payment_details
+    - field.field.node.submission_event.field_submission_1_on_1_comments
+    - field.field.node.submission_event.field_submission_1_on_1_topics
+    - field.field.node.submission_event.field_submission_age
+    - field.field.node.submission_event.field_submission_birthdate
+    - field.field.node.submission_event.field_submission_comments
+    - field.field.node.submission_event.field_submission_country
+    - field.field.node.submission_event.field_submission_email_address
+    - field.field.node.submission_event.field_submission_event_id
+    - field.field.node.submission_event.field_submission_event_option
+    - field.field.node.submission_event.field_submission_first_name
+    - field.field.node.submission_event.field_submission_in_canada
+    - field.field.node.submission_event.field_submission_indigenous
+    - field.field.node.submission_event.field_submission_is_indigenous
+    - field.field.node.submission_event.field_submission_language
+    - field.field.node.submission_event.field_submission_last_name
+    - field.field.node.submission_event.field_submission_linkedin
+    - field.field.node.submission_event.field_submission_mentor_title
+    - field.field.node.submission_event.field_submission_organization
+    - field.field.node.submission_event.field_submission_pho_vid_consent
+    - field.field.node.submission_event.field_submission_phone_number
+    - field.field.node.submission_event.field_submission_postal_code
+    - field.field.node.submission_event.field_submission_province
+    - field.field.node.submission_event.field_submission_role
+    - field.field.node.submission_event.field_submission_sharing_consent
+    - field.field.node.submission_event.field_submission_training_type
+    - node.type.submission_event
+  module:
+    - app_payment
+    - datetime
+id: node.submission_event.default
+targetEntityType: node
+bundle: submission_event
+mode: default
+content:
+  field_extras:
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_payment_details:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: payment_details_widget
+    region: content
+  field_submission_1_on_1_comments:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_submission_1_on_1_topics:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_age:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_birthdate:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_submission_comments:
+    weight: 23
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_submission_country:
+    weight: 22
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_email_address:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_event_id:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_submission_event_option:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_submission_first_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_in_canada:
+    weight: 19
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_indigenous:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_is_indigenous:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_language:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_last_name:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_linkedin:
+    weight: 18
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_mentor_title:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_organization:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_pho_vid_consent:
+    weight: 24
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_phone_number:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_postal_code:
+    weight: 21
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_province:
+    weight: 20
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_role:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_submission_sharing_consent:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_submission_training_type:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

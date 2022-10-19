@@ -1,0 +1,51 @@
+{# @var v \Drupal\app\Views\CompactMenuView #}
+<div id="compact-menu">
+  <div class="compact-menu-modal">
+    <div class="compact-menu-toggle">{{ v.iconClose }}</div>
+    <div class="nav-wrapper">
+      <nav>
+        <ul class="compact-menu-parent-list">
+          <li>
+            <a id="compact-menu-logo" href="{{ v.baseUrl }}/{{ v.lang }}" aria-hidden="true" title="{{ v.gs.addressName }}">{{ v.logo }}</a>
+          </li>
+          {% for item in v.menu %}
+            <li class="compact-menu-parent-list-item">
+              <a href="{{ item.url }}"{% if item.children|length %}class="has-children"{% endif %}>{{ item.title }}</a>
+              {% if item.children|length %}
+                <ul class="compact-menu-child-list">
+                  {% for child in item.children %}
+                    <li class="compact-menu-child-list-item">
+                      <a href="{{ child.url }}">{{ child.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+          <li class="div"></li>
+          <li class="social">
+            <a href="https://www.facebook.com/mentoringcanada/" target="_blank" aria-label='{{ "Follow us on"|t }} Facebook'>
+              <i class="fab fa-facebook-square" aria-hidden="true"></i>
+            </a>
+            <a href="https://twitter.com/Mentoringcanada" target="_blank" aria-label='{{ "Follow us on"|t }} Twitter'>
+              <i class="fab fa-twitter-square" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/canadian-mentoring-partnership-partenariat-canadien-de-mentorat/?viewAsMember=true" target="_blank" aria-label='{{ "Follow us on"|t }} LinkedIn'>
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/mentorcanada/" target="_blank" aria-label='{{ "Follow us on"|t }} Instagram'>
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCYExa1ehADYg-kzG7lSmPoQ/" target="_blank" aria-label='{{ "Follow us on"|t }} YouTube'>
+              <i class="fab fa-youtube" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            {{ v.languageToggleLink|raw }}
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+

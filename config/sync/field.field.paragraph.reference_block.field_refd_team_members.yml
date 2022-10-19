@@ -1,0 +1,23 @@
+uuid: e89a329f-a87d-4448-9124-e024097712f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refd_team_members
+    - paragraphs.paragraphs_type.reference_block
+id: paragraph.reference_block.field_refd_team_members
+field_name: field_refd_team_members
+entity_type: paragraph
+bundle: reference_block
+label: 'Dynamic Team Members'
+description: 'Display <em>Team Members</em> dynamically, updated as new ones are added. Disable this option to display specific members.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

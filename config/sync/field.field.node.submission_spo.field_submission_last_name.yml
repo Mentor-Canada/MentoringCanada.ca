@@ -1,0 +1,19 @@
+uuid: c5a445ea-e5ce-4c38-9bf5-1d2d7ab147f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_last_name
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_last_name
+field_name: field_submission_last_name
+entity_type: node
+bundle: submission_spo
+label: 'Last Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

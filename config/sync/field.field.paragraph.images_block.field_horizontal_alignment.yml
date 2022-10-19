@@ -1,0 +1,23 @@
+uuid: 141e2061-fcbb-49e8-aa04-d25d3e68a6bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_horizontal_alignment
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_horizontal_alignment
+field_name: field_horizontal_alignment
+entity_type: paragraph
+bundle: images_block
+label: 'Horizontal Alignment'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

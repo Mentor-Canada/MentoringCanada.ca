@@ -1,0 +1,181 @@
+uuid: 573736c3-2543-4e34-82e7-5172f21ef67b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.submission_spo.field_submission_aware_srdc_cmp
+    - field.field.node.submission_spo.field_submission_caller
+    - field.field.node.submission_spo.field_submission_connector_list
+    - field.field.node.submission_spo.field_submission_email_address
+    - field.field.node.submission_spo.field_submission_first_name
+    - field.field.node.submission_spo.field_submission_has_services
+    - field.field.node.submission_spo.field_submission_language
+    - field.field.node.submission_spo.field_submission_last_name
+    - field.field.node.submission_spo.field_submission_newsletter_list
+    - field.field.node.submission_spo.field_submission_organization
+    - field.field.node.submission_spo.field_submission_received_survey
+    - field.field.node.submission_spo.field_submission_survey_ask_1
+    - field.field.node.submission_spo.field_submission_survey_ask_2
+    - field.field.node.submission_spo.field_submission_survey_complete
+    - field.field.node.submission_spo.field_submission_survey_concerns
+    - field.field.node.submission_spo.field_submission_survey_started
+    - field.field.node.submission_spo.field_submission_survey_why_not
+    - field.field.node.submission_spo.field_submission_survey_willing
+    - node.type.submission_spo
+  module:
+    - user
+id: node.submission_spo.default
+targetEntityType: node
+bundle: submission_spo
+mode: default
+content:
+  field_submission_aware_srdc_cmp:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_caller:
+    weight: 126
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_connector_list:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_email_address:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_first_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_has_services:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_language:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_last_name:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_newsletter_list:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_organization:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_received_survey:
+    weight: 119
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_ask_1:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_ask_2:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_complete:
+    weight: 122
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_concerns:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_submission_survey_started:
+    weight: 123
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_why_not:
+    weight: 124
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_submission_survey_willing:
+    weight: 125
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

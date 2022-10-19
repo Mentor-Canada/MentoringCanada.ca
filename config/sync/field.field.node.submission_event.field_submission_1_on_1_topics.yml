@@ -1,0 +1,19 @@
+uuid: 6ae13801-d1c9-44b7-b5ce-e6692fb0c495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_1_on_1_topics
+    - node.type.submission_event
+id: node.submission_event.field_submission_1_on_1_topics
+field_name: field_submission_1_on_1_topics
+entity_type: node
+bundle: submission_event
+label: 'One On One Topics'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

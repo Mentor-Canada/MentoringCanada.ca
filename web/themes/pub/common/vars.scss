@@ -1,0 +1,49 @@
+$header-height: 100px;
+$ui-input-height: 56px;
+
+$content-width-standard: 800px;
+$content-width-wide: 1200px;
+$content-width-full: none;
+$content-width-bleed: none;
+
+$mentor-red: #d91c1c;
+$mentor-red-shade: #a60000;
+$mentor-yellow: #ffac26;
+$mentor-yellow-shade: #e58e00;
+$mentor-green: #00c2ae;
+$mentor-green-shade: #00a695;
+$mentor-soft-blue: #0061a6;
+$mentor-soft-blue-shade: #004373;
+$mentor-blue: #122e45;
+$mentor-blue-shade: #0d2133;
+$mentor-white-blue: #d9ebf0;
+$mentor-white-blue-shade: #9eb8bf;
+$mentor-night-blue: #001217;
+
+// custom colours
+$mentor-yellow-light: #ffc91a;
+$mentor-off-white: #f6f9fc;
+
+$ui-primary: #0095ff;
+$ui-neutral: rgba(#000, 0.38);
+$ui-neutral-dark: rgba(#000, 0.57);
+$ui-hover: rgba(#000, 0.76);
+$ui-focus: $ui-primary;
+$ui-input-color: rgba(#000, 0.87);
+$ui-border-radius: 4px;
+
+$ui-alert-success: #47c965;
+$ui-alert-error: #ff002a;
+
+$typography-color: #444;
+$heading-color: #222;
+
+$header-link-color: $heading-color;
+$header-link-hover-background: $ui-primary;
+
+$divider-vibrant: linear-gradient(to right, $ui-primary, $mentor-soft-blue);
+$divider-minimal: $mentor-white-blue-shade;
+$divider-minimal-light: scale-color($mentor-white-blue-shade, $lightness: 50%);
+
+$eyebrow-color: scale-color($mentor-white-blue-shade, $lightness: -50%);
+$eyebrow-color-light: scale-color($mentor-white-blue-shade, $lightness: 50%);

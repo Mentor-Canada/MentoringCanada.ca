@@ -1,0 +1,10 @@
+uuid: 81e7c813-ac81-4f13-9ae5-714e220a0087
+langcode: en
+status: true
+dependencies: {  }
+id: wysiwyg_block
+label: 'Text Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,18 @@
+uuid: a614b4c4-d44d-4c7e-aeb6-822d9fa65f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node.submission_event.changed
+field_name: changed
+entity_type: node
+bundle: submission_event
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

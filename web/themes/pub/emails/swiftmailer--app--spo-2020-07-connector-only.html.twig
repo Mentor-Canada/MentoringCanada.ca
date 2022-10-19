@@ -1,0 +1,135 @@
+{% set v = message.params.v %}
+{% set langcode = message.lang %}
+<html>
+<body>
+
+<table class="email" style="margin: 0 auto;padding: 0;width: 100%;max-width: 600px;height: 100%;border: 1px solid #0d2133;border-spacing: 0;background: #0d2133;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">
+
+  <tr class="header">
+    <td style="padding: 35px 20px;">
+      <img class="logo" width="193" height="44" alt="{{ message.logoAlt }}" src="{{ message.logo }}" style="display: block;width: 193px;height: 44px;">
+    </td>
+  </tr>
+
+  <tr class="body">
+    <td style="padding: 0 6px 20px 6px;">
+      <table class="body-table" style="margin: 0;padding: 0;width: 100%;height: 100%;background: #ffffff;">
+        <tr class="body-body">
+          <td style="padding: 40px 14px;">
+            <div class="wysiwyg" style="font-size: 16px;font-weight: normal;color: #464748;">
+
+              {% if langcode == "fr" %}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 0;">Cher / Chère {{ message.name }},</p>
+                {{ message.params.body|raw }}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Merci d’avoir pris le temps de parler avec nous au sujet des initiatives du <a href="https://www.mentoringcanada.ca/fr/" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">Partenariat canadien de mentorat</a>.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Nous allons également vous envoyer une invitation pour vous inscrire au <strong style="font-weight: 700;">Connecteur Mentor</strong> dès que la période d’inscription sera ouverte. Le Connecteur Mentor est une plateforme de recrutement en ligne qui dirigera les futurs mentors et les mentorés vers le programme qui leur convient le mieux. Il s’agit de la première initiative du Portail Mentor Canada qui sera lancé cet été. Le Portail Mentor Canada est un portail national pour les mentors, mentorés et les organismes de mentorat. Le portail offrira des outils technologiques et des ressources créées en collaboration avec des organismes canadiens de mentorat.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  <a href="https://www.mentoringcanada.ca/fr/infolettre" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">Inscrivez-vous à notre liste d’envoi</a> pour recevoir les dernières nouvelles à propos des initiatives du Partenariat canadien de mentorat.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Nous vous remercions de votre soutien et de votre contribution au développement d’un mouvement de mentorat au Canada.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  <br>
+                  <strong style="font-weight: 700;">Véronique Church-Duplessis</strong><br>
+                  <a href="mailto:veronique.church-duplessis@mentoringcanada.ca" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">veronique.church-duplessis@mentoringcanada.ca</a><br>
+                  1-800-263-9133 ext. 62<br>
+                  Directrice de la recherche et de l’évaluation<br>
+                  Partenariat canadien de mentorat
+                </p>
+              {% else %}
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">Dear {{ message.name }},</p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Thank you for taking the time to speak with us regarding the work of the <a href="https://www.mentoringcanada.ca/en/" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">Canadian Mentoring Partnership</a>.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  We will send you an invitation to pre-register for the <strong style="font-weight: 700;">Mentor Connector</strong> as soon as it is live. The Mentor Connector is an online recruitment platform that matches volunteer mentors and mentees with the right mentoring program.  This is the first initiative within the Canadian Mentor Portal that we’ll be launching this summer. It is a national gateway for mentors, mentees and the organizations that support them.  The portal will offer technology and resources developed in consultation with Canadian mentoring service providers.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  <a href="https://www.mentoringcanada.ca/en/newsletter" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">Sign up here</a> to receive updates on CMP’s work.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  Thank you again for your ongoing support as we work together to build a national mentoring movement in Canada.
+                </p>
+                <p style="font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;line-height: 1.5;margin-top: 1em;">
+                  <br>
+                  <strong style="font-weight: 700;">Véronique Church-Duplessis</strong><br>
+                  <a href="mailto:veronique.church-duplessis@mentoringcanada.ca" style="color: #0084ff;text-decoration: none;font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;">veronique.church-duplessis@mentoringcanada.ca</a><br>
+                  1-800-263-9133 ext. 62<br>
+                  Director of Research and Evaluation<br>
+                  Canadian Mentoring Partnership
+                </p>
+              {% endif %}
+
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr class="footer">
+    <td style="padding: 0 14px 20px 14px;">
+      <div class="footer-summary" style="font-size: 12px;color: #6b8399;">
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Follow us"|t([],{'langcode': langcode}) }}</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mentoringcanada/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.fb }}" alt="Facebook" style="width: 30px;height: 29.5px;">
+            </a>
+            <a href="https://twitter.com/MentoringCanada" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.tw }}" alt="Twitter" style="width: 30px;height: 30px;">
+            </a>
+            <a href="https://www.linkedin.com/company/canadian-mentoring-partnership-partenariat-canadien-de-mentorat/?viewAsMember=true" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.li }}" alt="LinkedIn" style="width: 28.5px;height: 28px;">
+            </a>
+            <a href="https://www.instagram.com/mentorcanada/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.ig }}" alt="Instagram" style="width: 29px;height: 29px;">
+            </a>
+            <a href="https://www.youtube.com/channel/UCYExa1ehADYg-kzG7lSmPoQ/" style="color: #a4daff;margin: 0;line-height: 1;display: inline-block;vertical-align: middle;padding: 5px 10px 5px 0;text-decoration: none;">
+              <img src="{{ message.yt }}" alt="YouTube" style="width: 35px;height: 25px;">
+            </a>
+          </div>
+          <p style="margin: 0;line-height: 1.3;">#MentoringCanada</p>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Contact us"|t([],{'langcode': langcode}) }}</div>
+          <a href="{{ message.globalSettings.phoneLink }}" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ message.globalSettings.phoneDisplayWithExtension }}</a>
+          <br>
+          <a href="{{ message.globalSettings.emailLink }}" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ message.globalSettings.emailDisplay }}</a>
+          <br>
+          <a href="mentoringcanada.ca/{{ langcode }}" target="_blank" style="color: #a4daff;margin: 0;line-height: 1.3;">mentoringcanada.ca</a>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 20px;">
+          <div class="footer-contact-title" style="font-weight: 700;color: #88afcc;">{{ "Mailing address"|t([],{'langcode': langcode}) }}</div>
+          <p style="margin: 0;line-height: 1.3;">
+            {{ message.globalSettings .addressName }}
+            <br>
+            {{ message.globalSettings .addressLine1 }}
+            <br>
+            {{ message.globalSettings .addressLine2 }}
+            <br>
+            {{ message.globalSettings .addressLine3 }}
+          </p>
+        </div>
+
+        <div class="footer-contact-block" style="margin-bottom: 0;">
+          <p style="margin: 0;line-height: 1.3;">{{ "Join our"|t([],{'langcode': langcode}) }} <a href="https://mentoringcanada.us4.list-manage.com/subscribe?u=a67929939be415eba75c93a0b&id=7d099210dd" target="_blank" style="color: #a4daff;margin: 0;line-height: 1.3;">{{ "mailing list"|t([],{'langcode': langcode}) }}</a></p>
+          <p style="margin: 0;line-height: 1.3;">&copy;{{ 'now'|date('Y') }} {{ message.globalSettings.addressName }}</p>
+        </div>
+
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>

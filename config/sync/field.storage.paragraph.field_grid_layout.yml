@@ -1,0 +1,27 @@
+uuid: 42df9301-b3be-426b-b462-eab1a98dec6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_grid_layout
+field_name: field_grid_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: best-fit
+      label: 'Best Fit'
+    -
+      value: number
+      label: 'Number Per Row'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

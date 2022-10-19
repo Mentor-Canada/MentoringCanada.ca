@@ -1,0 +1,23 @@
+uuid: 14d09263-7ea8-45dd-9440-ac56a8236cf0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_images
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - options
+id: paragraph.text_image_block.field_number_of_images
+field_name: field_number_of_images
+entity_type: paragraph
+bundle: text_image_block
+label: 'Number of Images'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: images-1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

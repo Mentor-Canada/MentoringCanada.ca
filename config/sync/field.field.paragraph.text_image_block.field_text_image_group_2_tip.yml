@@ -1,0 +1,24 @@
+uuid: 842e2814-8245-4368-82b5-ef408fd180df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_image_group_2_tip
+    - paragraphs.paragraphs_type.text_image_block
+  module:
+    - description_field
+id: paragraph.text_image_block.field_text_image_group_2_tip
+field_name: field_text_image_group_2_tip
+entity_type: paragraph
+bundle: text_image_block
+label: 'Text + Image Group 2 Tip'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  long_description:
+    value: "<h6>Add a second text and image group</h6>\r\n\r\n<p>To add a second text and image block, please select \"<em>2 images</em>\" from the \"<em>Number of Images</em>\" option under the Settings tab above.</p>\r\n"
+    format: html
+field_type: description_field

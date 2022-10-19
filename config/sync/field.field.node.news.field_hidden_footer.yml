@@ -1,0 +1,23 @@
+uuid: 1ee28a6c-994a-428d-af3c-30d4acee5bd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hidden_footer
+    - node.type.news
+id: node.news.field_hidden_footer
+field_name: field_hidden_footer
+entity_type: node
+bundle: news
+label: 'Hidden Footer'
+description: 'Hide most footer elements, rendering a minimal footer limited to contact and legal links.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 4e67715c-0c55-4fb0-88c5-ba8620cccd61
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dashboard
+id: node.dashboard.status
+field_name: status
+entity_type: node
+bundle: dashboard
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

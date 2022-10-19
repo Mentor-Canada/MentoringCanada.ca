@@ -1,0 +1,19 @@
+uuid: e81247b9-2196-4077-9cce-77d6a27d68e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.youtube_block
+id: paragraph.youtube_block.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: youtube_block
+label: Caption
+description: 'An optional caption to display alongside the YouTube video.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

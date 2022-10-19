@@ -1,0 +1,23 @@
+uuid: 5d01a0d9-4e97-4b18-9603-40978f93b061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_fb
+    - node.type.global_settings
+  module:
+    - link
+id: node.global_settings.field_social_fb
+field_name: field_social_fb
+entity_type: node
+bundle: global_settings
+label: Facebook
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

@@ -1,0 +1,28 @@
+uuid: 00270830-9fef-4b5c-8d3f-602fae6bab70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notify_event_users
+    - node.type.event
+id: node.event.field_notify_event_users
+field_name: field_notify_event_users
+entity_type: node
+bundle: event
+label: 'Notify Users'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

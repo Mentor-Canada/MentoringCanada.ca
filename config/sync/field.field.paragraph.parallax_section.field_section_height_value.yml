@@ -1,0 +1,25 @@
+uuid: fc0b465a-6d4e-4e45-bada-b56c392584f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_height_value
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_section_height_value
+field_name: field_section_height_value
+entity_type: paragraph
+bundle: parallax_section
+label: 'Section Height Value'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: !!float 80
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

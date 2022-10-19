@@ -1,0 +1,23 @@
+uuid: eb12f24e-c57d-4789-9511-324e3526ab56
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_images_display_mode
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_images_display_mode
+field_name: field_images_display_mode
+entity_type: paragraph
+bundle: images_block
+label: 'Images Display Mode'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: carousel
+default_value_callback: ''
+settings: {  }
+field_type: list_string

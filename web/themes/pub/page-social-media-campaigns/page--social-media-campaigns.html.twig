@@ -1,0 +1,35 @@
+{# @var v \Drupal\app\Views\PageSocialMediaCampaignsView #}
+<section id="page-banner" class="page-banner-no-image">
+  <div class="page-banner-content typography" data-banner-width="wide">
+    <h1 class="banner-eyebrow visually-h4">{{ "Mentor Canada"|t }}</h1>
+    <h2 class="banner-heading">{{ v.title }}</h2>
+  </div>
+</section>
+
+
+<div id="content">
+  <article>
+
+    <section class="content-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="wide">
+
+          <div class="teasers-wrapper">
+            {% for teaser in v.teasers %}
+              {{ teaser|raw }}
+            {% endfor %}
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>
+

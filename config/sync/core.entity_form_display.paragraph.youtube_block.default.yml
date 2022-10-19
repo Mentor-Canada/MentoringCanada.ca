@@ -1,0 +1,96 @@
+uuid: d380ad9b-4bb8-4db3-bc18-dd5fbcd47452
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.youtube_block.field_caption
+    - field.field.paragraph.youtube_block.field_closed_captions
+    - field.field.paragraph.youtube_block.field_width_options_wide
+    - field.field.paragraph.youtube_block.field_youtube_video_id
+    - paragraphs.paragraphs_type.youtube_block
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_content:
+      children:
+        - field_youtube_video_id
+        - field_caption
+      parent_name: group_tabs
+      weight: 1
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: open
+        required_fields: true
+      label: Content
+    group_settings:
+      children:
+        - field_closed_captions
+        - field_width_options_wide
+        - field_wide_block
+      parent_name: group_tabs
+      weight: 2
+      format_type: tab
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: Settings
+id: paragraph.youtube_block.default
+targetEntityType: paragraph
+bundle: youtube_block
+mode: default
+content:
+  field_caption:
+    weight: 6
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_closed_captions:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_width_options_wide:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_youtube_video_id:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  translation: true

@@ -1,0 +1,121 @@
+{# @var v \Drupal\app\Views\NewsletterView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    <div data-padding-standard="horizontal-vertical">
+      <div data-content-width="standard">
+
+        <div class="typography">{{ v.body|raw }}</div>
+
+        <form id="newsletter-form" method="post" class="newsletter-form standard-form-style" onsubmit="document.querySelector('body').classList.add('standard-form-submitted');">
+
+          <input type="hidden" name="nid" value="{{ v.nid }}">
+
+          <fieldset>
+            <legend>{{ "MENTOR Canada Newsletter"|t }}</legend>
+
+            <div class="ui-form-row">
+              <fieldset>
+                <legend>{{ "Subscribe / Unsubscribe"|t }}</legend>
+                {{ ui_radio("substatus_subscribe", "substatus", "Subscribe"|t, "subscribe", "checked", true, "substatus-subscribe,substatus-subscribe-action") }}
+                {{ ui_radio("substatus_unsubscribe", "substatus", "Unsubscribe"|t, "unsubscribe", "", true, "substatus-unsubscribe-action") }}
+              </fieldset>
+            </div>
+
+            <div class="ui-form-row">
+              {{ ui_input("email", "Email Address"|t, "required", "email", "off") }}
+            </div>
+
+            <div class="optional-substatus-subscribe"></div>
+
+            <template data-template-name="substatus-subscribe" data-target="optional-substatus-subscribe">
+              <div class="optional" data-template="substatus-subscribe">
+
+                <div class="ui-form-row col-2">
+                  {{ ui_input("firstname", "First Name"|t, "required", "First Name", "off") }}
+                  {{ ui_input("lastname", "Last Name"|t, "required", "Last Name", "off") }}
+                </div>
+
+                <div class="ui-form-row">
+                  {{ ui_input("organization", "Organization"|t, "", "Organization", "") }}
+                </div>
+
+                <div class="ui-form-row">
+                  <fieldset>
+                    <legend>{{ "Are you in Canada?"|t }}</legend>
+                    {{ ui_radio("in_canada_yes", "in_canada", "Yes"|t, "Yes", "", true, "canada-yes") }}
+                    {{ ui_radio("in_canada_no", "in_canada", "No"|t, "No", "", true) }}
+                  </fieldset>
+                </div>
+
+                <div class="optional-canada-yes"></div>
+
+                <div class="ui-form-row">
+                  <fieldset>
+                    <legend>{{ "Preferred Language"|t }}</legend>
+                    {% if v.lang == "fr" %}
+                      {{ ui_radio("lang_fr", "lang", "French"|t, "fr", "checked", true) }}
+                      {{ ui_radio("lang_en", "lang", "English"|t, "en", "", true) }}
+                    {% else %}
+                      {{ ui_radio("lang_en", "lang", "English"|t, "en", "checked", true) }}
+                      {{ ui_radio("lang_fr", "lang", "French"|t, "fr", "", true) }}
+                    {% endif %}
+                  </fieldset>
+                </div>
+
+                <div class="ui-form-row">
+                  <fieldset>
+                    <legend>{{ "Would you like to receive the MENTOR Canada Newsletter?"|t }}</legend>
+                    {{ ui_checkbox("newsletter", "newsletter", "Yes, subscribe me to the MENTOR Canada Newsletter"|t, "Yes", "", true) }}
+                    <div class="description">{{ "casl_description_text"|t }} <a href="{{ path('entity.node.canonical', {'node': 381}) }}">{{ "casl_contact_link"|t }}</a>.</div>
+                  </fieldset>
+                </div>
+
+              </div>
+            </template>
+
+          </fieldset>
+
+          <template data-template-name="canada-yes" data-target="optional-canada-yes">
+            <div class="optional" data-template="canada-yes">
+              <div class="ui-form-row">
+                {{ ui_select("province", v.provinceSelectOptions, "Province or Territory"|t, true, "Please select a province or territory") }}
+              </div>
+            </div>
+          </template>
+
+          <div class="optional-substatus-subscribe-action"></div>
+
+          <template data-template-name="substatus-subscribe-action" data-target="optional-substatus-subscribe-action">
+            <div class="optional" data-template="substatus-subscribe-action">
+              <div class="actions">
+                <button>{{ "Subscribe"|t }}</button>
+              </div>
+            </div>
+          </template>
+
+          <div class="optional-substatus-unsubscribe-action"></div>
+
+          <template data-template-name="substatus-unsubscribe-action" data-target="optional-substatus-unsubscribe-action">
+            <div class="optional" data-template="substatus-unsubscribe-action">
+              <div class="actions">
+                <button>{{ "Unsubscribe"|t }}</button>
+              </div>
+            </div>
+          </template>
+
+        </form>
+
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "newsletter";
+</script>
+

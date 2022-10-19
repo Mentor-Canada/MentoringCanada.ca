@@ -1,0 +1,21 @@
+uuid: 1de932dc-56fc-4882-baee-88517bc5a089
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_payment
+    - node.type.event
+  module:
+    - app_payment
+id: node.event.field_payment
+field_name: field_payment
+entity_type: node
+bundle: event
+label: Payment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: payment_item

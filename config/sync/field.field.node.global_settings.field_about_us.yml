@@ -1,0 +1,21 @@
+uuid: 3ea09c26-a8ed-4c38-9996-bb9c4aca0a00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_us
+    - node.type.global_settings
+  module:
+    - text
+id: node.global_settings.field_about_us
+field_name: field_about_us
+entity_type: node
+bundle: global_settings
+label: 'About Us'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

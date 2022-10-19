@@ -1,0 +1,33 @@
+uuid: 087de5df-40ae-4be3-82db-397f52087fa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact.field_banner_eyebrow
+    - field.field.node.contact.field_banner_heading
+    - field.field.node.contact.field_banner_image
+    - field.field.node.contact.field_banner_link
+    - field.field.node.contact.field_banner_subheading
+    - field.field.node.contact.field_page_content
+    - node.type.contact
+  module:
+    - user
+id: node.contact.teaser
+targetEntityType: node
+bundle: contact
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner_eyebrow: true
+  field_banner_heading: true
+  field_banner_image: true
+  field_banner_link: true
+  field_banner_subheading: true
+  field_page_content: true
+  langcode: true

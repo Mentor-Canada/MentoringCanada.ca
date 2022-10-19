@@ -1,0 +1,19 @@
+uuid: 6ac218d6-6c53-472e-a311-3dd8e0d59112
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_connector_list
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_connector_list
+field_name: field_submission_connector_list
+entity_type: node
+bundle: submission_spo
+label: 'Would you be interested in receiving more information about how to pre-register for the Mentor Connector?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

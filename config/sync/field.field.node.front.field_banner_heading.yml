@@ -1,0 +1,19 @@
+uuid: 1060e5da-2fc2-4c38-8548-5a9814fd7afd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_heading
+    - node.type.front
+id: node.front.field_banner_heading
+field_name: field_banner_heading
+entity_type: node
+bundle: front
+label: 'Banner Heading'
+description: 'The heading is the main headline that appears in the banner. It is encouraged to enter a short introductory sentence to the page. When no heading is given, the page title will be used.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

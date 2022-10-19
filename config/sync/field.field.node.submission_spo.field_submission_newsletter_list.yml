@@ -1,0 +1,19 @@
+uuid: e10c34a2-5423-4644-a8df-e7b024b97474
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_newsletter_list
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_newsletter_list
+field_name: field_submission_newsletter_list
+entity_type: node
+bundle: submission_spo
+label: 'Would you be interested in joining our mailing list?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

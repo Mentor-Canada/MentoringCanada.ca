@@ -1,0 +1,23 @@
+uuid: 69cfc068-3b5c-4aec-a4fd-036b3c954ca8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_option_closed
+    - node.type.event_option
+id: node.event_option.field_event_option_closed
+field_name: field_event_option_closed
+entity_type: node
+bundle: event_option
+label: Closed
+description: 'This will close this event option and remove it from the the options available to users, regardless of any openings available as set in the Registration Limit. Please note that this will have no effect on any existing registrations associated with this event option.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

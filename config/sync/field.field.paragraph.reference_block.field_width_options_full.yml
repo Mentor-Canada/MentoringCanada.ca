@@ -1,0 +1,23 @@
+uuid: 6ead70ec-4ddf-433d-bc3b-8146c2f3c34a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_full
+    - paragraphs.paragraphs_type.reference_block
+  module:
+    - options
+id: paragraph.reference_block.field_width_options_full
+field_name: field_width_options_full
+entity_type: paragraph
+bundle: reference_block
+label: 'Block Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

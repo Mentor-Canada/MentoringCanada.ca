@@ -1,0 +1,21 @@
+uuid: 96571d9d-bb9a-486e-91c1-5f4820e5fe96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_smt_date
+    - node.type.social_media_toolkit
+  module:
+    - datetime
+id: node.social_media_toolkit.field_smt_date
+field_name: field_smt_date
+entity_type: node
+bundle: social_media_toolkit
+label: Date
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

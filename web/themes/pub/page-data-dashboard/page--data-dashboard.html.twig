@@ -1,0 +1,43 @@
+{# @var v \Drupal\datadashboard\DataDashboardPageView #}
+{# @var group \Drupal\app\Views\Chart\ChartGroupView #}
+{# @var item \Drupal\app\Views\Chart\ChartItemView #}
+{{ v.banner|raw }}
+
+<div id="content">
+
+  <section id="intro">
+    {{ v.sections.0|raw }}
+  </section>
+
+  <section id="key-findings">
+    {{ v.sections.1|raw }}
+  </section>
+
+  <section id="chart-intro">
+    {{ v.sections.2|raw }}
+  </section>
+
+  <section id="chart-wrapper">
+    <div class="chart">
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+      <div class="chart-ui">
+        {{ v.interface }}
+      </div>
+    </div>
+  </section>
+
+  <section id="learn-more">
+    {{ v.sections.3|raw }}
+  </section>
+
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "dataDashboard";
+  window.pageData.json = {{ v.accessToMentoringChartData.elements|json_encode()|raw }};
+  window.pageData.language = "{{ language.getId() }}";
+  window.pageData.KPILabels = {{ v.KPILabels|json_encode|raw }}
+</script

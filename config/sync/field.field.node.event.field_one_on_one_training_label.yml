@@ -1,0 +1,19 @@
+uuid: 1e66599e-b472-4475-a01b-6bd5e6b405ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_one_on_one_training_label
+    - node.type.event
+id: node.event.field_one_on_one_training_label
+field_name: field_one_on_one_training_label
+entity_type: node
+bundle: event
+label: '1:1 Training & Support Label'
+description: 'This will override the "1:1 Training & Support" label displayed when asking the user which kind of training they are registering for. Leave blank to use the default label.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

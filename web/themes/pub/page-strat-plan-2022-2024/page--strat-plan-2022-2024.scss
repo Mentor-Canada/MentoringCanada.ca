@@ -1,0 +1,1443 @@
+body.page-alias--strategic-plan-2022-2024 {
+
+  $strat-plan-heading-color: #222;
+  $strat-plan-text-color: #444;
+
+  header {
+    @supports (-webkit-backdrop-filter: saturate(200%) blur(20px)) or (backdrop-filter: saturate(200%) blur(20px)) {
+      background-color: transparent;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: colorAtOpacity($mentor-off-white, 0.75);
+        -webkit-backdrop-filter: saturate(200%) blur(20px);
+        backdrop-filter: saturate(200%) blur(20px);
+      }
+    }
+  }
+
+  #content {
+    padding: 0;
+    background: transparent;
+  }
+
+  .typography {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 500;
+      color: $strat-plan-heading-color;
+    }
+    p {
+      color: $strat-plan-text-color;
+    }
+  }
+
+  #page-banner {
+    background: $mentor-off-white;
+    .banner-eyebrow {
+      color: #555;
+      background: transparent;
+      -webkit-background-clip: border-box;
+      -webkit-text-fill-color: currentcolor;
+    }
+    .banner-heading {
+      color: $strat-plan-heading-color;
+    }
+    .page-banners-image-wrapper {
+      &:after {
+        display: none;
+      }
+      .page-banners-image-scroll-effects-container {
+        .page-banner-image {
+          opacity: 0;
+          will-change: transform, opacity;
+          transition: transform 4000ms cubic-bezier(0, 1, 0, 1), opacity 1000ms;
+        }
+        @for $i from 0 through 4 {
+          &.container-#{$i} {
+            top: (-1% * ($i + 1));
+            left: (-1% * ($i + 1));
+            width: (102% + ($i * 2%));
+            height: (102% + ($i * 2%));
+            .page-banner-image {
+              transition-delay: (800ms + ($i * 100ms));
+              background-size: (1920px * (1.02 + ($i * 0.02))) auto;
+            }
+          }
+        }
+      }
+    }
+    .page-banners-content-wrapper {
+      min-height: 100vh;
+      padding: calc(100px + 10vh) 5vw;
+      .page-banner-content {
+        max-width: 800px;
+      }
+    }
+
+
+    //.page-banner-image-element {
+    //  .page-banner-image {
+    //    transform: scale(1.5);
+    //    transition: transform ($page-banner-transition-duration * 2) cubic-bezier(0, 1, 0, 1);
+    //  }
+    //}
+    //.page-banner-content-element {
+    //  .page-banner-content {
+    //    > * {
+    //      opacity: 0;
+    //      transform: translateY(50px);
+    //      transition: opacity $page-banner-transition-duration, transform ($page-banner-transition-duration * 2) cubic-bezier(0, 1, 0, 1);
+    //      transition-delay: 950ms;
+    //    }
+    //  }
+    //}
+  }
+
+
+
+  #strat-plan-article {
+    background: #fff;
+
+    #why-mentoring-matters,
+    #barriers-to-mentoring,
+    #what-is-mentor-canada-doing,
+    #reconciliation,
+    #what-will-mentor-canada-do {
+      position: relative;
+    }
+    #why-mentoring-matters {
+      z-index: 5;
+    }
+    #barriers-to-mentoring {
+      z-index: 4;
+    }
+    #what-is-mentor-canada-doing {
+      z-index: 3;
+    }
+    #reconciliation {
+      z-index: 2;
+    }
+    #what-will-mentor-canada-do {
+      z-index: 1;
+    }
+
+
+    #why-mentoring-matters {
+      background: #fff;
+      margin-top: 100vh;
+
+      #why-mentoring-matters-intro {
+        padding: 20vh 5vw 5vh 5vw;
+        .typography {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+          h2 {
+            @include font-tracking(90);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(75);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(60);
+            }
+            margin-bottom: 0.5em;
+          }
+          p {
+            @include font-tracking(24);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(22);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(20);
+            }
+          }
+        }
+      }
+
+      #why-mentoring-matters-stats {
+        padding: 5vh 5vw;
+        display: flex;
+        justify-content: center;
+        @media (max-width: 750px) {
+          display: block;
+        }
+        .why-stat {
+          max-width: 300px;
+          margin: 0 20px;
+          h4 {
+            display: flex;
+            align-items: flex-end;
+            line-height: 1.2;
+            height: 2.4em;
+            color: #ed186a;
+            @include font-tracking(16);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(15);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(14);
+            }
+          }
+          p {
+            margin-top: 0.5em;
+            span.stat-wrapper {
+              display: block;
+              span.stat {
+                font-weight: 500;
+                line-height: 1;
+                padding: 0 0.1em;
+                margin: 0 -0.1em 0 -0.15em;
+
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(115deg, #ed186a, #ff6700, #ffcb39);
+
+                @include font-tracking(90);
+                @media (max-width: $typography-break-2) {
+                  @include font-tracking(75);
+                }
+                @media (max-width: $typography-break-1) {
+                  @include font-tracking(60);
+                }
+                sup {
+                  font-size: 0.5em;
+                  padding-left: 0.1em;
+                }
+              }
+            }
+            span.stat-text {
+              display: block;
+              font-weight: 500;
+            }
+          }
+          h4,
+          span.stat-wrapper,
+          span.stat-text {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 500ms, transform 1000ms;
+          }
+          h4 {
+            transition-delay: 0ms;
+          }
+          span.stat-wrapper {
+            transition-delay: 100ms;
+          }
+          span.stat-text {
+            transition-delay: 200ms;
+          }
+          @media (max-width: 750px) {
+            max-width: 500px;
+            margin: 0 0 5vh 0;
+            &:last-child {
+              margin: 0;
+            }
+            h4 {
+              height: auto;
+            }
+          }
+          @media (min-width: 751px) {
+            &.why-stats-2 {
+              h4 {
+                transition-delay: (0ms + 300ms);
+              }
+              span.stat-wrapper {
+                transition-delay: (100ms + 300ms);
+              }
+              span.stat-text {
+                transition-delay: (200ms + 300ms);
+              }
+            }
+            &.why-stats-3 {
+              h4 {
+                transition-delay: (0ms + 600ms);
+              }
+              span.stat-wrapper {
+                transition-delay: (100ms + 600ms);
+              }
+              span.stat-text {
+                transition-delay: (200ms + 600ms);
+              }
+            }
+          }
+          &.focused {
+            h4,
+            span.stat-wrapper,
+            span.stat-text {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+
+      #why-mentoring-matters-1,
+      #why-mentoring-matters-2,
+      #why-mentoring-matters-3 {
+        display: flex;
+        align-items: center;
+        padding: 10vh 5vw;
+        min-height: 80vh;
+        .typography {
+          max-width: 800px;
+          margin: 0 auto;
+          opacity: 0;
+          transform: translateY(50px);
+          transition: opacity 500ms, transform 1000ms;
+          &.focused {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          h3 {
+            color: $strat-plan-text-color;
+            @include font-tracking(72);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(60);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(48);
+            }
+          }
+        }
+
+        .typography [data-focus-start] {
+          padding: 0 0.1em;
+          margin: 0 -0.1em;
+          background-size: 500% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+          transition: opacity 2000ms, background-position 4000ms;
+          &:nth-child(1) {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #ed186a, #ff6700, #ffcb39, #ffcb39);
+          }
+          &:nth-child(2) {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #ed186a, #ff6700, #ffb62e, #ffb62e);
+          }
+          &:nth-child(3) {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #ed186a, #ff6700, #ff991d, #ff991d);
+          }
+          &:nth-child(4) {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #ed186a, #ff6700, #ff7b0b, #ff7b0b);
+          }
+          &.focused {
+            background-position-x: 100%;
+          }
+        }
+      }
+
+      #why-mentoring-matters-recap {
+        padding: 0 5vw 20vh 5vw;
+        .typography {
+          max-width: 600px;
+          margin: 0 auto;
+          opacity: 0.25;
+          transition: opacity 1000ms;
+          p {
+            font-weight: 400;
+          }
+          strong {
+            font-weight: 500;
+            padding: 0 0.1em;
+            margin: 0 -0.1em;
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            background-image: linear-gradient(90deg, $strat-plan-text-color, $strat-plan-text-color 33.333%, #ed186a 66.666%, #ff6700, #ffcb39);
+            transition: background-position 2000ms;
+          }
+          &.focused {
+            opacity: 1;
+            strong {
+              background-position-x: 100%;
+            }
+          }
+        }
+      }
+
+    }
+
+
+    #barriers-to-mentoring {
+      background: $mentor-off-white;
+      margin-top: -100vh;
+      .sticky-content {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding-top: 50vh;
+      }
+      .sticky-spacer {
+        height: 50vh;
+      }
+
+      #barriers-to-mentoring-intro {
+        padding: 20vh 5vw 10vh 5vw;
+        text-align: center;
+        .typography {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+      }
+
+      #barriers-to-mentoring-stat {
+        padding: 0 5vw 10vh 5vw;
+        .typography {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        p {
+          span.stat-wrapper {
+            display: block;
+            span.stat {
+              font-weight: 500;
+              line-height: 1;
+              padding: 0 0.1em;
+              margin: 0 -0.1em 0 -0.15em;
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-size: 300% auto;
+              background-image: linear-gradient(90deg, #006280, #006280 33.333%, #006280 66.666%, #008f99 83.333%, #33c1b3);
+              @include font-tracking(180);
+              @media (max-width: $typography-break-2) {
+                @include font-tracking(150);
+              }
+              @media (max-width: $typography-break-1) {
+                @include font-tracking(120);
+              }
+              sup {
+                font-size: 0.5em;
+                padding-left: 0.1em;
+              }
+            }
+          }
+          span.stat-text {
+            display: block;
+            font-weight: 500;
+          }
+        }
+        span.stat-wrapper,
+        span.stat-text {
+          opacity: 0;
+          transition: opacity 600ms, transform 1000ms;
+          transform: translateY(25px);
+        }
+        span.stat-text {
+          transition-delay: 200ms;
+        }
+        span.stat {
+          transition: background-position 1000ms;
+        }
+      }
+
+      #barriers-to-mentoring-intro.focused {
+        & + #barriers-to-mentoring-stat.focused {
+          span.stat-wrapper,
+          span.stat-text {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          span.stat {
+            background-position-x: 100%;
+          }
+        }
+      }
+
+      .section-flex-content {
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        overflow: hidden;
+        .content-aside {
+          display: flex;
+          align-items: center;
+          width: 45%;
+          min-height: 80vh;
+          .typography {
+            max-width: 500px;
+            opacity: 0.25;
+            transition: opacity 1000ms;
+            h3 {
+              padding: 0 0.1em;
+              margin: 0 -0.1em;
+              background-size: 300% auto;
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -webkit-box-decoration-break: clone;
+              box-decoration-break: clone;
+              transition: background-position 2000ms;
+              background-image: linear-gradient(90deg, $strat-plan-heading-color, $strat-plan-heading-color 33.333%, #006280 66.666%, #008f99 83.333%, #33c1b3);
+            }
+            &.focused {
+              opacity: 1;
+              h3 {
+                background-position-x: 100%;
+              }
+            }
+          }
+        }
+        .image-aside {
+          position: relative;
+          width: 55%;
+          .parallax-container {
+            position: relative;
+            overflow: hidden;
+            .parallax-image {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              background-size: cover;
+              background-position: 50% 50%;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+        &.content-right {
+          flex-direction: row;
+          .content-aside {
+            justify-content: flex-start;
+            padding: 10vh 5vw 10vh min(50px, 5vw);
+          }
+        }
+        &.content-left {
+          flex-direction: row-reverse;
+          .content-aside {
+            justify-content: flex-end;
+            padding: 10vh min(50px, 5vw) 10vh 5vw;
+          }
+        }
+      }
+
+      #barriers-to-mentoring-covid-19 {
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          right: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 30vh;
+          right: calc(min(50px, 5vw) + 45vh);
+          width: 40vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+      #barriers-to-mentoring-marginalization {
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          left: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 25vh;
+          left: calc(min(50px, 5vw) + 45vh);
+          width: 60vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+      #barriers-to-mentoring-access {
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          right: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 30vh;
+          right: calc(min(50px, 5vw) + 45vh);
+          width: 40vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+
+      #barriers-to-mentoring-broken-down {
+        display: flex;
+        align-items: center;
+        padding: 20vh 5vw;
+        min-height: 100vh;
+        .list {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .list-item {
+          p {
+            padding: 0 0.1em;
+            margin: 1em -0.1em 0 -0.1em;
+            background-size: 500% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition: opacity 2000ms, background-position 4000ms;
+          }
+          &:nth-child(1) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #006280, #008f99, #33c1b3, #33c1b3);
+          }
+          &:nth-child(2) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #006280, #008f99, #29ada9, #29ada9);
+          }
+          &:nth-child(3) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #006280, #008f99, #199299, #199299);
+          }
+          &.focused p {
+            background-position-x: 100%;
+          }
+        }
+
+        .typography {
+          h3, p {
+            font-weight: 500;
+            line-height: 1.1;
+            color: $strat-plan-text-color;
+            @include font-tracking(60);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(50);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(40);
+            }
+          }
+        }
+      }
+
+    }
+
+
+    #what-is-mentor-canada-doing {
+      background: #fff;
+      margin-top: -100vh;
+      .sticky-content {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding-top: 50vh;
+      }
+      .sticky-spacer {
+        height: 50vh;
+      }
+
+      #what-is-mentor-canada-doing-intro {
+        padding: 20vh 5vw 0 5vw;
+        text-align: center;
+        .typography {
+          max-width: 800px;
+          margin: 0 auto;
+          p {
+            @include font-tracking(24);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(22);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(20);
+            }
+          }
+        }
+      }
+
+      #what-is-mentor-canada-doing-focus-areas {
+        display: flex;
+        align-items: center;
+        padding: 20vh 5vw;
+        min-height: 100vh;
+        .list {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .list-item {
+          p {
+            padding: 0 0.1em;
+            margin: 1em -0.1em 0 -0.1em;
+            background-size: 500% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition: opacity 2000ms, background-position 4000ms;
+          }
+          &:nth-child(1) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #04004d, #023d8c, #007acc, #007acc);
+          }
+          &:nth-child(2) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #04004d, #023d8c, #016dbe, #016dbe);
+          }
+          &:nth-child(3) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #04004d, #023d8c, #015aaa, #015aaa);
+          }
+          &:nth-child(4) p {
+            background-image: linear-gradient(90deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25), #04004d, #023d8c, #024494, #024494);
+          }
+          &.focused p {
+            background-position-x: 100%;
+          }
+        }
+
+        .typography {
+          h3, p {
+            font-weight: 500;
+            line-height: 1.1;
+            color: $strat-plan-text-color;
+            @include font-tracking(60);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(50);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(40);
+            }
+          }
+        }
+      }
+
+
+
+
+
+      .section-flex-content {
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        overflow: hidden;
+        .content-aside {
+          display: flex;
+          align-items: center;
+          width: 45%;
+          min-height: 80vh;
+          .typography {
+            max-width: 500px;
+            opacity: 0.25;
+            transition: opacity 1000ms;
+            h3 {
+              padding: 0 0.1em;
+              margin: 0 -0.1em;
+              background-size: 300% auto;
+              -webkit-background-clip: text;
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -webkit-box-decoration-break: clone;
+              box-decoration-break: clone;
+              transition: background-position 2000ms;
+              background-image: linear-gradient(90deg, $strat-plan-heading-color, $strat-plan-heading-color 33.333%, #04004d 66.666%, #0048ff 83.333%, #33adff);
+            }
+            &.focused {
+              opacity: 1;
+              h3 {
+                background-position-x: 100%;
+              }
+            }
+          }
+        }
+        .image-aside {
+          position: relative;
+          width: 55%;
+          .parallax-container {
+            position: relative;
+            overflow: hidden;
+            .parallax-image {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              background-size: cover;
+              background-position: 50% 50%;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+        &.content-right {
+          flex-direction: row;
+          .content-aside {
+            justify-content: flex-start;
+            padding: 10vh 5vw 10vh min(50px, 5vw);
+          }
+        }
+        &.content-left {
+          flex-direction: row-reverse;
+          .content-aside {
+            justify-content: flex-end;
+            padding: 10vh min(50px, 5vw) 10vh 5vw;
+          }
+        }
+      }
+
+      #what-is-mentor-canada-doing-seek-to-achieve {
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          right: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 30vh;
+          right: calc(min(50px, 5vw) + 45vh);
+          width: 40vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+      #what-is-mentor-canada-doing-core-underpinnings {
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          left: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 25vh;
+          left: calc(min(50px, 5vw) + 45vh);
+          width: 60vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+      #what-is-mentor-canada-doing-ultimate-goal {
+        padding-bottom: 20vh;
+        .image-aside {
+          height: 80vh;
+        }
+        .parallax-1 {
+          position: absolute;
+          top: 0;
+          right: min(50px, 5vw);
+          width: (2/3 * 80vh);
+          height: 80vh;
+          .parallax-image {
+            top: -5vh;
+            height: calc(100% + 10vh);
+          }
+        }
+        .parallax-2 {
+          position: absolute;
+          top: 30vh;
+          right: calc(min(50px, 5vw) + 45vh);
+          width: 40vh;
+          height: 40vh;
+          .parallax-image {
+            top: -3vh;
+            height: calc(100% + 6vh);
+          }
+        }
+      }
+
+    }
+
+    #reconciliation {
+      margin-top: -100vh;
+      .sticky-content {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: #0a1c35;
+        .sticky-content-image {
+          position: absolute;
+          z-index: 0;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          transition: opacity 1000ms;
+        }
+        .sticky-content-content {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          padding: 10vh 5vw;
+          .typography {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            transition: opacity 1000ms;
+            h2 {
+              color: #fff;
+              @include font-tracking(90);
+              @media (max-width: $typography-break-2) {
+                @include font-tracking(75);
+              }
+              @media (max-width: $typography-break-1) {
+                @include font-tracking(60);
+              }
+            }
+          }
+        }
+
+      }
+      .sticky-trigger {
+        position: absolute;
+        top: 0;
+        &.focused {
+          & + .sticky-content {
+            .sticky-content-image {
+              opacity: 0.1;
+            }
+            .sticky-content-content .typography {
+              opacity: 0;
+            }
+          }
+        }
+      }
+      .content {
+        position: relative;
+        padding-top: 120vh;
+        .typography-wrapper {
+          padding: 20vh 5vw;
+        }
+        .typography {
+          max-width: 600px;
+          margin: 0 auto;
+          p {
+            color: #fff;
+            @include font-tracking(24);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(22);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(20);
+            }
+          }
+        }
+      }
+    }
+
+
+    #what-will-mentor-canada-do {
+      background: #fff;
+      margin-top: -100vh;
+      .sticky-content {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding-top: 50vh;
+      }
+      .sticky-spacer {
+        height: 50vh;
+      }
+
+      .scroll-effect-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        .scroll-effect-wrapper-left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(50% - 400px);
+          height: 100%;
+          [data-parallax] > div > div {
+            background-position: 100% 50%;
+          }
+        }
+        .scroll-effect-wrapper-right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: calc(50% - 400px);
+          height: 100%;
+          [data-parallax] > div > div {
+            background-position: 0 50%;
+          }
+        }
+        [data-parallax] {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          > div {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            > div {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              background-size: auto 100%;
+              background-repeat: no-repeat;
+            }
+          }
+          &:nth-child(1) > div > div {
+            top: -3vh;
+            height: 106vh;
+          }
+          &:nth-child(2) > div > div {
+            top: -6vh;
+            height: 112vh;
+          }
+          &:nth-child(3) > div > div {
+            top: -9vh;
+            height: 118vh;
+          }
+          &:nth-child(4) > div > div {
+            top: -12vh;
+            height: 124vh;
+          }
+        }
+      }
+
+      #what-will-mentor-canada-do-intro {
+        display: flex;
+        align-items: center;
+        min-height: 50vh;
+        padding: 20vh 5vw;
+        text-align: center;
+        .typography {
+          max-width: 800px;
+          margin: 0 auto;
+          p {
+            @include font-tracking(24);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(22);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(20);
+            }
+          }
+        }
+      }
+
+      .pillar-section {
+        padding: 0 5vw 20vh 5vw;
+        .typography {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+          h3 {
+            padding: 0 0.1em;
+            margin: 0 -0.1em;
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition: background-position 2000ms;
+            @include font-tracking(60);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(50);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(40);
+            }
+          }
+          p.large {
+            font-weight: 400;
+          }
+          h4 {
+            position: relative;
+            margin-top: 1em;
+            padding-top: 1em;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              border-top: 1px solid rgba($strat-plan-text-color, 0.33);
+              opacity: 0.25;
+            }
+            @include font-tracking(40);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(33.75);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(27.5);
+            }
+          }
+          h4 + p {
+            color: rgba($strat-plan-text-color, 0.8);
+          }
+          h3 ~ * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: transform 1000ms, opacity 1000ms, color 1000ms;
+          }
+          h4:nth-of-type(1),
+          h4:nth-of-type(1) + p {
+            transition-delay: 100ms;
+          }
+          h4:nth-of-type(2),
+          h4:nth-of-type(2) + p {
+            transition-delay: 200ms;
+          }
+          h4:nth-of-type(3),
+          h4:nth-of-type(3) + p {
+            transition-delay: 300ms;
+          }
+          &.focused {
+            h3 {
+              background-position-x: 100%;
+            }
+            h3 ~ * {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+
+      #what-will-mentor-canada-do-influence-inspire {
+        .typography {
+          h3 {
+            background-image: linear-gradient(90deg, rgba($strat-plan-heading-color, 0.25), rgba($strat-plan-heading-color, 0.25) 33.333%, #660022 66.666%, #b3001e 83.333%, #ff3333);
+          }
+
+          &.focused {
+            h4:nth-of-type(1) {
+              color: #ff3333;
+            }
+            h4:nth-of-type(2) {
+              color: #cc0e23;
+            }
+            h4:nth-of-type(3) {
+              color: #90001d;
+            }
+          }
+        }
+      }
+
+      #what-will-mentor-canada-do-convene-connect {
+        .typography {
+          h3 {
+            background-image: linear-gradient(90deg, rgba($strat-plan-heading-color, 0.25), rgba($strat-plan-heading-color, 0.25) 33.333%, #ed186a 66.666%, #ff6700 83.333%, #ffcb39);
+          }
+
+          &.focused {
+            h4:nth-of-type(1) {
+              color: #ffcb39;
+            }
+            h4:nth-of-type(2) {
+              color: #ffa322;
+            }
+            h4:nth-of-type(3) {
+              color: #ff7b0b;
+            }
+          }
+        }
+      }
+
+      #what-will-mentor-canada-do-uplift-support {
+        .typography {
+          h3 {
+            background-image: linear-gradient(90deg, rgba($strat-plan-heading-color, 0.25), rgba($strat-plan-heading-color, 0.25) 33.333%, #006280 66.666%, #008f99 83.333%, #33c1b3);
+          }
+
+          &.focused {
+            h4:nth-of-type(1) {
+              color: #33c1b3;
+            }
+            h4:nth-of-type(2) {
+              color: #29ada9;
+            }
+            h4:nth-of-type(3) {
+              color: #199299;
+            }
+          }
+        }
+      }
+
+      #what-will-mentor-canada-do-collaborate-lead {
+        .typography {
+          h3 {
+            background-image: linear-gradient(90deg, rgba($strat-plan-heading-color, 0.25), rgba($strat-plan-heading-color, 0.25) 33.333%, #04004d 66.666%, #0048ff 83.333%, #33adff);
+          }
+
+          &.focused {
+            h4:nth-of-type(1) {
+              color: #007acc;
+            }
+            h4:nth-of-type(2) {
+              color: #0160b0;
+            }
+            h4:nth-of-type(3) {
+              color: #024494;
+            }
+          }
+        }
+      }
+
+    }
+
+    #about-us {
+      position: relative;
+      z-index: 2;
+      padding: 20vh 5vw;
+      background: $mentor-off-white;
+      min-height: 100vh;
+
+      #about-us-intro {
+        padding-bottom: 10vh;
+        .typography {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+          opacity: 0.25;
+          transition: opacity 1000ms;
+          &.focused {
+            opacity: 1;
+          }
+          h2 {
+            @include font-tracking(90);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(75);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(60);
+            }
+            margin-bottom: 0.5em;
+          }
+          p {
+            @include font-tracking(24);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(22);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(20);
+            }
+          }
+        }
+      }
+
+      #about-us-vision,
+      #about-us-mission,
+      #about-us-commitment {
+        padding-top: 10vh;
+        max-width: 600px;
+        margin: 0 auto;
+        .typography {
+          > * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 500ms, transform 1000ms;
+          }
+          @include transitionDelay("> *", 0, 100, 20);
+          &.focused {
+            > * {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+
+      #about-us-quote {
+        padding-top: 20vh;
+        .about-us-quote-wrapper {
+          max-width: 600px;
+          margin: 0 auto;
+          .quote-body,
+          .quote-attribution {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity 500ms, transform 1000ms;
+          }
+          .quote-attribution {
+            transition-delay: 100ms;
+          }
+          &.focused {
+            .quote-body,
+            .quote-attribution {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            .quote-body .typography p {
+              background-position-x: 100%;
+            }
+          }
+        }
+        .quote-body .typography {
+          position: relative;
+          @include font-tracking(32);
+          @media (max-width: $typography-break-2) {
+            @include font-tracking(27);
+          }
+          @media (max-width: $typography-break-1) {
+            @include font-tracking(22);
+          }
+          &:before {
+            content: "\2018\2018";
+            position: absolute;
+            z-index: -1;
+            top: -0.3em;
+            left: -0.25em;
+            font-size: 9em;
+            letter-spacing: -0.12em;
+            color: #33adff;
+            opacity: 0.25;
+          }
+          p {
+            padding: 0 0.1em;
+            margin: 0 -0.1em;
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+            transition: background-position 2000ms;
+            background-image: linear-gradient(115deg, rgba($strat-plan-text-color, 0.25), rgba($strat-plan-text-color, 0.25) 33.333%, #04004d 66.666%, #0048ff 83.333%, #33adff);
+            @include font-tracking(32);
+            @media (max-width: $typography-break-2) {
+              @include font-tracking(27);
+            }
+            @media (max-width: $typography-break-1) {
+              @include font-tracking(22);
+            }
+          }
+        }
+        .quote-attribution {
+          display: flex;
+          align-items: center;
+          margin-top: 40px;
+          .quote-avatar {
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 50%;
+          }
+          .typography {
+            padding-left: 10px;
+            p {
+              @include font-tracking(14);
+              @media (max-width: $typography-break-2) {
+                @include font-tracking(13);
+              }
+              @media (max-width: $typography-break-1) {
+                @include font-tracking(12);
+              }
+              strong {
+                font-weight: 500;
+                color: $strat-plan-heading-color;
+                @include font-tracking(18);
+                @media (max-width: $typography-break-2) {
+                  @include font-tracking(17);
+                }
+                @media (max-width: $typography-break-1) {
+                  @include font-tracking(16);
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+  }
+
+}
+
+html.loaded {
+  body.page-alias--strategic-plan-2022-2024 {
+    #page-banner.page-banner-with-image {
+      .page-banner-image-element {
+        .page-banner-image {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

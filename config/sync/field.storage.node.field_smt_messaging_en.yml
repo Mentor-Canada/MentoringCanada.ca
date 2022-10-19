@@ -1,0 +1,19 @@
+uuid: 026f8cf0-d6b7-4b51-9325-300d86cea50d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_smt_messaging_en
+field_name: field_smt_messaging_en
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

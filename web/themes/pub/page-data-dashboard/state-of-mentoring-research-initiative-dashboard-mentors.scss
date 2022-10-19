@@ -1,0 +1,45 @@
+body.page-alias--enquete-sur-letat-du-mentorat-tableau-de-bord-mentors,
+body.page-alias--state-of-mentoring-research-initiative-dashboard-mentors {
+
+  .stat-top,
+  .stat-stat,
+  .stat-bottom {
+    display: block;
+  }
+
+  .stat-top,
+  .stat-bottom {
+    font-weight: 500;
+  }
+
+  .stat-stat {
+    span.stat-in {
+      display: inline
+    }
+  }
+
+  .stat-stat {
+    padding: 0.2em 0;
+    margin: -0.2em 0;
+    color: darken($mentor-yellow-light, 5%);
+    background: -webkit-linear-gradient($mentor-yellow-light, darken($mentor-yellow, 10%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    font-weight: 500;
+    @include font-tracking(72);
+    @media (max-width: $typography-break-2) {
+      @include font-tracking(60);
+    }
+    @media (max-width: $typography-break-1) {
+      @include font-tracking(48);
+    }
+    .stat-in {
+      display: inline-block;
+      margin: 0 -0.125em;
+      font-weight: 500;
+      font-size: 0.66em;
+    }
+  }
+
+}

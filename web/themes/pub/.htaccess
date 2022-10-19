@@ -1,0 +1,4 @@
+<FilesMatch "\.(sass|ts)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>

@@ -1,0 +1,25 @@
+uuid: 0b447061-0d8a-41a5-acff-f51db999bbd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_divider_thickness_pixels
+    - paragraphs.paragraphs_type.divider_block
+id: paragraph.divider_block.field_divider_thickness_pixels
+field_name: field_divider_thickness_pixels
+entity_type: paragraph
+bundle: divider_block
+label: 'Divider Thickness Pixels'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 2
+default_value_callback: ''
+settings:
+  min: 1
+  max: 100
+  prefix: ''
+  suffix: px
+field_type: integer

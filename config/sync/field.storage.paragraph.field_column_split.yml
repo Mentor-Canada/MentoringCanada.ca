@@ -1,0 +1,30 @@
+uuid: 31b32ae4-bcc7-4f1a-9807-cdf6d0ee5f65
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_column_split
+field_name: field_column_split
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 1-to-1
+      label: '1 : 1'
+    -
+      value: 2-to-1
+      label: '2 : 1'
+    -
+      value: 1-to-2
+      label: '1 : 2'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

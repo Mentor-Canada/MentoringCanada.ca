@@ -1,0 +1,19 @@
+uuid: 1f384af6-63ea-49f3-89e2-129ddb2a7ae1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coming_soon_label
+    - node.type.event
+id: node.event.field_coming_soon_label
+field_name: field_coming_soon_label
+entity_type: node
+bundle: event
+label: 'Coming Soon Label'
+description: 'The text label to display when there are no event options, such as "Coming Fall". Leave blank to display an unspecific "Coming Soon".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

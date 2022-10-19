@@ -1,0 +1,23 @@
+uuid: 78e5267b-8e0f-44d1-a6e5-258484f19565
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_columns
+    - paragraphs.paragraphs_type.wysiwyg_block
+  module:
+    - options
+id: paragraph.wysiwyg_block.field_number_of_columns
+field_name: field_number_of_columns
+entity_type: paragraph
+bundle: wysiwyg_block
+label: 'Number of Columns'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: columns-1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

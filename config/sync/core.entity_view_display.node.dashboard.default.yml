@@ -1,0 +1,28 @@
+uuid: 4d790c42-80f7-4389-8e81-f7c1c50a620f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dashboard.field_dashboard_data
+    - node.type.dashboard
+  module:
+    - user
+id: node.dashboard.default
+targetEntityType: node
+bundle: dashboard
+mode: default
+content:
+  field_dashboard_data:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: null
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

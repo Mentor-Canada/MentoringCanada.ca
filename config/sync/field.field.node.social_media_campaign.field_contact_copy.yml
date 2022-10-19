@@ -1,0 +1,21 @@
+uuid: dc1d166d-49a1-457e-960e-dd71ff3c5f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_copy
+    - node.type.social_media_campaign
+  module:
+    - text
+id: node.social_media_campaign.field_contact_copy
+field_name: field_contact_copy
+entity_type: node
+bundle: social_media_campaign
+label: 'Contact Copy'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

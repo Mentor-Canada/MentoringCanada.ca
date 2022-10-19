@@ -1,0 +1,21 @@
+uuid: 8a7c8ba3-1c5a-404b-82c1-bc0b5fb27327
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_date_time_range
+    - node.type.event_option
+  module:
+    - datetime_range
+id: node.event_option.field_event_date_time_range
+field_name: field_event_date_time_range
+entity_type: node
+bundle: event_option
+label: 'Date & Time'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

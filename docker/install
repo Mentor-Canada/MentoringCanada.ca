@@ -1,0 +1,14 @@
+#!/bin/bash
+composer install
+sudo mkdir -p web/sites/default/files
+sudo chmod -R 777 web/sites/default/files
+npm install
+npx webpack
+./vendor/bin/drush site-install minimal -y
+./vendor/bin/drush cset system.site uuid "5ee17113-5137-4629-9df4-3919335b627d" -y
+./vendor/bin/drush config-import -y
+./vendor/bin/drush user:password admin QtnDU2wMNV
+./vendor/bin/drush urol admin admin
+./patches/patch
+
+touch ./docker/.installed

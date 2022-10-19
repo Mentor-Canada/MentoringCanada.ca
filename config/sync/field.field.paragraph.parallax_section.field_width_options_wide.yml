@@ -1,0 +1,23 @@
+uuid: 806e9613-766b-4a0f-a30e-6c01e452b8d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_wide
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - options
+id: paragraph.parallax_section.field_width_options_wide
+field_name: field_width_options_wide
+entity_type: paragraph
+bundle: parallax_section
+label: 'Section Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

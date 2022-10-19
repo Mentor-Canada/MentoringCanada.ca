@@ -1,0 +1,16 @@
+uuid: 7b4b4fe4-27f0-4104-854b-daaf5142c75a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_media_toolkit
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.social_media_toolkit
+target_entity_type_id: node
+target_bundle: social_media_toolkit
+default_langcode: site_default
+language_alterable: false

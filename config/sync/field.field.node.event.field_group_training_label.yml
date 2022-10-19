@@ -1,0 +1,19 @@
+uuid: ca2e535c-da9f-437f-a4c3-da15bf4ad5b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_group_training_label
+    - node.type.event
+id: node.event.field_group_training_label
+field_name: field_group_training_label
+entity_type: node
+bundle: event
+label: 'Group Training Label'
+description: 'This will override the "Group Training" label displayed when asking the user which kind of training they are registering for. Leave blank to use the default label.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

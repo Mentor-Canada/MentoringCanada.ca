@@ -1,0 +1,28 @@
+uuid: 7bc96f5c-5c5d-44e2-b830-d2f4e64bcb49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_event_option
+    - node.type.event_option
+    - node.type.submission_event
+id: node.submission_event.field_submission_event_option
+field_name: field_submission_event_option
+entity_type: node
+bundle: submission_event
+label: 'Event Option'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event_option: event_option
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

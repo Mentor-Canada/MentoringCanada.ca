@@ -1,0 +1,19 @@
+uuid: 5f6547a6-99ee-4abf-8c89-4898e71feb2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - app_payment
+    - node
+id: node.field_payment
+field_name: field_payment
+entity_type: node
+type: payment_item
+settings: {  }
+module: app_payment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: 3bacafb4-5eba-4b66-8b00-7bbf3c53458f
+langcode: en
+status: true
+dependencies: {  }
+id: images_block
+label: 'Images Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

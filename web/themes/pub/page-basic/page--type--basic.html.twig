@@ -1,0 +1,43 @@
+{# @var v \Drupal\app\Views\PageBasicView #}
+{{ v.banner|raw }}
+
+<div id="content">
+  <article>
+
+    {% if messages %}
+      <div class="messages">
+        {{ messages|raw }}
+      </div>
+    {% endif %}
+
+    {% for section in v.sections %}
+      {{ section|raw }}
+    {% endfor %}
+
+    {% if v.children|length %}
+    <section class="more-items-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="standard">
+          <div class="more-heading">
+            <div class="typography">
+              <h2>{{ v.title }}</h2>
+            </div>
+          </div>
+          <div class="items-wrapper">
+            {% for item in v.children %}
+              {{ item|raw }}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>
+

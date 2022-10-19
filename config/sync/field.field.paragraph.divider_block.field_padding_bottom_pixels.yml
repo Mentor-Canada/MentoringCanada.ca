@@ -1,0 +1,25 @@
+uuid: fc7f355b-eda4-413a-9d0e-b87d8417bc2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_padding_bottom_pixels
+    - paragraphs.paragraphs_type.divider_block
+id: paragraph.divider_block.field_padding_bottom_pixels
+field_name: field_padding_bottom_pixels
+entity_type: paragraph
+bundle: divider_block
+label: 'Padding Bottom Pixels'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 20
+default_value_callback: ''
+settings:
+  min: 0
+  max: 100
+  prefix: ''
+  suffix: px
+field_type: integer

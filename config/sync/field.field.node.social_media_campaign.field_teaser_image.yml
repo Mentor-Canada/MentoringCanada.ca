@@ -1,0 +1,28 @@
+uuid: f67f6a6d-baee-4723-a36c-1eef685915c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser_image
+    - media.type.image
+    - node.type.social_media_campaign
+id: node.social_media_campaign.field_teaser_image
+field_name: field_teaser_image
+entity_type: node
+bundle: social_media_campaign
+label: 'Teaser Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

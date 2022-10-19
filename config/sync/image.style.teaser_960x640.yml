@@ -1,0 +1,15 @@
+uuid: 44987ff9-b0a7-432a-9fa0-570b30c9558c
+langcode: en
+status: true
+dependencies: {  }
+name: teaser_960x640
+label: 'Teaser (960x640)'
+effects:
+  470bbc7f-467b-41ec-b9ee-1cc7b5be896a:
+    uuid: 470bbc7f-467b-41ec-b9ee-1cc7b5be896a
+    id: image_scale
+    weight: 1
+    data:
+      width: 960
+      height: 640
+      upscale: false

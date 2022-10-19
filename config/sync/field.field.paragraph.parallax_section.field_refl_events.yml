@@ -1,0 +1,23 @@
+uuid: 3ff4ebd2-11dc-49e7-8918-7570a2d790ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refl_events
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_refl_events
+field_name: field_refl_events
+entity_type: paragraph
+bundle: parallax_section
+label: 'Label Events'
+description: 'Display an <em>Event</em> label on the displayed event items. This can be useful when displaying multiple content types together.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

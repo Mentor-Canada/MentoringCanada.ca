@@ -1,0 +1,15 @@
+uuid: 59458b91-7096-48df-9799-691030e28f1c
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_X_2000
+label: 'Image Utils (Scale height 2000)'
+effects:
+  33a3a2cc-d35c-4a6a-9cd2-3f99cb73d2dc:
+    uuid: 33a3a2cc-d35c-4a6a-9cd2-3f99cb73d2dc
+    id: image_scale
+    weight: 0
+    data:
+      width: null
+      height: 2000
+      upscale: false

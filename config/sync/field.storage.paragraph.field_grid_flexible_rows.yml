@@ -1,0 +1,18 @@
+uuid: 9cc40185-ed52-46f1-8ba6-d46e791f2da1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_grid_flexible_rows
+field_name: field_grid_flexible_rows
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

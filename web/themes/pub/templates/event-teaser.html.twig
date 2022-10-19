@@ -1,0 +1,20 @@
+{# @var v \Drupal\app\Views\EventView #}
+<div class="event-teaser reference-item">
+  <div class="reference-item-padding">
+    <a href="{{ v.url }}">
+      <div class="event-teaser-image-wrapper">
+        <div class="event-teaser-image" style="background-image: url({{ v.teaserImage }})"></div>
+      </div>
+      <div class="event-teaser-heading">
+        {% if v.showTypeTip %}
+        <div class="event-teaser-type-tip">{{ v.typeTip }}</div>
+        {% endif %}
+        <div class="event-teaser-title">{{ v.title }}</div>
+        <div class="event-teaser-date">{{ v.date }}</div>
+      </div>
+      <div class="event-teaser-teaser">
+        <div class="typography"><p>{{ v.teaserSummary }}</p></div>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+uuid: 2a874fb6-87ad-40f1-94a0-cc017ddceca7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.front.field_banner_eyebrow
+    - field.field.node.front.field_banner_heading
+    - field.field.node.front.field_banner_image
+    - field.field.node.front.field_banner_link
+    - field.field.node.front.field_banner_subheading
+    - field.field.node.front.field_sections
+    - node.type.front
+  module:
+    - user
+id: node.front.teaser
+targetEntityType: node
+bundle: front
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_banner_eyebrow: true
+  field_banner_heading: true
+  field_banner_image: true
+  field_banner_link: true
+  field_banner_subheading: true
+  field_sections: true
+  langcode: true

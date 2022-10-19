@@ -1,0 +1,51 @@
+{# @var v \Drupal\app\Views\SocialMediaCampaignView #}
+<section id="page-banner" class="page-banner-no-image">
+  <div class="page-banner-content typography" data-banner-width="wide">
+    <h1 class="banner-eyebrow visually-h4">{{ "Social Media Campaign"|t }}</h1>
+    <h2 class="banner-heading">{{ v.title }}</h2>
+  </div>
+</section>
+
+
+<div id="content">
+  <article>
+
+    <section class="content-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="wide">
+
+          <div class="toolkit-flex-block toolkit-graphic-resources">
+            {% for lang in v.langOrder %}
+              <div class='toolkit-logo {{ "toolkit-logo-#{lang}" }}'>
+                <img src="{{ v.socialMediaCampaign.logoLocalized[lang].url }}" alt="{{ v.socialMediaCampaign.logoLocalized[lang].alt }}">
+
+                <div class="toolkit-image-info">
+                  <a href="{{ v.socialMediaCampaign.logoLocalized[lang].url }}" download>
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                    {{ "Download"|t }} {{ "Logo"|t }} ({{ "toolkit-lang-#{lang}"|t }})
+                  </a>
+                </div>
+
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="teasers-wrapper">
+            {% for teaser in v.teasers %}
+              {{ teaser|raw }}
+            {% endfor %}
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>
+

@@ -1,0 +1,43 @@
+{# @var v \Drupal\app\Views\HeaderView #}
+{% if v.display %}
+<header>
+  <div>
+    {% if v.displayLogo %}
+    <a id="header-logo" href="{{ v.baseUrl }}/{{ v.lang }}" aria-hidden="true" title="{{ v.gs.addressName }}">
+      {{ v.logo }}
+    </a>
+    {% endif %}
+  </div>
+  {% if v.displayMenu %}
+  <nav id="global-nav">
+    <ul id="nav-menu">
+      {% for item in v.menu %}
+        <li class="nav-menu-parent-link{% if item.children|length %} has-child-nav{% endif %}">
+          <a href="{{ item.url }}" class="global-nav-link">
+            <span>{{ item.title }}</span>
+          </a>
+          {% if item.children|length %}
+            <ul class="child-nav">
+              {% for child in item.children %}
+                <li class="nav-menu-child-link">
+                  <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+      <li>
+        {{ v.languageToggleButton|raw }}
+      </li>
+    </ul>
+    <ul id="compact-nav-menu">
+      <li>
+        <a class="compact-menu-toggle" aria-label='{{ "Open the menu"|t }}' onclick="event.preventDefault ? event.preventDefault() : event.returnValue = false;">{{ v.iconHamburger }}</a>
+      </li>
+    </ul>
+  </nav>
+  {% endif %}
+</header>
+{% endif %}
+

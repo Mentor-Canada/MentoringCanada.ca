@@ -1,0 +1,62 @@
+app.event_submitted_en:
+  path: '/events/submitted'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Thank You'
+  requirements:
+    _access: 'TRUE'
+
+app.event_submitted_fr:
+  path: '/evenements/soumis'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Merci'
+  requirements:
+    _access: 'TRUE'
+
+app.event_icalendar:
+  path: '/events/iCalendar/{eventId}/{optionId}'
+  defaults:
+    _controller: '\Drupal\app\Controllers\EventICalendarController::render'
+  requirements:
+    _access: 'TRUE'
+
+app.newsletter_submitted_en:
+  path: '/newsletter/submitted'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Thank You'
+  requirements:
+    _access: 'TRUE'
+
+app.newsletter_submitted_fr:
+  path: '/infolettre/soumis'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Merci'
+  requirements:
+    _access: 'TRUE'
+
+app.contact_submitted_en:
+  path: '/contact/submitted'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Thank You'
+  requirements:
+    _access: 'TRUE'
+
+app.contact_submitted_fr:
+  path: '/nous-joindre/soumis'
+  defaults:
+    _controller: '\Drupal\app\Controllers\SubmittedController::content'
+    _title: 'Merci'
+  requirements:
+    _access: 'TRUE'
+
+app.service_provider_outreach:
+  path: '/service-provider-outreach'
+  defaults:
+    _controller: '\Drupal\app\Controllers\ServiceProviderOutreachController::content'
+    _title: 'Service Provider Outreach'
+  requirements:
+    _role: 'caller+authenticated+admin'

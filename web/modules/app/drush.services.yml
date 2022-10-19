@@ -1,0 +1,5 @@
+services:
+  app.commands:
+    class: \Drupal\app\Commands\AppDrush
+    tags:
+      - { name: drush.command }

@@ -1,0 +1,15 @@
+uuid: 52e3dfd2-262d-4886-9e27-789d9dd5fa7c
+langcode: en
+status: true
+dependencies: {  }
+name: image_utils_scale_X_300
+label: 'Image Utils (Scale height 300)'
+effects:
+  2033a647-5158-41be-8471-754a4be0be60:
+    uuid: 2033a647-5158-41be-8471-754a4be0be60
+    id: image_scale
+    weight: 0
+    data:
+      width: null
+      height: 300
+      upscale: false

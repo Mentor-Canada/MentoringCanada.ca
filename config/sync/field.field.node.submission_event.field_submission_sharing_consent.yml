@@ -1,0 +1,23 @@
+uuid: 8f46858c-4c55-49ca-b2f0-eeb444de753c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_sharing_consent
+    - node.type.submission_event
+id: node.submission_event.field_submission_sharing_consent
+field_name: field_submission_sharing_consent
+entity_type: node
+bundle: submission_event
+label: 'Sharing Consent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

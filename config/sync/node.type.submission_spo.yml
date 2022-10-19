@@ -1,0 +1,17 @@
+uuid: 9a03e4bd-b6cb-4fc2-97b5-a315ad8919cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Submission SPO'
+type: submission_spo
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

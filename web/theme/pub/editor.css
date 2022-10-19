@@ -1,0 +1,148 @@
+body > * {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+body > *:first-child {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 32px;
+}
+h2.large {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 22px;
+}
+h3.large {
+  font-size: 27.5px;
+}
+
+h4 {
+  font-size: 20px;
+}
+h4.large {
+  font-size: 25px;
+}
+
+h5 {
+  font-size: 19px;
+}
+h5.large {
+  font-size: 23.75px;
+}
+
+h6 {
+  font-size: 18px;
+}
+h6.large {
+  font-size: 22.5px;
+}
+
+p {
+  font-size: 16px;
+}
+p.large {
+  font-size: 21px;
+}
+p.eyebrow-tip {
+  display: inline-block;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+p.eyebrow-tip.eyebrow-tip-blue {
+  color: #fff;
+  background: #0084ff;
+}
+p.eyebrow-tip.eyebrow-tip-orange {
+  color: #000;
+  background: #f5b049;
+}
+p.eyebrow-tip + h1, p.eyebrow-tip + h2, p.eyebrow-tip + h3, p.eyebrow-tip + h4, p.eyebrow-tip + h5, p.eyebrow-tip + h6 {
+  margin-top: 0.25em;
+}
+
+p img {
+  margin: 0.5em 1em 0.5em 0;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2em;
+  border-left: 4px solid #f5b049;
+}
+blockquote p {
+  margin-top: 1em;
+  font-size: 19px;
+}
+blockquote cite {
+  display: block;
+  margin-top: 1em;
+  font-style: italic;
+  font-size: 14px;
+  color: #444;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol, ul {
+  padding-left: 1em;
+  font-size: 15px;
+}
+ol li, ul li {
+  margin-bottom: 0.5em;
+}
+ol li:last-child, ul li:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #0084ff;
+}
+
+a.button {
+  position: relative;
+  display: inline-block;
+  padding: 15px 20px;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(#ffcf33, #f5b049);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  text-decoration: none;
+}
+
+hr {
+  margin: 2em 0;
+  border: none;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+/*# sourceMappingURL=editor.css.map */

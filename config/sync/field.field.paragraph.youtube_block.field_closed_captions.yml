@@ -1,0 +1,23 @@
+uuid: 9d3b0fde-7668-4a61-b446-8d78f968da4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_closed_captions
+    - paragraphs.paragraphs_type.youtube_block
+id: paragraph.youtube_block.field_closed_captions
+field_name: field_closed_captions
+entity_type: paragraph
+bundle: youtube_block
+label: 'Closed Captions'
+description: 'Causes closed captions to be shown by default, even if the user has turned captions off. The default behaviour is based on user preference.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

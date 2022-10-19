@@ -1,0 +1,19 @@
+uuid: dec65bac-ca93-450a-9b74-f35bbe47f88e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_subheading
+    - node.type.contact
+id: node.contact.field_banner_subheading
+field_name: field_banner_subheading
+entity_type: node
+bundle: contact
+label: 'Banner Subheading'
+description: 'The subheading is a smaller headline which appears underneath the banner heading. This can often be left blank.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

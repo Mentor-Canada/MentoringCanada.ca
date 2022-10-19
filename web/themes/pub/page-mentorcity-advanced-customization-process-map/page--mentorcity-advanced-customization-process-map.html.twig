@@ -1,0 +1,65 @@
+{# @var v \Drupal\app\Views\MentorCityProcessMapView #}
+<section id="page-banner" class="page-banner-no-image">
+  <svg id="knowledge-hub-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70" height="80" viewBox="0 0 70 80" xml:space="preserve">
+    <g id="knowledge-hub-icon-g1">
+      <polygon fill="#D91C1C" points="0,20.17 35,0.35 35,40 	"/>
+      <polygon fill="#F58723" points="0,59.83 35,40 35,79.65 	"/>
+      <polygon fill="#FFAC26" points="35,40 0,59.83 0,20.17 	"/>
+      <polygon fill="#00A9AC" points="70,59.83 35,79.65 35,40 	"/>
+      <polygon fill="#0061A6" points="70,20.17 35,40 35,0.35 	"/>
+      <polygon fill="#00C2AE" points="35,40 70,20.17 70,59.83 	"/>
+    </g>
+    <g id="knowledge-hub-icon-g2">
+      <polygon fill="#A60000" points="11.7,26.8 35,13.6 35,40 	"/>
+      <polygon fill="#E27107" points="11.7,53.2 35,40 35,66.4 	"/>
+      <polygon fill="#E58E00" points="35,40 11.7,53.2 11.7,26.8 	"/>
+      <polygon fill="#009499" points="58.3,53.2 35,66.4 35,40 	"/>
+      <polygon fill="#004373" points="58.3,26.8 35,40 35,13.6 	"/>
+      <polygon fill="#00A695" points="35,40 58.3,26.8 58.3,53.2 	"/>
+    </g>
+  </svg>
+  <div class="page-banner-content typography">
+    <h1 class="banner-heading">{{ v.title }}</h1>
+  </div>
+</section>
+
+
+<div id="content">
+  <article>
+
+    <section class="content-section">
+      <div data-padding-standard="horizontal">
+        <div data-content-width="full">
+
+          <div class="steps-wrapper">
+            {% for step in v.steps %}
+              <div class="step">
+                <div class="step-number">{{ step.number }}</div>
+                <div class="step-content">
+                  <div class="step-label">{{ step.label|raw }}</div>
+                  <div class="step-info">
+                    <div class="typography">{{ step.info|raw }}</div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-mentorcity-advanced-customization-process-map">
+      <div data-content-width="standard">
+        <div class="typography">{{ v.cta|raw }}</div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "basic";
+</script>
+

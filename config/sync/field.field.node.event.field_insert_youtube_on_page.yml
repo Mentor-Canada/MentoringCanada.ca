@@ -1,0 +1,23 @@
+uuid: 68aee4db-0074-48f2-8386-a5462e8ba6c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_insert_youtube_on_page
+    - node.type.event
+id: node.event.field_insert_youtube_on_page
+field_name: field_insert_youtube_on_page
+entity_type: node
+bundle: event
+label: 'Insert YouTube on post-submission page'
+description: 'Will embed the above YouTube video on the page shown following form submission.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

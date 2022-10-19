@@ -1,0 +1,23 @@
+uuid: 84613049-268d-4fe9-a0cc-ae3782e97a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_dynamic_content
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - options
+id: paragraph.parallax_section.field_display_dynamic_content
+field_name: field_display_dynamic_content
+entity_type: paragraph
+bundle: parallax_section
+label: 'Display Dynamic Content'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: none
+default_value_callback: ''
+settings: {  }
+field_type: list_string

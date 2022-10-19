@@ -1,0 +1,64 @@
+{# @var v \Drupal\app\Views\YearEnd2021View #}
+
+<div id="content">
+  <article>
+
+    <section id="intro" class="content-section">
+      <div class="wysiwyg-block content-block" data-padding-standard="horizontal">
+        <div data-column-count="1" data-column-split="1-to-1" data-block-constrained="true" data-block-alignment="left" data-content-width="standard">
+          <div class="typography column-1">
+            {{ v.intro|raw }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section">
+
+      <div id="cards-wrapper" class="cards-wrapper">
+
+        {% for card in v.cards %}
+          <div id="{{ card.id }}" class="card">
+            <div class="card-inner">
+              <div class="card-front card-face">
+                <div class="card-content">
+                  {{ card.front|raw }}
+                </div>
+                <button class="unset" aria-label="{{ 'Open'|t }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M20,0C8.95,0,0,8.95,0,20c0,11.05,8.95,20,20,20s20-8.95,20-20C40,8.95,31.05,0,20,0z M28.5,21.5h-7v7c0,0.83-0.67,1.5-1.5,1.5s-1.5-0.67-1.5-1.5v-7h-7c-0.83,0-1.5-0.67-1.5-1.5s0.67-1.5,1.5-1.5h7v-7c0-0.83,0.67-1.5,1.5-1.5s1.5,0.67,1.5,1.5v7h7c0.83,0,1.5,0.67,1.5,1.5S29.33,21.5,28.5,21.5z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="card-back card-face">
+                <div class="card-content-scroll-wrapper">
+                  <div class="card-content">
+                    {{ card.back|raw }}
+                  </div>
+                </div>
+                <button class="unset" aria-label="{{ 'Close'|t }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M34.14,5.86c-7.81-7.81-20.47-7.81-28.28,0c-7.81,7.81-7.81,20.47,0,28.28s20.47,7.81,28.28,0C41.95,26.33,41.95,13.67,34.14,5.86z M24.95,27.07L20,22.12l-4.95,4.95c-0.59,0.59-1.54,0.59-2.12,0s-0.59-1.54,0-2.12L17.88,20l-4.95-4.95c-0.59-0.59-0.59-1.54,0-2.12s1.54-0.59,2.12,0L20,17.88l4.95-4.95c0.59-0.59,1.54-0.59,2.12,0s0.59,1.54,0,2.12L22.12,20l4.95,4.95c0.59,0.59,0.59,1.54,0,2.12S25.54,27.66,24.95,27.07z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="cards-overlay"></div>
+        <div class="click-blocker"></div>
+
+      </div>
+
+    </section>
+
+
+  </article>
+</div>
+
+<script>
+  if(!window.pageData) window.pageData = {};
+  window.pageData.type = "yearEnd2021";
+</script>
+

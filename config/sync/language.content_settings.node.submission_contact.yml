@@ -1,0 +1,18 @@
+uuid: 1ff0f925-c271-4d71-b5d8-884efb59d29b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.submission_contact
+target_entity_type_id: node
+target_bundle: submission_contact
+default_langcode: site_default
+language_alterable: false

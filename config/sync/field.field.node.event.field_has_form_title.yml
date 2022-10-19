@@ -1,0 +1,23 @@
+uuid: 3721ceac-b36d-4435-ab25-a998f0cb7033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_has_form_title
+    - node.type.event
+id: node.event.field_has_form_title
+field_name: field_has_form_title
+entity_type: node
+bundle: event
+label: Title
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

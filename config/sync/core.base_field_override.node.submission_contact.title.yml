@@ -1,0 +1,18 @@
+uuid: 051affd0-721a-4265-9247-e16eef7e5214
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_contact
+id: node.submission_contact.title
+field_name: title
+entity_type: node
+bundle: submission_contact
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

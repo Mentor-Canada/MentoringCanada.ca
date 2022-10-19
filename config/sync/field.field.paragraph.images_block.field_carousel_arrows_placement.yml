@@ -1,0 +1,23 @@
+uuid: 8539c4db-91a1-4974-8305-629ddfdc056c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_carousel_arrows_placement
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_carousel_arrows_placement
+field_name: field_carousel_arrows_placement
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Arrows Placement'
+description: 'Sets where carousel arrows are placed. <em>Inside</em> will place arrows within the image area, <em>Outside</em> will place arrows outside the image area, and <em>Edge</em> will place arrows at the edges of the screen. The default is <em>Outside</em>.'
+required: true
+translatable: false
+default_value:
+  -
+    value: outside
+default_value_callback: ''
+settings: {  }
+field_type: list_string

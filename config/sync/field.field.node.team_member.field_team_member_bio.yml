@@ -1,0 +1,21 @@
+uuid: ddb71a14-ddd1-47ad-bb8e-8deca0410c4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_team_member_bio
+    - node.type.team_member
+  module:
+    - text
+id: node.team_member.field_team_member_bio
+field_name: field_team_member_bio
+entity_type: node
+bundle: team_member
+label: 'Team Member Bio'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

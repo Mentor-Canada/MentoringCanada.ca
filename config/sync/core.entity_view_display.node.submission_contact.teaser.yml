@@ -1,0 +1,33 @@
+uuid: dcd42a29-95c1-42fa-9945-f1c41e709f94
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.submission_contact.field_submission_email_address
+    - field.field.node.submission_contact.field_submission_first_name
+    - field.field.node.submission_contact.field_submission_language
+    - field.field.node.submission_contact.field_submission_last_name
+    - field.field.node.submission_contact.field_submission_message
+    - field.field.node.submission_contact.field_submission_subject
+    - node.type.submission_contact
+  module:
+    - user
+id: node.submission_contact.teaser
+targetEntityType: node
+bundle: submission_contact
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_submission_email_address: true
+  field_submission_first_name: true
+  field_submission_language: true
+  field_submission_last_name: true
+  field_submission_message: true
+  field_submission_subject: true
+  langcode: true

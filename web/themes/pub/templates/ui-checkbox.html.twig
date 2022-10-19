@@ -1,0 +1,28 @@
+{# @var v \Drupal\app\Views\UI_CheckboxFieldView #}
+<div class="ui-checkbox-field ui-field ui-option-field">
+
+  <div class="ui-option-field-wrapper">
+
+    <input type="checkbox"
+           id="{{ v.id }}"
+           name="{{ v.name }}"
+           value="{{ v.value }}"
+           {{ v.checked }}
+           {{ v.required }}
+           {{ v.show }}
+           {{ v.attributes }}
+    />
+
+    <div class="ui-checkbox-state-indicator ui-option-state-indicator">
+      <svg viewBox="0 0 14 14"><path class="ui-checkbox-checkmark-path" fill="none" d="M1.01,7.53l3.72,3.72l8.57-8.5"/></svg>
+    </div>
+
+    <div class="ui-checkbox-secondary-indicator ui-option-secondary-indicator"></div>
+
+  </div>
+
+  <div class="ui-option-label">
+    <label for="{{ v.id }}">{{ v.label }}</label>
+  </div>
+
+</div>

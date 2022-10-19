@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "dependencies": {
+    "axios": "^0.24.0",
+    "braintree-web": "^3.55.0",
+    "jquery": "^3.4.1",
+    "jquery-datepicker": "^1.12.3",
+    "chart.js": "^2.9.4",
+    "compass-mixins": "^0.12.10",
+    "css-loader": "^3.2.0",
+    "executive": "^1.6.3",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-copy": "^4.0.1",
+    "material-components-web": "6.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "random-material-color": "^1.0.5",
+    "sass": "1.26.5",
+    "sass-loader": "^7.1.0",
+    "sass-math-pow": "^0.1.5",
+    "slick-carousel": "^1.8.1",
+    "spin.js": "^4.1.1",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^14.2.0"
+  }
+}

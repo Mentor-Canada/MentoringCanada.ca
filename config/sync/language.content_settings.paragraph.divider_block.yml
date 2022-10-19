@@ -1,0 +1,18 @@
+uuid: ac6b744c-054b-49c8-aa34-074e2e666398
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.divider_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.divider_block
+target_entity_type_id: paragraph
+target_bundle: divider_block
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,150 @@
+header {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  padding: 0 5vw;
+  background-color: $mentor-off-white;
+  a {
+    display: block;
+  }
+  #header-logo {
+    min-width: 195px;
+    svg.mentor-canada-logo {
+      display: block;
+    }
+  }
+  $nav-menu-transition-duration: 300ms;
+  ul#nav-menu {
+    display: flex;
+    white-space: nowrap;
+    li.nav-menu-parent-link {
+      position: relative;
+    }
+    li.nav-menu-parent-link:nth-last-child(2) a {
+      padding-right: 20px;
+    }
+    a.global-nav-link {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 10px;
+      color: $header-link-color;
+      font-weight: 500;
+      @include font-tracking(12);
+      transition: opacity $nav-menu-transition-duration;
+      span {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          width: 100%;
+          height: 2px;
+          background: $header-link-hover-background;
+          transform-origin: 0 50%;
+          transform: scaleX(0);
+          transition: transform $nav-menu-transition-duration;
+        }
+      }
+    }
+    li.nav-menu-parent-link.has-child-nav {
+      a.global-nav-link span:before {
+        display: none;
+      }
+      &:hover {
+        ul.child-nav {
+          display: block;
+        }
+      }
+    }
+    ul.child-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 90vw;
+      max-width: 240px;
+      transform: translateX(-50%);
+      white-space: normal;
+      padding: 8px 0;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(#000, 0.15);
+      overflow: hidden;
+      background: rgba(#fff, 0.9);
+      @supports (-webkit-backdrop-filter: saturate(200%) blur(20px)) or (backdrop-filter: saturate(200%) blur(20px)) {
+        background: rgba(#fff, 0.75);
+        -webkit-backdrop-filter: saturate(200%) blur(20px);
+        backdrop-filter: saturate(200%) blur(20px);
+      }
+      a {
+        padding: 10px 20px;
+        color: $header-link-color;
+        font-weight: 500;
+        @include font-tracking(12);
+        &:hover {
+          color: #fff;
+          background: $ui-primary;
+        }
+      }
+    }
+    &:hover {
+      li.nav-menu-parent-link a.global-nav-link {
+        opacity: 0.5;
+      }
+      li.nav-menu-parent-link:hover a.global-nav-link {
+        opacity: 1;
+        span:before {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+  ul#compact-nav-menu {
+    display: none;
+    .compact-menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      .icon-hamburger {
+        fill: $header-link-color;
+      }
+    }
+  }
+  html.compact-menu & {
+    ul#nav-menu {
+      display: none;
+    }
+    ul#compact-nav-menu {
+      display: block;
+    }
+  }
+  body.page-has-banner & {
+    background: transparent;
+    svg.mentor-canada-logo {
+      .mentor-logo-text {
+        fill: #fff;
+      }
+    }
+    ul#nav-menu {
+      a.global-nav-link {
+        color: #fff;
+      }
+    }
+    ul#compact-nav-menu {
+      .compact-menu-toggle {
+        .icon-hamburger {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

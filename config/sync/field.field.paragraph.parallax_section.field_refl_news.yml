@@ -1,0 +1,23 @@
+uuid: 43043af0-de7f-4cd8-87ff-cc5d0ee9b67b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refl_news
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_refl_news
+field_name: field_refl_news
+entity_type: paragraph
+bundle: parallax_section
+label: 'Label News'
+description: 'Display a <em>News</em> label on the displayed news items. This can be useful when displaying multiple content types together.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

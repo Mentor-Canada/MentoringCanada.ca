@@ -1,0 +1,17 @@
+{# @var v \Drupal\app\Views\ParagraphMarkupSectionView #}
+<section class="markup-section"
+         data-section-id="{{ v.id }}"
+         data-section-zebra="{{ v.zebra }}"
+         data-ignore-default-padding-top="{{ v.ignoreDefaultPaddingTop }}"
+         data-ignore-default-padding-bottom="{{ v.ignoreDefaultPaddingBottom }}"
+>
+  <div
+    {% if v.sectionWidth != "bleed" %}
+    data-padding-standard="horizontal"
+    {% endif %}
+  >
+    <div data-content-width="{{ v.sectionWidth }}">
+      {{ v.markup|raw }}
+    </div>
+  </div>
+</section>

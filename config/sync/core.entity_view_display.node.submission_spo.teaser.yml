@@ -1,0 +1,57 @@
+uuid: 16c7d43f-d298-4439-bc7e-acd225bb8eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.submission_spo.field_submission_aware_srdc_cmp
+    - field.field.node.submission_spo.field_submission_caller
+    - field.field.node.submission_spo.field_submission_connector_list
+    - field.field.node.submission_spo.field_submission_email_address
+    - field.field.node.submission_spo.field_submission_first_name
+    - field.field.node.submission_spo.field_submission_has_services
+    - field.field.node.submission_spo.field_submission_language
+    - field.field.node.submission_spo.field_submission_last_name
+    - field.field.node.submission_spo.field_submission_newsletter_list
+    - field.field.node.submission_spo.field_submission_organization
+    - field.field.node.submission_spo.field_submission_received_survey
+    - field.field.node.submission_spo.field_submission_survey_ask_1
+    - field.field.node.submission_spo.field_submission_survey_ask_2
+    - field.field.node.submission_spo.field_submission_survey_complete
+    - field.field.node.submission_spo.field_submission_survey_concerns
+    - field.field.node.submission_spo.field_submission_survey_started
+    - field.field.node.submission_spo.field_submission_survey_why_not
+    - field.field.node.submission_spo.field_submission_survey_willing
+    - node.type.submission_spo
+  module:
+    - user
+id: node.submission_spo.teaser
+targetEntityType: node
+bundle: submission_spo
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_submission_aware_srdc_cmp: true
+  field_submission_caller: true
+  field_submission_connector_list: true
+  field_submission_email_address: true
+  field_submission_first_name: true
+  field_submission_has_services: true
+  field_submission_language: true
+  field_submission_last_name: true
+  field_submission_newsletter_list: true
+  field_submission_organization: true
+  field_submission_received_survey: true
+  field_submission_survey_ask_1: true
+  field_submission_survey_ask_2: true
+  field_submission_survey_complete: true
+  field_submission_survey_concerns: true
+  field_submission_survey_started: true
+  field_submission_survey_why_not: true
+  field_submission_survey_willing: true
+  langcode: true

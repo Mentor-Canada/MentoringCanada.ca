@@ -1,0 +1,17 @@
+uuid: 90ede2aa-d209-4e2f-94cc-5a16f1d7fc56
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Social Media Campaign'
+type: social_media_campaign
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

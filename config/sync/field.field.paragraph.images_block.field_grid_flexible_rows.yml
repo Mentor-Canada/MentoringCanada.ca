@@ -1,0 +1,23 @@
+uuid: 5ad0965a-b220-4da5-ac2e-efbbfa6d5e4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grid_flexible_rows
+    - paragraphs.paragraphs_type.images_block
+id: paragraph.images_block.field_grid_flexible_rows
+field_name: field_grid_flexible_rows
+entity_type: paragraph
+bundle: images_block
+label: 'Grid Flexible Rows'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

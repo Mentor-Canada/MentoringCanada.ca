@@ -1,0 +1,19 @@
+uuid: 69aa8a97-4b42-4bd6-8330-cfdc9688ba95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_language
+    - node.type.submission_event
+id: node.submission_event.field_submission_language
+field_name: field_submission_language
+entity_type: node
+bundle: submission_event
+label: Language
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 54141f9f-455e-41e0-b22c-a28a51d20a86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_eyebrow
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_section_eyebrow
+field_name: field_section_eyebrow
+entity_type: paragraph
+bundle: parallax_section
+label: 'Section Eyebrow'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

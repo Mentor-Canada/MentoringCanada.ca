@@ -1,0 +1,19 @@
+uuid: f2eaf350-1672-4f20-bfbc-a5038323ef94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_indigenous
+    - node.type.submission_event
+id: node.submission_event.field_submission_indigenous
+field_name: field_submission_indigenous
+entity_type: node
+bundle: submission_event
+label: 'Indigenous Group'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

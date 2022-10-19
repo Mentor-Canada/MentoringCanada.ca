@@ -1,0 +1,31 @@
+uuid: 593e5608-d841-4e27-9a86-c7129b398090
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.event_types.field_pathauto_stub
+    - taxonomy.vocabulary.event_types
+  module:
+    - text
+id: taxonomy_term.event_types.default
+targetEntityType: taxonomy_term
+bundle: event_types
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pathauto_stub:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

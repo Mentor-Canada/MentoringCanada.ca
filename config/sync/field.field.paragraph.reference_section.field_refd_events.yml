@@ -1,0 +1,23 @@
+uuid: 90d23996-3be5-4534-a6d0-dc8f8a7d8845
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_refd_events
+    - paragraphs.paragraphs_type.reference_section
+id: paragraph.reference_section.field_refd_events
+field_name: field_refd_events
+entity_type: paragraph
+bundle: reference_section
+label: 'Dynamic Events'
+description: 'Display <em>Events</em> dynamically, updated as new ones are created and old ones expire. Disable this option to display specific events, regardless of whether they have expired or not.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

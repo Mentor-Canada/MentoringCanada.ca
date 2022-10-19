@@ -1,0 +1,23 @@
+uuid: 98d9db49-0131-453f-a20b-3a171d392170
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_wysiwyg
+    - paragraphs.paragraphs_type.parallax_section
+  module:
+    - text
+id: paragraph.parallax_section.field_wysiwyg
+field_name: field_wysiwyg
+entity_type: paragraph
+bundle: parallax_section
+label: 'No Results'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

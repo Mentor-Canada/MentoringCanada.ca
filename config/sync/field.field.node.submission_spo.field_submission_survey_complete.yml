@@ -1,0 +1,19 @@
+uuid: 1972458d-a3f8-4e39-9417-b5a0a32fd649
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_survey_complete
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_survey_complete
+field_name: field_submission_survey_complete
+entity_type: node
+bundle: submission_spo
+label: 'May I ask if your organization was able to complete it?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

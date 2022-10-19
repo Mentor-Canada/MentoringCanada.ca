@@ -1,0 +1,23 @@
+uuid: 72bdbd63-2ae7-4e95-8ec8-79ee4f10b598
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_hide_scrim
+    - node.type.basic
+id: node.basic.field_banner_hide_scrim
+field_name: field_banner_hide_scrim
+entity_type: node
+bundle: basic
+label: 'Hide Banner Scrim'
+description: 'Hide the banner scrim, which darkens the image when one is present. Use with caution as this may affect the legibility of the menu and visually conflit with the Mentor logo in the header.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

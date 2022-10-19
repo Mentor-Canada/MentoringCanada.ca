@@ -1,0 +1,18 @@
+uuid: 9a0d06b7-9181-4d4d-8577-422b9522aca1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_event
+id: node.submission_event.created
+field_name: created
+entity_type: node
+bundle: submission_event
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

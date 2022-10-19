@@ -1,0 +1,53 @@
+{# @var location \Drupal\datadashboard\DataDashboardGroup #}
+{# @var gender \Drupal\datadashboard\DataDashboardGroup #}
+{# @var age \Drupal\datadashboard\DataDashboardGroup #}
+
+<form class="standard-form-style" onSubmit="return false;" action="">
+{% for location in v.tree %}
+  <div class="chart-factor {% if loop.index == 1 %}open{% endif %}">
+
+    <div class="chart-control chart-control-location">
+      {% set color = location.groups["All genders"].groups["All ages"].elements["All ages"].color %}
+      {% if color is null %}
+        {% set color = location.groups["All genders"].groups[4].elements["All ages"].color %}
+      {% endif %}
+      <div class="chart-control-legend" style='background-color: {{ color }}'></div>
+      {% set checked = "" %}
+      {% if loop.index == 1 %}
+        {% set checked = "checked" %}
+      {% endif %}
+      {{ ui_checkbox(v.prefix ~ location.trail|json_encode, "", location.title|t, location.trail|json_encode, checked, "", null, "autocomplete=off") }}
+      <div class="toggle-details-wrapper">
+        <a class="toggle-details" aria-label="{{ 'Expand'|t }}"></a>
+        <div class="toggle-details-tip toggle-details-tip-open">{{ 'Expand'|t }}</div>
+        <div class="toggle-details-tip toggle-details-tip-close">{{ 'Close'|t }}</div>
+      </div>
+    </div>
+
+    <div class="chart-groups">
+    {% for gender in location.groups %}
+
+      <div class="chart-group">
+        {% if gender.skip != true %}
+        <div class="chart-control chart-control-gender">
+          <div class="chart-control-legend" style='background-color: {{ gender.groups["All ages"].elements["All ages"].color }}'></div>
+          {{ ui_checkbox(v.prefix ~ gender.trail|json_encode, "", gender.title|t, gender.trail|json_encode, "", "", null, "autocomplete=off") }}
+        </div>
+        {% endif %}
+
+        {% for age in gender.groups %}
+          {% if age.skip != true %}
+          <div class="chart-control">
+            <div class="chart-control-legend" style='background-color: {{ age.elements[age.title].color }}'></div>
+            {{ ui_checkbox(v.prefix ~ age.trail|json_encode, "", age.title|t, age.trail|json_encode, "", "", null, "autocomplete=off") }}
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    {% endfor %}
+    </div>
+
+  </div>
+{% endfor %}
+</form>

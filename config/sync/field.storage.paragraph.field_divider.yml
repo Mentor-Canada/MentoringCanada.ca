@@ -1,0 +1,30 @@
+uuid: f6aca215-7d49-4305-a999-ac55326ac12e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_divider
+field_name: field_divider
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: minimal
+      label: Minimal
+    -
+      value: vibrant
+      label: Vibrant
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,13 @@
+{# @var v \Drupal\app\Views\ParagraphImageCaptionFieldView #}
+<figure class="image-caption-field image-caption-carousel-field">
+  <div>
+    <div class="image-constraint"
+         style="max-width: {{ v.image.width }}px; max-height: {{ v.image.height }}px;"
+    >
+  <img src="{{ v.image.url }}"
+       alt="{{ v.caption }}"
+  >
+    </div>
+  {% if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+  </div>
+</figure>

@@ -1,0 +1,23 @@
+uuid: 5238031b-9714-45f7-8bde-748091f8a3b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ref_news
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_ref_news
+field_name: field_ref_news
+entity_type: paragraph
+bundle: parallax_section
+label: News
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

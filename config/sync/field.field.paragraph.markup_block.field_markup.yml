@@ -1,0 +1,19 @@
+uuid: e558a798-c095-4b17-8794-18a44cfcac5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_markup
+    - paragraphs.paragraphs_type.markup_block
+id: paragraph.markup_block.field_markup
+field_name: field_markup
+entity_type: paragraph
+bundle: markup_block
+label: Markup
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

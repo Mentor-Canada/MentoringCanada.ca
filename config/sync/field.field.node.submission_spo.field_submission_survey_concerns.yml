@@ -1,0 +1,19 @@
+uuid: adabffe1-61f3-4743-a110-ce8105f738af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_survey_concerns
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_survey_concerns
+field_name: field_submission_survey_concerns
+entity_type: node
+bundle: submission_spo
+label: 'Survey Concerns'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,75 @@
+uuid: e7d66f47-f38f-4fa6-ba46-1dfdddc5370b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.submission_event.field_extras
+    - field.field.node.submission_event.field_payment_details
+    - field.field.node.submission_event.field_submission_1_on_1_comments
+    - field.field.node.submission_event.field_submission_1_on_1_topics
+    - field.field.node.submission_event.field_submission_age
+    - field.field.node.submission_event.field_submission_birthdate
+    - field.field.node.submission_event.field_submission_comments
+    - field.field.node.submission_event.field_submission_country
+    - field.field.node.submission_event.field_submission_email_address
+    - field.field.node.submission_event.field_submission_event_id
+    - field.field.node.submission_event.field_submission_event_option
+    - field.field.node.submission_event.field_submission_first_name
+    - field.field.node.submission_event.field_submission_in_canada
+    - field.field.node.submission_event.field_submission_indigenous
+    - field.field.node.submission_event.field_submission_is_indigenous
+    - field.field.node.submission_event.field_submission_language
+    - field.field.node.submission_event.field_submission_last_name
+    - field.field.node.submission_event.field_submission_linkedin
+    - field.field.node.submission_event.field_submission_mentor_title
+    - field.field.node.submission_event.field_submission_organization
+    - field.field.node.submission_event.field_submission_pho_vid_consent
+    - field.field.node.submission_event.field_submission_phone_number
+    - field.field.node.submission_event.field_submission_postal_code
+    - field.field.node.submission_event.field_submission_province
+    - field.field.node.submission_event.field_submission_role
+    - field.field.node.submission_event.field_submission_sharing_consent
+    - field.field.node.submission_event.field_submission_training_type
+    - node.type.submission_event
+  module:
+    - user
+id: node.submission_event.teaser
+targetEntityType: node
+bundle: submission_event
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_extras: true
+  field_payment_details: true
+  field_submission_1_on_1_comments: true
+  field_submission_1_on_1_topics: true
+  field_submission_age: true
+  field_submission_birthdate: true
+  field_submission_comments: true
+  field_submission_country: true
+  field_submission_email_address: true
+  field_submission_event_id: true
+  field_submission_event_option: true
+  field_submission_first_name: true
+  field_submission_in_canada: true
+  field_submission_indigenous: true
+  field_submission_is_indigenous: true
+  field_submission_language: true
+  field_submission_last_name: true
+  field_submission_linkedin: true
+  field_submission_mentor_title: true
+  field_submission_organization: true
+  field_submission_pho_vid_consent: true
+  field_submission_phone_number: true
+  field_submission_postal_code: true
+  field_submission_province: true
+  field_submission_role: true
+  field_submission_sharing_consent: true
+  field_submission_training_type: true
+  langcode: true

@@ -1,0 +1,1331 @@
+diff --git a/core/modules/system/tests/modules/tabledrag_test/src/Form/NestedTableDragTestForm.php b/core/modules/system/tests/modules/tabledrag_test/src/Form/NestedTableDragTestForm.php
+new file mode 100644
+index 0000000000..23ee549a3e
+--- /dev/null
++++ b/core/modules/system/tests/modules/tabledrag_test/src/Form/NestedTableDragTestForm.php
+@@ -0,0 +1,36 @@
++<?php
++
++namespace Drupal\tabledrag_test\Form;
++
++use Drupal\Core\Form\FormStateInterface;
++
++/**
++ * Provides a form for testing nested draggable tables.
++ */
++class NestedTableDragTestForm extends TableDragTestForm {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getFormId() {
++    return 'nested_tabledrag_test_form';
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildForm(array $form, FormStateInterface $form_state) {
++    $parent_row_ids = ['parent_1', 'parent_2', 'parent_3'];
++    $parent_rows = array_combine($parent_row_ids, $parent_row_ids);
++
++    $form['table'] = $this->buildTestTable($parent_rows, 'tabledrag-test-parent-table', 'tabledrag-test-nested-parent', FALSE);
++
++    $form['table']['#caption'] = $this->t('Parent table');
++    $form['table'][reset($parent_row_ids)]['title'] = $this->buildTestTable() + ['#caption' => $this->t('Nested table')];
++
++    $form['actions'] = $this->buildFormActions();
++
++    return $form;
++  }
++
++}
+diff --git a/core/modules/system/tests/modules/tabledrag_test/src/Form/TableDragTestForm.php b/core/modules/system/tests/modules/tabledrag_test/src/Form/TableDragTestForm.php
+index a5f1f4630a..3b4528e8b2 100644
+--- a/core/modules/system/tests/modules/tabledrag_test/src/Form/TableDragTestForm.php
++++ b/core/modules/system/tests/modules/tabledrag_test/src/Form/TableDragTestForm.php
+@@ -44,46 +44,68 @@ public function getFormId() {
+   }
+ 
+   /**
+-   * {@inheritdoc}
++   * Builds the draggable test table.
++   *
++   * @param array $rows
++   *   (optional) Rows that should be shown on the table. Default value is 5
++   *   rows that are stored to state on save.
++   * @param string $table_id
++   *   (optional) An HTML ID for the table, defaults to 'tabledrag-test-table'.
++   * @param string $group_prefix
++   *   (optional) A prefix for HTML classes generated in the method, defaults to
++   *   'tabledrag-test'.
++   * @param bool $indentation
++   *   (optional) A boolean indicating whether the rows can be indented,
++   *   defaults to TRUE.
++   *
++   * @return array
++   *   The renderable array of the draggable table used for testing.
+    */
+-  public function buildForm(array $form, FormStateInterface $form_state) {
+-    $form['table'] = [
++  protected function buildTestTable(array $rows = [], $table_id = 'tabledrag-test-table', $group_prefix = 'tabledrag-test', $indentation = TRUE) {
++    $tabledrag = [
++      [
++        'action' => 'order',
++        'relationship' => 'sibling',
++        'group' => "$group_prefix-weight",
++      ],
++    ];
++
++    if ($indentation) {
++      $tabledrag[] = [
++        'action' => 'match',
++        'relationship' => 'parent',
++        'group' => "$group_prefix-parent",
++        'subgroup' => "$group_prefix-parent",
++        'source' => "$group_prefix-id",
++        'hidden' => TRUE,
++        'limit' => 2,
++      ];
++      $tabledrag[] = [
++        'action' => 'depth',
++        'relationship' => 'group',
++        'group' => "$group_prefix-depth",
++        'hidden' => TRUE,
++      ];
++    }
++
++    $table = [
+       '#type' => 'table',
+       '#header' => [
+         [
+           'data' => $this->t('Text'),
+-          'colspan' => 4,
++          'colspan' => $indentation ? 4 : 2,
+         ],
+         $this->t('Weight'),
+       ],
+-      '#tabledrag' => [
+-        [
+-          'action' => 'order',
+-          'relationship' => 'sibling',
+-          'group' => 'tabledrag-test-weight',
+-        ],
+-        [
+-          'action' => 'match',
+-          'relationship' => 'parent',
+-          'group' => 'tabledrag-test-parent',
+-          'subgroup' => 'tabledrag-test-parent',
+-          'source' => 'tabledrag-test-id',
+-          'hidden' => TRUE,
+-          'limit' => 2,
+-        ],
+-        [
+-          'action' => 'depth',
+-          'relationship' => 'group',
+-          'group' => 'tabledrag-test-depth',
+-          'hidden' => TRUE,
+-        ],
+-      ],
+-      '#attributes' => ['id' => 'tabledrag-test-table'],
++      '#tabledrag' => $tabledrag,
++      '#attributes' => ['id' => $table_id],
+       '#attached' => ['library' => ['tabledrag_test/tabledrag']],
+     ];
+ 
+     // Provide a default set of five rows.
+-    $rows = $this->state->get('tabledrag_test_table', array_flip(range(1, 5)));
++    $rows = !empty($rows) ? $rows :
++      $this->state->get('tabledrag_test_table', array_flip(range(1, 5)));
++
+     foreach ($rows as $id => $row) {
+       if (!is_array($row)) {
+         $row = [];
+@@ -101,43 +123,56 @@ public function buildForm(array $form, FormStateInterface $form_state) {
+         $row['classes'][] = 'draggable';
+       }
+ 
+-      $form['table'][$id] = [
++      $table[$id] = [
+         'title' => [
+           'indentation' => [
+             '#theme' => 'indentation',
+-            '#size' => $row['depth'],
++            '#size' => $indentation ? $row['depth'] : 0,
+           ],
+           '#plain_text' => "Row with id $id",
+         ],
+         'id' => [
+           '#type' => 'hidden',
+           '#value' => $id,
+-          '#attributes' => ['class' => ['tabledrag-test-id']],
++          '#parents' => ['table', $id, 'id'],
++          '#attributes' => ['class' => ["$group_prefix-id"]],
+         ],
+-        'parent' => [
++        '#attributes' => ['class' => $row['classes']],
++      ];
++
++      if ($indentation) {
++        $table[$id]['parent'] = [
+           '#type' => 'hidden',
+           '#default_value' => $row['parent'],
+           '#parents' => ['table', $id, 'parent'],
+-          '#attributes' => ['class' => ['tabledrag-test-parent']],
+-        ],
+-        'depth' => [
++          '#attributes' => ['class' => ["$group_prefix-parent"]],
++        ];
++        $table[$id]['depth'] = [
+           '#type' => 'hidden',
+           '#default_value' => $row['depth'],
+-          '#attributes' => ['class' => ['tabledrag-test-depth']],
+-        ],
+-        'weight' => [
+-          '#type' => 'weight',
+-          '#default_value' => $row['weight'],
+-          '#attributes' => ['class' => ['tabledrag-test-weight']],
+-        ],
+-        '#attributes' => ['class' => $row['classes']],
++          '#parents' => ['table', $id, 'depth'],
++          '#attributes' => ['class' => ["$group_prefix-depth"]],
++        ];
++      }
++
++      $table[$id]['weight'] = [
++        '#type' => 'weight',
++        '#default_value' => $row['weight'],
++        '#parents' => ['table', $id, 'weight'],
++        '#attributes' => ['class' => ["$group_prefix-weight"]],
+       ];
+     }
+ 
+-    $form['save'] = [
+-      '#type' => 'submit',
+-      '#value' => $this->t('Save'),
+-    ];
++    return $table;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildForm(array $form, FormStateInterface $form_state) {
++    // Provide a default set of five rows.
++    $form['table'] = $this->buildTestTable();
++    $form['actions'] = $this->buildFormActions();
+ 
+     return $form;
+   }
+@@ -146,12 +181,44 @@ public function buildForm(array $form, FormStateInterface $form_state) {
+    * {@inheritdoc}
+    */
+   public function submitForm(array &$form, FormStateInterface $form_state) {
+-    $test_table = [];
+-    foreach ($form_state->getValue('table') as $row) {
+-      $test_table[$row['id']] = $row;
++    $operation = isset($form_state->getTriggeringElement()['#op']) ?
++      $form_state->getTriggeringElement()['#op'] :
++      'save';
++
++    switch ($operation) {
++      case 'reset':
++        $this->state->set('tabledrag_test_table', array_flip(range(1, 5)));
++        break;
++
++      default:
++        $test_table = [];
++        foreach ($form_state->getValue('table') as $row) {
++          $test_table[$row['id']] = $row;
++        }
++        $this->state->set('tabledrag_test_table', $test_table);
++        break;
+     }
++  }
+ 
+-    $this->state->set('tabledrag_test_table', $test_table);
++  /**
++   * Builds the test table form actions.
++   *
++   * @return array
++   *   The renderable array of form actions.
++   */
++  protected function buildFormActions() {
++    return [
++      '#type' => 'actions',
++      'save' => [
++        '#type' => 'submit',
++        '#value' => $this->t('Save'),
++      ],
++      'reset' => [
++        '#type' => 'submit',
++        '#op' => 'reset',
++        '#value' => $this->t('Reset'),
++      ],
++    ];
+   }
+ 
+ }
+diff --git a/core/modules/system/tests/modules/tabledrag_test/tabledrag_test.routing.yml b/core/modules/system/tests/modules/tabledrag_test/tabledrag_test.routing.yml
+index 1bb88ff12b..cc9cf59b83 100644
+--- a/core/modules/system/tests/modules/tabledrag_test/tabledrag_test.routing.yml
++++ b/core/modules/system/tests/modules/tabledrag_test/tabledrag_test.routing.yml
+@@ -5,3 +5,11 @@ tabledrag_test.test_form:
+     _title: 'Draggable table test'
+   requirements:
+     _access: 'TRUE'
++
++tabledrag_test.nested_tabledrag_test_form:
++  path: '/tabledrag_test_nested'
++  defaults:
++    _form: '\Drupal\tabledrag_test\Form\NestedTableDragTestForm'
++    _title: 'Nested draggable table test'
++  requirements:
++    _access: 'TRUE'
+diff --git a/core/themes/claro/css/components/tabledrag.css b/core/themes/claro/css/components/tabledrag.css
+index ae680d4ed4..c0dcc41ab4 100644
+--- a/core/themes/claro/css/components/tabledrag.css
++++ b/core/themes/claro/css/components/tabledrag.css
+@@ -190,7 +190,7 @@ body.drag {
+ 
+ .tabledrag-handle:hover::after,
+ .tabledrag-handle:focus::after,
+-.draggable.drag .tabledrag-handle::after {
++.tabledrag-handle.is-dragged::after {
+   transform: scale(1.25);
+ }
+ 
+@@ -307,27 +307,6 @@ body.drag {
+   height: 100%;
+ }
+ 
+-.tabledrag-cell-content .tree {
+-  min-height: 100%; /* Using simply 'height: 100%' would make IE11 rendering ugly. */
+-}
+-
+-/**
+- * Safari (at least version 13.0) thinks that if we define a width or height for
+- * and SVG, then we refer to the elements total size inside the SVG.
+- * We only want to inherit the height of the parent element.
+- */
+-
+-/* stylelint-disable-next-line unit-whitelist */
+-
+-@media not all and (min-resolution: 0.001dpcm) {
+-  @media {
+-    .tabledrag-cell-content .tree {
+-      overflow: visible;
+-      min-height: 0;
+-    }
+-  }
+-}
+-
+ .tabledrag-cell-content .tabledrag-handle::after {
+   vertical-align: middle;
+ }
+@@ -340,8 +319,10 @@ body.drag {
+   position: relative;
+   left: -0.25rem; /* LTR */
+   float: left; /* LTR */
++  overflow: hidden;
+   width: 1.5625rem; /* 25px */
+   height: 1.5625rem; /* 25px */
++  transform: translate3d(0, 0, 0);
+   background: none !important;
+   line-height: 0;
+ }
+@@ -356,7 +337,7 @@ body.drag {
+  * Tree is the visual representation for the simultaneously moved draggable
+  * rows.
+  *
+- * These rules are styleing the inline SVG that is placed inside the .indetation
++ * These rules are styling the inline SVG that is placed inside the .indentation
+  * element.
+  */
+ 
+@@ -365,6 +346,10 @@ body.drag {
+   height: 1.5625rem; /* 25px */
+ }
+ 
++.tabledrag-cell-content .tree {
++  overflow: visible;
++}
++
+ .tree__item {
+   display: none;
+ }
+diff --git a/core/themes/claro/css/components/tabledrag.pcss.css b/core/themes/claro/css/components/tabledrag.pcss.css
+index ba51715522..3151956833 100644
+--- a/core/themes/claro/css/components/tabledrag.pcss.css
++++ b/core/themes/claro/css/components/tabledrag.pcss.css
+@@ -127,7 +127,7 @@ body.drag {
+ 
+ .tabledrag-handle:hover::after,
+ .tabledrag-handle:focus::after,
+-.draggable.drag .tabledrag-handle::after {
++.tabledrag-handle.is-dragged::after {
+   transform: scale(1.25);
+ }
+ 
+@@ -235,25 +235,6 @@ body.drag {
+   height: 100%;
+ }
+ 
+-.tabledrag-cell-content .tree {
+-  min-height: 100%; /* Using simply 'height: 100%' would make IE11 rendering ugly. */
+-}
+-
+-/**
+- * Safari (at least version 13.0) thinks that if we define a width or height for
+- * and SVG, then we refer to the elements total size inside the SVG.
+- * We only want to inherit the height of the parent element.
+- */
+-/* stylelint-disable-next-line unit-whitelist */
+-@media not all and (min-resolution: 0.001dpcm) {
+-  @media {
+-    .tabledrag-cell-content .tree {
+-      overflow: visible;
+-      min-height: 0;
+-    }
+-  }
+-}
+-
+ .tabledrag-cell-content .tabledrag-handle::after {
+   vertical-align: middle;
+ }
+@@ -265,8 +246,10 @@ body.drag {
+   position: relative;
+   left: calc(var(--space-xs) * -0.5); /* LTR */
+   float: left; /* LTR */
++  overflow: hidden;
+   width: calc(25rem / 16); /* 25px */
+   height: calc(25rem / 16); /* 25px */
++  transform: translate3d(0, 0, 0);
+   background: none !important;
+   line-height: 0;
+ }
+@@ -280,7 +263,7 @@ body.drag {
+  * Tree is the visual representation for the simultaneously moved draggable
+  * rows.
+  *
+- * These rules are styleing the inline SVG that is placed inside the .indetation
++ * These rules are styling the inline SVG that is placed inside the .indentation
+  * element.
+  */
+ .tree {
+@@ -288,6 +271,10 @@ body.drag {
+   height: calc(25rem / 16); /* 25px */
+ }
+ 
++.tabledrag-cell-content .tree {
++  overflow: visible;
++}
++
+ .tree__item {
+   display: none;
+ }
+diff --git a/core/themes/claro/js/tabledrag.es6.js b/core/themes/claro/js/tabledrag.es6.js
+index 49211ca5af..481200c5a7 100644
+--- a/core/themes/claro/js/tabledrag.es6.js
++++ b/core/themes/claro/js/tabledrag.es6.js
+@@ -218,10 +218,10 @@
+     Object.keys(tableSettings || {}).forEach(group => {
+       Object.keys(tableSettings[group] || {}).forEach(n => {
+         if (tableSettings[group][n].relationship === 'parent') {
+-          this.indentEnabled = true;
++          self.indentEnabled = true;
+         }
+         if (tableSettings[group][n].limit > 0) {
+-          this.maxDepth = tableSettings[group][n].limit;
++          self.maxDepth = tableSettings[group][n].limit;
+         }
+       });
+     });
+@@ -237,21 +237,26 @@
+       // manually append 2 indentations in the first draggable row, measure
+       // the offset, then remove.
+       const indent = Drupal.theme('tableDragIndentation');
+-      const testRow = $('<tr/>')
++      const $testRow = $('<tr/>')
+         .addClass('draggable')
+-        .appendTo(table);
+-      const testCell = $('<td/>')
+-        .appendTo(testRow)
++        .appendTo(self.$table);
++      const $testCell = $('<td/>')
++        .appendTo($testRow)
+         .prepend(indent)
+-        .prepend(indent);
+-      const $indentation = testCell.find('.js-indentation');
++        .prepend(indent)
++        .wrapInner(
++          $(Drupal.theme('tableDragCellItemsWrapper')).addClass(
++            'js-tabledrag-cell-content',
++          ),
++        );
++      const $indentation = $testCell.find('.js-indentation');
+ 
+       /**
+        * @type {number}
+        */
+       this.indentAmount =
+         $indentation.get(1).offsetLeft - $indentation.get(0).offsetLeft;
+-      testRow.remove();
++      $testRow.remove();
+     }
+ 
+     // Make each applicable row draggable.
+@@ -318,18 +323,19 @@
+      * 'Drupal.tableDrag.showWeight' localStorage value.
+      */
+     initColumns() {
++      const self = this;
+       const { $table } = this;
+       let hidden;
+       let cell;
+       let columnIndex;
+       Object.keys(this.tableSettings || {}).forEach(group => {
+         // Find the first field in this group.
+-        Object.keys(this.tableSettings[group]).some(tableSetting => {
++        Object.keys(self.tableSettings[group]).some(tableSetting => {
+           const field = $table
+-            .find(`.${this.tableSettings[group][tableSetting].target}`)
++            .find(`.${self.tableSettings[group][tableSetting].target}`)
+             .eq(0);
+-          if (field.length && this.tableSettings[group][tableSetting].hidden) {
+-            hidden = this.tableSettings[group][tableSetting].hidden;
++          if (field.length && self.tableSettings[group][tableSetting].hidden) {
++            hidden = self.tableSettings[group][tableSetting].hidden;
+             cell = field.closest('td');
+             return true;
+           }
+@@ -348,7 +354,7 @@
+               .index(cell.get(0)) + 1;
+           $table
+             .find('> thead > tr, > tbody > tr, > tr')
+-            .each(this.addColspanClass(columnIndex));
++            .each(self.addColspanClass(columnIndex));
+         }
+       });
+       this.displayColumns(showWeight);
+@@ -550,36 +556,43 @@
+       const self = this;
+       const $item = $(item);
+       const $firstCell = $item
+-        .find('td:first-of-type')
+-        .wrapInner(Drupal.theme.tableDragCellContentWrapper())
++        .children('td:first-of-type')
++        .wrapInner(
++          $(Drupal.theme.tableDragCellContentWrapper()).addClass(
++            'js-tabledrag-cell-content-wrapper',
++          ),
++        )
+         .wrapInner(
+           $(Drupal.theme('tableDragCellItemsWrapper')).addClass(
+             'js-tabledrag-cell-content',
+           ),
+         );
+-      const $targetElem = $firstCell.find('.js-tabledrag-cell-content').length
+-        ? $firstCell.find('.js-tabledrag-cell-content')
++      const $targetElem = $firstCell.children('.js-tabledrag-cell-content').length
++        ? $firstCell.children('.js-tabledrag-cell-content')
+         : $firstCell.addClass('js-tabledrag-cell-content');
++      const $contentWrapper = $targetElem.children(
++        '.js-tabledrag-cell-content-wrapper',
++      );
+ 
+       // Move indentations into the '.js-tabledrag-cell-content' target.
+-      $targetElem
+-        .find('.js-indentation')
++      $contentWrapper
++        .children('.js-indentation')
+         .detach()
+         .prependTo($targetElem);
+ 
+       // Add a class to the title link.
+-      $targetElem.find('a').addClass('menu-item__link');
++      $contentWrapper.find('a').addClass('menu-item__link');
+       // Create the handle.
+       const handle = $(Drupal.theme.tableDragHandle())
+         .addClass('js-tabledrag-handle')
+         .attr('title', Drupal.t('Drag to re-order'));
+       // Insert the handle after indentations (if any).
+-      const $indentationLast = $targetElem.find('.js-indentation').eq(-1);
++      const $indentationLast = $targetElem.children('.js-indentation').eq(-1);
+       if ($indentationLast.length) {
+         $indentationLast.after(handle);
+         // Update the total width of indentation in this entire table.
+         self.indentCount = Math.max(
+-          $item.find('.js-indentation').length,
++          $targetElem.children('.js-indentation').length,
+           self.indentCount,
+         );
+       } else {
+@@ -592,7 +605,7 @@
+       });
+ 
+       // Don't do anything if tabledrag is disabled.
+-      if (handle.closest('.js-tabledrag-disabled').length) {
++      if (handle.closest('table').hasClass('js-tabledrag-disabled')) {
+         return;
+       }
+ 
+@@ -669,7 +682,9 @@
+                 groupHeight = 0;
+                 while (
+                   previousRow &&
+-                  $previousRow.find('.js-indentation').length
++                  $previousRow.find(
++                    '> td > .js-tabledrag-cell-content > .js-indentation',
++                  ).length
+                 ) {
+                   $previousRow = $(previousRow)
+                     .prev('tr')
+@@ -824,6 +839,7 @@
+       self.dragObject = {};
+       self.dragObject.initOffset = self.getPointerOffset(item, event);
+       self.dragObject.initPointerCoords = self.pointerCoords(event);
++      self.lastDragSwitchPointerY = self.dragObject.initPointerCoords.y;
+       if (self.indentEnabled) {
+         self.dragObject.indentPointerPos = self.dragObject.initPointerCoords;
+       }
+@@ -848,8 +864,9 @@
+       self.table.topY = $(self.table).offset().top;
+       self.table.bottomY = self.table.topY + self.table.offsetHeight;
+ 
+-      // Add classes to the handle and row.
++      // Add classes to the row.
+       $(item).addClass('drag');
++      self.rowObject.$handle.addClass('is-dragged');
+ 
+       // Set the document to use the move cursor during drag.
+       $('body').addClass('drag');
+@@ -873,7 +890,6 @@
+       if (self.dragObject) {
+         self.currentPointerCoords = self.pointerCoords(event);
+         const y = self.currentPointerCoords.y - self.dragObject.initOffset.y;
+-        const x = self.currentPointerCoords.x - self.dragObject.initOffset.x;
+ 
+         // Check for row swapping and vertical scrolling.
+         if (y !== self.oldY) {
+@@ -893,7 +909,7 @@
+           }
+ 
+           // If we have a valid target, perform the swap and restripe the table.
+-          const currentRow = self.findDropTargetRow(x, y);
++          const currentRow = self.findDropTargetRow();
+           if (currentRow) {
+             if (self.rowObject.direction === 'down') {
+               self.rowObject.swap('after', currentRow, self);
+@@ -935,6 +951,7 @@
+      *   The tableDrag instance.
+      */
+     dropRow(event, self) {
++      self.lastDragSwitchPointerY = null;
+       let droppedRow;
+       let $droppedRow;
+ 
+@@ -982,6 +999,7 @@
+           $(self.oldRowElement).removeClass('drag-previous');
+         }
+         $droppedRow.removeClass('drag').addClass('drag-previous');
++        self.rowObject.$handle.removeClass('is-dragged');
+         self.oldRowElement = droppedRow;
+         self.onDrop();
+         self.rowObject = null;
+@@ -1040,62 +1058,66 @@
+      *
+      * This row is then taken and swapped with the one being dragged.
+      *
+-     * @param {number} x
+-     *   The x coordinate of the mouse on the page (not the screen).
+-     * @param {number} y
+-     *   The y coordinate of the mouse on the page (not the screen).
+-     *
+      * @return {*}
+      *   The drop target row, if found.
+      */
+-    findDropTargetRow(x, y) {
+-      const rows = $(this.table.tBodies[0].rows).not(':hidden');
+-      for (let n = 0; n < rows.length; n++) {
+-        let row = rows[n];
+-        let $row = $(row);
+-        const rowY = $row.offset().top;
+-        let rowHeight;
+-        // Because Safari does not report offsetHeight on table rows, but does on
+-        // table cells, grab the firstChild of the row and use that instead.
++    findDropTargetRow() {
++      const self = this;
++      const pointerY = self.currentPointerCoords.y;
++      const directionUp = self.lastDragSwitchPointerY >= pointerY;
++      const rows = directionUp
++        ? $(self.rowObject.element)
++            .prevAll('tr')
++            .not(':hidden')
++            .toArray()
++            .reverse()
++        : $(self.rowObject.element)
++            .nextAll('tr')
++            .not(':hidden')
++            .toArray()
++            .reverse();
++      const getRowHeight = row =>
++        // Because Safari does not report offsetHeight on table rows, but does
++        // on table cells, grab the firstChild of the row and use that instead.
+         // http://jacob.peargrove.com/blog/2006/technical/table-row-offsettop-bug-in-safari.
+-        if (row.offsetHeight === 0) {
+-          rowHeight = parseInt(row.firstChild.offsetHeight, 10) / 2;
+-        }
+-        // Other browsers.
+-        else {
+-          rowHeight = parseInt(row.offsetHeight, 10) / 2;
+-        }
++        row.offsetHeight === 0
++          ? parseInt(row.firstChild.offsetHeight, 10)
++          : parseInt(row.offsetHeight, 10);
+ 
+-        // Because we always insert before, we need to offset the height a bit.
+-        if (y > rowY - rowHeight && y < rowY + rowHeight) {
+-          if (this.indentEnabled) {
++      for (let n = 0; n < rows.length; n++) {
++        const currentRow = rows[n];
++        const currentRowOffestY = $(currentRow).offset().top;
++        const currentRowHeight = getRowHeight(currentRow);
++        const currentRowCenterOffset = currentRowOffestY + currentRowHeight / 2;
++
++        if (
++          (directionUp && pointerY < currentRowCenterOffset) ||
++          (!directionUp && pointerY > currentRowCenterOffset)
++        ) {
++          if (self.indentEnabled) {
+             // Check that this row is not a child of the row being dragged.
+             if (
+-              Object.keys(this.rowObject.group).some(
+-                o => this.rowObject.group[o] === row,
++              Object.keys(self.rowObject.group).some(
++                o => self.rowObject.group[o] === currentRow,
+               )
+             ) {
+               return null;
+             }
+           }
+           // Do not allow a row to be swapped with itself.
+-          else if (row === this.rowObject.element) {
++          else if (currentRow === self.rowObject.element) {
+             return null;
+           }
+ 
+           // Check that swapping with this row is allowed.
+-          if (!this.rowObject.isValidSwap(row)) {
++          if (!self.rowObject.isValidSwap(currentRow)) {
+             return null;
+           }
+ 
+-          // We may have found the row the mouse just passed over, but it doesn't
+-          // take into account hidden rows. Skip backwards until we find a
+-          // draggable row.
+-          while ($row.is(':hidden') && $row.prev('tr').is(':hidden')) {
+-            $row = $row.prev('tr:first-of-type');
+-            row = $row.get(0);
++          if (currentRow) {
++            self.lastDragSwitchPointerY = pointerY;
+           }
+-          return row;
++          return currentRow;
+         }
+       }
+       return null;
+@@ -1108,10 +1130,11 @@
+      *   DOM object for the row that was just dropped.
+      */
+     updateFields(changedRow) {
+-      Object.keys(this.tableSettings || {}).forEach(group => {
++      const self = this;
++      Object.keys(self.tableSettings || {}).forEach(group => {
+         // Each group may have a different setting for relationship, so we find
+         // the source rows for each separately.
+-        this.updateField(changedRow, group);
++        self.updateField(changedRow, group);
+       });
+     },
+ 
+@@ -1181,7 +1204,9 @@
+         previousRow = $previousRow;
+         while (
+           $previousRow.length &&
+-          $previousRow.find('.js-indentation').length >= this.rowObject.indents
++          $previousRow.find(
++            '> td > .js-tabledrag-cell-content > .js-indentation',
++          ).length >= this.rowObject.indents
+         ) {
+           $previousRow = $previousRow.prev('tr');
+           previousRow = $previousRow;
+@@ -1232,7 +1257,9 @@
+             // Get the depth of the target row.
+             targetElement.value = $(sourceElement)
+               .closest('tr')
+-              .find('.js-indentation').length;
++              .find(
++                '> td > .js-tabledrag-cell-content > .js-indentation',
++              ).length;
+             break;
+ 
+           case 'match':
+@@ -1430,24 +1457,34 @@
+     row(tableRow, method, indentEnabled, maxDepth, addClasses) {
+       const $tableRow = $(tableRow);
+ 
++      this.$handle = $tableRow.find(
++        '> td > .js-tabledrag-cell-content > .js-tabledrag-handle',
++      );
+       this.element = tableRow;
+       this.method = method;
+       this.group = [tableRow];
+-      this.groupDepth = $tableRow.find('.js-indentation').length;
++      this.groupDepth = $tableRow.find(
++        '> td > .js-tabledrag-cell-content > .js-indentation',
++      ).length;
+       this.changed = false;
+       this.table = $tableRow.closest('table')[0];
+       this.indentEnabled = indentEnabled;
+       this.maxDepth = maxDepth;
++
+       // Direction the row is being moved.
+       this.direction = '';
+       if (this.indentEnabled) {
+-        this.indents = $tableRow.find('.js-indentation').length;
++        this.indents = $tableRow.find(
++          '> td > .js-tabledrag-cell-content > .js-indentation',
++        ).length;
+         this.children = this.findChildren(addClasses);
+         this.group = $.merge(this.group, this.children);
+         // Find the depth of this entire group.
+         for (let n = 0; n < this.group.length; n++) {
+           this.groupDepth = Math.max(
+-            $(this.group[n]).find('.js-indentation').length,
++            $(this.group[n]).find(
++              '> td > .js-tabledrag-cell-content > .js-indentation',
++            ).length,
+             this.groupDepth,
+           );
+         }
+@@ -1468,7 +1505,7 @@
+      */
+     findChildren(addClasses) {
+       const parentIndentation = this.indents;
+-      let currentRow = $(this.element, this.table).next('tr.draggable');
++      let nextRow = $(this.element, this.table).next('tr.draggable');
+       const rows = [];
+       let child = 0;
+ 
+@@ -1484,18 +1521,23 @@
+         }
+       }
+ 
+-      while (currentRow.length) {
++      while (nextRow.length) {
+         // A greater indentation indicates this is a child.
+-        if (currentRow.find('.js-indentation').length > parentIndentation) {
++        if (
++          nextRow.find('> td > .js-tabledrag-cell-content > .js-indentation')
++            .length > parentIndentation
++        ) {
+           child += 1;
+-          rows.push(currentRow[0]);
++          rows.push(nextRow[0]);
+           if (addClasses) {
+-            currentRow.find('.js-indentation').each(rowIndentation);
++            nextRow
++              .find('> td > .js-tabledrag-cell-content > .js-indentation')
++              .each(rowIndentation);
+           }
+         } else {
+           break;
+         }
+-        currentRow = currentRow.next('tr.draggable');
++        nextRow = nextRow.next('tr.draggable');
+       }
+       if (addClasses && rows.length) {
+         $(rows[rows.length - 1])
+@@ -1587,7 +1629,10 @@
+ 
+       // Minimum indentation:
+       // Do not orphan the next row.
+-      const minIndent = nextRow ? $(nextRow).find('.js-indentation').length : 0;
++      const minIndent = nextRow
++        ? $(nextRow).find('> td > .js-tabledrag-cell-content > .js-indentation')
++            .length
++        : 0;
+ 
+       // Maximum indentation:
+       if (
+@@ -1603,8 +1648,8 @@
+       } else {
+         // Do not go deeper than as a child of the previous row.
+         maxIndent =
+-          $prevRow.find('.js-indentation').length +
+-          ($prevRow.is('.tabledrag-leaf') ? 0 : 1);
++          $prevRow.find('> td > .js-tabledrag-cell-content > .js-indentation')
++            .length + ($prevRow.is('.tabledrag-leaf') ? 0 : 1);
+         // Limit by the maximum allowed depth for the table.
+         if (this.maxDepth) {
+           maxIndent = Math.min(
+@@ -1651,11 +1696,15 @@
+       for (let n = 1; n <= Math.abs(indentDiff); n++) {
+         // Add or remove indentations.
+         if (indentDiff < 0) {
+-          $group.find('.js-indentation:first-of-type').remove();
++          $group
++            .find(
++              '> td > .js-tabledrag-cell-content > .js-indentation:first-of-type',
++            )
++            .remove();
+           this.indents -= 1;
+         } else {
+           $group
+-            .find('.js-tabledrag-cell-content')
++            .find('> td > .js-tabledrag-cell-content')
+             .prepend(Drupal.theme('tableDragIndentation'));
+           this.indents += 1;
+         }
+@@ -1695,7 +1744,9 @@
+             // Either add immediately if this is a flat table, or check to
+             // ensure that this row has the same level of indentation.
+             if (this.indentEnabled) {
+-              checkRowIndentation = checkRow.find('.js-indentation').length;
++              checkRowIndentation = checkRow.find(
++                '> td > .js-tabledrag-cell-content > .js-indentation',
++              ).length;
+             }
+ 
+             if (!this.indentEnabled || checkRowIndentation === rowIndentation) {
+@@ -1724,8 +1775,9 @@
+      * Remove indentation helper classes from the current row group.
+      */
+     removeIndentClasses() {
+-      Object.keys(this.children || {}).forEach(n => {
+-        $(this.children[n])
++      const self = this;
++      Object.keys(self.children || {}).forEach(n => {
++        $(self.children[n])
+           .find('.js-indentation')
+           .removeClass('tree-child')
+           .removeClass('tree-child-first')
+@@ -1738,12 +1790,14 @@
+      * Add an asterisk or other marker to the changed row.
+      */
+     markChanged() {
+-      const marker = $(Drupal.theme('tableDragChangedMarker')).addClass(
+-        'js-tabledrag-changed-marker',
+-      );
+-      const cell = $(this.element).find('td:first-of-type');
+-      if (cell.find('.js-tabledrag-changed-marker').length === 0) {
+-        cell.find('.js-tabledrag-handle').after(marker);
++      if (
++        this.$handle.parent().children('.js-tabledrag-changed-marker')
++          .length === 0
++      ) {
++        const marker = $(Drupal.theme('tableDragChangedMarker')).addClass(
++          'js-tabledrag-changed-marker',
++        );
++        this.$handle.after(marker);
+       }
+     },
+ 
+diff --git a/core/themes/claro/js/tabledrag.js b/core/themes/claro/js/tabledrag.js
+index ef37e236c0..4aa50d1a6b 100644
+--- a/core/themes/claro/js/tabledrag.js
++++ b/core/themes/claro/js/tabledrag.js
+@@ -24,8 +24,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+   };
+ 
+   Drupal.tableDrag = function init(table, tableSettings) {
+-    var _this = this;
+-
+     var self = this;
+     var $table = $(table);
+ 
+@@ -63,10 +61,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+     Object.keys(tableSettings || {}).forEach(function (group) {
+       Object.keys(tableSettings[group] || {}).forEach(function (n) {
+         if (tableSettings[group][n].relationship === 'parent') {
+-          _this.indentEnabled = true;
++          self.indentEnabled = true;
+         }
+         if (tableSettings[group][n].limit > 0) {
+-          _this.maxDepth = tableSettings[group][n].limit;
++          self.maxDepth = tableSettings[group][n].limit;
+         }
+       });
+     });
+@@ -74,12 +72,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       this.indentCount = 1;
+ 
+       var indent = Drupal.theme('tableDragIndentation');
+-      var testRow = $('<tr/>').addClass('draggable').appendTo(table);
+-      var testCell = $('<td/>').appendTo(testRow).prepend(indent).prepend(indent);
+-      var $indentation = testCell.find('.js-indentation');
++      var $testRow = $('<tr/>').addClass('draggable').appendTo(self.$table);
++      var $testCell = $('<td/>').appendTo($testRow).prepend(indent).prepend(indent).wrapInner($(Drupal.theme('tableDragCellItemsWrapper')).addClass('js-tabledrag-cell-content'));
++      var $indentation = $testCell.find('.js-indentation');
+ 
+       this.indentAmount = $indentation.get(1).offsetLeft - $indentation.get(0).offsetLeft;
+-      testRow.remove();
++      $testRow.remove();
+     }
+ 
+     $table.find('> tr.draggable, > tbody > tr.draggable').each(function initDraggable() {
+@@ -116,18 +114,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+ 
+   $.extend(Drupal.tableDrag.prototype, {
+     initColumns: function initColumns() {
+-      var _this2 = this;
+-
++      var self = this;
+       var $table = this.$table;
+ 
+       var hidden = void 0;
+       var cell = void 0;
+       var columnIndex = void 0;
+       Object.keys(this.tableSettings || {}).forEach(function (group) {
+-        Object.keys(_this2.tableSettings[group]).some(function (tableSetting) {
+-          var field = $table.find('.' + _this2.tableSettings[group][tableSetting].target).eq(0);
+-          if (field.length && _this2.tableSettings[group][tableSetting].hidden) {
+-            hidden = _this2.tableSettings[group][tableSetting].hidden;
++        Object.keys(self.tableSettings[group]).some(function (tableSetting) {
++          var field = $table.find('.' + self.tableSettings[group][tableSetting].target).eq(0);
++          if (field.length && self.tableSettings[group][tableSetting].hidden) {
++            hidden = self.tableSettings[group][tableSetting].hidden;
+             cell = field.closest('td');
+             return true;
+           }
+@@ -136,7 +133,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+ 
+         if (hidden && cell[0]) {
+           columnIndex = cell.parent().find('> td').index(cell.get(0)) + 1;
+-          $table.find('> thead > tr, > tbody > tr, > tr').each(_this2.addColspanClass(columnIndex));
++          $table.find('> thead > tr, > tbody > tr, > tr').each(self.addColspanClass(columnIndex));
+         }
+       });
+       this.displayColumns(showWeight);
+@@ -240,20 +237,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+     makeDraggable: function makeDraggable(item) {
+       var self = this;
+       var $item = $(item);
+-      var $firstCell = $item.find('td:first-of-type').wrapInner(Drupal.theme.tableDragCellContentWrapper()).wrapInner($(Drupal.theme('tableDragCellItemsWrapper')).addClass('js-tabledrag-cell-content'));
+-      var $targetElem = $firstCell.find('.js-tabledrag-cell-content').length ? $firstCell.find('.js-tabledrag-cell-content') : $firstCell.addClass('js-tabledrag-cell-content');
++      var $firstCell = $item.children('td:first-of-type').wrapInner($(Drupal.theme.tableDragCellContentWrapper()).addClass('js-tabledrag-cell-content-wrapper')).wrapInner($(Drupal.theme('tableDragCellItemsWrapper')).addClass('js-tabledrag-cell-content'));
++      var $targetElem = $firstCell.children('.js-tabledrag-cell-content').length ? $firstCell.children('.js-tabledrag-cell-content') : $firstCell.addClass('js-tabledrag-cell-content');
++      var $contentWrapper = $targetElem.children('.js-tabledrag-cell-content-wrapper');
+ 
+-      $targetElem.find('.js-indentation').detach().prependTo($targetElem);
++      $contentWrapper.children('.js-indentation').detach().prependTo($targetElem);
+ 
+-      $targetElem.find('a').addClass('menu-item__link');
++      $contentWrapper.find('a').addClass('menu-item__link');
+ 
+       var handle = $(Drupal.theme.tableDragHandle()).addClass('js-tabledrag-handle').attr('title', Drupal.t('Drag to re-order'));
+ 
+-      var $indentationLast = $targetElem.find('.js-indentation').eq(-1);
++      var $indentationLast = $targetElem.children('.js-indentation').eq(-1);
+       if ($indentationLast.length) {
+         $indentationLast.after(handle);
+ 
+-        self.indentCount = Math.max($item.find('.js-indentation').length, self.indentCount);
++        self.indentCount = Math.max($targetElem.children('.js-indentation').length, self.indentCount);
+       } else {
+         $targetElem.prepend(handle);
+       }
+@@ -262,7 +260,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+         event.preventDefault();
+       });
+ 
+-      if (handle.closest('.js-tabledrag-disabled').length) {
++      if (handle.closest('table').hasClass('js-tabledrag-disabled')) {
+         return;
+       }
+ 
+@@ -315,7 +313,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+ 
+                 if ($(item).is('.tabledrag-root')) {
+                   groupHeight = 0;
+-                  while (previousRow && $previousRow.find('.js-indentation').length) {
++                  while (previousRow && $previousRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length) {
+                     $previousRow = $(previousRow).prev('tr').eq(0);
+                     previousRow = $previousRow.get(0);
+                     groupHeight += $previousRow.is(':hidden') ? 0 : previousRow.offsetHeight;
+@@ -414,6 +412,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       self.dragObject = {};
+       self.dragObject.initOffset = self.getPointerOffset(item, event);
+       self.dragObject.initPointerCoords = self.pointerCoords(event);
++      self.lastDragSwitchPointerY = self.dragObject.initPointerCoords.y;
+       if (self.indentEnabled) {
+         self.dragObject.indentPointerPos = self.dragObject.initPointerCoords;
+       }
+@@ -428,6 +427,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       self.table.bottomY = self.table.topY + self.table.offsetHeight;
+ 
+       $(item).addClass('drag');
++      self.rowObject.$handle.addClass('is-dragged');
+ 
+       $('body').addClass('drag');
+       if (self.oldRowElement) {
+@@ -438,7 +438,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       if (self.dragObject) {
+         self.currentPointerCoords = self.pointerCoords(event);
+         var y = self.currentPointerCoords.y - self.dragObject.initOffset.y;
+-        var x = self.currentPointerCoords.x - self.dragObject.initOffset.x;
+ 
+         if (y !== self.oldY) {
+           self.rowObject.direction = y > self.oldY ? 'down' : 'up';
+@@ -453,7 +452,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+             self.setScroll(scrollAmount);
+           }
+ 
+-          var currentRow = self.findDropTargetRow(x, y);
++          var currentRow = self.findDropTargetRow();
+           if (currentRow) {
+             if (self.rowObject.direction === 'down') {
+               self.rowObject.swap('after', currentRow, self);
+@@ -481,6 +480,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       }
+     },
+     dropRow: function dropRow(event, self) {
++      self.lastDragSwitchPointerY = null;
+       var droppedRow = void 0;
+       var $droppedRow = void 0;
+ 
+@@ -515,6 +515,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+           $(self.oldRowElement).removeClass('drag-previous');
+         }
+         $droppedRow.removeClass('drag').addClass('drag-previous');
++        self.rowObject.$handle.removeClass('is-dragged');
+         self.oldRowElement = droppedRow;
+         self.onDrop();
+         self.rowObject = null;
+@@ -540,50 +541,47 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       var pointerPos = this.pointerCoords(event);
+       return { x: pointerPos.x - docPos.left, y: pointerPos.y - docPos.top };
+     },
+-    findDropTargetRow: function findDropTargetRow(x, y) {
+-      var _this3 = this;
+-
+-      var rows = $(this.table.tBodies[0].rows).not(':hidden');
++    findDropTargetRow: function findDropTargetRow() {
++      var self = this;
++      var pointerY = self.currentPointerCoords.y;
++      var directionUp = self.lastDragSwitchPointerY >= pointerY;
++      var rows = directionUp ? $(self.rowObject.element).prevAll('tr').not(':hidden').toArray().reverse() : $(self.rowObject.element).nextAll('tr').not(':hidden').toArray().reverse();
++      var getRowHeight = function getRowHeight(row) {
++        return row.offsetHeight === 0 ? parseInt(row.firstChild.offsetHeight, 10) : parseInt(row.offsetHeight, 10);
++      };
+ 
+       var _loop = function _loop(n) {
+-        var row = rows[n];
+-        var $row = $(row);
+-        var rowY = $row.offset().top;
+-        var rowHeight = void 0;
+-
+-        if (row.offsetHeight === 0) {
+-          rowHeight = parseInt(row.firstChild.offsetHeight, 10) / 2;
+-        } else {
+-            rowHeight = parseInt(row.offsetHeight, 10) / 2;
+-          }
+-
+-        if (y > rowY - rowHeight && y < rowY + rowHeight) {
+-          if (_this3.indentEnabled) {
+-            if (Object.keys(_this3.rowObject.group).some(function (o) {
+-              return _this3.rowObject.group[o] === row;
++        var currentRow = rows[n];
++        var currentRowOffestY = $(currentRow).offset().top;
++        var currentRowHeight = getRowHeight(currentRow);
++        var currentRowCenterOffset = currentRowOffestY + currentRowHeight / 2;
++
++        if (directionUp && pointerY < currentRowCenterOffset || !directionUp && pointerY > currentRowCenterOffset) {
++          if (self.indentEnabled) {
++            if (Object.keys(self.rowObject.group).some(function (o) {
++              return self.rowObject.group[o] === currentRow;
+             })) {
+               return {
+                 v: null
+               };
+             }
+-          } else if (row === _this3.rowObject.element) {
++          } else if (currentRow === self.rowObject.element) {
+               return {
+                 v: null
+               };
+             }
+ 
+-          if (!_this3.rowObject.isValidSwap(row)) {
++          if (!self.rowObject.isValidSwap(currentRow)) {
+             return {
+               v: null
+             };
+           }
+ 
+-          while ($row.is(':hidden') && $row.prev('tr').is(':hidden')) {
+-            $row = $row.prev('tr:first-of-type');
+-            row = $row.get(0);
++          if (currentRow) {
++            self.lastDragSwitchPointerY = pointerY;
+           }
+           return {
+-            v: row
++            v: currentRow
+           };
+         }
+       };
+@@ -596,10 +594,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       return null;
+     },
+     updateFields: function updateFields(changedRow) {
+-      var _this4 = this;
+-
+-      Object.keys(this.tableSettings || {}).forEach(function (group) {
+-        _this4.updateField(changedRow, group);
++      var self = this;
++      Object.keys(self.tableSettings || {}).forEach(function (group) {
++        self.updateField(changedRow, group);
+       });
+     },
+     updateField: function updateField(changedRow, group) {
+@@ -638,7 +635,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+         } else if (rowSettings.relationship === 'parent') {
+             $previousRow = $changedRow.prev('tr');
+             previousRow = $previousRow;
+-            while ($previousRow.length && $previousRow.find('.js-indentation').length >= this.rowObject.indents) {
++            while ($previousRow.length && $previousRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length >= this.rowObject.indents) {
+               $previousRow = $previousRow.prev('tr');
+               previousRow = $previousRow;
+             }
+@@ -670,7 +667,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+         var sourceElement = $(sourceClass, sourceRow).get(0);
+         switch (rowSettings.action) {
+           case 'depth':
+-            targetElement.value = $(sourceElement).closest('tr').find('.js-indentation').length;
++            targetElement.value = $(sourceElement).closest('tr').find('> td > .js-tabledrag-cell-content > .js-indentation').length;
+             break;
+ 
+           case 'match':
+@@ -764,10 +761,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+     row: function row(tableRow, method, indentEnabled, maxDepth, addClasses) {
+       var $tableRow = $(tableRow);
+ 
++      this.$handle = $tableRow.find('> td > .js-tabledrag-cell-content > .js-tabledrag-handle');
+       this.element = tableRow;
+       this.method = method;
+       this.group = [tableRow];
+-      this.groupDepth = $tableRow.find('.js-indentation').length;
++      this.groupDepth = $tableRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length;
+       this.changed = false;
+       this.table = $tableRow.closest('table')[0];
+       this.indentEnabled = indentEnabled;
+@@ -775,12 +773,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+ 
+       this.direction = '';
+       if (this.indentEnabled) {
+-        this.indents = $tableRow.find('.js-indentation').length;
++        this.indents = $tableRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length;
+         this.children = this.findChildren(addClasses);
+         this.group = $.merge(this.group, this.children);
+ 
+         for (var n = 0; n < this.group.length; n++) {
+-          this.groupDepth = Math.max($(this.group[n]).find('.js-indentation').length, this.groupDepth);
++          this.groupDepth = Math.max($(this.group[n]).find('> td > .js-tabledrag-cell-content > .js-indentation').length, this.groupDepth);
+         }
+       }
+     }
+@@ -789,7 +787,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+   $.extend(Drupal.tableDrag.prototype.row.prototype, {
+     findChildren: function findChildren(addClasses) {
+       var parentIndentation = this.indents;
+-      var currentRow = $(this.element, this.table).next('tr.draggable');
++      var nextRow = $(this.element, this.table).next('tr.draggable');
+       var rows = [];
+       var child = 0;
+ 
+@@ -805,17 +803,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+         }
+       }
+ 
+-      while (currentRow.length) {
+-        if (currentRow.find('.js-indentation').length > parentIndentation) {
++      while (nextRow.length) {
++        if (nextRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length > parentIndentation) {
+           child += 1;
+-          rows.push(currentRow[0]);
++          rows.push(nextRow[0]);
+           if (addClasses) {
+-            currentRow.find('.js-indentation').each(rowIndentation);
++            nextRow.find('> td > .js-tabledrag-cell-content > .js-indentation').each(rowIndentation);
+           }
+         } else {
+           break;
+         }
+-        currentRow = currentRow.next('tr.draggable');
++        nextRow = nextRow.next('tr.draggable');
+       }
+       if (addClasses && rows.length) {
+         $(rows[rows.length - 1]).find('.js-indentation:nth-child(' + (parentIndentation + 1) + ')').addClass('tree-child-last');
+@@ -863,12 +861,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       var $prevRow = $(prevRow);
+       var maxIndent = void 0;
+ 
+-      var minIndent = nextRow ? $(nextRow).find('.js-indentation').length : 0;
++      var minIndent = nextRow ? $(nextRow).find('> td > .js-tabledrag-cell-content > .js-indentation').length : 0;
+ 
+       if (!prevRow || $prevRow.is(':not(.draggable)') || $(this.element).is('.tabledrag-root')) {
+         maxIndent = 0;
+       } else {
+-        maxIndent = $prevRow.find('.js-indentation').length + ($prevRow.is('.tabledrag-leaf') ? 0 : 1);
++        maxIndent = $prevRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length + ($prevRow.is('.tabledrag-leaf') ? 0 : 1);
+ 
+         if (this.maxDepth) {
+           maxIndent = Math.min(maxIndent, this.maxDepth - (this.groupDepth - this.indents));
+@@ -893,10 +891,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+ 
+       for (var n = 1; n <= Math.abs(indentDiff); n++) {
+         if (indentDiff < 0) {
+-          $group.find('.js-indentation:first-of-type').remove();
++          $group.find('> td > .js-tabledrag-cell-content > .js-indentation:first-of-type').remove();
+           this.indents -= 1;
+         } else {
+-          $group.find('.js-tabledrag-cell-content').prepend(Drupal.theme('tableDragIndentation'));
++          $group.find('> td > .js-tabledrag-cell-content').prepend(Drupal.theme('tableDragIndentation'));
+           this.indents += 1;
+         }
+       }
+@@ -918,7 +916,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+         while (checkRow.length) {
+           if (checkRow.find('.' + rowSettings.target)) {
+             if (this.indentEnabled) {
+-              checkRowIndentation = checkRow.find('.js-indentation').length;
++              checkRowIndentation = checkRow.find('> td > .js-tabledrag-cell-content > .js-indentation').length;
+             }
+ 
+             if (!this.indentEnabled || checkRowIndentation === rowIndentation) {
+@@ -940,17 +938,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
+       return siblings;
+     },
+     removeIndentClasses: function removeIndentClasses() {
+-      var _this5 = this;
+-
+-      Object.keys(this.children || {}).forEach(function (n) {
+-        $(_this5.children[n]).find('.js-indentation').removeClass('tree-child').removeClass('tree-child-first').removeClass('tree-child-last').removeClass('tree-child-horizontal');
++      var self = this;
++      Object.keys(self.children || {}).forEach(function (n) {
++        $(self.children[n]).find('.js-indentation').removeClass('tree-child').removeClass('tree-child-first').removeClass('tree-child-last').removeClass('tree-child-horizontal');
+       });
+     },
+     markChanged: function markChanged() {
+-      var marker = $(Drupal.theme('tableDragChangedMarker')).addClass('js-tabledrag-changed-marker');
+-      var cell = $(this.element).find('td:first-of-type');
+-      if (cell.find('.js-tabledrag-changed-marker').length === 0) {
+-        cell.find('.js-tabledrag-handle').after(marker);
++      if (this.$handle.parent().children('.js-tabledrag-changed-marker').length === 0) {
++        var marker = $(Drupal.theme('tableDragChangedMarker')).addClass('js-tabledrag-changed-marker');
++        this.$handle.after(marker);
+       }
+     },
+     onIndent: function onIndent() {

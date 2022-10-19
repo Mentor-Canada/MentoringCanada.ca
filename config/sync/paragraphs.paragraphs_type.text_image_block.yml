@@ -1,0 +1,10 @@
+uuid: 98ec2622-12fa-409b-bd43-bc66680125b1
+langcode: en
+status: true
+dependencies: {  }
+id: text_image_block
+label: 'Text + Image Block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

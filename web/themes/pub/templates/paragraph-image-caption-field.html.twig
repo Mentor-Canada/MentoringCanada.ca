@@ -1,0 +1,7 @@
+{# @var v \Drupal\app\Views\ParagraphImageCaptionFieldView #}
+<figure class="image-caption-field">
+  <img src="{{ v.image.url }}"
+       alt="{{ v.caption }}"
+  >
+  {% if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+</figure>

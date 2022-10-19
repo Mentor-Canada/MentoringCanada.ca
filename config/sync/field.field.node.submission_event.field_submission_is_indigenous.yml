@@ -1,0 +1,19 @@
+uuid: ba407a09-49c8-434d-99bb-dfc136752329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_is_indigenous
+    - node.type.submission_event
+id: node.submission_event.field_submission_is_indigenous
+field_name: field_submission_is_indigenous
+entity_type: node
+bundle: submission_event
+label: 'Is Indigenous'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

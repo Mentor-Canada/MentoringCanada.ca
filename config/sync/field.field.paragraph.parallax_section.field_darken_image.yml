@@ -1,0 +1,23 @@
+uuid: 78cb68c9-9963-442e-b691-f320a5d18067
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_darken_image
+    - paragraphs.paragraphs_type.parallax_section
+id: paragraph.parallax_section.field_darken_image
+field_name: field_darken_image
+entity_type: paragraph
+bundle: parallax_section
+label: 'Darken Image'
+description: 'This will darken the parallax image used within the section. This is often used with <em>Display Menu</em> and the <em>Section Eyebrow</em> and <em>Section Title</em> to ensure that these elements remain legible over the image.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

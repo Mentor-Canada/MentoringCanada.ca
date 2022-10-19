@@ -1,0 +1,19 @@
+uuid: 015fdee8-8dfe-486c-bb3a-899b907e798f
+langcode: en
+status: true
+dependencies:
+  module:
+    - description_field
+    - paragraphs
+id: paragraph.field_text_image_group_2_tip
+field_name: field_text_image_group_2_tip
+entity_type: paragraph
+type: description_field
+settings: {  }
+module: description_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

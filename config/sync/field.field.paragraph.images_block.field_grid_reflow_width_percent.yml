@@ -1,0 +1,23 @@
+uuid: 554999cf-57a1-4391-b3af-546328f329c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grid_reflow_width_percent
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_grid_reflow_width_percent
+field_name: field_grid_reflow_width_percent
+entity_type: paragraph
+bundle: images_block
+label: 'Grid Reflow Width Percent'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

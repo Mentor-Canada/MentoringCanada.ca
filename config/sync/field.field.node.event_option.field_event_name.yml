@@ -1,0 +1,19 @@
+uuid: 806010fa-446a-42cc-9158-def5bf82a480
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_name
+    - node.type.event_option
+id: node.event_option.field_event_name
+field_name: field_event_name
+entity_type: node
+bundle: event_option
+label: Details
+description: 'Enter a name or description for this event, for example <i>"Webinar (French)"</i> or <i>"Hilton Toronto"</i>.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 48e28c4c-a1db-4423-b62d-76bf420e80a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.submission_spo
+id: node.submission_spo.status
+field_name: status
+entity_type: node
+bundle: submission_spo
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

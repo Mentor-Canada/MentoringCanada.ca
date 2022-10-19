@@ -1,0 +1,33 @@
+uuid: 7ae69493-cc0e-488d-9747-4c85d9581147
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: pom_events_english_
+label: 'POM Events (English)'
+type: 'canonical_entities:node'
+pattern: 'power-of-mentoring/[node:title]'
+selection_criteria:
+  a52d5d37-0e88-4dc4-863b-16d617ed5427:
+    id: node_type
+    bundles:
+      event_pom: event_pom
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a52d5d37-0e88-4dc4-863b-16d617ed5427
+  020d2197-d251-4dc5-a2a2-72e469b704ed:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: 020d2197-d251-4dc5-a2a2-72e469b704ed
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

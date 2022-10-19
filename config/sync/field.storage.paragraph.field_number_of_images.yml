@@ -1,0 +1,27 @@
+uuid: e9525479-5f31-4cd0-aae9-9303781b0e66
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_number_of_images
+field_name: field_number_of_images
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: images-1
+      label: '1 image'
+    -
+      value: images-2
+      label: '2 images'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 2f057d15-fe1b-4ea1-b31b-42bd8f6d7540
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_email_address
+    - node.type.submission_event
+id: node.submission_event.field_submission_email_address
+field_name: field_submission_email_address
+entity_type: node
+bundle: submission_event
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

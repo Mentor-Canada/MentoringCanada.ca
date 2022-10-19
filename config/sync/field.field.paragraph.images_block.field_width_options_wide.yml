@@ -1,0 +1,23 @@
+uuid: 8e34583b-82b8-41f9-b97b-96e7015114b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width_options_wide
+    - paragraphs.paragraphs_type.images_block
+  module:
+    - options
+id: paragraph.images_block.field_width_options_wide
+field_name: field_width_options_wide
+entity_type: paragraph
+bundle: images_block
+label: 'Carousel Width'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

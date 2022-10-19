@@ -1,0 +1,19 @@
+uuid: 61f91b2b-83df-464e-94e9-7bbffd8fafd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_eyebrow
+    - node.type.custom
+id: node.custom.field_banner_eyebrow
+field_name: field_banner_eyebrow
+entity_type: node
+bundle: custom
+label: 'Banner Eyebrow'
+description: 'The “eyebrow” is a small line of text that appears over the main banner heading, and can usually be left blank. When no eyebrow is given, the page title will be used. When neither an eyebrow or heading are given, the eyebrow will be hidden.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

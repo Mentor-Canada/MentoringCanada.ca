@@ -1,0 +1,36 @@
+uuid: 644d1e4f-4caf-4b9b-aac0-6c43700ba4b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_padding_top
+field_name: field_padding_top
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: none
+      label: None
+    -
+      value: 1x
+      label: '1x Standard'
+    -
+      value: 2x
+      label: '2x Standard'
+    -
+      value: 3x
+      label: '3x Standard'
+    -
+      value: pixels
+      label: Pixels
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

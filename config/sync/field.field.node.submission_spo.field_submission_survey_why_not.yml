@@ -1,0 +1,19 @@
+uuid: ca263f21-5ea0-4ef4-91ff-0b299246f4cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submission_survey_why_not
+    - node.type.submission_spo
+id: node.submission_spo.field_submission_survey_why_not
+field_name: field_submission_survey_why_not
+entity_type: node
+bundle: submission_spo
+label: 'Would you be willing to share why not?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

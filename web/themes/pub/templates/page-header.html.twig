@@ -1,0 +1,56 @@
+{# @var v \Drupal\app\Views\PageHeaderView #}
+<section id="page-header">
+  <div data-header-width="{{ v.width }}">
+
+    <div class="page-header-content typography">
+
+    {% if not v.eyebrow and not v.heading %}
+      <h1 class="page-header-heading">{{ v.title }}</h1>
+    {% elseif v.eyebrow and not v.heading %}
+      <h2 class="page-header-eyebrow">{{ v.eyebrow }}</h2>
+      <h1 class="page-header-heading">{{ v.title }}</h1>
+    {% elseif not v.eyebrow and v.heading %}
+      <h2 class="page-header-eyebrow">{{ v.title }}</h2>
+      <h1 class="page-header-heading">{{ v.heading }}</h1>
+    {% else %}
+      <h2 class="page-header-eyebrow">{{ v.eyebrow }}</h2>
+      <h1 class="page-header-heading">{{ v.heading }}</h1>
+    {% endif %}
+
+    {% if v.subheading %}
+      <h3 class="page-header-subheading">{{ v.subheading }}</h3>
+    {% endif %}
+
+    {% if v.hasLink %}
+      <div class="page-header-link">
+        <a href="{{ v.linkUrl }}"><button>{{ v.linkTitle }}</button></a>
+      </div>
+    {% endif %}
+
+    </div>
+
+    <div class="share-content">
+      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ v.url }}">
+        <span class="visually-hidden">{{ "Share on Facebook"|t }}</span>
+        <div class="share-button-shape share-fb"></div>
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a target="_blank" href="https://twitter.com/intent/tweet?text={{ v.url }}">
+        <span class="visually-hidden">{{ "Share on Twitter"|t }}</span>
+        <div class="share-button-shape share-tw"></div>
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ v.url|url_encode }}&title={{ v.title|url_encode }}&source={{ "MENTOR Canada"|t|url_encode }}">
+        <span class="visually-hidden">{{ "Share on LinkedIn"|t }}</span>
+        <div class="share-button-shape share-li"></div>
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a target="_blank" href="mailto:?subject={{ v.title|url_encode }}">
+        <span class="visually-hidden">{{ "Share by Email"|t }}</span>
+        <div class="share-button-shape share-em"></div>
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
